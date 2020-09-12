@@ -21,7 +21,7 @@ class ScoreFrame extends React.Component {
         responseType: 'blob',
       })
       .then((response) => {
-        const file = new Blob([response.data], {});
+        const file = new Blob([response.data], {type: "application/pdf"});
         this.setState({ fileURL: URL.createObjectURL(file) });
       })
       .catch((error) => {
