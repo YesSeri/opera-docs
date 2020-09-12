@@ -8,6 +8,7 @@ class Post extends React.Component {
     super();
     this.state = {
       data: null,
+      postExists: true,
     };
   }
 
@@ -19,9 +20,13 @@ class Post extends React.Component {
       .then((response) => {
         const { data } = response;
 
-        this.setState({
-          data,
-        });
+        if (data) {
+          this.setState({
+            data,
+          });
+        } else {
+          this.setState({postExists: false})
+        }
       })
       .catch((err) => {
         if (err) console.error(err);
@@ -52,7 +57,10 @@ class Post extends React.Component {
       <div className="container">
         <div className="innerContainer">
           {data ? this.PostInfo() : null}
-          {data ? <ScoreFrame /> : null}
+          {!this.state.postExists ? <h1>Nothing here</h1> : null}
+          {!this.state.postExists ? <p>Post not found</p> : null}
+          {this.state.postExists ? <ScoreFrame /> : null}
+
         </div>
       </div>
     );

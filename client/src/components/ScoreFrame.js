@@ -42,13 +42,6 @@ class ScoreFrame extends React.Component {
     return (
       <div className="container">
         <div className="innerContainer">
-          <div className="spinnerContainer">
-            {this.state.loading && this.state.fileExists ? (
-              <Spinner name="line-scale-pulse-out" />
-            ) : null}
-            {!this.state.fileExists ? <p>File not found. </p> : null}
-          </div>
-          {console.log(this.state.fileURL)}
           <div className="iframeContainer">
             {this.state.fileURL ? (
               <object
@@ -56,7 +49,9 @@ class ScoreFrame extends React.Component {
                 data={`${this.state.fileURL}`}
                 onLoad={this.hideSpinner}
               />
-            ) : null}
+            ) :
+              <Spinner name="line-scale-pulse-out" />
+            }
           </div>
         </div>
       </div>

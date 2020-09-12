@@ -15,7 +15,6 @@ import {
 } from "react-router-dom";
 
 export default function App() {
-    console.log(process.env.port)
   return (
     <Router>
       <div>
