@@ -1,0 +1,17 @@
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+}
+iframe {
+  height: 100%;
+  width: 95%;
+}
+embed {
+  height: 100%;
+  width: 95%;
+}
+
+.iframeContainer {
+  height: 100vh;
+  width: 95vw;
+}
