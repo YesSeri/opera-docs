@@ -24,7 +24,7 @@ class Post extends React.Component {
         });
       })
       .catch((err) => {
-        if (err) throw err;
+        if (err) console.error(err);
       });
   }
 

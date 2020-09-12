@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
     err,
     result
   ) => {
-    if (err) throw err;
+    if (err) console.error(err);
     res.status(200).json(result);
   });
 });

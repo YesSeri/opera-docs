@@ -48,11 +48,12 @@ class ScoreFrame extends React.Component {
             ) : null}
             {!this.state.fileExists ? <p>File not found. </p> : null}
           </div>
+          {console.log(this.state.fileURL)}
           <div className="iframeContainer">
             {this.state.fileURL ? (
-              <embed
-                title="pdfEmbed"
-                src={this.state.fileURL}
+              <object
+                title="pdfObject"
+                data={`${this.state.fileURL}`}
                 onLoad={this.hideSpinner}
               />
             ) : null}

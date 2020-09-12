@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
     err,
     result
   ) {
-    if (err) throw err;
+    if (err) console.error(err);
     res.json(result)
   });
 });
@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
     'SELECT o.name, p.title, p.placement, p.id FROM Pieces_test as p INNER JOIN Operas as o ON o.id = p.opera_id WHERE o.id = ? ORDER BY p.placement ASC;';
   const id = req.params.id;
   db.query(query, id, (err, result) => {
-    if (err) throw err;
+    if (err) console.error(err);
 
     if (result.length === 0) {
       res.json("")

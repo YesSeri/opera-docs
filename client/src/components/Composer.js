@@ -13,7 +13,7 @@ function Composer() {
         setData(response.data);
       })
       .catch((err) => {
-        if (err) throw err;
+        if (err) console.error(err)
       });
     return () => {};
   }, []);
