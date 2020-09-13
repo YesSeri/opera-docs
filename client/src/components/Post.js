@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-
 import ScoreFrame from './ScoreFrame';
+const Spinner = require('react-spinkit');
 
 class Post extends React.Component {
   constructor() {
@@ -25,7 +25,7 @@ class Post extends React.Component {
             data,
           });
         } else {
-          this.setState({postExists: false})
+          this.setState({ postExists: false });
         }
       })
       .catch((err) => {
@@ -34,17 +34,25 @@ class Post extends React.Component {
   }
 
   PostInfo = () => {
-    const data = this.state.data;
+    const {
+      title,
+      opera,
+      description,
+      type,
+      first_name,
+      last_name,
+      placement,
+    } = this.state.data;
     let renderPost = '';
-    if (data) {
+    if (title) {
       renderPost = (
         <div>
-          <h2>{data.title}</h2>
-          <h3>{data.opera}</h3>
-          <p>{data.description}</p>
-          <p>It is a {data.type}</p>
-          <p>{`${data.first_name} ${data.last_name}`}</p>
-          <p>Number {data.placement} in the opera</p>
+          <h2>{title}</h2>
+          <h3>{opera}</h3>
+          <p>{description}</p>
+          <p>It is a {type}</p>
+          <p>{`${first_name} ${last_name}`}</p>
+          <p>Number {placement} in the opera</p>
         </div>
       );
     }
@@ -52,15 +60,17 @@ class Post extends React.Component {
   };
 
   render() {
-    const data = this.state.data;
     return (
       <div className="container">
         <div className="innerContainer">
-          {data ? this.PostInfo() : null}
+          {this.state.data ? this.PostInfo() : null}
           {!this.state.postExists ? <h1>Nothing here</h1> : null}
           {!this.state.postExists ? <p>Post not found</p> : null}
-          {this.state.postExists ? <ScoreFrame /> : null}
-
+          {this.state.data ? (
+            <ScoreFrame filename={this.state.data.file_title} />
+          ) : (
+            null
+          )}
         </div>
       </div>
     );
