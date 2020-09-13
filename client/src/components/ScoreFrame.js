@@ -49,7 +49,7 @@ class ScoreFrame extends React.Component {
       <div className="container">
         <div className="innerContainer">
           <div className="iframeContainer">
-            <iframe src={"http://docs.google.com/gview?embedded=true&amp;url=https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"}></iframe>
+              <iframe src={`https://drive.google.com/viewerng/viewer?embedded=true&url=https://operadocs.com/wp-content/uploads/2019/01/1.2-Non-sperar-se-non-muccidi.pdf`}></iframe>
             {/* {this.state.fileURL ? (
               <object
                 type="application/pdf"
