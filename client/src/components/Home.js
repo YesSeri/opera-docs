@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import lunr from 'lunr';
-import './css/home.css'
+import './css/home.css';
 
 const SearchBar = (props) => {
   const [index, setIndex] = useState(null);
@@ -40,27 +40,19 @@ const SearchBar = (props) => {
     });
   }
 
-  useEffect(() => {
+  useEffect( () => {
     if (value.length > 2) {
-      Search();
+      const results =  index.search(value).map(function (result) {
+        return data[result.ref];
+      });
+      if (results.length > 0) {
+        props.setResults(results);
+      }
     } else {
       setResponse(null);
     }
   }, [value]);
 
-  async function Search() {
-    const results = await index.search(value).map(function (result) {
-      console.log(result.ref)
-      console.log(data)
-      return data[result.ref];
-    });
-    if (results.length > 0) {
-      setResponse(results);
-      props.setResults(results);
-    } else {
-      setResponse(null);
-    }
-  }
   return (
     <>
       <form>
@@ -82,19 +74,15 @@ const SearchBar = (props) => {
 function SearchResults(props) {
   if (props.results) {
     return props.results.map((result, i) => {
-      return(
-      <div className='colContainer' key={i} >
-        <p className="resContainer">
-          {result.title}
-        </p>
-        <p className="resContainer">
-          {result.opera}
-        </p>
-        <p className="resContainer">
-          {`${result.last_name}, ${result.first_name}`}
-        </p>
-      </div>
-      )
+      return (
+        <div className="colContainer" key={i}>
+          <p className="resContainer">{result.title}</p>
+          <p className="resContainer">{result.opera}</p>
+          <p className="resContainer">
+            {`${result.last_name}, ${result.first_name}`}
+          </p>
+        </div>
+      );
     });
   } else {
     return null;
