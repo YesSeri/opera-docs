@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import lunr from 'lunr';
 import './css/home.css';
 
-const SearchBar = (props) => {
+const SearchBar = ({setResults}) => {
   const [index, setIndex] = useState(null);
-  const [response, setResponse] = useState(null);
   const [data, setData] = useState(null);
   const [value, setValue] = useState('');
 
@@ -46,12 +45,11 @@ const SearchBar = (props) => {
         return data[result.ref];
       });
       if (results.length > 0) {
-        props.setResults(results);
+        setResults(results);
       }
     } else {
-      setResponse(null);
     }
-  }, [value]);
+  }, [value, index, data, setResults]);
 
   return (
     <>
