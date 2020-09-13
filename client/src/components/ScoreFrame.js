@@ -21,7 +21,13 @@ class ScoreFrame extends React.Component {
         responseType: 'blob',
       })
       .then((response) => {
-        const file = new Blob([response.data], {type: "application/pdf"});
+        const file = new Blob([response.data], {
+          filename: 'aaaa',
+          type: 'application/pdf',
+        });
+        file.arrayBuffer().then((value) => {
+          console.log(value.slice());
+        });
         this.setState({ fileURL: URL.createObjectURL(file) });
       })
       .catch((error) => {
@@ -43,15 +49,17 @@ class ScoreFrame extends React.Component {
       <div className="container">
         <div className="innerContainer">
           <div className="iframeContainer">
-            {this.state.fileURL ? (
+            <iframe src={"http://docs.google.com/gview?embedded=true&amp;url=https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"}></iframe>
+            {/* {this.state.fileURL ? (
               <object
+                type="application/pdf"
                 title="pdfObject"
                 data={`${this.state.fileURL}`}
                 onLoad={this.hideSpinner}
               />
-            ) :
+            ) : (
               <Spinner name="line-scale-pulse-out" />
-            }
+            )} */}
           </div>
         </div>
       </div>
