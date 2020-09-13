@@ -1,6 +1,5 @@
 import React from 'react';
 import './css/scoreFrame.css';
-const Spinner = require('react-spinkit');
 
 class ScoreFrame extends React.Component {
   constructor(props) {
@@ -19,12 +18,12 @@ class ScoreFrame extends React.Component {
   };
 
   render() {
-    const googleUrlPDF = `https://drive.google.com/viewerng/viewer?embedded=true&url=https://operadocs.com/wp-content/uploads/pdfsToBeAccessed/${this.props.filename}`;
+    const googleUrlPDF = `https://drive.google.com/viewerng/viewer?embedded=true&url=https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${this.props.filename}`;
     return (
       <div className="container">
         <div className="innerContainer">
           <div className="iframeContainer">
-            {<iframe src={googleUrlPDF} />}
+            {<iframe src={googleUrlPDF} title="embededPDF" />}
             {/* 
             
           <object data={googleUrlPDF} type="application/pdf">

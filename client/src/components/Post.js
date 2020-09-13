@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import ScoreFrame from './ScoreFrame';
-const Spinner = require('react-spinkit');
 
 class Post extends React.Component {
   constructor() {

@@ -1,2 +1,10 @@
-.homeContainer{
+.colContainer {
+  display: flex;
+  flex-wrap: wrap;
 }
+.resContainer{
+  list-style: none;
+  flex: 0 0 32%;
+  border-bottom: green dotted 1px;
+  border-right: green dotted 1px;
+} 
