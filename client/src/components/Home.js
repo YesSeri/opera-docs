@@ -3,13 +3,8 @@ import { Link } from 'react-router-dom';
 import lunr from 'lunr';
 import './css/home.css';
 
-<<<<<<< HEAD
 const SearchBar = ({ setResults }) => {
-=======
-const SearchBar = (props) => {
->>>>>>> parent of b3ecb12... No more linter warning, fixed useeffect bug
   const [index, setIndex] = useState(null);
-  const [response, setResponse] = useState(null);
   const [data, setData] = useState(null);
   const [value, setValue] = useState('');
 
@@ -49,19 +44,11 @@ const SearchBar = (props) => {
       const results = index.search(`${value}~1`).map(function (result) {
         return data[result.ref];
       });
-<<<<<<< HEAD
       setResults(results);
     } else {
       setResults(null);
-=======
-      if (results.length > 0) {
-        props.setResults(results);
-      }
-    } else {
-      setResponse(null);
->>>>>>> parent of b3ecb12... No more linter warning, fixed useeffect bug
     }
-  }, [value]);
+  }, [value, index, data, setResults]);
 
   return (
     <>
