@@ -7,14 +7,17 @@
 
 html, body {
   height: 100%;
+  background-color: #a8dadc;
 }
 body {
   margin: 0;
 }
+a{
+
+  color: #e63946;
+}
 .container {
   height: 100%;
-  padding: 0;
-  margin: 0;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -24,5 +27,9 @@ body {
   justify-content: center;
 }
 .innerContainer{
+  margin-top: 10px;
+  padding: 0px 10px 20px 10px;
+  border-radius: 20px;
+  background-color: #f1faee;
   text-align: center;
 }

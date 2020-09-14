@@ -31,9 +31,9 @@ class Composers extends React.Component {
       data.forEach((el) => {
         view.push(
           <div key={el.id}>
-            <Link
+            <Link style={{display: 'flex', textAlign: 'left'}}
               to={`/composer/${el.id}`}
-            >{`${el.first_name} ${el.last_name}`}</Link>
+            >{`${el.last_name}, ${el.first_name}` }</Link>
           </div>
         );
       });

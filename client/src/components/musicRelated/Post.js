@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import ScoreFrame from './ScoreFrame';
+import ScoreFrame from '../ScoreFrame';
 
 class Post extends React.Component {
   constructor() {

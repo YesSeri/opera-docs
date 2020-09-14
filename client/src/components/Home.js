@@ -74,17 +74,14 @@ function SearchResults(props) {
       return (
         <div className="colContainer" key={i}>
           <div className="resContainer">
-            <p>{result.title}</p>
+            {console.log(result)}
+            <Link to={`/post/${result.piece_id}`}>{result.title}</Link>
           </div>
           <div className="resContainer">
             <p>{result.opera}</p>
           </div>
           <div className="resContainer">
             <p>{`${result.last_name}, ${result.first_name}`}</p>
-          </div>
-          <div className="resContainer">
-            {console.log(result)}
-            <Link to={`/post/${result.piece_id}`}>{result.title}</Link>
           </div>
         </div>
       );

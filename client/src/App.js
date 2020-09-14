@@ -1,30 +1,29 @@
 import React from 'react';
 import './App.css';
-import Composers from './components/Composers';
-import Composer from './components/Composer';
-import Operas from './components/Operas';
-import Opera from './components/Opera';
-import Posts from './components/Posts';
-import Post from './components/Post';
+import Composers from './components/musicRelated/Composers';
+import Composer from './components/musicRelated/Composer';
+import Operas from './components/musicRelated/Operas';
+import Opera from './components/musicRelated/Opera';
+import Posts from './components/musicRelated/Posts';
+import Post from './components/musicRelated/Post';
 import Home from './components/Home';
 import { NavBar } from './components/NavBar';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 export default function App() {
+  const spanColor = '#F1FAEE'
   return (
     <Router>
       <div>
-        <div className="navContainer">
-        <>
-            <NavBar />
-        </>
-          <nav>
+        <div style={{fontSize: '1.3em', }}className="navContainer">
+          <h1>mysqldocs</h1>
+          <nav style={{fontSize: '1.5em'}}>
             <Link to="/">Home</Link>
-            <span> | </span>
+            <span style={{color: spanColor}}> | </span>
             <Link to="/operas">Operas</Link>
-            <span> | </span>
+            <span style={{color: spanColor}}> | </span>
             <Link to="/composers">Composers</Link>
-            <span> | </span>
+            <span style={{color: spanColor}}> | </span>
             <Link to="/posts">Posts</Link>
           </nav>
         </div>
@@ -37,8 +36,7 @@ export default function App() {
           <Route path="/opera" component={Opera} />
           <Route path="/posts" component={Posts} />
           <Route path="/post" component={Post} />
-          <Route exact path="/">
-            <Home />
+          <Route exact path="/" component={Home}>
           </Route>
         </Switch>
       </div>

@@ -20,7 +20,7 @@ function Operas() {
     const operas = data.map((el) => {
       return (
         <div key={el.id}>
-          <Link to={`/opera/${el.id}`}>{`${el.opera}`}</Link>
+          <Link style={{textAlign: 'left', display: 'flex', marginBottom: '-15px'}} to={`/opera/${el.id}`}>{`${el.opera}`}</Link>
           <br />
         </div>
       );

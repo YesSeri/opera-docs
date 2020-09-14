@@ -7,7 +7,7 @@ const db = require('../helper/dbConnection');
 router.use(express.json());
 
 router.get('/', (req, res) => {
-  const query =   `SELECT p.id, p.title, p.type, p.placement, o.name as opera, c.first_name, c.last_name 
+  const query =   `SELECT p.id as piece_id, p.title, p.type, p.placement, o.name as opera, o.id as opera_id, c.first_name, c.last_name, c.id as composer_id 
                     FROM Pieces as p INNER JOIN Operas as o ON p.opera_id = o.id 
                     INNER JOIN Composers as c ON o.composer_id = c.id
                     ORDER BY opera ASC, p.placement ASC;`

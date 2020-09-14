@@ -28,27 +28,28 @@ class Posts extends React.Component {
     const data = this.state.data;
     const posts = [];
     const borderStyle = 'solid green 1px';
-    const innerDivStyle = { flex: '1 0 0', borderRight: borderStyle}
+    const innerDivStyle = { flex: '1 0 0'}
     if (data) {
       data.forEach((el) => {
         posts.push(
           <div
-            key={el.id}
+            key={el.piece_id}
             style={{
               display: 'flex',
               borderTop: borderStyle,
-              borderLeft: borderStyle,
-              borderLeft: borderStyle,
+              height: '50px',
+              alignItems: 'center'
+
             }}
           >
             <div style={innerDivStyle}>
-              <Link to={`/post/${el.id}`}>{el.title}</Link>
+              <Link to={`/post/${el.piece_id}`}>{el.title}</Link>
             </div>
             <div style={innerDivStyle}>
-              <p to={`/post/${el.id}`}>{el.opera}</p>
+              <Link to={`/opera/${el.opera_id}`}>{el.opera}</Link>
             </div>
             <div style={innerDivStyle}>
-              <p to={`/post/${el.id}`}>{el.last_name}</p>
+              <Link to={`/composer/${el.composer_id}`}>{el.last_name}</Link>
             </div>
             <br />
           </div>
