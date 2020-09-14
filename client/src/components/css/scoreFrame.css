@@ -2,6 +2,10 @@
   display: flex;
   justify-content: center;
 }
+.loader{
+  display: flex;
+  justify-content: center;
+}
 iframe {
   height: 100%;
   width: 95%;
