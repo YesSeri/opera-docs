@@ -10,6 +10,9 @@ function ScoreFrame(props) {
     timer = setInterval(() => {
       reloadIframe();
     }, 3000);
+    return () => {
+      clearInterval(timer);
+    };
   }, []);
 
   const reloadIframe = () => {
