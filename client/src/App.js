@@ -8,7 +8,6 @@ import Posts from './components/Posts';
 import Post from './components/Post';
 import Home from './components/Home';
 import { NavBar } from './components/NavBar';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 export default function App() {
