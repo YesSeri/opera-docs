@@ -20,7 +20,7 @@ function Operas() {
     const operas = data.map((el) => {
       return (
         <div key={el.id}>
-          <Link style={{textAlign: 'left', display: 'flex', marginBottom: '-15px'}} to={`/opera/${el.id}`}>{`${el.opera}`}</Link>
+          <Link to={`/opera/${el.id}`}>{`${el.opera}`}</Link>
           <br />
         </div>
       );
@@ -28,12 +28,10 @@ function Operas() {
     return operas;
   };
   return (
-    <div className="container">
-      <div className="innerContainer">
+    <>
         <h1>Operas</h1>
         {data ? operaPieces() : null}
-      </div>
-    </div>
+    </>
   );
 }
 

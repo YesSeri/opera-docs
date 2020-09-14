@@ -45,14 +45,14 @@ class Piece extends React.Component {
     let renderPiece = '';
     if (title) {
       renderPiece = (
-        <div>
+        <>
           <h2>{title}</h2>
           <h3>{opera}</h3>
           <p>{description}</p>
           <p>It is a {type}</p>
           <p>{`${first_name} ${last_name}`}</p>
           <p>Number {placement} in the opera</p>
-        </div>
+        </>
       );
     }
     return renderPiece;
@@ -60,8 +60,7 @@ class Piece extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="innerContainer">
+      <>
           {this.state.data ? this.PieceInfo() : null}
           {!this.state.pieceExists ? <h1>Nothing here</h1> : null}
           {!this.state.pieceExists ? <p>Piece not found</p> : null}
@@ -70,8 +69,7 @@ class Piece extends React.Component {
           ) : (
             null
           )}
-        </div>
-      </div>
+      </>
     );
   }
 }

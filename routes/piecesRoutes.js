@@ -32,19 +32,4 @@ router.get('/:id', (req, res) => {
   });
 });
 
-// router.get('/getfile/:id', (req, res) => {
-  // const id = req.params.id;
-  // db.query('SELECT * FROM Pieces WHERE id = ?', id, function (err, result) {
-    // if (err) console.error(err);
-    // const { file_title } = result[0];
-    // const file = path.join(__dirname, '..', '/pdfs/', file_title);
-    // if (Object.keys(result).length === 0) {
-      // res.send('');
-    // } else {
-      // res.setHeader('Content-Type', 'application/pdf');
-      // res.sendFile(file);
-    // }
-  // });
-// });
-
 module.exports = router;

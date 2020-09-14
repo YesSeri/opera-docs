@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './css/scoreFrame.css';
 var Spinner = require('react-spinkit');
 
 function ScoreFrame({ filename }) {
@@ -33,7 +32,6 @@ function ScoreFrame({ filename }) {
 
   const renderIframe = () => {
     return (
-      <div className="iframeContainer">
         <iframe
           style={{
             visibility: loading && !loadingFailed ? 'hidden' : 'visible',
@@ -43,22 +41,16 @@ function ScoreFrame({ filename }) {
           title="title"
           onLoad={handleLoad}
         />
-      </div>
     );
   };
   return (
-    <div className="container">
-      <div className="innerContainer">
+    <>
         {loading && !loadingFailed ? (
-          <div className="loader">
-            <Spinner name="wave" color="green" />
-          </div>
+          <Spinner name="wave" color="green" />
         ) : null}
-
         {renderIframe()}
         {loadingFailed ? <a href={googleUrlPDF}>Download File</a> : null}
-      </div>
-    </div>
+    </>
   );
 }
 

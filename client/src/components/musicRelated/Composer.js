@@ -30,12 +30,9 @@ function Composer() {
     return operas;
   };
   return (
-    <div className="container">
-      <div className="innerContainer">
-        
+    <div>
         <h1>{data ? `${data[0].first_name} ${data[0].last_name}` : null}</h1>
         {data ? composersOperas() : null}
-        </div>
     </div>
   );
 }

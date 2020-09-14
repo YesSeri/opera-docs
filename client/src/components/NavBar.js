@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Nav, Navbar, Form, FormControl } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Styles = styled.div`

@@ -27,31 +27,13 @@ class Pieces extends React.Component {
   PiecesInfo = () => {
     const data = this.state.data;
     const pieces = [];
-    const borderStyle = 'solid green 1px';
-    const innerDivStyle = { flex: '1 0 0'}
     if (data) {
       data.forEach((el) => {
         pieces.push(
-          <div
-            key={el.piece_id}
-            style={{
-              display: 'flex',
-              borderTop: borderStyle,
-              height: '50px',
-              alignItems: 'center'
-
-            }}
-          >
-            <div style={innerDivStyle}>
-              <Link to={`/piece/${el.piece_id}`}>{el.title}</Link>
-            </div>
-            <div style={innerDivStyle}>
-              <Link to={`/opera/${el.opera_id}`}>{el.opera}</Link>
-            </div>
-            <div style={innerDivStyle}>
-              <Link to={`/composer/${el.composer_id}`}>{el.last_name}</Link>
-            </div>
-            <br />
+          <div key={el.piece_id}>
+            <Link to={`/piece/${el.piece_id}`}>{el.title}</Link>
+            <Link to={`/opera/${el.opera_id}`}>{el.opera}</Link>
+            <Link to={`/composer/${el.composer_id}`}>{el.last_name}</Link>
           </div>
         );
       });
@@ -61,12 +43,10 @@ class Pieces extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="innerContainer">
-          <h1>All pieces</h1>
-          <div>{this.state.data ? this.PiecesInfo() : null}</div>
-        </div>
-      </div>
+      <>
+        <h1>All pieces</h1>
+        {this.state.data ? this.PiecesInfo() : null}
+      </>
     );
   }
 }

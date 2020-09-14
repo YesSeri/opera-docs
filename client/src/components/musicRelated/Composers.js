@@ -1,57 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-class Composers extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      data: null,
-    };
-  }
+function Composers() {
+  const [data, setData] = useState(null);
 
-  componentDidMount() {
+  useEffect(() => {
     axios
       .get(`/api/composers/`)
       .then((response) => {
-        const { data } = response;
-        this.setState({
-          data,
-        });
+        setData(response.data);
       })
       .catch((err) => {
         if (err) console.error(err);
       });
-  }
+  });
 
-  renderComposer = () => {
-    const data = this.state.data;
+  const renderComposer = () => {
     const view = [];
     if (data) {
       data.forEach((el) => {
         view.push(
-          <div key={el.id}>
-            <Link style={{display: 'flex', textAlign: 'left'}}
+          <>
+            <Link
+              key={el.id}
               to={`/composer/${el.id}`}
-            >{`${el.last_name}, ${el.first_name}` }</Link>
-          </div>
+            >{`${el.last_name}, ${el.first_name}`}</Link>
+          </>
         );
       });
       return view;
     }
   };
 
-  render() {
-    return (
-      <div className="container">
-        <div className="innerContainer">
-          <h1>Composers</h1>
-          <p>Click to see operas by the respective composers.</p>
-          {this.renderComposer()}
-        </div>
-      </div>
-    );
-  }
+  return (
+    <>
+        <h1>Composers</h1>
+        <p>Click to see operas by the respective composers.</p>
+        {renderComposer()}
+    </>
+  );
 }
 
 export default Composers;

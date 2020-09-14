@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import lunr from 'lunr';
-import './css/home.css';
 
 const SearchBar = ({ setResults }) => {
   const [index, setIndex] = useState(null);
@@ -72,17 +71,10 @@ function SearchResults(props) {
   if (props.results) {
     return props.results.map((result, i) => {
       return (
-        <div className="colContainer" key={i}>
-          <div className="resContainer">
-            {console.log(result)}
+        <div key={i}>
             <Link to={`/piece/${result.piece_id}`}>{result.title}</Link>
-          </div>
-          <div className="resContainer">
             <p>{result.opera}</p>
-          </div>
-          <div className="resContainer">
             <p>{`${result.last_name}, ${result.first_name}`}</p>
-          </div>
         </div>
       );
     });
@@ -92,13 +84,11 @@ function Home() {
   const [results, setResults] = useState(null);
   useEffect(() => {}, [results]);
   return (
-    <div className="container">
-      <div className="innerContainer">
+    <>
       	<h1>Home</h1>
         <SearchBar setResults={setResults}></SearchBar>
         <SearchResults results={results}></SearchResults>
-      </div>
-    </div>
+    </>
   );
 }
 
