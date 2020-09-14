@@ -10,7 +10,7 @@ const SearchBar = ({ setResults }) => {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch('http://localhost:5000/api/search');
+      const response = await fetch('/api/search');
       const json = await response.json();
       setData(await assignIndex(json)); // Add an index here so the
       setIndex(await createIndex(json));
