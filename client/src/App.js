@@ -1,24 +1,24 @@
 import React from 'react';
 import './App.css';
-import Home from './components/Home'
-import Composers from './components/Composers'
-import Composer from './components/Composer'
-import Operas from './components/Operas'
-import Opera from './components/Opera'
-import Posts from './components/Posts'
-import Post from './components/Post'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import Composers from './components/Composers';
+import Composer from './components/Composer';
+import Operas from './components/Operas';
+import Opera from './components/Opera';
+import Posts from './components/Posts';
+import Post from './components/Post';
+import Home from './components/Home';
+import { NavBar } from './components/NavBar';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 export default function App() {
   return (
     <Router>
       <div>
-        <div className='navContainer'>
+        <div className="navContainer">
+        <>
+            <NavBar />
+        </>
           <nav>
             <Link to="/">Home</Link>
             <span> | </span>

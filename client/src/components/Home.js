@@ -98,7 +98,6 @@ function Home() {
     <div className="container">
       <div className="innerContainer">
       	<h1>Home</h1>
-      	<h2>Search here</h2>
         <SearchBar setResults={setResults}></SearchBar>
         <SearchResults results={results}></SearchResults>
       </div>
