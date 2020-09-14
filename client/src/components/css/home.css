@@ -1,10 +1,13 @@
 .colContainer {
   display: flex;
   flex-wrap: wrap;
+  border-left: solid black 1px;
+  border-bottom: solid black 1px;
 }
-.resContainer{
-  list-style: none;
-  flex: 0 0 32%;
-  border-bottom: green dotted 1px;
-  border-right: green dotted 1px;
-} 
+.resContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 0 24%;
+  border-right: solid black 1px;
+}

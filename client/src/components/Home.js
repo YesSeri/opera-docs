@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import lunr from 'lunr';
 import './css/home.css';
 
-const SearchBar = ({setResults}) => {
+const SearchBar = ({ setResults }) => {
   const [index, setIndex] = useState(null);
   const [data, setData] = useState(null);
   const [value, setValue] = useState('');
@@ -11,11 +12,8 @@ const SearchBar = ({setResults}) => {
     async function fetchData() {
       const response = await fetch('http://localhost:5000/api/search');
       const json = await response.json();
-      const indexedJson = await assignIndex(json);
-      const idx = await createIndex(json);
-
-      setData(indexedJson);
-      setIndex(idx);
+      setData(await assignIndex(json)); // Add an index here so the
+      setIndex(await createIndex(json));
     }
     fetchData();
   }, []);
@@ -35,19 +33,20 @@ const SearchBar = ({setResults}) => {
     // Gives an index, from 1 to max that will be used later to match the search in the index back to
     return json.map((el, i) => {
       el.jsonId = i;
+
       return el;
     });
   }
 
-  useEffect( () => {
-    if (value.length > 2) {
-      const results =  index.search(value).map(function (result) {
+  useEffect(() => {
+    // console.log(`Index Value: ${index}`)
+    if (value.length > 2 && index) {
+      const results = index.search(`${value}~1`).map(function (result) {
         return data[result.ref];
       });
-      if (results.length > 0) {
-        setResults(results);
-      }
+      setResults(results);
     } else {
+      setResults(null);
     }
   }, [value, index, data, setResults]);
 
@@ -74,17 +73,23 @@ function SearchResults(props) {
     return props.results.map((result, i) => {
       return (
         <div className="colContainer" key={i}>
-          <p className="resContainer">{result.title}</p>
-          <p className="resContainer">{result.opera}</p>
-          <p className="resContainer">
-            {`${result.last_name}, ${result.first_name}`}
-          </p>
+          <div className="resContainer">
+            <p>{result.title}</p>
+          </div>
+          <div className="resContainer">
+            <p>{result.opera}</p>
+          </div>
+          <div className="resContainer">
+            <p>{`${result.last_name}, ${result.first_name}`}</p>
+          </div>
+          <div className="resContainer">
+            {console.log(result)}
+            <Link to={`/post/${result.piece_id}`}>{result.title}</Link>
+          </div>
         </div>
       );
     });
-  } else {
-    return null;
-  }
+  } else return null;
 }
 function Home() {
   const [results, setResults] = useState(null);

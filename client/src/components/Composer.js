@@ -15,7 +15,6 @@ function Composer() {
       .catch((err) => {
         if (err) console.error(err)
       });
-    return () => {};
   }, []);
 
   const composersOperas = () => {
