@@ -4,8 +4,8 @@ import Composers from './components/musicRelated/Composers';
 import Composer from './components/musicRelated/Composer';
 import Operas from './components/musicRelated/Operas';
 import Opera from './components/musicRelated/Opera';
-import Posts from './components/musicRelated/Posts';
-import Post from './components/musicRelated/Post';
+import Pieces from './components/musicRelated/Pieces';
+import Piece from './components/musicRelated/Piece';
 import About from './components/info/About';
 import Home from './components/Home';
 import { NavBar } from './components/NavBar';
@@ -25,7 +25,7 @@ export default function App() {
             <span style={{color: spanColor}}> | </span>
             <Link to="/composers">Composers</Link>
             <span style={{color: spanColor}}> | </span>
-            <Link to="/posts">Posts</Link>
+            <Link to="/pieces">Pieces</Link>
             <span style={{color: spanColor}}> | </span>
             <Link to="/about">About</Link>
           </nav>
@@ -37,8 +37,8 @@ export default function App() {
           <Route path="/composer" component={Composer} />
           <Route path="/operas" component={Operas} />
           <Route path="/opera" component={Opera} />
-          <Route path="/posts" component={Posts} />
-          <Route path="/post" component={Post} />
+          <Route path="/pieces" component={Pieces} />
+          <Route path="/piece" component={Piece} />
           <Route path="/about" component={About} />
           <Route exact path="/" component={Home}>
           </Route>

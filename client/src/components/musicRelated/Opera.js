@@ -22,7 +22,7 @@ function Opera() {
     const pieces = data.map((el) => {
       return (
         <div key={el.id}>
-          <Link to={`/post/${el.id}`}>{`${el.title}`}</Link>
+          <Link to={`/piece/${el.id}`}>{`${el.title}`}</Link>
           <br />
         </div>
       );

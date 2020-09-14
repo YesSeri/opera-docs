@@ -2,12 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import ScoreFrame from '../ScoreFrame';
 
-class Post extends React.Component {
+class Piece extends React.Component {
   constructor() {
     super();
     this.state = {
       data: null,
-      postExists: true,
+      pieceExists: true,
     };
   }
 
@@ -24,7 +24,7 @@ class Post extends React.Component {
             data,
           });
         } else {
-          this.setState({ postExists: false });
+          this.setState({ pieceExists: false });
         }
       })
       .catch((err) => {
@@ -32,7 +32,7 @@ class Post extends React.Component {
       });
   }
 
-  PostInfo = () => {
+  PieceInfo = () => {
     const {
       title,
       opera,
@@ -42,9 +42,9 @@ class Post extends React.Component {
       last_name,
       placement,
     } = this.state.data;
-    let renderPost = '';
+    let renderPiece = '';
     if (title) {
-      renderPost = (
+      renderPiece = (
         <div>
           <h2>{title}</h2>
           <h3>{opera}</h3>
@@ -55,16 +55,16 @@ class Post extends React.Component {
         </div>
       );
     }
-    return renderPost;
+    return renderPiece;
   };
 
   render() {
     return (
       <div className="container">
         <div className="innerContainer">
-          {this.state.data ? this.PostInfo() : null}
-          {!this.state.postExists ? <h1>Nothing here</h1> : null}
-          {!this.state.postExists ? <p>Post not found</p> : null}
+          {this.state.data ? this.PieceInfo() : null}
+          {!this.state.pieceExists ? <h1>Nothing here</h1> : null}
+          {!this.state.pieceExists ? <p>Piece not found</p> : null}
           {this.state.data ? (
             <ScoreFrame filename={this.state.data.file_title} />
           ) : (
@@ -76,4 +76,4 @@ class Post extends React.Component {
   }
 }
 
-export default Post;
+export default Piece;

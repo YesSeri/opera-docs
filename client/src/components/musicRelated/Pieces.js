@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-class Posts extends React.Component {
+class Pieces extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -24,14 +24,14 @@ class Posts extends React.Component {
       });
   }
 
-  PostsInfo = () => {
+  PiecesInfo = () => {
     const data = this.state.data;
-    const posts = [];
+    const pieces = [];
     const borderStyle = 'solid green 1px';
     const innerDivStyle = { flex: '1 0 0'}
     if (data) {
       data.forEach((el) => {
-        posts.push(
+        pieces.push(
           <div
             key={el.piece_id}
             style={{
@@ -43,7 +43,7 @@ class Posts extends React.Component {
             }}
           >
             <div style={innerDivStyle}>
-              <Link to={`/post/${el.piece_id}`}>{el.title}</Link>
+              <Link to={`/piece/${el.piece_id}`}>{el.title}</Link>
             </div>
             <div style={innerDivStyle}>
               <Link to={`/opera/${el.opera_id}`}>{el.opera}</Link>
@@ -56,7 +56,7 @@ class Posts extends React.Component {
         );
       });
     }
-    return posts;
+    return pieces;
   };
 
   render() {
@@ -64,11 +64,11 @@ class Posts extends React.Component {
       <div className="container">
         <div className="innerContainer">
           <h1>All pieces</h1>
-          <div>{this.state.data ? this.PostsInfo() : null}</div>
+          <div>{this.state.data ? this.PiecesInfo() : null}</div>
         </div>
       </div>
     );
   }
 }
 
-export default Posts;
+export default Pieces;
