@@ -55,8 +55,8 @@ function ScoreFrame({ filename }) {
           </div>
         ) : null}
 
-        {loadingFailed ? <a href={googleUrlPDF}>Download File</a> : null}
         {renderIframe()}
+        {loadingFailed ? <a href={googleUrlPDF}>Download File</a> : null}
       </div>
     </div>
   );
