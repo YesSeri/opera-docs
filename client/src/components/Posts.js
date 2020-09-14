@@ -28,6 +28,7 @@ class Posts extends React.Component {
     const data = this.state.data;
     const posts = [];
     const borderStyle = 'solid green 1px';
+    const innerDivStyle = { flex: '1 0 0', borderRight: borderStyle}
     if (data) {
       data.forEach((el) => {
         posts.push(
@@ -40,13 +41,13 @@ class Posts extends React.Component {
               borderLeft: borderStyle,
             }}
           >
-            <div style={{ flex: '2 0 0', borderRight: borderStyle }}>
+            <div style={innerDivStyle}>
               <Link to={`/post/${el.id}`}>{el.title}</Link>
             </div>
-            <div style={{ flex: '1 0 0', borderRight: borderStyle }}>
+            <div style={innerDivStyle}>
               <p to={`/post/${el.id}`}>{el.opera}</p>
             </div>
-            <div style={{ flex: '1 0 0', borderRight: borderStyle }}>
+            <div style={innerDivStyle}>
               <p to={`/post/${el.id}`}>{el.last_name}</p>
             </div>
             <br />
