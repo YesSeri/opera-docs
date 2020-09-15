@@ -21,12 +21,11 @@ function Composers() {
     if (data) {
       data.forEach((el) => {
         view.push(
-          <>
+          <div key={el.id}>
             <Link
-              key={el.id}
               to={`/composer/${el.id}`}
             >{`${el.last_name}, ${el.first_name}`}</Link>
-          </>
+          </div>
         );
       });
       return view;
@@ -35,9 +34,9 @@ function Composers() {
 
   return (
     <>
-        <h1>Composers</h1>
-        <p>Click to see operas by the respective composers.</p>
-        {renderComposer()}
+      <h1>Composers</h1>
+      <p>Click to see operas by the respective composers.</p>
+      {renderComposer()}
     </>
   );
 }

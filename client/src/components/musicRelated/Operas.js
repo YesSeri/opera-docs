@@ -21,7 +21,6 @@ function Operas() {
       return (
         <div key={el.id}>
           <Link to={`/opera/${el.id}`}>{`${el.opera}`}</Link>
-          <br />
         </div>
       );
     });

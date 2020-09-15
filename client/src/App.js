@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Composers from './components/musicRelated/Composers';
 import Composer from './components/musicRelated/Composer';
 import Operas from './components/musicRelated/Operas';
@@ -13,21 +14,19 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 export default function App() {
   return (
     <Router>
-      <div>
+      <div className="siteContainer">
         <h1>mysqldocs</h1>
-        <div>
-          <nav>
-            <Link to="/">Home</Link>
-            <span> | </span>
-            <Link to="/operas">Operas</Link>
-            <span> | </span>
-            <Link to="/composers">Composers</Link>
-            <span> | </span>
-            <Link to="/pieces">Pieces</Link>
-            <span> | </span>
-            <Link to="/about">About</Link>
-          </nav>
-        </div>
+        <nav>
+          <Link to="/">Home</Link>
+          <span> | </span>
+          <Link to="/operas">Operas</Link>
+          <span> | </span>
+          <Link to="/composers">Composers</Link>
+          <span> | </span>
+          <Link to="/pieces">Pieces</Link>
+          <span> | </span>
+          <Link to="/about">About</Link>
+        </nav>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>

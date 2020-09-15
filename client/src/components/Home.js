@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Nav from 'react-bootstrap/Nav';
+import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
+import { LinkGrid } from './css/styComp';
 import lunr from 'lunr';
 
 const SearchBar = ({ setResults }) => {
@@ -71,11 +76,15 @@ function SearchResults(props) {
   if (props.results) {
     return props.results.map((result, i) => {
       return (
-        <div key={i}>
-            <Link to={`/piece/${result.piece_id}`}>{result.title}</Link>
-            <p>{result.opera}</p>
-            <p>{`${result.last_name}, ${result.first_name}`}</p>
-        </div>
+        <Row>
+          <Col>
+            <Nav.Link href={`/piece/${result.piece_id}`}>
+              {result.title}
+            </Nav.Link>
+          </Col>
+          <Col>{result.opera}</Col>
+          <Col>{`${result.last_name}, ${result.first_name}`}</Col>
+        </Row>
       );
     });
   } else return null;
@@ -85,9 +94,11 @@ function Home() {
   useEffect(() => {}, [results]);
   return (
     <>
-      	<h1>Home</h1>
-        <SearchBar setResults={setResults}></SearchBar>
+      <h1>Home</h1>
+      <SearchBar setResults={setResults}></SearchBar>
+      <Container>
         <SearchResults results={results}></SearchResults>
+      </Container>
     </>
   );
 }

@@ -1,38 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ScoreFrame from '../ScoreFrame';
 
-class Piece extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      data: null,
-      pieceExists: true,
-    };
-  }
-
-  componentDidMount() {
+function Piece() {
+  const [data, setData] = useState(null);
+  useEffect(() => {
     const url = window.location.href;
     const id = url.substring(url.lastIndexOf('/') + 1);
     axios
       .get(`/api/pieces/${id}`)
-      .then((response) => {
-        const { data } = response;
-
-        if (data) {
-          this.setState({
-            data,
-          });
-        } else {
-          this.setState({ pieceExists: false });
-        }
-      })
+      .then((response) => setData(response.data))
       .catch((err) => {
         if (err) console.error(err);
       });
-  }
+  });
 
-  PieceInfo = () => {
+  const PieceInfo = () => {
     const {
       title,
       opera,
@@ -41,7 +24,7 @@ class Piece extends React.Component {
       first_name,
       last_name,
       placement,
-    } = this.state.data;
+    } = data;
     let renderPiece = '';
     if (title) {
       renderPiece = (
@@ -57,21 +40,14 @@ class Piece extends React.Component {
     }
     return renderPiece;
   };
-
-  render() {
-    return (
-      <>
-          {this.state.data ? this.PieceInfo() : null}
-          {!this.state.pieceExists ? <h1>Nothing here</h1> : null}
-          {!this.state.pieceExists ? <p>Piece not found</p> : null}
-          {this.state.data ? (
-            <ScoreFrame filename={this.state.data.file_title} />
-          ) : (
-            null
-          )}
-      </>
-    );
-  }
+  return (
+    <>
+      {this.state.data ? PieceInfo() : null}
+      {this.state.data ? (
+        <ScoreFrame filename={this.state.data.file_title} />
+      ) : null}
+    </>
+  );
 }
 
 export default Piece;
