@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Nav from 'react-bootstrap/Nav';
 
 function Composers() {
   const [data, setData] = useState(null);
@@ -14,21 +17,19 @@ function Composers() {
       .catch((err) => {
         if (err) console.error(err);
       });
-  });
+  }, []);
 
-  const renderComposer = () => {
-    const view = [];
+  const renderComposers = () => {
     if (data) {
-      data.forEach((el) => {
-        view.push(
-          <div key={el.id}>
-            <Link
-              to={`/composer/${el.id}`}
-            >{`${el.last_name}, ${el.first_name}`}</Link>
-          </div>
+      return data.map((el) => {
+        return (
+          <Row key={el.id}>
+            <Col>
+              <Nav.Link href={`/composer/${el.id}`}>{`${el.last_name}, ${el.first_name}`}</Nav.Link >
+            </Col>
+          </Row>
         );
       });
-      return view;
     }
   };
 
@@ -36,7 +37,7 @@ function Composers() {
     <>
       <h2>Composers</h2>
       <p>Click to see operas by the respective composers.</p>
-      {renderComposer()}
+      <Container>{renderComposers()}</Container>
     </>
   );
 }

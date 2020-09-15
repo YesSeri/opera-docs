@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { LinkGrid } from '../css/styComp';
+import Nav from 'react-bootstrap/Nav';
 
 function Pieces() {
   const [data, setData] = useState(null);
@@ -19,14 +17,14 @@ function Pieces() {
       .catch((err) => {
         if (err) console.error(err);
       });
-  });
+  }, []);
 
   const PiecesInfo = () => {
     const pieces = [];
     if (data) {
       data.forEach((el) => {
         pieces.push(
-          <Row xs={2} md={3}>
+          <Row key={el.piece_id} xs={2} md={3}>
             <Col>
               <Nav.Link href={`/piece/${el.piece_id}`}>{el.title}</Nav.Link>
             </Col>
@@ -47,7 +45,7 @@ function Pieces() {
   return (
     <>
       <h2>Pieces</h2>
-      <Container>{data ? PiecesInfo() : null}</Container>
+      <Container >{data ? PiecesInfo() : null}</Container>
     </>
   );
 }

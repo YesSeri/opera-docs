@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {StyledIframe} from './css/styComp';
-var Spinner = require('react-spinkit');
 
 function ScoreFrame({ filename }) {
   const [loading, setLoading] = useState(true);

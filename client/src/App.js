@@ -8,7 +8,7 @@ import Operas from './components/musicRelated/Operas';
 import Opera from './components/musicRelated/Opera';
 import Pieces from './components/musicRelated/Pieces';
 import Piece from './components/musicRelated/Piece';
-import About from './components/info/About';
+import About from './components/About';
 import Home from './components/Home';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 

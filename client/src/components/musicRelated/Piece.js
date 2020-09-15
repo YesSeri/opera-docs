@@ -13,7 +13,7 @@ function Piece() {
       .catch((err) => {
         if (err) console.error(err);
       });
-  });
+  }, []);
 
   const PieceInfo = () => {
     const {

@@ -11,9 +11,12 @@ const piecesRoutes = require('./routes/piecesRoutes.js');
 const composersRoutes = require('./routes/composersRoutes.js');
 const operaRoutes = require('./routes/operaRoutes.js');
 const searchRoutes = require('./routes/searchRoutes.js');
+const sendPdfRoutes = require('./routes/sendPdfRoutes.js');
+
 
 app.use(cors())
 
+app.use('/api/send', sendPdfRoutes);
 app.use('/api/pieces', piecesRoutes);
 app.use('/api/composers', composersRoutes);
 app.use('/api/operas', operaRoutes);
