@@ -94,7 +94,7 @@ function Home() {
   useEffect(() => {}, [results]);
   return (
     <>
-      <h1>Home</h1>
+      <h2>Home</h2>
       <SearchBar setResults={setResults}></SearchBar>
       <Container>
         <SearchResults results={results}></SearchResults>

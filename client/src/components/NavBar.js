@@ -1,35 +1,20 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React from 'react';
+import {Link} from 'react-router-dom'
 
-const Styles = styled.div`
-  .navbar {
-    background-color: #222;
-  }
-  a,
-  .navbar-nav,
-  .navbar-light .nav-link {
-    color: #fff;
-    &:hover {
-      color: white;
-    }
-  }
-  .navbar-brand {
-    font-size: 1.4em;
-    color: #fff;
-    &:hover {
-      color: white;
-    }
-  }
-  .form-center {
-    position: absolute !important;
-    left: 25%;
-    right: 25%;
-  }
-`;
-export function NavBar() {
-  const [value, setValue] = useState('');
+function NavBar({ filename }) {
   return (
-    <Styles>
-    </Styles>
+    <nav>
+      <Link to="/">Home</Link>
+      <span> | </span>
+      <Link to="/operas">Operas</Link>
+      <span> | </span>
+      <Link to="/composers">Composers</Link>
+      <span> | </span>
+      <Link to="/pieces">Pieces</Link>
+      <span> | </span>
+      <Link to="/about">About</Link>
+    </nav>
   );
 }
+
+export default NavBar;

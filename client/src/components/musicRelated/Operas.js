@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -19,17 +22,19 @@ function Operas() {
   const operaPieces = () => {
     const operas = data.map((el) => {
       return (
-        <div key={el.id}>
+        <Col key={el.id}>
           <Link to={`/opera/${el.id}`}>{`${el.opera}`}</Link>
-        </div>
+        </Col>
       );
     });
     return operas;
   };
   return (
     <>
-        <h1>Operas</h1>
-        {data ? operaPieces() : null}
+      <h2>Operas</h2>
+      <Container>
+        <Row  xs={2}> { data ? operaPieces() : null}</Row>
+      </Container>
     </>
   );
 }

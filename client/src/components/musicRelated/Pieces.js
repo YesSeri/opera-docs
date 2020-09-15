@@ -46,7 +46,7 @@ function Pieces() {
   };
   return (
     <>
-      <h1>Pieces</h1>
+      <h2>Pieces</h2>
       <Container>{data ? PiecesInfo() : null}</Container>
     </>
   );

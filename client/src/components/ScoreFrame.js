@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import {StyledIframe} from './css/styComp';
 var Spinner = require('react-spinkit');
 
 function ScoreFrame({ filename }) {
@@ -32,6 +33,7 @@ function ScoreFrame({ filename }) {
 
   const renderIframe = () => {
     return (
+      <StyledIframe>
         <iframe
           style={{
             visibility: loading && !loadingFailed ? 'hidden' : 'visible',
@@ -41,13 +43,14 @@ function ScoreFrame({ filename }) {
           title="title"
           onLoad={handleLoad}
         />
+        </StyledIframe>
     );
   };
   return (
     <>
-        {loading && !loadingFailed ? (
+        {/* {loading && !loadingFailed ? (
           <Spinner name="wave" color="green" />
-        ) : null}
+        ) : null} */}
         {renderIframe()}
         {loadingFailed ? <a href={googleUrlPDF}>Download File</a> : null}
     </>

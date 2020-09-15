@@ -42,9 +42,9 @@ function Piece() {
   };
   return (
     <>
-      {this.state.data ? PieceInfo() : null}
-      {this.state.data ? (
-        <ScoreFrame filename={this.state.data.file_title} />
+      {data ? PieceInfo() : null}
+      {data ? (
+        <ScoreFrame filename={data.file_title} />
       ) : null}
     </>
   );

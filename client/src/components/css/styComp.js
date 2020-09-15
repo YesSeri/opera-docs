@@ -20,3 +20,10 @@ export const LinkGrid = styled.div`
     }
   }
 `;
+
+export const StyledIframe = styled.div`
+  iframe {
+    height: 99vh;
+    width: 95vw;
+  }
+`;
