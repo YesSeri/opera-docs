@@ -1,11 +1,12 @@
 import React from 'react';
 import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 export default function About() {
   return (
     <>
         <h1>About</h1>
 
+        <Container>
         <Col>
           This is a page where scores can be found. They have been found in a
           variety of places but what they all have in common is that the there
@@ -14,6 +15,7 @@ export default function About() {
           Henrik Zenkert. If you have any questions or remarks, please feel free
           to contact me.
         </Col>
+</Container>
     </>
   );
 }
