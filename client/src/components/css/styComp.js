@@ -7,9 +7,9 @@ export const LinkGrid = styled.div`
     justify-content: space-around;
   }
   .linkContainer {
-    visibility: ${props => props.show ? "visible" : "hidden"};
+    visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
     background-color: #fff;
-    display:grid;
+    display: grid;
     grid-row-gap: 0.5em;
     margin: auto;
     max-width: 40%;
@@ -21,6 +21,25 @@ export const LinkGrid = styled.div`
   }
 `;
 
+export const StyledResults = styled.div`
+  .topResult{
+    font-size: 36px;
+    border-radius: 20px;
+    &:hover {
+      color: tomato;  
+    }
+  }
+  }
+`;
+
+export const StyledHeading = styled.div`
+  div {
+    background-color: 'black';
+    color: 'white';
+    border-bottom-left-radius: '20px';
+    border-bottom-right-radius: '20px';
+  }
+`;
 export const StyledIframe = styled.div`
   iframe {
     height: 99vh;

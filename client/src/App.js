@@ -2,7 +2,9 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Composers from './components/musicRelated/Composers';
+
 import NavBar from './components/NavBar';
+import Container from 'react-bootstrap/Container';
 import Composer from './components/musicRelated/Composer';
 import Operas from './components/musicRelated/Operas';
 import Opera from './components/musicRelated/Opera';
@@ -15,8 +17,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 export default function App() {
   return (
     <Router>
-      <div className='siteContainer'>
-        <h1>mysqldocs</h1>
+      <Container className='siteContainer'>
+        <h1 style={{backgroundColor: '#111', color: 'white', borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px'}}>mysqldocs</h1>
         <NavBar></NavBar>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -30,7 +32,7 @@ export default function App() {
           <Route path="/about" component={About} />
           <Route exact path="/" component={Home}></Route>
         </Switch>
-      </div>
+      </Container>
     </Router>
   );
 }
