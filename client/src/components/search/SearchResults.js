@@ -98,15 +98,16 @@ export default function SearchResults({ searchValue }) {
       title,
       opera_id,
       opera,
-      composer_id,
+      id,
       last_name,
       first_name,
     } = topResult.item;
+    console.log(topResult)
     switch (topResult.resultType) {
       case 'opera':
         container = (
           <Col>
-            <Nav.Link className="topResult" href={`/opera/${opera_id}`}>
+            <Nav.Link className="topResult" href={`/opera/${id}`}>
               {opera}
             </Nav.Link>
           </Col>
@@ -117,7 +118,7 @@ export default function SearchResults({ searchValue }) {
           <Col>
             <Nav.Link
               className="topResult"
-              href={`/composer/${composer_id}`}
+              href={`/composer/${id}`}
             >{`${last_name}, ${first_name}`}</Nav.Link>
           </Col>
         );
@@ -144,7 +145,6 @@ export default function SearchResults({ searchValue }) {
     }
     const otherContainer = otherResults.map((el, i) => {
       let container;
-      console.log(el);
       const {
         piece_id,
         title,
@@ -156,7 +156,6 @@ export default function SearchResults({ searchValue }) {
       } = el.item;
       switch (el.resultType) {
         case 'opera':
-          console.log('o');
           container = (
             <Nav.Link key={i} href={`/opera/${opera_id}`}>
               {opera}

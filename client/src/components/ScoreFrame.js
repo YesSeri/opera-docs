@@ -5,7 +5,7 @@ function ScoreFrame({ filename }) {
   const [loading, setLoading] = useState(true);
   const [loadingFailed, setLoadingFailed] = useState(false);
   const [loadAttempts, setLoadAttempts] = useState(0);
-  const [time, setTime] = useState(2500);
+  const [time, setTime] = useState(4000);
   const googleUrlPDF = `https://drive.google.com/viewerng/viewer?embedded=true&url=https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${filename}`;
 
   useEffect(() => {

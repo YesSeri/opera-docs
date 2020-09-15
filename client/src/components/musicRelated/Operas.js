@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 // import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
@@ -22,9 +24,11 @@ function Operas() {
   const operaPieces = () => {
     const operas = data.map((el) => {
       return (
+        <Row>
         <Col key={el.id}>
-          <Link to={`/opera/${el.id}`}>{`${el.opera}`}</Link>
+          <Nav.Link to={`/opera/${el.id}`}>{`${el.opera}`}</Nav.Link>
         </Col>
+</Row>
       );
     });
     return operas;

@@ -10,8 +10,13 @@ function Pieces() {
 
   useEffect(() => {
     axios
-      .get(`/api/pieces/`)
+      .get(`/api/pieces/`, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
       .then((response) => {
+        console.log(response);
         setData(response.data);
       })
       .catch((err) => {
@@ -21,6 +26,7 @@ function Pieces() {
 
   const PiecesInfo = () => {
     const pieces = [];
+    console.log(data);
     if (data) {
       data.forEach((el) => {
         pieces.push(
@@ -45,7 +51,7 @@ function Pieces() {
   return (
     <>
       <h2>Pieces</h2>
-      <Container >{data ? PiecesInfo() : null}</Container>
+      <Container>{data ? PiecesInfo() : null}</Container>
     </>
   );
 }
