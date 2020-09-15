@@ -87,7 +87,7 @@ export default function SearchResults({ searchValue }) {
   }, [searchValue, pieces, operas, composers]);
 
   function sortArrays(arr1, arr2, arr3) {
-    let result = [...arr1, ...arr2, ...arr3];
+    let result = [...arr1||[], ...arr2||[], ...arr3||[]];
     return result.sort((a, b) => a.score - b.score);
   }
   function TopResult() {
@@ -138,7 +138,7 @@ export default function SearchResults({ searchValue }) {
   function OtherResults() {
     if (results[1] === undefined) return <></>;
     const otherResults = [];
-    for (let i = 1; i < results.length || i > 5; i++) {
+    for (let i = 1; i < results.length ; i++) {
       if (results[i] === undefined) break;
       otherResults.push(results[i]);
     }
@@ -189,7 +189,7 @@ export default function SearchResults({ searchValue }) {
     <StyledResults>
       <Container>
         <Row>{results ? <TopResult /> : null}</Row>
-        <Row xs={3}>{results ? <OtherResults /> : null}</Row>
+        <Row md={3}>{results ? <OtherResults /> : null}</Row>
       </Container>
     </StyledResults>
   );

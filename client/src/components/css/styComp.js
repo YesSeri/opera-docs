@@ -26,7 +26,7 @@ export const StyledResults = styled.div`
     font-size: 36px;
     border-radius: 20px;
     &:hover {
-      color: tomato;  
+      color: #22e;  
     }
   }
   }
