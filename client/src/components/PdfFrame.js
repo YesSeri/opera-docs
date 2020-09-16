@@ -8,10 +8,8 @@ export default function PdfFrame({ filename }) {
   return (
     <>
 
-    <object style={frameStyles} data={downloadLink}>
     <embed style={frameStyles} src={downloadLink}>
     </embed>
-</object>
     </>
     // <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.4.456/build/pdf.worker.min.js">
     //   <div style={{ height: '100vh' }}>
