@@ -7,7 +7,7 @@ import axios from 'axios';
 
 function Composer() {
   const [data, setData] = useState(null);
-  const [wikiData, setWikiData] = useState(null)
+  const [wikiData, setWikiData] = useState(null);
   useEffect(() => {
     const url = window.location.href;
     const id = url.substring(url.lastIndexOf('/') + 1);
@@ -20,35 +20,40 @@ function Composer() {
       .catch((err) => {
         if (err) console.error(err);
       });
-
   }, []);
 
   const composersOperas = () => {
     const operas = data.map((el) => {
-      const id = el.opera_id;
+      const { id, opera } = el;
       return (
         <div key={id}>
-          <Container fluid>
-            <Col md={{ span: 8, offset: 2 }}>
-              <img
-                style={{ maxWidth: '500px' }}
-                variant="top"
-                src={`https://singcademy.com/wp-content/uploads/composerPics/${el.last_name.toLowerCase()}.jpeg`}
-              />
-              <h3>{`${el.last_name}`}</h3>
-              <p>Info about the composer.</p>
-            </Col>
-          </Container>
-          <Link to={`/opera/${id}`}>{`${el.opera}`}</Link>
-          <br />
+          <Link to={`/opera/${id}`}>{`${opera}`}</Link>
         </div>
       );
     });
     return operas;
   };
+
+  const composerInfo = () => {
+    const { last_name } = data[0];
+    return (
+      <Container fluid>
+        <Col xs={12}>
+          <img
+            style={{borderRadius: '10px', width: '32rem' }}
+            variant="top"
+            src={`https://singcademy.com/wp-content/uploads/composerPics/${last_name.toLowerCase()}.jpeg`}
+          />
+          {/* <h3>{`${last_name}`}</h3>
+            <p>Info about the composer.</p> */}
+        </Col>
+      </Container>
+    );
+  };
   return (
     <div>
       <h1>{data ? `${data[0].first_name} ${data[0].last_name}` : null}</h1>
+      {data ? composerInfo() : null}
       {data ? composersOperas() : null}
     </div>
   );

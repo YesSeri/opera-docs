@@ -99,7 +99,6 @@ export default function SearchResults({ searchValue }) {
       last_name,
       first_name,
     } = topResult.item;
-    console.log(topResult)
     switch (topResult.resultType) {
       case 'opera':
         container = (

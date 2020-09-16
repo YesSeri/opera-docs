@@ -11,9 +11,7 @@ function ScoreFrame({ filename }) {
   useEffect(() => {
     // I need to try and reload the page because google viewer doesnt always render as it should. If the iframe loads, then I stop the attempts to rerender.
     if (time && loadAttempts > 4) {
-      console.log('aaa');
       setLoadingFailed(true);
-      console.log(loadAttempts);
       setTime(null);
     }
   }, [loadAttempts, time]);
@@ -44,7 +42,7 @@ function ScoreFrame({ filename }) {
           onLoad={handleLoad}
         />
         </div>
-        </StyledIframe>
+      </StyledIframe>
     );
   };
   return (

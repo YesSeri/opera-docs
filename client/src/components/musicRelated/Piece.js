@@ -39,8 +39,7 @@ function Piece() {
             <Row>
               <Col xs={12}>
                 <img
-                  style={{ width: '32rem' }}
-                  className="img-thumbnail"
+                  style={{ borderRadius: '10px', width: '32rem' }}
                   variant="top"
                   src={`https://singcademy.com/wp-content/uploads/composerPics/${last_name.toLowerCase()}.jpeg`}
                 />
@@ -48,10 +47,12 @@ function Piece() {
             </Row>
             <Row>
               <Col style={{ width: '32rem' }}>
-                <Card.Title>{`${last_name}`}</Card.Title>
+                <h3>{`${last_name}`}</h3>
                 <p>
-                  This is {testArticle(type)} by {first_name}. It is the{' '}
-                  {ordinal_suffix_of(placement)} piece in {opera}
+                  This is {testArticle(type)} by {first_name}. It is{' '}
+                  {type == 'score'
+                    ? `a vocal score for ${opera}.`
+                    : `the ${ordinal_suffix_of(placement)} piece in ${opera}.`}
                 </p>
                 <p>{description}</p>
                 {/* </Card> */}
