@@ -20,9 +20,14 @@ function Opera() {
 
   const operaPieces = () => {
     const pieces = data.map((el) => {
+      const weight = el.type === 'recitativo' || el.type === 'choir' ? 'normal' : 'bold';
       return (
         <div key={el.id}>
-          <Link to={`/piece/${el.id}`}>{`${el.title}`}</Link>
+          {console.log(el)}
+          <Link
+            style={{ fontWeight: weight }}
+            to={`/piece/${el.id}`}
+          >{`${el.title}`}</Link>
           <br />
         </div>
       );

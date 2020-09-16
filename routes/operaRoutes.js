@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const query =
-    'SELECT o.name, p.title, p.placement, p.id FROM Pieces as p INNER JOIN Operas as o ON o.id = p.opera_id WHERE o.id = ? ORDER BY p.placement ASC;';
+    'SELECT o.name, p.title, p.type, p.placement, p.id FROM Pieces as p INNER JOIN Operas as o ON o.id = p.opera_id WHERE o.id = ? ORDER BY p.placement ASC;';
   const id = req.params.id;
   db.query(query, id, (err, result) => {
     if (err) console.error(err);
