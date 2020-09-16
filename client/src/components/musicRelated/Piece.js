@@ -57,7 +57,6 @@ function Piece() {
                     : `the ${ordinalSuffixOf(placement)} piece in ${opera}.`}
                 </p>
                 <p>{description}</p>
-                {/* </Card> */}
               </Col>
             </Row>
           </Container>
