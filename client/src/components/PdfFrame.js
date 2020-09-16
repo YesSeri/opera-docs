@@ -1,5 +1,5 @@
 import React from 'react';
-import Viewer, { Worker, defaultLayout } from '@phuocng/react-pdf-viewer';
+import Viewer, { Worker, defaultLayout, SpecialZoomLevel } from '@phuocng/react-pdf-viewer';
 import '@phuocng/react-pdf-viewer/cjs/react-pdf-viewer.css';
 
 const renderToolbar = (toolbarSlot) => {
@@ -55,7 +55,9 @@ export default function PdfFrame({ filename }) {
     // </>
     <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.4.456/build/pdf.worker.min.js">
       <div style={{ height: '100vh' }}>
-        <Viewer fileUrl={downloadLink} layout={layout} />
+        <Viewer fileUrl={downloadLink} layout={layout} 
+        defaultScale={SpecialZoomLevel.PageFit}
+        />
       </div>
     </Worker>
   );
