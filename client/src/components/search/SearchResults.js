@@ -130,6 +130,8 @@ export default function SearchResults({ searchValue }) {
           </Col>
         );
         break;
+      default:
+        container = <></>
     }
 
     return container;

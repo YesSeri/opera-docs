@@ -30,10 +30,10 @@ function Pieces() {
         pieces.push(
           <Row
             style={{
-              borderRadius: '15px',
-              borderTop: 'solid black 1px',
-              borderRight: 'solid black 1px',
-              borderLeft: 'solid black 1px',
+              borderRadius: '10px',
+              borderTop: 'solid #ddd 1px',
+              borderRight: 'solid #ddd 1px',
+              borderLeft: 'solid #ddd 1px',
             }}
             key={el.piece_id}
             xs={1}
@@ -59,7 +59,7 @@ function Pieces() {
   return (
     <>
       <h2>Pieces</h2>
-      <Container>{data ? PiecesInfo() : null}</Container>
+      <Container >{data ? PiecesInfo() : null}</Container>
     </>
   );
 }

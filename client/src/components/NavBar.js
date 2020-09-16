@@ -2,13 +2,7 @@ import React from 'react';
 import {
   Nav,
   Navbar,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
 } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { StyledLinks } from './css/styComp';
 function NavBar({ filename }) {
   return (
     <Navbar bg="light" expand="lg">
@@ -24,19 +18,6 @@ function NavBar({ filename }) {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-    // <StyledLinks>
-    //   <nav>
-    //     <Link to="/">Home</Link>
-    //     <span> | </span>
-    //     <Link to="/operas">Operas</Link>
-    //     <span> | </span>
-    //     <Link to="/composers">Composers</Link>
-    //     <span> | </span>
-    //     <Link to="/pieces">Pieces</Link>
-    //     <span> | </span>
-    //     <Link to="/about">About</Link>
-    //   </nav>
-    // </StyledLinks>
   );
 }
 
