@@ -95,6 +95,7 @@ export default function SearchResults({ searchValue }) {
     const {
       piece_id,
       title,
+      type,
       opera,
       id,
       last_name,
@@ -124,7 +125,7 @@ export default function SearchResults({ searchValue }) {
         container = (
           <Col>
             <Nav.Link className="topResult" href={`/piece/${piece_id}`}>
-              {title}
+              {type === 'ouverture' ? `${title} - ${opera}` : title}
             </Nav.Link>
           </Col>
         );
@@ -145,6 +146,7 @@ export default function SearchResults({ searchValue }) {
       const {
         piece_id,
         title,
+        type,
         opera_id,
         opera,
         composer_id,
@@ -170,7 +172,7 @@ export default function SearchResults({ searchValue }) {
         case 'piece':
           container = (
             <Nav.Link key={i} href={`/piece/${piece_id}`}>
-              {title}
+              {type === 'ouverture' ? `${title} - ${opera}` : title}
             </Nav.Link>
           );
           break;
