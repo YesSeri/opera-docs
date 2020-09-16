@@ -46,13 +46,7 @@ const layout = (isSidebarOpened, container, main, toolbar, sidebar) => {
 
 export default function PdfFrame({ filename }) {
   const downloadLink = `https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${filename}`; // `https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${filename}`;
-  const frameStyles = { height: '100vh', width: '100vw' };
   return (
-    // <>
-
-    // <embed style={frameStyles} src={downloadLink}>
-    // </embed>
-    // </>
     <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.4.456/build/pdf.worker.min.js">
       <div style={{ height: '100vh' }}>
         <Viewer fileUrl={downloadLink} layout={layout} 

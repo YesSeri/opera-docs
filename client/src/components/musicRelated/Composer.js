@@ -40,12 +40,15 @@ function Composer() {
         <Col xs={12}>
           <img
             alt={`pictureOf${last_name}`}
-            style={{ borderRadius: '10px', width: '32rem' }}
+            style={{
+              borderRadius: '10px',
+              width: '100%',
+              height: 'auto',
+              maxWidth: '36rem',
+            }}
             variant="top"
             src={`https://singcademy.com/wp-content/uploads/composerPics/${last_name.toLowerCase()}.jpeg`}
           />
-          {/* <h3>{`${last_name}`}</h3>
-            <p>Info about the composer.</p> */}
         </Col>
       </Container>
     );

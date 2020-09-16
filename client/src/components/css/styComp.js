@@ -32,11 +32,10 @@ export const StyledResults = styled.div`
   }
 `;
 export const StyledLinks = styled.div`
-  a{
+  a {
     font-size: 2em;
   }
-  span{
-
+  span {
     font-size: 2em;
   }
 `;
@@ -53,5 +52,13 @@ export const StyledIframe = styled.div`
   iframe {
     height: 99vh;
     width: 95vw;
+  }
+`;
+export const StyledImage = styled.div`
+  img{
+    border-radius: '11px';
+    width: '100%';
+    height: 'auto';
+    max-width: '36rem';
   }
 `;

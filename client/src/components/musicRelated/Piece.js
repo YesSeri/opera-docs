@@ -4,7 +4,10 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import PdfFrame from '../PdfFrame';
-import {indeterminateArticleOf, ordinalSuffixOf} from '../helper/HelperFunctions';
+import {
+  indeterminateArticleOf,
+  ordinalSuffixOf,
+} from '../helper/HelperFunctions';
 
 function Piece() {
   const [data, setData] = useState(null);
@@ -40,7 +43,12 @@ function Piece() {
               <Col xs={12}>
                 <img
                   alt={`pictureOf${last_name}`}
-                  style={{ borderRadius: '10px', width: '100%', height: 'auto', maxWidth: '36rem' }}
+                  style={{
+                    borderRadius: '10px',
+                    width: '100%',
+                    height: 'auto',
+                    maxWidth: '36rem',
+                  }}
                   variant="top"
                   src={`https://singcademy.com/wp-content/uploads/composerPics/${last_name.toLowerCase()}.jpeg`}
                 />
