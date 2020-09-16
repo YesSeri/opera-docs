@@ -16,7 +16,6 @@ function Pieces() {
         },
       })
       .then((response) => {
-        console.log(response);
         setData(response.data);
       })
       .catch((err) => {
@@ -26,7 +25,6 @@ function Pieces() {
 
   const PiecesInfo = () => {
     const pieces = [];
-    console.log(data);
     if (data) {
       data.forEach((el) => {
         pieces.push(

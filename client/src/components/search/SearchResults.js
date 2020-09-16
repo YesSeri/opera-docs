@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
@@ -10,17 +10,20 @@ import { StyledResults } from '../css/styComp';
 const optionsPieces = {
   includeScore: true,
   shouldSort: false,
+  location: true,
   keys: ['title'],
 };
 const optionsOperas = {
   includeScore: true,
   shouldSort: false,
+  location: true,
   keys: ['opera'],
 };
 
 const optionsComposers = {
   includeScore: true,
   shouldSort: false,
+  location: true,
   keys: ['last_name', 'first_name'],
 };
 
@@ -28,9 +31,6 @@ export default function SearchResults({ searchValue }) {
   const [pieces, setPieces] = useState(null);
   const [operas, setOperas] = useState(null);
   const [composers, setComposers] = useState(null);
-  const [pieceResults, setPieceResults] = useState([]);
-  const [operaResults, setOperaResults] = useState([]);
-  const [composerResults, setComposerResults] = useState([]);
   const [results, setResults] = useState(null);
   useEffect(() => {
     axios.get('/api/search').then(({ data }) => {
@@ -55,7 +55,6 @@ export default function SearchResults({ searchValue }) {
           o.resultType = 'piece';
           return o;
         });
-        setPieceResults(searchResultType);
         allArray.push(searchResultType);
       }
       if (operas) {
@@ -66,23 +65,22 @@ export default function SearchResults({ searchValue }) {
           o.resultType = 'opera';
           return o;
         });
-        setPieceResults(searchResultType);
         allArray.push(searchResultType);
       }
       if (composers) {
         const fuse = new Fuse(composers, optionsComposers);
-        setComposerResults(fuse.search(searchValue));
         const search = fuse.search(searchValue);
         const searchResultType = search.map(function (el) {
           var o = Object.assign({}, el);
           o.resultType = 'composer';
           return o;
         });
-        setPieceResults(searchResultType);
         allArray.push(searchResultType);
       }
 
       setResults(sortArrays(allArray[0], allArray[1], allArray[2]));
+    } else{
+      setResults(null)
     }
   }, [searchValue, pieces, operas, composers]);
 
@@ -96,7 +94,6 @@ export default function SearchResults({ searchValue }) {
     const {
       piece_id,
       title,
-      opera_id,
       opera,
       id,
       last_name,

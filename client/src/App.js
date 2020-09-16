@@ -12,7 +12,7 @@ import Pieces from './components/musicRelated/Pieces';
 import Piece from './components/musicRelated/Piece';
 import About from './components/About';
 import Home from './components/Home';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 export default function App() {
   return (

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
 import ScoreFrame from '../ScoreFrame';
 
 function Piece() {
@@ -31,21 +34,56 @@ function Piece() {
         <>
           <h2>{title}</h2>
           <h3>{opera}</h3>
-          <p>{description}</p>
-          <p>It is a {type}</p>
-          <p>{`${first_name} ${last_name}`}</p>
-          <p>Number {placement} in the opera</p>
+          <Container>
+            <Col>
+              <Card style={{ margin: 'auto', width: '26rem' }}>
+                <Card.Img
+                  variant="top"
+                  src={`https://singcademy.com/wp-content/uploads/composerPics/${last_name.toLowerCase()}.jpeg`}
+                />
+                <Card.Body>
+                  <Card.Title>{`${last_name}`}</Card.Title>
+                  <Card.Text>
+                    This is {testArticle(type)} by {first_name} {last_name}.{' '}
+                    It is the {ordinal_suffix_of(placement)} piece in{' '}
+                    {opera}.
+                  </Card.Text>
+                  <Card.Text>{description}</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Container>
         </>
       );
     }
     return renderPiece;
   };
+  const testArticle = (type) => {
+    const pattern = /^([aeiou])/i;
+    if (pattern.test(type)) {
+      return `an ${type}`;
+    } else {
+      return `a ${type}`;
+    }
+  };
+  function ordinal_suffix_of(i) {
+    var j = i % 10,
+      k = i % 100;
+    if (j === 1 && k !== 11) {
+      return i + 'st';
+    }
+    if (j === 2 && k !== 12) {
+      return i + 'nd';
+    }
+    if (j === 3 && k !== 13) {
+      return i + 'rd';
+    }
+    return i + 'th';
+  }
   return (
     <>
       {data ? PieceInfo() : null}
-      {data ? (
-        <ScoreFrame filename={data.file_title} />
-      ) : null}
+      {data ? <ScoreFrame filename={data.file_title} /> : null}
     </>
   );
 }

@@ -4,7 +4,6 @@ import Row from 'react-bootstrap/Row';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 // import Row from 'react-bootstrap/Row';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function Operas() {
@@ -24,11 +23,11 @@ function Operas() {
   const operaPieces = () => {
     const operas = data.map((el) => {
       return (
-        <Row>
-        <Col key={el.id}>
-          <Nav.Link to={`/opera/${el.id}`}>{`${el.opera}`}</Nav.Link>
-        </Col>
-</Row>
+        <Row key={el.id}>
+          <Col>
+            <Nav.Link href={`/opera/${el.id}`}>{`${el.opera}`}</Nav.Link>
+          </Col>
+        </Row>
       );
     });
     return operas;
@@ -36,9 +35,7 @@ function Operas() {
   return (
     <>
       <h2>Operas</h2>
-      <Container>
-          {data ? operaPieces() : null}
-      </Container>
+      <Container>{data ? operaPieces() : null}</Container>
     </>
   );
 }
