@@ -7,17 +7,20 @@ import axios from 'axios';
 
 function Composer() {
   const [data, setData] = useState(null);
+  const [wikiData, setWikiData] = useState(null)
   useEffect(() => {
     const url = window.location.href;
     const id = url.substring(url.lastIndexOf('/') + 1);
+
     axios
       .get(`/api/composers/${id}`)
       .then((response) => {
         setData(response.data);
       })
       .catch((err) => {
-        if (err) console.error(err)
+        if (err) console.error(err);
       });
+
   }, []);
 
   const composersOperas = () => {
@@ -25,20 +28,15 @@ function Composer() {
       const id = el.opera_id;
       return (
         <div key={id}>
-          <Container>
-            <Col>
-              <Card style={{ margin: 'auto', width: '26rem' }}>
-                <Card.Img
-                  variant="top"
-                  src={`https://singcademy.com/wp-content/uploads/composerPics/${el.last_name.toLowerCase()}.jpeg`}
-                />
-                <Card.Body>
-                  <Card.Title>{`${el.last_name}`}</Card.Title>
-                  <Card.Text>
-                    Info about the composer.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+          <Container fluid>
+            <Col md={{ span: 8, offset: 2 }}>
+              <img
+                style={{ maxWidth: '500px' }}
+                variant="top"
+                src={`https://singcademy.com/wp-content/uploads/composerPics/${el.last_name.toLowerCase()}.jpeg`}
+              />
+              <h3>{`${el.last_name}`}</h3>
+              <p>Info about the composer.</p>
             </Col>
           </Container>
           <Link to={`/opera/${id}`}>{`${el.opera}`}</Link>
@@ -50,8 +48,8 @@ function Composer() {
   };
   return (
     <div>
-        <h1>{data ? `${data[0].first_name} ${data[0].last_name}` : null}</h1>
-        {data ? composersOperas() : null}
+      <h1>{data ? `${data[0].first_name} ${data[0].last_name}` : null}</h1>
+      {data ? composersOperas() : null}
     </div>
   );
 }

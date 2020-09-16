@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import ScoreFrame from '../ScoreFrame';
 
@@ -32,26 +33,30 @@ function Piece() {
     if (title) {
       renderPiece = (
         <>
-          <h2>{title}</h2>
-          <h3>{opera}</h3>
-          <Container>
-            <Col>
-              <Card style={{ margin: 'auto', width: '26rem' }}>
-                <Card.Img
+          <h2>{opera}</h2>
+          <h3>{title}</h3>
+          <Container fluid>
+            <Row>
+              <Col xs={12}>
+                <img
+                  style={{ width: '32rem' }}
+                  className="img-thumbnail"
                   variant="top"
                   src={`https://singcademy.com/wp-content/uploads/composerPics/${last_name.toLowerCase()}.jpeg`}
                 />
-                <Card.Body>
-                  <Card.Title>{`${last_name}`}</Card.Title>
-                  <Card.Text>
-                    This is {testArticle(type)} by {first_name} {last_name}.{' '}
-                    It is the {ordinal_suffix_of(placement)} piece in{' '}
-                    {opera}.
-                  </Card.Text>
-                  <Card.Text>{description}</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
+              </Col>
+            </Row>
+            <Row>
+              <Col style={{ width: '32rem' }}>
+                <Card.Title>{`${last_name}`}</Card.Title>
+                <p>
+                  This is {testArticle(type)} by {first_name}. It is the{' '}
+                  {ordinal_suffix_of(placement)} piece in {opera}
+                </p>
+                <p>{description}</p>
+                {/* </Card> */}
+              </Col>
+            </Row>
           </Container>
         </>
       );
