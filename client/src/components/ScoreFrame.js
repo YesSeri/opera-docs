@@ -33,6 +33,7 @@ function ScoreFrame({ filename }) {
   const renderIframe = () => {
     return (
       <StyledIframe>
+        <div style={{margin: 'auto'}}>
         <iframe
           style={{
             visibility: loading && !loadingFailed ? 'hidden' : 'visible',
@@ -42,6 +43,7 @@ function ScoreFrame({ filename }) {
           title="title"
           onLoad={handleLoad}
         />
+        </div>
         </StyledIframe>
     );
   };

@@ -17,7 +17,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 export default function App() {
   return (
     <Router>
-      <Container className='siteContainer'>
+      <div className='siteContainer'>
         <h1 style={{backgroundColor: '#111', color: 'white', borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px'}}>mysqldocs</h1>
         <NavBar></NavBar>
         {/* A <Switch> looks through its children <Route>s and
@@ -32,7 +32,7 @@ export default function App() {
           <Route path="/about" component={About} />
           <Route exact path="/" component={Home}></Route>
         </Switch>
-      </Container>
+      </div>
     </Router>
   );
 }

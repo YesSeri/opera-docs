@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
                     INNER JOIN Composers as c ON o.composer_id = c.id
                     ORDER BY opera ASC, p.placement ASC;`
   db.query(query, function (err, result) {
-    console.log(result)
     if (err) console.error(err);
     res.json(result);
   });
