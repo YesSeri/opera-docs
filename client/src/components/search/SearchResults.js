@@ -192,7 +192,7 @@ export default function SearchResults({ searchValue }) {
     <StyledResults>
       <Container>
         <Row>{results ? <TopResult /> : null}</Row>
-        <Row md={3}>{results ? <OtherResults /> : null}</Row>
+        <Row  xs ={1} sm={1} md={3}>{results ? <OtherResults /> : null}</Row>
       </Container>
     </StyledResults>
   );
