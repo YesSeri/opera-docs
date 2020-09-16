@@ -79,13 +79,13 @@ export default function SearchResults({ searchValue }) {
       }
 
       setResults(sortArrays(allArray[0], allArray[1], allArray[2]));
-    } else{
-      setResults(null)
+    } else {
+      setResults(null);
     }
   }, [searchValue, pieces, operas, composers]);
 
   function sortArrays(arr1, arr2, arr3) {
-    let result = [...arr1||[], ...arr2||[], ...arr3||[]];
+    let result = [...(arr1 || []), ...(arr2 || []), ...(arr3 || [])];
     return result.sort((a, b) => a.score - b.score);
   }
   function TopResult() {
@@ -136,7 +136,7 @@ export default function SearchResults({ searchValue }) {
   function OtherResults() {
     if (results[1] === undefined) return <></>;
     const otherResults = [];
-    for (let i = 1; i < results.length ; i++) {
+    for (let i = 1; i < results.length; i++) {
       if (results[i] === undefined) break;
       otherResults.push(results[i]);
     }
@@ -174,6 +174,11 @@ export default function SearchResults({ searchValue }) {
             </Nav.Link>
           );
           break;
+        default:
+          container = (
+            <>
+            </>
+          );
       }
       return container;
     });

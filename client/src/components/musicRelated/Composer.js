@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import axios from 'axios';
 
 function Composer() {
   const [data, setData] = useState(null);
-  const [wikiData, setWikiData] = useState(null);
+  // const [wikiData, setWikiData] = useState(null);
   useEffect(() => {
     const url = window.location.href;
     const id = url.substring(url.lastIndexOf('/') + 1);
@@ -24,10 +23,10 @@ function Composer() {
 
   const composersOperas = () => {
     const operas = data.map((el) => {
-      const { id, opera } = el;
+      const { opera_id, opera } = el;
       return (
-        <div key={id}>
-          <Link to={`/opera/${id}`}>{`${opera}`}</Link>
+        <div key={opera_id}>
+          <Link to={`/opera/${opera_id}`}>{`${opera}`}</Link>
         </div>
       );
     });
@@ -40,7 +39,8 @@ function Composer() {
       <Container fluid>
         <Col xs={12}>
           <img
-            style={{borderRadius: '10px', width: '32rem' }}
+            alt={`pictureOf${last_name}`}
+            style={{ borderRadius: '10px', width: '32rem' }}
             variant="top"
             src={`https://singcademy.com/wp-content/uploads/composerPics/${last_name.toLowerCase()}.jpeg`}
           />

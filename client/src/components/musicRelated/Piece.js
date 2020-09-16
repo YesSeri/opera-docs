@@ -39,6 +39,7 @@ function Piece() {
             <Row>
               <Col xs={12}>
                 <img
+                  alt={`pictureOf${last_name}`}
                   style={{ borderRadius: '10px', width: '32rem' }}
                   variant="top"
                   src={`https://singcademy.com/wp-content/uploads/composerPics/${last_name.toLowerCase()}.jpeg`}
@@ -50,7 +51,7 @@ function Piece() {
                 <h3>{`${last_name}`}</h3>
                 <p>
                   This is {indeterminateArticleOf(type)} by {first_name}. It is{' '}
-                  {type == 'score'
+                  {type === 'score'
                     ? `a vocal score for ${opera}.`
                     : `the ${ordinalSuffixOf(placement)} piece in ${opera}.`}
                 </p>

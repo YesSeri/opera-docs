@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Composers from './components/musicRelated/Composers';
 
 import NavBar from './components/NavBar';
-import Container from 'react-bootstrap/Container';
 import Composer from './components/musicRelated/Composer';
 import Operas from './components/musicRelated/Operas';
 import Opera from './components/musicRelated/Opera';
