@@ -39,7 +39,7 @@ function ScoreFrame({ filename }) {
             visibility: loading && !loadingFailed ? 'hidden' : 'visible',
           }}
           id="myIframe"
-          src={googleUrlPDF}
+          src={downloadLink}
           title="title"
           onLoad={handleLoad}
         />

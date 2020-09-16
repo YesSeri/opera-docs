@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import ScoreFrame from '../ScoreFrame';
+import PdfFrame from '../PdfFrame';
 import {indeterminateArticleOf, ordinalSuffixOf} from '../helper/HelperFunctions';
 
 function Piece() {
@@ -69,7 +70,7 @@ function Piece() {
   return (
     <>
       {data ? PieceInfo() : null}
-      {data ? <ScoreFrame filename={data.file_title} /> : null}
+      {data ? <PdfFrame filename={data.file_title} /> : null}
     </>
   );
 }
