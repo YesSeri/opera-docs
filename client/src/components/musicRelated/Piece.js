@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import ScoreFrame from '../ScoreFrame';
+import {indeterminateArticleOf, ordinalSuffixOf} from '../helper/HelperFunctions';
 
 function Piece() {
   const [data, setData] = useState(null);
@@ -49,10 +49,10 @@ function Piece() {
               <Col style={{ width: '32rem' }}>
                 <h3>{`${last_name}`}</h3>
                 <p>
-                  This is {testArticle(type)} by {first_name}. It is{' '}
+                  This is {indeterminateArticleOf(type)} by {first_name}. It is{' '}
                   {type == 'score'
                     ? `a vocal score for ${opera}.`
-                    : `the ${ordinal_suffix_of(placement)} piece in ${opera}.`}
+                    : `the ${ordinalSuffixOf(placement)} piece in ${opera}.`}
                 </p>
                 <p>{description}</p>
                 {/* </Card> */}
@@ -64,28 +64,7 @@ function Piece() {
     }
     return renderPiece;
   };
-  const testArticle = (type) => {
-    const pattern = /^([aeiou])/i;
-    if (pattern.test(type)) {
-      return `an ${type}`;
-    } else {
-      return `a ${type}`;
-    }
-  };
-  function ordinal_suffix_of(i) {
-    var j = i % 10,
-      k = i % 100;
-    if (j === 1 && k !== 11) {
-      return i + 'st';
-    }
-    if (j === 2 && k !== 12) {
-      return i + 'nd';
-    }
-    if (j === 3 && k !== 13) {
-      return i + 'rd';
-    }
-    return i + 'th';
-  }
+
   return (
     <>
       {data ? PieceInfo() : null}

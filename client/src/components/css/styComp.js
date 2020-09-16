@@ -31,6 +31,15 @@ export const StyledResults = styled.div`
   }
   }
 `;
+export const StyledLinks = styled.div`
+  a{
+    font-size: 2em;
+  }
+  span{
+
+    font-size: 2em;
+  }
+`;
 
 export const StyledHeading = styled.div`
   div {

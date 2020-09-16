@@ -90,6 +90,7 @@ export default function SearchResults({ searchValue }) {
   }
   function TopResult() {
     let topResult = results[0];
+    if (topResult === undefined) return <></>;
     let container;
     const {
       piece_id,

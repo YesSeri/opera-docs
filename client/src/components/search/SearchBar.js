@@ -2,6 +2,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import diacritics from 'diacritics'
 
 const SearchBar = ({ setSearchValue }) => {
   return (
@@ -9,12 +10,11 @@ const SearchBar = ({ setSearchValue }) => {
       <Col md={{ span: 8, offset: 2 }}>
         <Form>
           <Form.Group controlId="searchBar">
-            <Form.Label>Search</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter search"
               onChange={(e) => {
-                setSearchValue(e.target.value);
+                setSearchValue(diacritics.remove(e.target.value));
               }}
             />
             <Form.Text className="text-muted">
