@@ -6,6 +6,8 @@ import axios from 'axios';
 import Fuse from 'fuse.js';
 import Nav from 'react-bootstrap/Nav';
 import { createPieceUrl } from '../helper/HelperFunctions';
+import { createComposerUrl } from '../helper/HelperFunctions';
+import { createOperaUrl } from '../helper/HelperFunctions';
 import { StyledResults } from '../css/styComp';
 
 const optionsPieces = {
@@ -96,23 +98,21 @@ export default function SearchResults({ searchValue }) {
     switch (topResult.resultType) {
       case 'opera': {
         const { opera_id, opera, last_name } = topResult.item;
-        const endUrl = `${opera_id}-${opera.replace(/\s+/g, '-')}`;
+        const url = createOperaUrl(last_name, opera_id, opera);
         return (
           <Col>
-            <Nav.Link
-              className="topResult"
-              href={`${last_name}/${endUrl}`}
-            >{`${opera}`}</Nav.Link>
+            <Nav.Link className="topResult" href={url}>{`${opera}`}</Nav.Link>
           </Col>
         );
       }
       case 'composer': {
         const { last_name, first_name } = topResult.item;
+        const url = createComposerUrl(last_name);
         return (
           <Col>
             <Nav.Link
               className="topResult"
-              href={`/${last_name.toLowerCase()}`}
+              href={url}
             >{`${last_name}, ${first_name}`}</Nav.Link>
           </Col>
         );
@@ -129,10 +129,7 @@ export default function SearchResults({ searchValue }) {
         const url = createPieceUrl(last_name, opera_id, opera, piece_id, title);
         return (
           <Col>
-            <Nav.Link
-              className="topResult"
-              href={url}
-            >
+            <Nav.Link className="topResult" href={url}>
               {type === 'ouverture' ? `${title} - ${opera}` : title}
             </Nav.Link>
           </Col>
@@ -156,20 +153,19 @@ export default function SearchResults({ searchValue }) {
       switch (el.resultType) {
         case 'opera': {
           const { opera_id, opera, last_name } = el.item;
-          const operaUrl = `${opera_id}-${opera.replace(/\s+/g, '-')}`;
+          const url = createOperaUrl(last_name, opera_id, opera);
           return (
             <div key={i}>
-              <Nav.Link href={`${last_name}/${operaUrl}`}>{`${opera}`}</Nav.Link>
+              <Nav.Link href={url}>{`${opera}`}</Nav.Link>
             </div>
           );
         }
         case 'composer': {
           const { last_name, first_name } = el.item;
+          const url = createComposerUrl(last_name);
           return (
             <Col key={i}>
-              <Nav.Link
-                href={`/${last_name.toLowerCase()}`}
-              >{`${last_name}, ${first_name}`}</Nav.Link>
+              <Nav.Link href={url}>{`${last_name}, ${first_name}`}</Nav.Link>
             </Col>
           );
         }

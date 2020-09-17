@@ -49,8 +49,8 @@ export function createPieceUrl(lastName, opera_id, opera, piece_id, title) {
     .replace(/\s+/g, '-')
     .toLowerCase();
   const pieceUrl = `${piece_id}-${safeTitle}`;
-  const operaUrl = `${opera_id}-${opera.replace(/\s+/g, '-')}`;
-  const url = `/${lastName}/${operaUrl}/${pieceUrl}`;
+  const operaUrl = `${opera_id}-${opera.replace(/\s+/g, '-').toLowerCase()}`;
+  const url = `/${lastName.toLowerCase()}/${operaUrl}/${pieceUrl}`;
   return url
 }
 

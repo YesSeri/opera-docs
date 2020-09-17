@@ -27,7 +27,7 @@ function Composers() {
         return (
           <Row key={id}>
             <Col>
-              <Nav.Link href={`/${last_name.toLowerCase()}`}>{`${last_name}, ${first_name}`}</Nav.Link >
+              <Nav.Link href={url}>{`${last_name}, ${first_name}`}</Nav.Link >
             </Col>
           </Row>
         );

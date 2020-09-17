@@ -9,7 +9,6 @@ import { createPieceUrl } from '../helper/HelperFunctions';
 import { createComposerUrl } from '../helper/HelperFunctions';
 import { createOperaUrl } from '../helper/HelperFunctions';
 
-
 function Pieces() {
   const [data, setData] = useState(null);
 
@@ -21,7 +20,7 @@ function Pieces() {
         },
       })
       .then((response) => {
-        console.log(response.data)
+        console.log(response.data);
         setData(response.data);
       })
       .catch((err) => {
@@ -31,43 +30,61 @@ function Pieces() {
 
   const PiecesInfo = () => {
     const pieces = []; //p.id title o.id opera c.id c.lastname, c.firstname
-    createComposerUrl()
     if (data) {
-      data.forEach(({piece_id, title, opera_id, opera, composer_id, last_name, first_name}) => {
+      data.forEach(
+        ({
+          piece_id,
+          title,
+          opera_id,
+          opera,
+          composer_id,
+          last_name,
+          first_name,
+        }) => {
+          const composerUrl = createComposerUrl(last_name);
+          const operaUrl = createOperaUrl(last_name, opera_id, opera);
+          const pieceUrl = createPieceUrl(
+            last_name,
+            opera_id,
+            opera,
+            piece_id,
+            title
+          );
 
-        pieces.push(
-          <Row
-            style={{
-              borderRadius: '10px',
-              borderTop: 'solid #ddd 1px',
-              borderRight: 'solid #ddd 1px',
-              borderLeft: 'solid #ddd 1px',
-            }}
-            key={piece_id}
-            xs={1}
-            sm={3}
-          >
-            <Col>
-              <Nav.Link href={`/piece/${piece_id}`}>{title}</Nav.Link>
-            </Col>
-            <Col>
-              <Nav.Link href={`/opera/${opera_id}`}>{opera}</Nav.Link>
-            </Col>
-            <Col>
-              <Nav.Link
-                href={`/composer/${composer_id}`}
-              >{`${last_name}, ${first_name}`}</Nav.Link>
-            </Col>
-          </Row>
-        );
-      });
+          pieces.push(
+            <Row
+              style={{
+                borderRadius: '10px',
+                borderTop: 'solid #ddd 1px',
+                borderRight: 'solid #ddd 1px',
+                borderLeft: 'solid #ddd 1px',
+              }}
+              key={piece_id}
+              xs={1}
+              sm={3}
+            >
+              <Col>
+                <Nav.Link href={pieceUrl}>{title}</Nav.Link>
+              </Col>
+              <Col>
+                <Nav.Link href={operaUrl}>{opera}</Nav.Link>
+              </Col>
+              <Col>
+                <Nav.Link
+                  href={composerUrl}
+                >{`${last_name}, ${first_name}`}</Nav.Link>
+              </Col>
+            </Row>
+          );
+        }
+      );
     }
     return pieces;
   };
   return (
     <>
       <h2>Pieces</h2>
-      <Container >{data ? PiecesInfo() : null}</Container>
+      <Container>{data ? PiecesInfo() : null}</Container>
     </>
   );
 }
