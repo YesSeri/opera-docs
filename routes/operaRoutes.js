@@ -8,12 +8,13 @@ router.use(express.json());
 
 router.get('/', (req, res) => {
   // Show all operas, sort by name
-  db.query('SELECT id, name as opera FROM Operas ORDER BY opera', function (
-    err,
-    result
-  ) {
+  const query = `SELECT o.name as opera, o.id as opera_id, c.last_name FROM Operas as o 
+    INNER JOIN Composers as c 
+    ON c.id = o.composer_id 
+    ORDER BY opera`;
+  db.query(query, function (err, result) {
     if (err) console.error(err);
-    res.json(result)
+    res.json(result);
   });
 });
 
@@ -25,7 +26,7 @@ router.get('/:id', (req, res) => {
     if (err) console.error(err);
 
     if (result.length === 0) {
-      res.json("")
+      res.json('');
     } else {
       res.json(result);
     }

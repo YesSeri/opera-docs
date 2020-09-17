@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import axios from 'axios';
 import Fuse from 'fuse.js';
 import Nav from 'react-bootstrap/Nav';
+import { createPieceUrl } from '../helper/HelperFunctions';
 import { StyledResults } from '../css/styComp';
 
 const optionsPieces = {
@@ -92,46 +93,53 @@ export default function SearchResults({ searchValue }) {
     let topResult = results[0];
     if (topResult === undefined) return <></>;
     let container;
-    const {
-      piece_id,
-      title,
-      type,
-      opera,
-      id,
-      last_name,
-      first_name,
-    } = topResult.item;
     switch (topResult.resultType) {
-      case 'opera':
-        container = (
-          <Col>
-            <Nav.Link className="topResult" href={`/opera/${id}`}>
-              {opera}
-            </Nav.Link>
-          </Col>
-        );
-        break;
-      case 'composer':
-        container = (
+      case 'opera': {
+        const { opera_id, opera, last_name } = topResult.item;
+        const endUrl = `${opera_id}-${opera.replace(/\s+/g, '-')}`;
+        return (
           <Col>
             <Nav.Link
               className="topResult"
-              href={`/composer/${id}`}
+              href={`${last_name}/${endUrl}`}
+            >{`${opera}`}</Nav.Link>
+          </Col>
+        );
+      }
+      case 'composer': {
+        const { last_name, first_name } = topResult.item;
+        return (
+          <Col>
+            <Nav.Link
+              className="topResult"
+              href={`/${last_name.toLowerCase()}`}
             >{`${last_name}, ${first_name}`}</Nav.Link>
           </Col>
         );
-        break;
-      case 'piece':
-        container = (
+      }
+      case 'piece': {
+        const {
+          title,
+          piece_id,
+          last_name,
+          opera_id,
+          opera,
+          type,
+        } = topResult.item;
+        const url = createPieceUrl(last_name, opera_id, opera, piece_id, title);
+        return (
           <Col>
-            <Nav.Link className="topResult" href={`/piece/${piece_id}`}>
+            <Nav.Link
+              className="topResult"
+              href={url}
+            >
               {type === 'ouverture' ? `${title} - ${opera}` : title}
             </Nav.Link>
           </Col>
         );
-        break;
+      }
       default:
-        container = <></>
+        container = <></>;
     }
 
     return container;
@@ -139,50 +147,49 @@ export default function SearchResults({ searchValue }) {
   function OtherResults() {
     if (results[1] === undefined) return <></>;
     const otherResults = [];
-    for (let i = 1; i < results.length; i++) {
+    for (let i = 1; i < 25; i++) {
       if (results[i] === undefined) break;
       otherResults.push(results[i]);
     }
     const otherContainer = otherResults.map((el, i) => {
       let container;
-      const {
-        piece_id,
-        title,
-        type,
-        opera_id,
-        opera,
-        composer_id,
-        last_name,
-        first_name,
-      } = el.item;
       switch (el.resultType) {
-        case 'opera':
-          container = (
-            <Nav.Link key={i} href={`/opera/${opera_id}`}>
-              {opera}
-            </Nav.Link>
+        case 'opera': {
+          const { opera_id, opera, last_name } = el.item;
+          const operaUrl = `${opera_id}-${opera.replace(/\s+/g, '-')}`;
+          return (
+            <div key={i}>
+              <Nav.Link href={`${last_name}/${operaUrl}`}>{`${opera}`}</Nav.Link>
+            </div>
           );
-          break;
-        case 'composer':
-          container = (
-            <Nav.Link
-              key={i}
-              href={`/composer/${composer_id}`}
-            >{`${last_name}, ${first_name}`}</Nav.Link>
+        }
+        case 'composer': {
+          const { last_name, first_name } = el.item;
+          return (
+            <Col key={i}>
+              <Nav.Link
+                href={`/${last_name.toLowerCase()}`}
+              >{`${last_name}, ${first_name}`}</Nav.Link>
+            </Col>
           );
-          break;
-        case 'piece':
-          container = (
-            <Nav.Link key={i} href={`/piece/${piece_id}`}>
+        }
+        case 'piece': {
+          const { title, piece_id, last_name, opera_id, opera, type } = el.item;
+          const url = createPieceUrl(
+            last_name,
+            opera_id,
+            opera,
+            piece_id,
+            title
+          );
+          return (
+            <Nav.Link key={i} href={url}>
               {type === 'ouverture' ? `${title} - ${opera}` : title}
             </Nav.Link>
           );
-          break;
+        }
         default:
-          container = (
-            <>
-            </>
-          );
+          container = <></>;
       }
       return container;
     });
@@ -194,7 +201,9 @@ export default function SearchResults({ searchValue }) {
     <StyledResults>
       <Container>
         <Row>{results ? <TopResult /> : null}</Row>
-        <Row  xs ={1} sm={1} md={3}>{results ? <OtherResults /> : null}</Row>
+        <Row xs={1} sm={1} md={3}>
+          {results ? <OtherResults /> : null}
+        </Row>
       </Container>
     </StyledResults>
   );

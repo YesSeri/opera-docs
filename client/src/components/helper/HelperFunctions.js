@@ -1,4 +1,4 @@
-import {useEffect, useRef} from 'react'
+import { useEffect, useRef } from 'react';
 export const indeterminateArticleOf = (type) => {
   const pattern = /^([aeiou])/i;
   if (pattern.test(type)) {
@@ -20,7 +20,7 @@ export const ordinalSuffixOf = (i) => {
     return i + 'rd';
   }
   return i + 'th';
-}
+};
 
 export function useInterval(callback, delay) {
   // https://overreacted.io/making-setinterval-declarative-with-react-hooks/
@@ -41,4 +41,23 @@ export function useInterval(callback, delay) {
       return () => clearInterval(id);
     }
   }, [delay]);
+}
+
+export function createPieceUrl(lastName, opera_id, opera, piece_id, title) {
+  const safeTitle = title
+    .replace(/[^a-zA-Z ]/g, '')
+    .replace(/\s+/g, '-')
+    .toLowerCase();
+  const pieceUrl = `${piece_id}-${safeTitle}`;
+  const operaUrl = `${opera_id}-${opera.replace(/\s+/g, '-')}`;
+  const url = `/${lastName}/${operaUrl}/${pieceUrl}`;
+  return url
+}
+
+export function createOperaUrl(lastName, opera_id, opera) {
+  return `/${lastName.toLowerCase()}/${opera_id}-${opera.replace(/\s+/g, '-').toLowerCase()}` // url = lastname/id-opera
+}
+
+export function createComposerUrl(lastName) {
+  return lastName.toLowerCase()
 }

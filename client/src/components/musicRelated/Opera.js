@@ -2,32 +2,38 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-function Opera() {
+function Opera(props) {
   const [data, setData] = useState(null);
+  const {pathname} = props.location
   useEffect(() => {
-    const url = window.location.href;
-    const id = url.substring(url.lastIndexOf('/') + 1);
+    
+    const {operaIdName} = props.match.params
+    const id = operaIdName.replace(/(^\d+)(.+$)/i,'$1')
     axios
       .get(`/api/operas/${id}`)
       .then((response) => {
         setData(response.data);
+        console.log(response.data)
       })
       .catch((err) => {
         if (err) console.error(err);
       });
     return () => {};
-  }, []);
+  }, [props.match.params]);
 
   const operaPieces = () => {
-    const pieces = data.map((el) => {
-      const weight = el.type === 'recitativo' || el.type === 'choir' ? 'normal' : 'bold';
+    const pieces = data.map(({title, id, type}) => {
+      const safeTitle = title.replace(/[^a-zA-Z ]/g, "").replace(/\s+/g, '-').toLowerCase()
+      const url = `${id}-${safeTitle}`
+      
+      const weight =
+        type === 'recitativo' || type === 'choir' ? 'normal' : 'bold';
       return (
-        <div key={el.id}>
-          {console.log(el)}
+        <div key={id}>
           <Link
             style={{ fontWeight: weight }}
-            to={`/piece/${el.id}`}
-          >{`${el.title}`}</Link>
+            to={`${pathname}/${url}`}
+          >{`${title}`}</Link>
           <br />
         </div>
       );

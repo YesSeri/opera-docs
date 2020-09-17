@@ -3,6 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
+import { createOperaUrl } from '../helper/HelperFunctions';
 // import Row from 'react-bootstrap/Row';
 import axios from 'axios';
 
@@ -21,13 +22,13 @@ function Operas() {
   }, []);
 
   const operaPieces = () => {
-    const operas = data.map((el) => {
+    const operas = data.map(({last_name, opera_id, opera}) => {
+      const url = createOperaUrl(last_name, opera_id, opera);
+
       return (
-        <Row key={el.id}>
-          <Col>
-            <Nav.Link href={`/opera/${el.id}`}>{`${el.opera}`}</Nav.Link>
-          </Col>
-        </Row>
+        <div key={opera_id}>
+          <Nav.Link href={url}>{`${opera}`}</Nav.Link>
+        </div>
       );
     });
     return operas;

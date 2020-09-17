@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Nav from 'react-bootstrap/Nav';
+import { createComposerUrl } from '../helper/HelperFunctions';
 
 function Composers() {
   const [data, setData] = useState(null);
@@ -21,11 +22,12 @@ function Composers() {
 
   const renderComposers = () => {
     if (data) {
-      return data.map((el) => {
+      return data.map(({id, last_name, first_name}) => {
+      const url = createComposerUrl(last_name)
         return (
-          <Row key={el.id}>
+          <Row key={id}>
             <Col>
-              <Nav.Link href={`/composer/${el.id}`}>{`${el.last_name}, ${el.first_name}`}</Nav.Link >
+              <Nav.Link href={`/${last_name.toLowerCase()}`}>{`${last_name}, ${first_name}`}</Nav.Link >
             </Col>
           </Row>
         );

@@ -17,13 +17,13 @@ router.get('/', (req, res) => {
   });
 });
 
-router.get('/:id', (req, res) => {
-  const id = req.params.id;
+router.get('/:last_name', (req, res) => {
+  const last_name = req.params.last_name;
   const query = `SELECT o.name as opera, o.id as opera_id, c.first_name, c.last_name 
                   FROM Operas as o 
                   INNER JOIN Composers as c 
-                  ON o.composer_id = c.id WHERE c.id = ?`;
-  db.query(query, id, (err, result) => {
+                  ON o.composer_id = c.id WHERE c.last_name = ?`;
+  db.query(query, last_name, (err, result) => {
     res.json(result);
   });
 });

@@ -9,18 +9,18 @@ import {
   ordinalSuffixOf,
 } from '../helper/HelperFunctions';
 
-function Piece() {
+function Piece(props) {
   const [data, setData] = useState(null);
   useEffect(() => {
-    const url = window.location.href;
-    const id = url.substring(url.lastIndexOf('/') + 1);
+    const {pieceIdName} = props.match.params
+    const id = pieceIdName.replace(/(^\d+)(.+$)/i,'$1')
     axios
       .get(`/api/pieces/${id}`)
       .then((response) => setData(response.data))
       .catch((err) => {
         if (err) console.error(err);
       });
-  }, []);
+  }, [props.match.params]);
 
   const PieceInfo = () => {
     const {

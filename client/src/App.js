@@ -22,12 +22,12 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/composers" component={Composers} />
-          <Route path="/composer" component={Composer} />
-          <Route path="/operas" component={Operas} />
-          <Route path="/opera" component={Opera} />
-          <Route path="/pieces" component={Pieces} />
-          <Route path="/piece" component={Piece} />
+          <Route path="/composers/" exact component={Composers} />
+          <Route path="/pieces/" exact component={Pieces} />
+          <Route path="/operas/" exact component={Operas} />
+          <Route path="/:lastName/:operaId/:pieceIdName" component={Piece} />
+          <Route path="/:lastName/:operaIdName" component={Opera} />
+          <Route path="/:lastName/" component={Composer} />
           <Route path="/about" component={About} />
           <Route exact path="/" component={Home}></Route>
         </Switch>

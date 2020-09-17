@@ -5,6 +5,11 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Nav from 'react-bootstrap/Nav';
 
+import { createPieceUrl } from '../helper/HelperFunctions';
+import { createComposerUrl } from '../helper/HelperFunctions';
+import { createOperaUrl } from '../helper/HelperFunctions';
+
+
 function Pieces() {
   const [data, setData] = useState(null);
 
@@ -16,6 +21,7 @@ function Pieces() {
         },
       })
       .then((response) => {
+        console.log(response.data)
         setData(response.data);
       })
       .catch((err) => {
@@ -24,9 +30,11 @@ function Pieces() {
   }, []);
 
   const PiecesInfo = () => {
-    const pieces = [];
+    const pieces = []; //p.id title o.id opera c.id c.lastname, c.firstname
+    createComposerUrl()
     if (data) {
-      data.forEach((el) => {
+      data.forEach(({piece_id, title, opera_id, opera, composer_id, last_name, first_name}) => {
+
         pieces.push(
           <Row
             style={{
@@ -35,20 +43,20 @@ function Pieces() {
               borderRight: 'solid #ddd 1px',
               borderLeft: 'solid #ddd 1px',
             }}
-            key={el.piece_id}
+            key={piece_id}
             xs={1}
             sm={3}
           >
             <Col>
-              <Nav.Link href={`/piece/${el.piece_id}`}>{el.title}</Nav.Link>
+              <Nav.Link href={`/piece/${piece_id}`}>{title}</Nav.Link>
             </Col>
             <Col>
-              <Nav.Link href={`/opera/${el.opera_id}`}>{el.opera}</Nav.Link>
+              <Nav.Link href={`/opera/${opera_id}`}>{opera}</Nav.Link>
             </Col>
             <Col>
               <Nav.Link
-                href={`/composer/${el.composer_id}`}
-              >{`${el.last_name}, ${el.first_name}`}</Nav.Link>
+                href={`/composer/${composer_id}`}
+              >{`${last_name}, ${first_name}`}</Nav.Link>
             </Col>
           </Row>
         );
