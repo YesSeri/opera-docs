@@ -17,7 +17,7 @@ const renderToolbar = (toolbarSlot) => {
           display: 'flex',
           flexGrow: 1,
           flexShrink: 1,
-          justifyContent: 'space-between',
+          justifyContent: 'center',
         }}
       >
         {/* <div style={{ padding: '0 2px' }}>{toolbarSlot.previousPageButton}</div> */}
