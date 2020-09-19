@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import diacritics from 'diacritics'
 
-const SearchBar = ({ setSearchValue }) => {
+const SearchBar = ({ setSearchValue }) => { // Parent component of SearchBar and SearchResults is Search
   return (
     <Container>
       <Col md={{ span: 8, offset: 2 }}>
@@ -14,7 +14,7 @@ const SearchBar = ({ setSearchValue }) => {
               type="text"
               placeholder="Enter search"
               onChange={(e) => {
-                setSearchValue(diacritics.remove(e.target.value));
+                setSearchValue(diacritics.remove(e.target.value)); // Remove all strange italian signs above letters for better search, e.g. è and é
               }}
             />
             <Form.Text className="text-muted">

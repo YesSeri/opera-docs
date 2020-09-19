@@ -10,6 +10,7 @@ import { createComposerUrl } from '../helper/HelperFunctions';
 import { createOperaUrl } from '../helper/HelperFunctions';
 import { StyledResults } from '../css/styComp';
 
+// I have to make three seperate searches. One for each category, composer, opera and piece. Here I define what the options for the searches should be. It doesn't need to be sorted, because I will have to combine the three lists myself into one big, and compare the search scores of the big array to discover which order of matching.
 const optionsPieces = {
   includeScore: true,
   shouldSort: false,
@@ -29,168 +30,124 @@ const optionsComposers = {
   location: true,
   keys: ['last_name', 'first_name'],
 };
+function composerPost(result, className, index = null) {
+  const { last_name, first_name } = result.item;
+  const url = createComposerUrl(last_name);
+  return (
+    <Col key={index}>
+      <Nav.Link
+        className={className}
+        href={url}
+      >{`${last_name}, ${first_name}`}</Nav.Link>
+    </Col>
+  );
+}
+function operaPost(result, className, index = null) {
+  const { opera_id, opera, last_name } = result.item;
+  const url = createOperaUrl(last_name, opera_id, opera);
+  return (
+    <Col key={index}>
+      <Nav.Link className={className} href={url}>{`${opera}`}</Nav.Link>
+    </Col>
+  );
+}
 
+function piecePost(result, className, index = null) {
+  const { title, piece_id, last_name, opera_id, opera, type } = result.item;
+  const url = createPieceUrl(last_name, opera_id, opera, piece_id, title);
+  return (
+    <Col key={index}>
+      <Nav.Link className={className} href={url}>
+        {type === 'ouverture' ? `${title} - ${opera}` : title}
+      </Nav.Link>
+    </Col>
+  );
+}
+function search(data, resultType, optionsType, searchValue) {
+  const fuse = new Fuse(data, optionsType);
+  const search = fuse.search(searchValue);
+  return search.map(function (el) {
+    var o = Object.assign({}, el);
+    o.resultType = resultType;
+    return o;
+  });
+}
 export default function SearchResults({ searchValue }) {
   const [pieces, setPieces] = useState(null);
   const [operas, setOperas] = useState(null);
   const [composers, setComposers] = useState(null);
   const [results, setResults] = useState(null);
   useEffect(() => {
-    axios.get('/api/search').then(({ data }) => {
-      setPieces(data);
-    });
-    axios.get('/api/operas').then(({ data }) => {
-      setOperas(data);
-    });
-    axios.get('/api/composers').then(({ data }) => {
-      setComposers(data);
-    });
+    axios.get('/api/search')    .then(({ data }) => setPieces(data));
+    axios.get('/api/operas')    .then(({ data }) => setOperas(data));
+    axios.get('/api/composers') .then(({ data }) => setComposers(data));
   }, []);
 
   useEffect(() => {
-    if (searchValue.length > 2) {
+    if (searchValue.length > 1) { //Don't search if search if only one char. It is pointless, the results dont make sense. 
       const allArray = [];
-      if (pieces) {
-        const fuse = new Fuse(pieces, optionsPieces);
-        const search = fuse.search(searchValue);
-        const searchResultType = search.map(function (el) {
-          var o = Object.assign({}, el);
-          o.resultType = 'piece';
-          return o;
-        });
-        allArray.push(searchResultType);
-      }
-      if (operas) {
-        const fuse = new Fuse(operas, optionsOperas);
-        const search = fuse.search(searchValue);
-        const searchResultType = search.map(function (el) {
-          var o = Object.assign({}, el);
-          o.resultType = 'opera';
-          return o;
-        });
-        allArray.push(searchResultType);
-      }
-      if (composers) {
-        const fuse = new Fuse(composers, optionsComposers);
-        const search = fuse.search(searchValue);
-        const searchResultType = search.map(function (el) {
-          var o = Object.assign({}, el);
-          o.resultType = 'composer';
-          return o;
-        });
-        allArray.push(searchResultType);
-      }
-
+      if (pieces)
+        allArray.push(search(pieces, 'piece', optionsPieces, searchValue));
+      if (operas)
+        allArray.push(search(operas, 'opera', optionsOperas, searchValue));
+      if (composers)
+        allArray.push(
+          search(composers, 'composer', optionsComposers, searchValue)
+        );
       setResults(sortArrays(allArray[0], allArray[1], allArray[2]));
     } else {
       setResults(null);
     }
   }, [searchValue, pieces, operas, composers]);
 
-  function sortArrays(arr1, arr2, arr3) {
+  function sortArrays(arr1, arr2, arr3) { // Sort the array so the objects with the best search scores are first.
     let result = [...(arr1 || []), ...(arr2 || []), ...(arr3 || [])];
     return result.sort((a, b) => a.score - b.score);
   }
   function TopResult() {
     let topResult = results[0];
     if (topResult === undefined) return <></>;
-    let container;
+    const className = 'topResult';
     switch (topResult.resultType) {
-      case 'opera': {
-        const { opera_id, opera, last_name } = topResult.item;
-        const url = createOperaUrl(last_name, opera_id, opera);
-        return (
-          <Col>
-            <Nav.Link className="topResult" href={url}>{`${opera}`}</Nav.Link>
-          </Col>
-        );
-      }
       case 'composer': {
-        const { last_name, first_name } = topResult.item;
-        const url = createComposerUrl(last_name);
-        return (
-          <Col>
-            <Nav.Link
-              className="topResult"
-              href={url}
-            >{`${last_name}, ${first_name}`}</Nav.Link>
-          </Col>
-        );
+        return composerPost(topResult, className);
+      }
+      case 'opera': {
+        return operaPost(topResult, className);
       }
       case 'piece': {
-        const {
-          title,
-          piece_id,
-          last_name,
-          opera_id,
-          opera,
-          type,
-        } = topResult.item;
-        const url = createPieceUrl(last_name, opera_id, opera, piece_id, title);
-        return (
-          <Col>
-            <Nav.Link className="topResult" href={url}>
-              {type === 'ouverture' ? `${title} - ${opera}` : title}
-            </Nav.Link>
-          </Col>
-        );
+        return piecePost(topResult, className);
       }
       default:
-        container = <></>;
+        return <></>;
     }
-
-    return container;
   }
   function OtherResults() {
     if (results[1] === undefined) return <></>;
     const otherResults = [];
+    const className = 'otherResult';
     for (let i = 1; i < 25; i++) {
+      // Shows a maximum of 25 search results. Probably overkill to be honest. Undefined means that I have not found that many results, and should show all the results found, and not more.
       if (results[i] === undefined) break;
       otherResults.push(results[i]);
     }
-    const otherContainer = otherResults.map((el, i) => {
+    return otherResults.map((result, index) => {
       let container;
-      switch (el.resultType) {
-        case 'opera': {
-          const { opera_id, opera, last_name } = el.item;
-          const url = createOperaUrl(last_name, opera_id, opera);
-          return (
-            <div key={i}>
-              <Nav.Link href={url}>{`${opera}`}</Nav.Link>
-            </div>
-          );
-        }
+      switch (result.resultType) {
         case 'composer': {
-          const { last_name, first_name } = el.item;
-          const url = createComposerUrl(last_name);
-          return (
-            <Col key={i}>
-              <Nav.Link href={url}>{`${last_name}, ${first_name}`}</Nav.Link>
-            </Col>
-          );
+          return composerPost(result, className, index);
+        }
+        case 'opera': {
+          return operaPost(result, className, index);
         }
         case 'piece': {
-          const { title, piece_id, last_name, opera_id, opera, type } = el.item;
-          const url = createPieceUrl(
-            last_name,
-            opera_id,
-            opera,
-            piece_id,
-            title
-          );
-          return (
-            <Nav.Link key={i} href={url}>
-              {type === 'ouverture' ? `${title} - ${opera}` : title}
-            </Nav.Link>
-          );
+          return piecePost(result, className, index);
         }
         default:
           container = <></>;
       }
       return container;
     });
-
-    return otherContainer;
   }
 
   return (

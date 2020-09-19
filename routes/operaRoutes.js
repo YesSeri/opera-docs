@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
   db.query(query, id, (err, result) => {
     if (err) console.error(err);
 
-    if (result.length === 0) {
+    if (result.length === 0) { // Returns string instead of result to stop client from crashing when it recieves null or undefined. 
       res.json('');
     } else {
       res.json(result);

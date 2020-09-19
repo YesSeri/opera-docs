@@ -10,7 +10,7 @@ import Opera from './components/musicRelated/Opera';
 import Pieces from './components/musicRelated/Pieces';
 import Piece from './components/musicRelated/Piece';
 import About from './components/About';
-import Home from './components/Home';
+import Search from './components/Search';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 export default function App() {
@@ -29,7 +29,7 @@ export default function App() {
           <Route path="/:lastName/:operaIdName" component={Opera} />
           <Route path="/:lastName/" component={Composer} />
           <Route path="/about" component={About} />
-          <Route exact path="/" component={Home}></Route>
+          <Route exact path="/" component={Search}></Route>
         </Switch>
       </div>
     </Router>
