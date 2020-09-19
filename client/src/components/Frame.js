@@ -9,10 +9,18 @@ export default function Frame({ downloadLink }) {
     <StyledIframe>
       <Container fluid>
         <Row>
-          <Col xl={{span: 10, offset: 1}}>
-            <object data={downloadLink} type="application/pdf">
-              <iframe src={`https://drive.google.com/viewerng/viewer?embedded=true&url=${downloadLink}`}></iframe>
-            </object>
+          <Col xl={{ span: 10, offset: 1 }}>
+            <iframe
+              src={`https://drive.google.com/viewerng/viewer?embedded=true&url=${downloadLink}`}
+            ></iframe>
+          </Col>
+          <Col xl={{ span: 10, offset: 1 }}>
+            <object data={downloadLink} type="application/pdf"></object>
+          </Col>
+          <Col xl={{ span: 10, offset: 1 }}>
+            <iframe
+              src={downloadLink}
+            ></iframe>
           </Col>
         </Row>
       </Container>
