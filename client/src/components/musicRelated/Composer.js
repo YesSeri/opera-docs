@@ -7,8 +7,6 @@ import { createOperaUrl } from '../helper/HelperFunctions';
 
 function Composer(props) {
   const [data, setData] = useState('');
-  const { pathname } = props.location;
-  // const [wikiData, setWikiData] = useState(null);
   useEffect(() => {
     const { lastName } = props.match.params;
 

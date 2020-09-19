@@ -22,13 +22,15 @@ function Operas() {
   }, []);
 
   const operaPieces = () => {
-    const operas = data.map(({last_name, opera_id, opera}) => {
+    const operas = data.map(({ last_name, opera_id, opera }) => {
       const url = createOperaUrl(last_name, opera_id, opera);
 
       return (
-        <div key={opera_id}>
-          <Nav.Link href={url}>{`${opera}`}</Nav.Link>
-        </div>
+        <Row key={opera_id}>
+          <Col>
+            <Nav.Link href={url}>{`${opera}`}</Nav.Link>
+          </Col>
+        </Row>
       );
     });
     return operas;
@@ -36,7 +38,7 @@ function Operas() {
   return (
     <>
       <h2>Operas</h2>
-      <Container>{data ? operaPieces() : null}</Container>
+      <Container >{data ? operaPieces() : null}</Container>
     </>
   );
 }
