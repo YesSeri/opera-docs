@@ -13,7 +13,6 @@ function Opera(props) {
       .get(`/api/operas/${id}`)
       .then((response) => {
         setData(response.data);
-        console.log(response.data)
       })
       .catch((err) => {
         if (err) console.error(err);
@@ -27,7 +26,7 @@ function Opera(props) {
       const url = `${id}-${safeTitle}`
       
       const weight =
-        type === 'recitativo' || type === 'choir' ? 'normal' : 'bold';
+        type === 'recitativo' || type === 'choir' || type === 'intermezzo' ? 'normal' : 'bold';
       return (
         <div key={id}>
           <Link
