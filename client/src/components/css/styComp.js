@@ -49,9 +49,13 @@ export const StyledHeading = styled.div`
   }
 `;
 export const StyledIframe = styled.div`
+  object {
+    height: 100vh;
+    width: 100%;
+  }
   iframe {
-    height: 99vh;
-    width: 95vw;
+    height: 100vh;
+    width: 100%;
   }
 `;
 export const StyledImage = styled.div`
