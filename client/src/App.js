@@ -10,7 +10,7 @@ import Opera from './components/musicRelated/Opera';
 import Pieces from './components/musicRelated/Pieces';
 import Piece from './components/musicRelated/Piece';
 import About from './components/About';
-import Search from './components/Search';
+import Search from './components/search/Search';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 export default function App() {

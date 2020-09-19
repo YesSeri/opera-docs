@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import SearchResults from './search/SearchResults'
-import SearchBar from './search/SearchBar'
+import SearchResults from './SearchResults'
+import SearchBar from './SearchBar'
 
 function Search() {
   const [searchValue, setSearchValue] = useState('');
