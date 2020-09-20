@@ -40,12 +40,10 @@ export const StyledResults = styled.div`
     }
   }
 `;
-export const StyledLinks = styled.div`
+
+export const StyledNavbar = styled.div`
   a {
-    font-size: 2em;
-  }
-  span {
-    font-size: 2em;
+    font-size: 1.3rem;
   }
 `;
 
@@ -70,7 +68,7 @@ export const StyledIframe = styled.div`
 export const StyledBanner = styled.div`
   .bannerContainer {
     justify-content: center;
-    background-color: #303273;
+    background-color: #466;
     color: #fff;
     padding:20px;
     margin-bottom:10px;
@@ -81,12 +79,12 @@ export const StyledBanner = styled.div`
   }
 
   .topRow {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     font-size: 1.5rem;
   }
   .bottomRow {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     align-content: center;
     font-size: 1.1rem;

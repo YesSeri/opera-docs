@@ -35,7 +35,6 @@ function Composers() {
 
   return (
     <>
-      <h1>Composers</h1>
       <p>Click to see operas by the respective composers.</p>
       <Container>{renderComposers()}</Container>
     </>
