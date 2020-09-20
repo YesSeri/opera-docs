@@ -72,7 +72,7 @@ export const StyledBanner = styled.div`
     justify-content: center;
     background-color: #303273;
     color: #fff;
-    margin-bottom: 20px;
+    margin: 20px;
   }
   .centered {
     float: none;
@@ -82,8 +82,8 @@ export const StyledBanner = styled.div`
   .topRow {
     max-width: 800px;
     margin: 0 auto;
+    padding-bottom:5px;
     font-size: 1.5rem;
-    padding: 20px;
   }
   .bottomRow {
     max-width: 800px;
@@ -92,7 +92,6 @@ export const StyledBanner = styled.div`
     font-size: 1.1rem;
   }
   .columns {
-    padding-bottom: 20px;
   }
 `;
 
