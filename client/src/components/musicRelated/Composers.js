@@ -24,7 +24,7 @@ function Composers() {
       const url = createComposerUrl(last_name)
         return (
           <Row key={id}>
-            <Col>
+            <Col md={{span: 4, offset: 4}} style={{backgroundColor: "#eee"}}>
               <Nav.Link href={url}>{`${last_name}, ${first_name}`}</Nav.Link >
             </Col>
           </Row>
@@ -35,7 +35,6 @@ function Composers() {
 
   return (
     <>
-      <p>Click to see operas by the respective composers.</p>
       <Container>{renderComposers()}</Container>
     </>
   );

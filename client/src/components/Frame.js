@@ -15,7 +15,7 @@ export default function Frame({ downloadLink }) {
           style={{ visibility: loading ? 'visible' : 'hidden' }}
           className="justify-content-center"
         >
-          <Spinner name='double-bounce' />
+          <Spinner name="double-bounce" />
         </Row>
         <Row>
           <Col
@@ -32,6 +32,8 @@ export default function Frame({ downloadLink }) {
                 onLoad={() => setLoading(false)}
                 src={`https://drive.google.com/viewerng/viewer?embedded=true&url=${downloadLink}`}
               ></iframe>
+
+              <a href={downloadLink}>PDF could not be loaded. Please download score here.</a>
             </object>
           </Col>
         </Row>

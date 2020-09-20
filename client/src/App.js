@@ -19,7 +19,7 @@ export default function App() {
   return (
     <Router>
       <div className='siteContainer'>
-        <h1 style={{fontSize: '4em', backgroundColor: '#022', color: 'white', borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px'}}>mysqldocs</h1>
+        <h1 style={{fontSize: '4em', backgroundColor: '#111', color: 'white', borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px'}}>mysqldocs</h1>
         <NavBar></NavBar>
       <Banner />
         <Switch>

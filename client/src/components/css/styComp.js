@@ -48,13 +48,13 @@ export const StyledNavbar = styled.div`
     background-color: white;
   }
   .active{
-    background-color:#022;
+    background-color:#111;
     color:white;
     padding: 5px 8px;
     border-radius: 10px;
 }
 .active:hover{
-    background-color:#022;
+    background-color:#333;
     color:white;
     padding: 5px 8px;
     border-radius: 10px;
