@@ -9,7 +9,7 @@ import { createPieceUrl } from '../helper/HelperFunctions';
 import { createComposerUrl } from '../helper/HelperFunctions';
 import { createOperaUrl } from '../helper/HelperFunctions';
 
-function Pieces() {
+function Arias() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -25,8 +25,8 @@ function Pieces() {
       });
   }, []);
 
-  const PiecesInfo = () => {
-    const pieces = []; //p.id title o.id opera c.id c.lastname, c.firstname
+  const AriasInfo = () => {
+    const arias = []; //p.id title o.id opera c.id c.lastname, c.firstname
     if (data) {
       data.forEach(
         ({
@@ -47,9 +47,8 @@ function Pieces() {
             piece_id,
             title
           );
-          console.log(type)
 
-          pieces.push(
+          arias.push(
             <Row
               style={{
                 borderRadius: '10px',
@@ -77,13 +76,13 @@ function Pieces() {
         }
       );
     }
-    return pieces;
+    return arias;
   };
   return (
     <>
-      <Container>{data ? PiecesInfo() : null}</Container>
+      <Container>{data ? AriasInfo() : null}</Container>
     </>
   );
 }
 
-export default Pieces;
+export default Arias;

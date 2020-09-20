@@ -44,7 +44,21 @@ export const StyledResults = styled.div`
 export const StyledNavbar = styled.div`
   a {
     font-size: 1.3rem;
+    color: #000;
+    background-color: white;
   }
+  .active{
+    background-color:#022;
+    color:white;
+    padding: 5px 8px;
+    border-radius: 10px;
+}
+.active:hover{
+    background-color:#022;
+    color:white;
+    padding: 5px 8px;
+    border-radius: 10px;
+}
 `;
 
 export const StyledHeading = styled.div`
@@ -68,7 +82,7 @@ export const StyledIframe = styled.div`
 export const StyledBanner = styled.div`
   .bannerContainer {
     justify-content: center;
-    background-color: #466;
+    background-color: #6a1a1b;
     color: #fff;
     padding:20px;
     margin-bottom:10px;
