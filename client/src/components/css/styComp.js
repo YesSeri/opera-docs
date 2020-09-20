@@ -22,13 +22,22 @@ export const LinkGrid = styled.div`
 `;
 
 export const StyledResults = styled.div`
-  .topResult{
+  .topResult {
     font-size: 36px;
     border-radius: 20px;
     &:hover {
-      color: #22e;  
+      color: #22e;
     }
   }
+  .bottomRow {
+    border-radius: 5px;
+  }
+  .otherResult {
+    min-height: 100%;
+    height: 100%;
+    &:hover {
+      color: #22e;
+    }
   }
 `;
 export const StyledLinks = styled.div`
@@ -58,8 +67,37 @@ export const StyledIframe = styled.div`
     width: 100%;
   }
 `;
+export const StyledBanner = styled.div`
+  .bannerContainer {
+    justify-content: center;
+    background-color: #303273;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .centered {
+    float: none;
+    margin: 0 auto;
+  }
+
+  .topRow {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    padding: 20px;
+  }
+  .bottomRow {
+    max-width: 800px;
+    margin: 0 auto;
+    align-content: center;
+    font-size: 1.1rem;
+  }
+  .columns {
+    padding-bottom: 20px;
+  }
+`;
+
 export const StyledImage = styled.div`
-  img{
+  img {
     border-radius: '11px';
     width: '100%';
     height: 'auto';

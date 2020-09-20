@@ -45,7 +45,7 @@ function Piece(props) {
     if (title) {
       renderPiece = (
         <>
-          <h2>{opera}</h2>
+          <h1>{opera}</h1>
           <h3>{`${last_name}`}</h3>
           <Container fluid>
             <Row>

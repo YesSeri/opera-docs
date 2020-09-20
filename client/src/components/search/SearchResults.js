@@ -97,12 +97,10 @@ export default function SearchResults({ searchValue }) {
 
   return (
     <StyledResults>
-      <Container>
-        <Row>{results ? <TopResult /> : null}</Row>
-        <Row xs={1} sm={1} md={3}>
+        <Row className="topRow">{results ? <TopResult /> : null}</Row>
+        <Row xs={1} sm={2} md={3} className="align-items-center bottomRow">
           {results ? <OtherResults /> : null}
         </Row>
-      </Container>
     </StyledResults>
   );
 }

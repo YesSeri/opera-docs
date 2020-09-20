@@ -17,6 +17,7 @@
     "react-pdf": "^5.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-spinkit": "^3.0.0",
     "styled-components": "^5.2.0"
   },
   "scripts": {

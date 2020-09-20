@@ -37,7 +37,7 @@ function Operas() {
   };
   return (
     <>
-      <h2>Operas</h2>
+      <h1>Operas</h1>
       <Container >{data ? operaPieces() : null}</Container>
     </>
   );

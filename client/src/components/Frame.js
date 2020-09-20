@@ -1,26 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { StyledIframe } from './css/styComp';
+var Spinner = require('react-spinkit');
 
 export default function Frame({ downloadLink }) {
+  const [loading, setLoading] = useState(true);
+
   return (
     <StyledIframe>
       <Container fluid>
+        <Row
+          style={{ visibility: loading ? 'visible' : 'hidden' }}
+          className="justify-content-center"
+        >
+          <Spinner name='double-bounce' />
+        </Row>
         <Row>
-          <Col xl={{ span: 10, offset: 1 }}>
-            <iframe
-              src={`https://drive.google.com/viewerng/viewer?embedded=true&url=${downloadLink}`}
-            ></iframe>
-          </Col>
-          <Col xl={{ span: 10, offset: 1 }}>
-            <object data={downloadLink} type="application/pdf"></object>
-          </Col>
-          <Col xl={{ span: 10, offset: 1 }}>
-            <iframe
-              src={downloadLink}
-            ></iframe>
+          <Col
+            style={{ visibility: loading ? 'hidden' : 'visible' }}
+            className="frameContainer"
+            xl={{ span: 10, offset: 1 }}
+          >
+            <object
+              onLoad={() => setLoading(false)}
+              data={downloadLink}
+              type="application/pdf"
+            >
+              <iframe
+                onLoad={() => setLoading(false)}
+                src={`https://drive.google.com/viewerng/viewer?embedded=true&url=${downloadLink}`}
+              ></iframe>
+            </object>
           </Col>
         </Row>
       </Container>
