@@ -82,7 +82,7 @@ export const StyledBanner = styled.div`
   .topRow {
     max-width: 800px;
     margin: 0 auto;
-    padding-bottom:5px;
+    padding-bottom: 5px;
     font-size: 1.5rem;
   }
   .bottomRow {
@@ -90,8 +90,6 @@ export const StyledBanner = styled.div`
     margin: 0 auto;
     align-content: center;
     font-size: 1.1rem;
-  }
-  .columns {
   }
 `;
 
