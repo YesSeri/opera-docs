@@ -12,9 +12,7 @@ function Operas() {
   useEffect(() => {
     axios
       .get(`/api/operas/`)
-      .then((response) => {
-        setData(response.data);
-      })
+      .then((response) => setData(response.data))
       .catch((err) => {
         if (err) console.error(err);
       });

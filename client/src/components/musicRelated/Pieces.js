@@ -19,9 +19,7 @@ function Pieces() {
           'Content-Type': 'application/json',
         },
       })
-      .then((response) => {
-        setData(response.data);
-      })
+      .then((response) => setData(response.data))
       .catch((err) => {
         if (err) console.error(err);
       });
@@ -36,7 +34,6 @@ function Pieces() {
           title,
           opera_id,
           opera,
-          composer_id,
           last_name,
           first_name,
         }) => {

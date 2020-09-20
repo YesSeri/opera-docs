@@ -4,16 +4,13 @@ import axios from 'axios';
 
 function Opera(props) {
   const [data, setData] = useState(null);
-  const {pathname} = props.location
+  const { pathname } = props.location;
   useEffect(() => {
-    
-    const {operaIdName} = props.match.params
-    const id = operaIdName.replace(/(^\d+)(.+$)/i,'$1')
+    const { operaIdName } = props.match.params;
+    const id = operaIdName.replace(/(^\d+)(.+$)/i, '$1');
     axios
       .get(`/api/operas/${id}`)
-      .then((response) => {
-        setData(response.data);
-      })
+      .then((response) => setData(response.data))
       .catch((err) => {
         if (err) console.error(err);
       });
@@ -21,12 +18,17 @@ function Opera(props) {
   }, [props.match.params]);
 
   const operaPieces = () => {
-    const pieces = data.map(({title, id, type}) => {
-      const safeTitle = title.replace(/[^a-zA-Z ]/g, "").replace(/\s+/g, '-').toLowerCase()
-      const url = `${id}-${safeTitle}`
-      
+    const pieces = data.map(({ title, id, type }) => {
+      const safeTitle = title
+        .replace(/[^a-zA-Z ]/g, '')
+        .replace(/\s+/g, '-')
+        .toLowerCase();
+      const url = `${id}-${safeTitle}`;
+
       const weight =
-        type === 'recitativo' || type === 'choir' || type === 'intermezzo' ? 'normal' : 'bold';
+        type === 'recitativo' || type === 'choir' || type === 'intermezzo'
+          ? 'normal'
+          : 'bold';
       return (
         <div key={id}>
           <Link

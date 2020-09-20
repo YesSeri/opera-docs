@@ -23,9 +23,7 @@ function Piece(props) {
         );
         return response;
       })
-      .then((response) => {
-        setData(response.data);
-      })
+      .then((response) => setData(response.data))
       .catch((err) => {
         if (err) console.error(err);
       });

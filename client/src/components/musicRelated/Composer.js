@@ -9,19 +9,16 @@ function Composer(props) {
   const [data, setData] = useState('');
   useEffect(() => {
     const { lastName } = props.match.params;
-
     axios
       .get(`/api/composers/${lastName}`)
-      .then((response) => {
-        setData(response.data);
-      })
+      .then((response) => setData(response.data))
       .catch((err) => {
         if (err) console.error(err);
       });
   }, [props.match.params]);
 
   const composersOperas = () => {
-    const operas = data.map(({last_name, opera_id, opera}) => {
+    const operas = data.map(({ last_name, opera_id, opera }) => {
       const url = createOperaUrl(last_name, opera_id, opera);
       return (
         <Col key={opera_id}>

@@ -2,9 +2,10 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import diacritics from 'diacritics'
+import diacritics from 'diacritics';
 
-const SearchBar = ({ setSearchValue }) => { // Parent component of SearchBar and SearchResults is Search
+const SearchBar = ({ setSearchValue }) => {
+  // Parent component of SearchBar and SearchResults is Search
   return (
     <Container>
       <Col lg={{ span: 6, offset: 3 }}>
@@ -25,5 +26,5 @@ const SearchBar = ({ setSearchValue }) => { // Parent component of SearchBar and
       </Col>
     </Container>
   );
-}
+};
 export default SearchBar;

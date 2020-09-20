@@ -72,7 +72,8 @@ export const StyledBanner = styled.div`
     justify-content: center;
     background-color: #303273;
     color: #fff;
-    margin: 20px;
+    padding:20px;
+    margin-bottom:10px;
   }
   .centered {
     float: none;
@@ -82,7 +83,6 @@ export const StyledBanner = styled.div`
   .topRow {
     max-width: 800px;
     margin: 0 auto;
-    padding-bottom: 5px;
     font-size: 1.5rem;
   }
   .bottomRow {
