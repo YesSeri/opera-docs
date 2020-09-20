@@ -14,7 +14,7 @@ function Pieces() {
 
   useEffect(() => {
     axios
-      .get(`/api/pieces/`, {
+      .get(`/api/pieces/arias`, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -34,6 +34,7 @@ function Pieces() {
           title,
           opera_id,
           opera,
+          type,
           last_name,
           first_name,
         }) => {
@@ -46,6 +47,7 @@ function Pieces() {
             piece_id,
             title
           );
+          console.log(type)
 
           pieces.push(
             <Row

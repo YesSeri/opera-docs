@@ -7,7 +7,7 @@ import NavBar from './components/NavBar';
 import Composer from './components/musicRelated/Composer';
 import Operas from './components/musicRelated/Operas';
 import Opera from './components/musicRelated/Opera';
-import Pieces from './components/musicRelated/Pieces';
+import Arias from './components/musicRelated/Arias';
 import Piece from './components/musicRelated/Piece';
 import About from './components/About';
 import Search from './components/search/Search';
@@ -24,7 +24,7 @@ export default function App() {
         <Switch>
           <Route path="/about" exact component={About} />
           <Route path="/composers/" exact component={Composers} />
-          <Route path="/pieces/" exact component={Pieces} />
+          <Route path="/arias/" exact component={Arias} />
           <Route path="/operas/" exact component={Operas} />
           <Route path="/:lastName/:operaId/:pieceIdName" component={Piece} />
           <Route path="/:lastName/:operaIdName" component={Opera} />

@@ -19,8 +19,8 @@ function NavBar({ filename }) {
             <NavLink exact activeClassName="active" to="/composers">
               <Nav.Link href="/composers">Composers</Nav.Link>
             </NavLink>
-            <NavLink exact activeClassName="active" to="/pieces">
-              <Nav.Link href="/pieces">Pieces</Nav.Link>
+            <NavLink exact activeClassName="active" to="/arias">
+              <Nav.Link href="/arias">Arias</Nav.Link>
             </NavLink>
             <NavLink exact activeClassName="active" to="/about">
               <Nav.Link href="/about">About</Nav.Link>
