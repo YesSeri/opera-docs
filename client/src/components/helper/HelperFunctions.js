@@ -1,4 +1,6 @@
 import { useEffect, useRef } from 'react';
+import axios from 'axios';
+//Not used
 export const indeterminateArticleOf = (type) => {
   const pattern = /^([aeiou])/i;
   if (pattern.test(type)) {
@@ -7,6 +9,7 @@ export const indeterminateArticleOf = (type) => {
     return `a ${type}`;
   }
 };
+// Not used
 export const ordinalSuffixOf = (i) => {
   var j = i % 10,
     k = i % 100;
@@ -21,7 +24,7 @@ export const ordinalSuffixOf = (i) => {
   }
   return i + 'th';
 };
-
+// Not used
 export function useInterval(callback, delay) {
   // https://overreacted.io/making-setinterval-declarative-with-react-hooks/
   const savedCallback = useRef();
@@ -41,6 +44,19 @@ export function useInterval(callback, delay) {
       return () => clearInterval(id);
     }
   }, [delay]);
+}
+
+export function getApiData(url, setData) {
+  const source = axios.CancelToken.source();
+  axios
+    .get(url, {
+      cancelToken: source.token,
+    })
+    .then((response) => setData(response.data))
+    .catch((err) => {
+      if (err) console.error(err);
+    });
+  return source;
 }
 
 export function createPieceUrl(lastName, opera_id, opera, piece_id, title) {

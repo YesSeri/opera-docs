@@ -11,6 +11,7 @@ import {
   search,
 } from './SearchResultsHelper';
 import { StyledResults } from '../css/styComp';
+import { getApiData } from '../helper/HelperFunctions';
 
 // I have to make three seperate searches. One for each category, composer, opera and piece. Here I define what the options for the searches should be. It doesn't need to be sorted, because I will have to combine the three lists myself into one big, and compare the search scores of the big array to discover which order of matching.
 
@@ -20,9 +21,20 @@ export default function SearchResults({ searchValue }) {
   const [composers, setComposers] = useState(null);
   const [results, setResults] = useState(null);
   useEffect(() => {
-    axios.get('/api/search').then(({ data }) => setPieces(data));
-    axios.get('/api/operas').then(({ data }) => setOperas(data));
-    axios.get('/api/composers').then(({ data }) => setComposers(data));
+    const piecesSource = getApiData(`/api/search/`, setPieces); // Return is an axios cancel token. Used if component gets unmounted before request is completed.
+    const operasSource = getApiData(`/api/operas/`, setOperas); // Return is an axios cancel token. Used if component gets unmounted before request is completed.
+    const composersSource = getApiData(`/api/composers/`, setComposers); // Return is an axios cancel token. Used if component gets unmounted before request is completed.
+    return () => {
+      piecesSource.cancel(
+        'Component was unmounted, axios search request is cancelled.'
+      );
+      operasSource.cancel(
+        'Component was unmounted, axios opera request is cancelled.'
+      );
+      composersSource.cancel(
+        'Component was unmounted, axios composer request is cancelled.'
+      );
+    };
   }, []);
 
   useEffect(() => {
@@ -96,10 +108,10 @@ export default function SearchResults({ searchValue }) {
 
   return (
     <StyledResults>
-        <Row className="topRow">{results ? <TopResult /> : null}</Row>
-        <Row xs={1} sm={2} md={3} className="align-items-center bottomRow">
-          {results ? <OtherResults /> : null}
-        </Row>
+      <Row className="topRow">{results ? <TopResult /> : null}</Row>
+      <Row xs={1} sm={2} md={3} className="align-items-center bottomRow">
+        {results ? <OtherResults /> : null}
+      </Row>
     </StyledResults>
   );
 }

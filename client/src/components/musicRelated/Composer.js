@@ -2,19 +2,17 @@ import React, { useState, useEffect } from 'react';
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
-import axios from 'axios';
 import { createOperaUrl } from '../helper/HelperFunctions';
+import {getApiData} from '../helper/HelperFunctions'
 
 function Composer(props) {
   const [data, setData] = useState('');
   useEffect(() => {
     const { lastName } = props.match.params;
-    axios
-      .get(`/api/composers/${lastName}`)
-      .then((response) => setData(response.data))
-      .catch((err) => {
-        if (err) console.error(err);
-      });
+    const source = getApiData(`/api/composers/${lastName}`, setData) // Return is an axios cancel token. Used if component gets unmounted before request is completed. 
+    return () => {
+      source.cancel('Component was unmounted, axios request is cancelled.');
+    };
   }, [props.match.params]);
 
   const composersOperas = () => {

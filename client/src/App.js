@@ -1,17 +1,9 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Composers from './components/musicRelated/Composers';
 import NavBar from './components/NavBar';
-import Composer from './components/musicRelated/Composer';
-import Operas from './components/musicRelated/Operas';
-import Opera from './components/musicRelated/Opera';
-import Arias from './components/musicRelated/Arias';
-import Piece from './components/musicRelated/Piece';
-import About from './components/About';
-import Search from './components/search/Search';
 import Banner from './components/Banner';
-import { Switch, Route, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import ReactGA from 'react-ga';
 ReactGA.initialize(process.env.REACT_APP_GOOGLE_TRACKING_ID);
 function usePageViews() {
@@ -38,16 +30,6 @@ export default function App() {
       </h1>
       <Banner />
       <NavBar />
-      <Switch>
-        <Route path="/about" exact component={About} />
-        <Route path="/composers/" exact component={Composers} />
-        <Route path="/arias/" exact component={Arias} />
-        <Route path="/operas/" exact component={Operas} />
-        <Route path="/:lastName/:operaId/:pieceIdName" component={Piece} />
-        <Route path="/:lastName/:operaIdName" component={Opera} />
-        <Route path="/:lastName/" component={Composer} />
-        <Route exact path="/" component={Search}></Route>
-      </Switch>
     </div>
   );
 }

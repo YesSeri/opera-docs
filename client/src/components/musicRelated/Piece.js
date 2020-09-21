@@ -1,27 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Frame from '../Frame';
+import {getApiData} from '../helper/HelperFunctions'
 
 function Piece(props) {
   const [data, setData] = useState(null);
-  const [downloadLink, setDownloadlink] = useState(null);
   useEffect(() => {
     const { pieceIdName } = props.match.params;
     const id = pieceIdName.replace(/(^\d+)(.+$)/i, '$1');
-    axios
-      .get(`/api/pieces/${id}`)
-      .then((response) => {
-        setDownloadlink(
-          `https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${response.data.file_title}`
-        );
-        return response;
-      })
-      .then((response) => setData(response.data))
-      .catch((err) => {
-        if (err) console.error(err);
-      });
+    const source = getApiData(`/api/pieces/${id}`, setData)
+    return () => {
+      source.cancel('Component was unmounted, axios request is cancelled.');
+    };
   }, [props.match.params]);
 
   const PieceInfo = () => {
@@ -59,7 +50,7 @@ function Piece(props) {
   return (
     <>
       {data ? PieceInfo() : null}
-      <Frame downloadLink={downloadLink} />
+      {data ? <Frame downloadLink={`https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${data.file_title}`} />: null}
       <Col>
       </Col>
     </>

@@ -5,18 +5,15 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { createOperaUrl } from '../helper/HelperFunctions';
 // import Row from 'react-bootstrap/Row';
-import axios from 'axios';
+import { getApiData } from '../helper/HelperFunctions';
 
 function Operas() {
   const [data, setData] = useState(null);
   useEffect(() => {
-    axios
-      .get(`/api/operas/`)
-      .then((response) => setData(response.data))
-      .catch((err) => {
-        if (err) console.error(err);
-      });
-    return () => {};
+    const source = getApiData(`/api/operas/`, setData); // Return is an axios cancel token. Used if component gets unmounted before request is completed.
+    return () => {
+      source.cancel('Component was unmounted, axios request is cancelled.');
+    };
   }, []);
 
   const operaPieces = () => {
@@ -35,7 +32,7 @@ function Operas() {
   };
   return (
     <>
-      <Container >{data ? operaPieces() : null}</Container>
+      <Container>{data ? operaPieces() : null}</Container>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { getApiData } from '../helper/HelperFunctions';
 
 function Opera(props) {
   const [data, setData] = useState(null);
@@ -8,13 +8,10 @@ function Opera(props) {
   useEffect(() => {
     const { operaIdName } = props.match.params;
     const id = operaIdName.replace(/(^\d+)(.+$)/i, '$1');
-    axios
-      .get(`/api/operas/${id}`)
-      .then((response) => setData(response.data))
-      .catch((err) => {
-        if (err) console.error(err);
-      });
-    return () => {};
+    const source = getApiData(`/api/operas/${id}`, setData); // Return is an axios cancel token. Used if component gets unmounted before request is completed.
+    return () => {
+      source.cancel('Component was unmounted, axios request is cancelled.');
+    };
   }, [props.match.params]);
 
   const operaPieces = () => {
