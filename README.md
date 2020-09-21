@@ -16,6 +16,6 @@ Another concern: It might be worth restructuring the site to use Redux. However,
 
 A third thing that I might have to look over. The PDF viewer works great, but when loading really big files, 150 pages and more, it cant really render them well on a phone and I have to scorll a lot up and down to get it to work. Maybe I should use the googlePDFViewer for the big files, even though it is quite buggy, because at least it is better at rendering the things correctly. However then I need to reinsert all the logic for reloading it every 3 seconds if the PDF doesnt show up. Quite an ugly solution. 
 
-One more very important thing to work on is the looks. I need to look into how to do some stylish css. It would be awesome if the site could look really crisp and clean. Right now it is a bit of a mixed bag. 
+One more very important thing to work on is the looks. I need to look into how to do some stylish css. It would be awesome if the site could look really crisp and clean. Right now it is a bit of a mixed bag.
 
 const googleUrlPDF = `https://drive.google.com/viewerng/viewer?embedded=true&url=https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${filename}`

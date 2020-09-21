@@ -24,7 +24,7 @@ function Composers() {
       const url = createComposerUrl(last_name)
         return (
           <Row key={id}>
-            <Col md={{span: 4, offset: 4}} style={{backgroundColor: "#eee"}}>
+            <Col md={{span: 4, offset: 4}}>
               <Nav.Link href={url}>{`${last_name}, ${first_name}`}</Nav.Link >
             </Col>
           </Row>

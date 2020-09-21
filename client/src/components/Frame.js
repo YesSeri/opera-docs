@@ -32,9 +32,17 @@ export default function Frame({ downloadLink }) {
                 onLoad={() => setLoading(false)}
                 src={`https://drive.google.com/viewerng/viewer?embedded=true&url=${downloadLink}`}
               ></iframe>
-
-              <a href={downloadLink}>PDF could not be loaded. Please download score here.</a>
             </object>
+            {loading ? 
+            
+            <Col>
+              <a href={downloadLink}>Download here</a> if your browser doesn't
+              support in browser PDF-viewer
+            </Col>
+            :
+            null
+          
+          }
           </Col>
         </Row>
       </Container>
