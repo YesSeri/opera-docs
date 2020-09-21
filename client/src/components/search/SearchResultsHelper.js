@@ -2,6 +2,7 @@ import Fuse from 'fuse.js';
 import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
+import diacritics from 'diacritics';
 import {
   createPieceUrl,
   createComposerUrl,
@@ -50,7 +51,11 @@ export function search(data, resultType, optionsType, searchValue) {
     return o;
   });
 }
-export const optionsPieces = {
+function getFn() {
+  return diacritics.remove(Fuse.config.getFn.apply(this, arguments));
+}
+export const optionsPieces = { // The getFn option, is that it should remove diacritics, when searching.
+  getFn: getFn,
   includeScore: true,
   shouldSort: false,
   location: true,
