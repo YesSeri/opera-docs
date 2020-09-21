@@ -2,12 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
 import Frame from '../Frame';
-import {
-  indeterminateArticleOf,
-  ordinalSuffixOf,
-} from '../helper/HelperFunctions';
 
 function Piece(props) {
   const [data, setData] = useState(null);
@@ -33,18 +28,16 @@ function Piece(props) {
     const {
       title,
       opera,
-      description,
       type,
       first_name,
       last_name,
-      placement,
     } = data;
     let renderPiece = '';
     if (title) {
       renderPiece = (
         <>
           <h2 style={{paddingTop: '20px'}}>{title}</h2>
-          <Row style={{paddingTop: '30px'}}>
+          <Row xs={1} md={3} style={{paddingTop: '30px'}}>
             <Col>
               <b>Type: </b> {type.charAt(0).toUpperCase() + type.slice(1)}
             </Col>

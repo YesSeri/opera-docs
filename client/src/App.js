@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Composers from './components/musicRelated/Composers';
 
-import Container from 'react-bootstrap/Container';
 import NavBar from './components/NavBar';
 import Composer from './components/musicRelated/Composer';
 import Operas from './components/musicRelated/Operas';
@@ -14,8 +13,14 @@ import About from './components/About';
 import Search from './components/search/Search';
 import Banner from './components/Banner';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ReactGA from 'react-ga'
 
 export default function App() {
+  useEffect(() => {
+    ReactGA.initialize(process.env.REACT_APP_GOOGLE_TRACKING_ID);
+    ReactGA.pageview(window.location.pathname + window.location.search)
+    console.log(window.location.pathname + window.location.search)
+  }, [])
   return (
     <Router>
       <div className='siteContainer'>

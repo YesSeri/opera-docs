@@ -29,20 +29,17 @@ export default function Frame({ downloadLink }) {
               type="application/pdf"
             >
               <iframe
+                title="pdfFrame"
                 onLoad={() => setLoading(false)}
                 src={`https://drive.google.com/viewerng/viewer?embedded=true&url=${downloadLink}`}
               ></iframe>
             </object>
-            {loading ? 
-            
-            <Col>
-              <a href={downloadLink}>Download here</a> if your browser doesn't
-              support in browser PDF-viewer
-            </Col>
-            :
-            null
-          
-          }
+            {loading ? (
+              <Col>
+                <a href={downloadLink}>Download here</a> if your browser doesn't
+                support in browser PDF-viewer
+              </Col>
+            ) : null}
           </Col>
         </Row>
       </Container>

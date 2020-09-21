@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
 import {
   optionsPieces,
   optionsOperas,
