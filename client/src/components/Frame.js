@@ -34,14 +34,16 @@ export default function Frame({ downloadLink }) {
                 src={`https://drive.google.com/viewerng/viewer?embedded=true&url=${downloadLink}`}
               ></iframe>
             </object>
-            {loading ? (
-              <Col>
-                <a href={downloadLink}>Download here</a> if your browser doesn't
-                support in browser PDF-viewer
-              </Col>
-            ) : null}
           </Col>
         </Row>
+        {/* <Row>
+          {loading ? (
+            <Col>
+              <a href={downloadLink}>Download here</a> if your browser doesn't
+                support in browser PDF-viewer
+            </Col>
+          ) : null}
+        </Row> */}
       </Container>
     </StyledIframe>
   );
