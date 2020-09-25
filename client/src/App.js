@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import Banner from './components/Banner';
 import { useLocation } from 'react-router-dom';
 import ReactGA from 'react-ga';
@@ -16,6 +17,7 @@ function usePageViews() {
 export default function App() {
   usePageViews();
   return (
+    <div id="wrapper">
     <div className="siteContainer">
       <h1
         style={{
@@ -31,5 +33,7 @@ export default function App() {
       <Banner />
       <NavBar />
     </div>
+      <Footer />
+</div>
   );
 }

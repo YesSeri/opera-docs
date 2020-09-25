@@ -28,7 +28,7 @@ function Piece(props) {
       renderPiece = (
         <>
           <h2 style={{paddingTop: '20px'}}>{title}</h2>
-          <Row xs={1} md={3} style={{paddingTop: '30px'}}>
+          <Row xs={1} md={4} style={{paddingTop: '30px'}}>
             <Col>
               <b>Type: </b> {type.charAt(0).toUpperCase() + type.slice(1)}
             </Col>
@@ -39,6 +39,10 @@ function Piece(props) {
             <Col>
               <b> Composer: </b>
               {`${last_name}, ${first_name}`}
+            </Col>
+            <Col>
+              <b> Link: </b>
+              {data ? <a href={`https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${data.file_title}`}>Find here</a> : null}
             </Col>
           </Row>
         </>

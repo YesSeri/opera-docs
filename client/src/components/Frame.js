@@ -23,17 +23,17 @@ export default function Frame({ downloadLink }) {
             className="frameContainer"
             xl={{ span: 10, offset: 1 }}
           >
-            {/* <object
+            <object
               onLoad={() => setLoading(false)}
               data={downloadLink}
               type="application/pdf"
-            > */}
+            >
               <iframe
                 title="pdfFrame"
                 onLoad={() => setLoading(false)}
                 src={`https://drive.google.com/viewerng/viewer?embedded=true&url=${downloadLink}`}
               ></iframe>
-            {/* </object> */}
+            </object>
             {loading ? (
               <Col>
                 <a href={downloadLink}>Download here</a> if your browser doesn't

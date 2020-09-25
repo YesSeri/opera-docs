@@ -1,25 +1,4 @@
 import styled from 'styled-components';
-export const LinkGrid = styled.div`
-  .linkContainer > div {
-    display: grid;
-    grid-template-columns: 3fr 1fr 2fr;
-    grid-column-gap: 0.5em;
-    justify-content: space-around;
-  }
-  .linkContainer {
-    visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
-    background-color: #fff;
-    display: grid;
-    grid-row-gap: 0.5em;
-    margin: auto;
-    max-width: 40%;
-    border-radius: 20px;
-    padding: 10px;
-    @media (max-width: 768px) {
-      max-width: 100%;
-    }
-  }
-`;
 
 export const StyledResults = styled.div`
   .topResult {
@@ -41,11 +20,21 @@ export const StyledResults = styled.div`
   }
 `;
 
+export const StyledFooter = styled.div`
+  #footerContainer{
+    bottom: 0;
+    width: 100%;
+  }
+  #closeFooter{
+    cursor: pointer;
+  }
+
+`
 export const StyledNavbar = styled.div`
   a {
     font-size: 1.3rem;
     color: #000;
-    background-color: white;
+    background-color: white; 
   }
   .active{
     background-color:#111;
