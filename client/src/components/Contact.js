@@ -10,6 +10,7 @@ export default function Contact() {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [text, setText] = useState('');
+  const [emailSent, setEmailSent] = useState(false);
 
   const handleEmailChange = (e) => {
     console.log(e.target.value);
@@ -34,10 +35,11 @@ export default function Contact() {
         text,
       },
     }).then((response) => {
-        console.log(response)
+      console.log(response);
       if (response.status === 200) {
         console.log('Message Sent.');
-      } else{
+        setEmailSent(true);
+      } else {
         console.log('Message failed to send.');
       }
     });
@@ -47,24 +49,24 @@ export default function Contact() {
       <Form onSubmit={handleSubmit}>
         <Row xs={1} md={2}>
           <Col>
-          <Form.Group controlId="emailInput">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="your@email.com"
-              onChange={handleEmailChange}
-            />
-          </Form.Group>
+            <Form.Group controlId="emailInput">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="your@email.com"
+                onChange={handleEmailChange}
+              />
+            </Form.Group>
           </Col>
           <Col>
-          <Form.Group controlId="subjectInput">
-            <Form.Label>Subject</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Subject"
-              onChange={handleSubjectChange}
-            />
-          </Form.Group>
+            <Form.Group controlId="subjectInput">
+              <Form.Label>Subject</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Subject"
+                onChange={handleSubjectChange}
+              />
+            </Form.Group>
           </Col>
         </Row>
         <Row md={1}>
@@ -83,6 +85,15 @@ export default function Contact() {
           Submit
         </Button>
       </Form>
+      <Row>
+        <Col
+          style={{
+            display: emailSent ? 'flex' : 'none',
+          }}
+        >
+          Your message has been sent
+        </Col>
+      </Row>
     </Container>
   );
 }
