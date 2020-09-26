@@ -18,4 +18,6 @@ A third thing that I might have to look over. The PDF viewer works great, but wh
 
 One more very important thing to work on is the looks. I need to look into how to do some stylish css. It would be awesome if the site could look really crisp and clean. Right now it is a bit of a mixed bag.
 
+Need to add a success message when succesfully submitting mail. 
+
 const googleUrlPDF = `https://drive.google.com/viewerng/viewer?embedded=true&url=https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${filename}`

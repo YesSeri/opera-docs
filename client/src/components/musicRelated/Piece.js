@@ -42,7 +42,7 @@ function Piece(props) {
             </Col>
             <Col>
               <b> Link: </b>
-              {data ? <a href={`https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${data.file_title}`}>Find here</a> : null}
+              {data ? <a href={`https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${data.file_title}`}>here</a> : null}
             </Col>
           </Row>
         </>
