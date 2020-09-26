@@ -4,24 +4,20 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Toast from 'react-bootstrap/Toast';
 import axios from 'axios';
-export default function Contact() {
+
+export default function Contact({ setEmailSent }) { // All the logic for sending email is here. If succesfully sent, then send true to SuccessMessage. 
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [text, setText] = useState('');
-  const [emailSent, setEmailSent] = useState(false);
 
   const handleEmailChange = (e) => {
-    console.log(e.target.value);
     setEmail(e.target.value);
   };
   const handleSubjectChange = (e) => {
-    console.log(e.target.value);
     setSubject(e.target.value);
   };
   const handleTextChange = (e) => {
-    console.log(e.target.value);
     setText(e.target.value);
   };
   const handleSubmit = (event) => {
@@ -35,12 +31,9 @@ export default function Contact() {
         text,
       },
     }).then((response) => {
-      console.log(response);
       if (response.status === 200) {
-        console.log('Message Sent.');
         setEmailSent(true);
       } else {
-        console.log('Message failed to send.');
       }
     });
   };
@@ -85,15 +78,6 @@ export default function Contact() {
           Submit
         </Button>
       </Form>
-      <Row>
-        <Col
-          style={{
-            display: emailSent ? 'flex' : 'none',
-          }}
-        >
-          Your message has been sent
-        </Col>
-      </Row>
     </Container>
   );
 }

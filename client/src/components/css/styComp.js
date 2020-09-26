@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'; // Styled components is used to style css in react. A classname used in one place only gets used in that place and its subcomponents.
 
 export const StyledResults = styled.div`
   .topResult {
@@ -50,14 +50,6 @@ export const StyledNavbar = styled.div`
 }
 `;
 
-export const StyledHeading = styled.div`
-  div {
-    background-color: 'black';
-    color: 'white';
-    border-bottom-left-radius: '20px';
-    border-bottom-right-radius: '20px';
-  }
-`;
 export const StyledIframe = styled.div`
   object {
     height: 100vh;
@@ -91,14 +83,5 @@ export const StyledBanner = styled.div`
     margin: 0 auto;
     align-content: center;
     font-size: 1.1rem;
-  }
-`;
-
-export const StyledImage = styled.div`
-  img {
-    border-radius: '11px';
-    width: '100%';
-    height: 'auto';
-    max-width: '36rem';
   }
 `;
