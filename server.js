@@ -11,6 +11,7 @@ const piecesRoutes = require('./routes/piecesRoutes.js');
 const composersRoutes = require('./routes/composersRoutes.js');
 const operaRoutes = require('./routes/operaRoutes.js');
 const searchRoutes = require('./routes/searchRoutes.js');
+const sendMailRoutes = require('./routes/sendMailRoutes.js');
 
 if (process.env.NODE_ENV !== 'production') { // Only enable cors in development. For security this is better.
   app.use(cors());
@@ -20,6 +21,7 @@ app.use('/api/pieces', piecesRoutes); // Each of these routes are used to find s
 app.use('/api/composers', composersRoutes);
 app.use('/api/operas', operaRoutes);
 app.use('/api/search', searchRoutes);
+app.use('/sendmail', sendMailRoutes);
 
 if (process.env.NODE_ENV === 'production') { // If this is in production, then we need to use react as a static thing, instead of in the client folder. 
   const folder = path.join(__dirname, 'client', 'build');
