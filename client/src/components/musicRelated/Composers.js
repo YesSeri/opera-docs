@@ -32,9 +32,7 @@ function Composers() {
   };
 
   return (
-    <>
       <Container>{renderComposers()}</Container>
-    </>
   );
 }
 

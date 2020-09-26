@@ -51,17 +51,18 @@ export function search(data, resultType, optionsType, searchValue) {
     return o;
   });
 }
-function getFn() {
+function getFn() { 
   return diacritics.remove(Fuse.config.getFn.apply(this, arguments));
 }
 export const optionsPieces = { // The getFn option, is that it should remove diacritics, when searching.
-  getFn: getFn,
+  getFn,
   includeScore: true,
   shouldSort: false,
   location: true,
   keys: ['title'],
 };
 export const optionsOperas = {
+  getFn,
   includeScore: true,
   shouldSort: false,
   location: true,
@@ -69,6 +70,7 @@ export const optionsOperas = {
 };
 
 export const optionsComposers = {
+  getFn,
   includeScore: true,
   shouldSort: false,
   location: true,
