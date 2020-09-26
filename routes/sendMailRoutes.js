@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-var nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer'); // This doesn't work with heroku, but works on other platforms. 
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
