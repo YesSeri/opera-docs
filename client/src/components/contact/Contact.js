@@ -4,12 +4,12 @@ import SuccessMessage from './SuccessMessage';
 import ContactForm from './ContactForm';
 
 export default function Contact() {
-  const [emailSent, setEmailSent] = useState(false);
+  const [emailSentStatus, setEmailSentStatus] = useState(null); // Three values. Either success, failure or null. Null is before attempt has been made.
 
   return (
     <Container>
-      <ContactForm setEmailSent={setEmailSent} />
-      <SuccessMessage emailSent={emailSent} />
+      <ContactForm setEmailSentStatus={setEmailSentStatus} />
+      <SuccessMessage emailSentStatus={emailSentStatus} />
     </Container>
   );
 }

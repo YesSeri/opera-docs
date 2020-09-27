@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 
-export default function Contact({ setEmailSent }) { // All the logic for sending email is here. If succesfully sent, then send true to SuccessMessage. 
+export default function Contact({ setEmailSentStatus }) { // All the logic for sending email is here. If succesfully sent, then send true to SuccessMessage. 
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [text, setText] = useState('');
@@ -32,8 +32,9 @@ export default function Contact({ setEmailSent }) { // All the logic for sending
       },
     }).then((response) => {
       if (response.status === 200) {
-        setEmailSent(true);
+        setEmailSentStatus('success');
       } else {
+        setEmailSentStatus('failure')
       }
     });
   };
