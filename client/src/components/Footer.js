@@ -12,33 +12,31 @@ function Footer() {
     setVisible(false);
   };
   return (
-    <>
-      <StyledFooter>
-        <Navbar
-          bg="light"
-          expand="sm"
-          style={{ display: visible ? 'flex' : 'none',  }}
-        >
-          <Nav className="mx-auto">
-            <Row>
-              <Col>
-                <NavLink exact to="/contact">
-                  Contact
+    <div className='footerContainer'>
+      <Navbar
+        bg="light"
+        expand="sm"
+        style={{ display: visible ? 'flex' : 'none', }}
+      >
+        <Nav className="mx-auto">
+          <Row>
+            <Col>
+              <NavLink exact to="/contact">
+                Contact
                 </NavLink>
-              </Col>
-              <Col>
-                <NavLink exact activeClassName="active" to="/about">
-                  About
+            </Col>
+            <Col>
+              <NavLink exact activeClassName="active" to="/about">
+                About
                 </NavLink>
-              </Col>
-            </Row>
-          </Nav>
-          <div id="closeFooter" onClick={handleClick}>
-            &#10006;
+            </Col>
+          </Row>
+        </Nav>
+        <div className="closeFooter" onClick={handleClick}>
+          &#10006;
           </div>
-        </Navbar>
-      </StyledFooter>
-    </>
+      </Navbar>
+    </div>
   );
 }
 export default Footer;

@@ -32,7 +32,7 @@ function Composers() {
   };
 
   return (
-      <Container>{renderComposers()}</Container>
+      <Container className='musicContainer'>{renderComposers()}</Container>
   );
 }
 

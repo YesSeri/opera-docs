@@ -52,10 +52,10 @@ function Piece(props) {
   };
 
   return (
-    <>
+    <div className='musicContainer'>
       {data ? PieceInfo() : null}
       {data ? <Frame downloadLink={`https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${data.file_title}`} />: null}
-    </>
+    </div>
   );
 }
 

@@ -39,10 +39,10 @@ function Opera(props) {
     return pieces;
   };
   return (
-    <>
+    <div className='musicContainer'>
       {data ? <h1>{data[0].name}</h1> : data === null ? '' : 'Nothing here'}
       {data ? operaPieces() : null}
-    </>
+    </div>
   );
 }
 

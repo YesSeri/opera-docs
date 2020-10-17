@@ -32,7 +32,7 @@ function Operas() {
   };
   return (
     <>
-      <Container>{data ? operaPieces() : null}</Container>
+      <Container className='musicContainer'>{data ? operaPieces() : null}</Container>
     </>
   );
 }

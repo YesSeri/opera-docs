@@ -4,12 +4,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
 
-import { StyledNavbar } from './css/styComp';
-
 function NavBar() {
   return (
-    <>
-      <StyledNavbar>
+    <div className='navContainer'>
         <Navbar bg="light" expand="sm">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -38,8 +35,7 @@ function NavBar() {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      </StyledNavbar>
-    </>
+    </div>
   );
 }
 

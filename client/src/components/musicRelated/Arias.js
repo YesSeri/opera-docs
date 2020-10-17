@@ -9,6 +9,7 @@ import {
   createOperaUrl,
   getApiData,
 } from '../helper/HelperFunctions';
+import './music.css'
 
 function Arias() {
   const [data, setData] = useState(null);
@@ -66,9 +67,9 @@ function Arias() {
     return arias;
   };
   return (
-    <>
+    <div className='musicContainer'>
       <Container>{data ? AriasInfo() : null}</Container>
-    </>
+      </div>
   );
 }
 

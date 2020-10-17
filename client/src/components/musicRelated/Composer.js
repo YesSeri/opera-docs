@@ -49,7 +49,7 @@ function Composer(props) {
     );
   };
   return (
-    <div>
+    <div className='musicContainer'>
       <h1>
         {data && data[0] !== undefined
           ? `${data[0].first_name} ${data[0].last_name}`

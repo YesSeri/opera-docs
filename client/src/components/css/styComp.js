@@ -32,22 +32,20 @@ export const StyledFooter = styled.div`
 `
 export const StyledNavbar = styled.div`
   a {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: #000;
-    background-color: white; 
+    padding: 5px 8px;
+    border-radius: 10px;
+  }
+  a:not(.active):hover{
+    background-color:#444;
+    color:white;
   }
   .active{
     background-color:#111;
     color:white;
-    padding: 5px 8px;
-    border-radius: 10px;
-}
-.active:hover{
-    background-color:#333;
-    color:white;
-    padding: 5px 8px;
-    border-radius: 10px;
-}
+  }
+
 `;
 
 export const StyledIframe = styled.div`
