@@ -1,0 +1,23 @@
+.bannerContainer {
+  justify-content: center;
+  background-color: #6a1a1b;
+  color: #fff;
+  padding:20px;
+  margin-bottom:10px;
+}
+.centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.topRow {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+.bottomRow {
+  max-width: 1000px;
+  margin: 0 auto;
+  align-content: center;
+  font-size: 1.1rem;
+}

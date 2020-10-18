@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './components/navbarFooter.css'
 import './components/musicRelated/music.css'
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';

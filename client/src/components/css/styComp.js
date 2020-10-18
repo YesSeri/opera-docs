@@ -20,34 +20,6 @@ export const StyledResults = styled.div`
   }
 `;
 
-export const StyledFooter = styled.div`
-  #footerContainer{
-    bottom: 0;
-    width: 100%;
-  }
-  #closeFooter{
-    cursor: pointer;
-  }
-
-`
-export const StyledNavbar = styled.div`
-  a {
-    font-size: 1.5rem;
-    color: #000;
-    padding: 5px 8px;
-    border-radius: 10px;
-  }
-  a:not(.active):hover{
-    background-color:#444;
-    color:white;
-  }
-  .active{
-    background-color:#111;
-    color:white;
-  }
-
-`;
-
 export const StyledIframe = styled.div`
   object {
     height: 100vh;
@@ -56,30 +28,5 @@ export const StyledIframe = styled.div`
   iframe {
     height: 100vh;
     width: 100%;
-  }
-`;
-export const StyledBanner = styled.div`
-  .bannerContainer {
-    justify-content: center;
-    background-color: #6a1a1b;
-    color: #fff;
-    padding:20px;
-    margin-bottom:10px;
-  }
-  .centered {
-    float: none;
-    margin: 0 auto;
-  }
-
-  .topRow {
-    max-width: 1000px;
-    margin: 0 auto;
-    font-size: 1.5rem;
-  }
-  .bottomRow {
-    max-width: 1000px;
-    margin: 0 auto;
-    align-content: center;
-    font-size: 1.1rem;
   }
 `;
