@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { createOperaUrl } from '../helper/HelperFunctions';
-// import Row from 'react-bootstrap/Row';
+import { Helmet } from 'react-helmet'
 import { getApiData } from '../helper/HelperFunctions';
 
 function Operas() {
@@ -32,6 +32,11 @@ function Operas() {
   };
   return (
     <>
+      <Helmet>
+        <title>
+          A list of all operas at OperaDocs
+        </title>
+      </Helmet>
       <Container className='musicContainer'>{data ? operaPieces() : null}</Container>
     </>
   );

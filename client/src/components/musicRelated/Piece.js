@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Frame from '../Frame';
-import {getApiData} from '../helper/HelperFunctions'
+import { getApiData } from '../helper/HelperFunctions'
+import { Helmet } from 'react-helmet'
 
 function Piece(props) {
   const [data, setData] = useState(null);
@@ -27,8 +28,13 @@ function Piece(props) {
     if (title) {
       renderPiece = (
         <>
-          <h2 style={{paddingTop: '20px'}}>{title}</h2>
-          <Row xs={1} md={4} style={{paddingTop: '30px'}}>
+          <Helmet>
+            <title>
+              The score for {title} from {opera} by {`${last_name}, ${first_name}`}
+            </title>
+          </Helmet>
+          <h2 style={{ paddingTop: '20px' }}>{title}</h2>
+          <Row xs={1} md={4} style={{ paddingTop: '30px' }}>
             <Col>
               <b>Type: </b> {type.charAt(0).toUpperCase() + type.slice(1)}
             </Col>
@@ -54,7 +60,7 @@ function Piece(props) {
   return (
     <div className='musicContainer'>
       {data ? PieceInfo() : null}
-      {data ? <Frame downloadLink={`https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${data.file_title}`} />: null}
+      {data ? <Frame downloadLink={`https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${data.file_title}`} /> : null}
     </div>
   );
 }

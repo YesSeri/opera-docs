@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
+import { Helmet } from 'react-helmet'
 import { createOperaUrl } from '../helper/HelperFunctions';
 import {getApiData} from '../helper/HelperFunctions'
 

@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { StyledIframe } from './css/styComp';
-var Spinner = require('react-spinkit');
+const Spinner = require('react-spinkit');
 
 export default function Frame({ downloadLink }) {
   const [loading, setLoading] = useState(true);

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getApiData } from '../helper/HelperFunctions';
+import { Helmet } from 'react-helmet'
 
 function Opera(props) {
   const [data, setData] = useState(null);
   const { pathname } = props.location;
+  const opera = data ? data[0].name : '';
   useEffect(() => {
     const { operaIdName } = props.match.params;
     const id = operaIdName.replace(/(^\d+)(.+$)/i, '$1');
@@ -39,8 +41,14 @@ function Opera(props) {
     return pieces;
   };
   return (
+    
     <div className='musicContainer'>
-      {data ? <h1>{data[0].name}</h1> : data === null ? '' : 'Nothing here'}
+      <Helmet>
+        <title>
+          All songs and recitatives from the opera {opera}
+        </title>
+      </Helmet>
+      {data ? <h1>{opera}</h1> : data === null ? '' : 'Nothing here'}
       {data ? operaPieces() : null}
     </div>
   );
