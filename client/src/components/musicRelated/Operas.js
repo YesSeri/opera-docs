@@ -4,7 +4,6 @@ import Row from 'react-bootstrap/Row';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { createOperaUrl } from '../helper/HelperFunctions';
-import { Helmet } from 'react-helmet'
 import { getApiData } from '../helper/HelperFunctions';
 
 function Operas() {
@@ -17,28 +16,21 @@ function Operas() {
   }, []);
 
   const operaPieces = () => {
-    const operas = data.map(({ last_name, opera_id, opera }) => {
+    return data.map(({ last_name, opera_id, opera }) => {
       const url = createOperaUrl(last_name, opera_id, opera);
-
       return (
-        <Row key={opera_id}>
-          <Col>
-            <Nav.Link href={url}>{`${opera}`}</Nav.Link>
-          </Col>
-        </Row>
+        <Col key={opera_id}>
+          <Nav.Link href={url}>{`${opera}`}</Nav.Link>
+        </Col>
       );
     });
-    return operas;
   };
   return (
-    <>
-      <Helmet>
-        <title>
-          A list of all operas at OperaDocs
-        </title>
-      </Helmet>
-      <Container className='musicContainer'>{data ? operaPieces() : null}</Container>
-    </>
+    <Container className='musicContainer'>
+      <Row xs={1} md={2} lg={3}>
+        {data ? operaPieces() : null}
+      </Row>
+    </Container>
   );
 }
 

@@ -69,8 +69,13 @@ function Arias() {
   };
   return (
     <div className='musicContainer'>
+      <Helmet>
+        <title>
+          All Arias currently available at OperaDocs.com
+        </title>
+      </Helmet>
       <Container>{data ? AriasInfo() : null}</Container>
-      </div>
+    </div>
   );
 }
 

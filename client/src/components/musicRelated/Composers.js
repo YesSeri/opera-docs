@@ -33,7 +33,14 @@ function Composers() {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>
+          All Composers at OperaDocs.com
+        </title>
+      </Helmet>
       <Container className='musicContainer'>{renderComposers()}</Container>
+    </>
   );
 }
 

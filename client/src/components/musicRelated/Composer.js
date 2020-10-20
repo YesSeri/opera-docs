@@ -30,9 +30,14 @@ function Composer(props) {
 
   const composerInfo = () => {
     if (data[0] === undefined) return <Col>Nothing found</Col>;
-    const { last_name } = data[0];
+    const { last_name, first_name } = data[0];
     return (
       <Container fluid>
+        <Helmet>
+            <title>
+            All Operas by the {`${first_name} ${last_name}`}
+            </title>
+        </Helmet>
         <Col xs={12}>
           <img
             alt={`pictureOf${last_name}`}

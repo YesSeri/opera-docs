@@ -4,7 +4,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { NavLink } from 'react-router-dom';
-import { StyledFooter } from './css/styComp';
 
 function Footer() {
   const [visible, setVisible] = useState(true);
