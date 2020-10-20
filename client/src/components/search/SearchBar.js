@@ -7,7 +7,7 @@ import diacritics from 'diacritics';
 const SearchBar = ({ setSearchValue }) => {
   // Parent component of SearchBar and SearchResults is Search
   return (
-    <Container>
+    <Container style={{paddingTop: '10px'}}>
       <Col lg={{ span: 6, offset: 3 }}>
         <Form>
           <Form.Group controlId="searchBar">

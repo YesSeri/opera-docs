@@ -11,7 +11,7 @@ function Footer() {
     setVisible(false);
   };
   return (
-    <div className='footerContainer'>
+    <div className='navFooterContainer'>
       <Navbar
         bg="light"
         expand="sm"
@@ -20,20 +20,20 @@ function Footer() {
         <Nav className="mx-auto">
           <Row>
             <Col>
-              <NavLink exact to="/contact">
+              <NavLink exact activeClassName="active" to="/contact">
                 Contact
-                </NavLink>
+              </NavLink>
             </Col>
             <Col>
               <NavLink exact activeClassName="active" to="/about">
                 About
-                </NavLink>
+              </NavLink>
             </Col>
           </Row>
         </Nav>
         <div className="closeFooter" onClick={handleClick}>
           &#10006;
-          </div>
+        </div>
       </Navbar>
     </div>
   );

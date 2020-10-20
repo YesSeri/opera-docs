@@ -28,33 +28,33 @@ export default function App() {
   usePageViews();
   return (
     <div id="wrapper">
-    <div className="siteContainer">
-      <h1
-        style={{
-          fontSize: '4em',
-          backgroundColor: '#111',
-          color: 'white',
-          borderBottomLeftRadius: '20px',
-          borderBottomRightRadius: '20px',
-        }}
-      >
-        mysqldocs
+      <div className="siteContainer">
+        <h1
+          style={{
+            fontSize: '4em',
+            backgroundColor: '#111',
+            color: 'white',
+            borderBottomLeftRadius: '20px',
+            borderBottomRightRadius: '20px',
+          }}
+        >
+          mysqldocs
       </h1>
-      <Banner />
-      <NavBar />
-      <Switch>
-        <Route path="/about" exact component={About} />
-        <Route path="/contact" exact component={Contact} />
-        <Route path="/composers" exact component={Composers} />
-        <Route path="/arias" exact component={Arias} />
-        <Route path="/operas" exact component={Operas} />
-        <Route path="/:lastName/:operaId/:pieceIdName" component={Piece} />
-        <Route path="/:lastName/:operaIdName" component={Opera} />
-        <Route path="/:lastName" component={Composer} />
-        <Route exact path="/" component={Search}></Route>
-      </Switch>
-    </div>
+        <Banner />
+        <NavBar />
+        <Switch>
+          <Route path="/about" exact component={About} />
+          <Route path="/contact" exact component={Contact} />
+          <Route path="/composers" exact component={Composers} />
+          <Route path="/arias" exact component={Arias} />
+          <Route path="/operas" exact component={Operas} />
+          <Route path="/:lastName/:operaId/:pieceIdName" component={Piece} />
+          <Route path="/:lastName/:operaIdName" component={Opera} />
+          <Route path="/:lastName" component={Composer} />
+          <Route exact path="/" component={Search}></Route>
+        </Switch>
+      </div>
       <Footer />
-</div>
+    </div>
   );
 }

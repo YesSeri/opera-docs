@@ -7,7 +7,7 @@ export default function Contact() {
   const [emailSentStatus, setEmailSentStatus] = useState(null); // Three values. Either success, failure or null. Null is before attempt has been made.
 
   return (
-    <Container>
+    <Container style={{marginTop: '10px'}}>
       <ContactForm setEmailSentStatus={setEmailSentStatus} />
       <SuccessMessage emailSentStatus={emailSentStatus} />
     </Container>

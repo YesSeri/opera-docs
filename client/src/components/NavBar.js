@@ -7,7 +7,7 @@ import './navbarFooter.css'
 
 function NavBar() {
   return (
-    <div className='navContainer'>
+    <div className='navFooterContainer topNavContainer'>
         <Navbar bg="light" expand="sm">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
