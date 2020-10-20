@@ -1,11 +1,11 @@
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
+require('dotenv').config();
 
 const express = require('express');
 const path = require('path');
-const app = express();
 const cors = require('cors');
+const compression = require('compression')
+
+const app = express();
 
 const piecesRoutes = require('./routes/piecesRoutes.js');
 const composersRoutes = require('./routes/composersRoutes.js');
@@ -16,6 +16,8 @@ const sendMailRoutes = require('./routes/sendMailRoutes.js');
 if (process.env.NODE_ENV !== 'production') { // Only enable cors in development. For security this is better.
   app.use(cors());
 }
+
+app.use(compression());
 
 app.use('/api/pieces', piecesRoutes); // Each of these routes are used to find stuff for the client. The client connects locally to these.
 app.use('/api/composers', composersRoutes);

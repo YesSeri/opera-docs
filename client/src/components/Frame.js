@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { StyledIframe } from './css/styComp';
+import './frame.css'
 const Spinner = require('react-spinkit');
 
 export default function Frame({ downloadLink }) {
   const [loading, setLoading] = useState(true);
 
   return (
-    <StyledIframe>
+    <div className='iframeContainer'>
       <Container fluid>
         <Row
           style={{ visibility: loading ? 'visible' : 'hidden' }}
@@ -36,15 +36,7 @@ export default function Frame({ downloadLink }) {
             </object>
           </Col>
         </Row>
-        {/* <Row>
-          {loading ? (
-            <Col>
-              <a href={downloadLink}>Download here</a> if your browser doesn't
-                support in browser PDF-viewer
-            </Col>
-          ) : null}
-        </Row> */}
       </Container>
-    </StyledIframe>
+    </div>
   );
 }

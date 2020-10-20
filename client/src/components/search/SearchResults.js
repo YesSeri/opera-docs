@@ -5,10 +5,10 @@ import {
   optionsComposers,
   search,
 } from './SearchResultsHelper';
-import { StyledResults } from '../css/styComp';
 import { getApiData } from '../helper/HelperFunctions';
 import TopResult from './TopResult';
 import OtherResults from './OtherResults';
+import './searchResults.css'
 
 // I have to make three seperate searches. One for each category, composer, opera and piece. Here I define what the options for the searches should be. It doesn't need to be sorted, because I will have to combine the three lists myself into one big, and compare the search scores of the big array to discover which order of matching.
 
@@ -58,9 +58,9 @@ export default function SearchResults({ searchValue }) {
     return result.sort((a, b) => a.score - b.score);
   }
   return (
-    <StyledResults>
+    <div className="resultsContainer">
       {results ? <TopResult topResult={results[0]} /> : null}
       {results ? <OtherResults results={results} /> : null}
-    </StyledResults>
+    </div>
   );
 }
