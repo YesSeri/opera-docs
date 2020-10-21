@@ -3,6 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
+import { Helmet } from 'react-helmet'
 import { createOperaUrl } from '../helper/HelperFunctions';
 import { getApiData } from '../helper/HelperFunctions';
 
@@ -26,11 +27,18 @@ function Operas() {
     });
   };
   return (
-    <Container className='musicContainer'>
-      <Row xs={1} md={2} lg={3}>
-        {data ? operaPieces() : null}
-      </Row>
-    </Container>
+    <>
+      <Helmet>
+        <title>
+          Operas and Scores at operadocs
+        </title>
+      </Helmet>
+      <Container className='musicContainer'>
+        <Row xs={1} md={2} lg={3}>
+          {data ? operaPieces() : null}
+        </Row>
+      </Container>
+    </>
   );
 }
 

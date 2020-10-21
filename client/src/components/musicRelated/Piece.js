@@ -30,7 +30,7 @@ function Piece(props) {
         <>
           <Helmet>
             <title>
-              The score for {title} from {opera} by {`${last_name}, ${first_name}`}
+              Sheet music for {title}, {opera}
             </title>
           </Helmet>
           <h2 style={{ paddingTop: '20px' }}>{title}</h2>

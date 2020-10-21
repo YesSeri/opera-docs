@@ -36,7 +36,7 @@ function Composers() {
     <>
       <Helmet>
         <title>
-          All Composers at OperaDocs.com
+          All composers available at operadocs
         </title>
       </Helmet>
       <Container className='musicContainer'>{renderComposers()}</Container>

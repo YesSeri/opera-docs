@@ -71,7 +71,7 @@ function Arias() {
     <div className='musicContainer'>
       <Helmet>
         <title>
-          All Arias currently available at OperaDocs.com
+          All arias available at operadocs
         </title>
       </Helmet>
       <Container>{data ? AriasInfo() : null}</Container>
