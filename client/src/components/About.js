@@ -7,7 +7,7 @@ export default function About() {
     <>
       <Helmet>
         <title>
-          Info about operadocs.com
+          Info about operadocs
         </title>
       </Helmet>
       <Container style={{ marginTop: '10px' }}>

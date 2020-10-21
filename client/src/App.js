@@ -16,10 +16,11 @@ import About from './components/About';
 import Contact from './components/contact/Contact';
 import { useLocation, Switch, Route } from 'react-router-dom';
 import ReactGA from 'react-ga';
+
 ReactGA.initialize(process.env.REACT_APP_GOOGLE_TRACKING_ID);
+
 function usePageViews() {
   let location = useLocation();
-
   useEffect(() => {
     ReactGA.pageview(location.pathname);
   }, [location]);
@@ -29,17 +30,11 @@ export default function App() {
   return (
     <div id="wrapper">
       <div className="siteContainer">
-        <h1
-          style={{
-            fontSize: '4em',
-            backgroundColor: '#111',
-            color: 'white',
-            borderBottomLeftRadius: '20px',
-            borderBottomRightRadius: '20px',
-          }}
-        >
-          mysqldocs
-      </h1>
+        <div className='logoContainer'>
+          <h1>
+            operadocs
+          </h1>
+        </div>
         <Banner />
         <NavBar />
         <Switch>
