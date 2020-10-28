@@ -26,7 +26,9 @@ function usePageViews() {
   }, [location]);
 }
 export default function App() {
+  
   usePageViews();
+
   return (
     <div id="wrapper">
       <div className="siteContainer">
