@@ -13,22 +13,24 @@ const transporter = nodemailer.createTransport({
 router.use(express.json());
 
 router.post('/', (req, res) => {
-  const { email, subject, text } = req.body;
-  const mailOptions = {
-    from: email,
-    to: process.env.EMAIL,
-    subject,
-    text: text + '\n' + email,
-  };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
-  res.status(200).end();
+  const { email, subject, message } = req.body;
+  console.log(email, subject, message)
+  // const mailOptions = {
+  //   from: email,
+  //   to: process.env.EMAIL,
+  //   subject,
+  //   text: text + '\n' + email,
+  // };
+
+  // transporter.sendMail(mailOptions, (error, info) => {
+  //   if (err) {
+  //     console.error(err);
+  //   } else {
+  //     console.log('Email sent: ' + info.response);
+  //   }
+  // });
+  res.end();
 });
 
 module.exports = router;
