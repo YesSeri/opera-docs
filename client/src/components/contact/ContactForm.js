@@ -6,12 +6,13 @@ import axios from 'axios';
 
 export default function Contact() {
   const [email, setEmail] = useState(null);
+  const [name, setName] = useState(null);
   const [subject, setSubject] = useState(null);
-  const [message, setMessage] = useState(null);
+  const [text, setText] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('/sendmail', {email, subject, message})
+    axios.post('/sendmail', {email, name, subject, text})
       .then(response => {
         console.log(response);
       })
@@ -22,8 +23,11 @@ export default function Contact() {
   const emailChange = (event) => {
     setEmail(event.target.value)
   }
-  const messageChange = (event) => {
-    setMessage(event.target.value)
+  const nameChange = (event) => {
+    setName(event.target.value)
+  }
+  const textChange = (event) => {
+    setText(event.target.value)
   }
   const subjectChange = (event) => {
     setSubject(event.target.value)
@@ -36,14 +40,19 @@ export default function Contact() {
           <Form.Control type="email" placeholder="Enter email" onChange={emailChange} />
         </Form.Group>
 
+        <Form.Group controlId="formName">
+          <Form.Label>Name</Form.Label>
+          <Form.Control type="text" placeholder="Name" onChange={nameChange} />
+        </Form.Group>
+
         <Form.Group controlId="formSubject">
           <Form.Label>Subject</Form.Label>
           <Form.Control type="text" placeholder="Subject" onChange={subjectChange} />
         </Form.Group>
 
         <Form.Group controlId="form.ControlTextarea">
-          <Form.Label>Message</Form.Label>
-          <Form.Control as="textarea" rows={7} placeholder='Your message' onChange={messageChange} />
+          <Form.Label>Text</Form.Label>
+          <Form.Control as="textarea" rows={7} placeholder='Your text' onChange={textChange} />
         </Form.Group>
 
         <Button variant="primary" type="submit">

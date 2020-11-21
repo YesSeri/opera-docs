@@ -1,35 +1,48 @@
 const express = require('express');
+const nodemailer = require('nodemailer');
 const router = express.Router();
-var nodemailer = require('nodemailer'); // This doesn't work with heroku, but works on other platforms. 
-
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-});
 
 router.use(express.json());
 
 router.post('/', (req, res) => {
+  console.log(req.body)
+  const { email, name, subject, text } = req.body;
+  console.log(email, subject, text);
+  const transporter = nodemailer.createTransport({
+    host: 'mail.operadocs.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.EMAIL_PASSWORD,
+    },
+  });
 
-  const { email, subject, message } = req.body;
-  console.log(email, subject, message)
-  // const mailOptions = {
-  //   from: email,
-  //   to: process.env.EMAIL,
-  //   subject,
-  //   text: text + '\n' + email,
-  // };
-
-  // transporter.sendMail(mailOptions, (error, info) => {
-  //   if (err) {
-  //     console.error(err);
-  //   } else {
-  //     console.log('Email sent: ' + info.response);
-  //   }
-  // });
+  const mailOptions = {
+    from: `"${name}" <${email}>`,
+    to: 'henrik.zenkert@gmail.com',
+    subject,
+    text,
+  };
+  // I make two emails, because the first one always goes to my spam folder in gmail. The second one will go to most of the time go to real folder, because transporter host, and from adress are correct together. 
+  const mailOptionsNotSpam = {
+    from: `"operadocsContact" <contact@operadocs.com>`,
+    to: 'henrik.zenkert@gmail.com',
+    subject: `${email} - ${subject}`,
+    text,
+  };
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
+    console.log('Message sent: %s', info.messageId);
+  });
+  transporter.sendMail(mailOptionsNotSpam, (error, info) => { 
+    if (error) {
+      return console.log(error);
+    }
+    console.log('Message sent: %s', info.messageId);
+  });
   res.end();
 });
 
