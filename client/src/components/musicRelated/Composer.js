@@ -35,7 +35,7 @@ function Composer(props) {
       <Container fluid>
         <Helmet>
             <title>
-              Operas by {`${first_name} ${last_name}`}
+              operadocs - Operas by {`${first_name} ${last_name}`}
             </title>
         </Helmet>
         <Col xs={12}>

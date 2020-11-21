@@ -9,9 +9,10 @@ export default function Contact() {
     <>
       <Helmet>
         <title>
-          Contact page for operadocs
+          operadocs - Contact page
         </title>
       </Helmet>
+      <h1>Contact</h1>
       <ContactForm></ContactForm>
     </>
   );

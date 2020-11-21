@@ -30,7 +30,7 @@ function Operas() {
     <>
       <Helmet>
         <title>
-          Operas and Scores at operadocs
+          operadocs - Operas and Scores
         </title>
       </Helmet>
       <Container className='musicContainer'>

@@ -9,7 +9,7 @@ function Search() {
     <>
       <Helmet>
         <title>
-          Search for Arias, Ensembles, Recitatives and Ouvertures
+          operadocs - Search for Arias, Ensembles, Recitatives and Ouvertures
         </title>
       </Helmet>
       <SearchBar setSearchValue={setSearchValue}></SearchBar>

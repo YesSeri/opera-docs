@@ -45,7 +45,7 @@ function Opera(props) {
     <div className='musicContainer'>
       <Helmet>
         <title>
-            Music scores for {opera}
+            operadocs - Vocal scores for {opera}
         </title>
       </Helmet>
       {data ? <h1>{opera}</h1> : data === null ? '' : 'Nothing here'}
