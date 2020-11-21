@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
     subject,
     text,
   };
-  // I make two emails, because the first one always goes to my spam folder in gmail. The second one will go to most of the time go to real folder, because transporter host, and from adress are correct together. 
+  // I make two emails, because the first one always goes to my spam folder in gmail. The second one will go to most of the time go to real folder, because transporter host, and from adress are correct together. Might be able to remove the second email if it works without. Just for testing now. 
   const mailOptionsNotSpam = {
     from: `"operadocsContact" <${process.env.FROM_EMAIL}>`,
     to: process.env.TO_EMAIL,
@@ -33,17 +33,19 @@ router.post('/', (req, res) => {
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
+      res.status(500).end('Error');
       return console.log(error);
     }
     console.log('Message sent: %s', info.messageId);
   });
   transporter.sendMail(mailOptionsNotSpam, (error, info) => { 
     if (error) {
+      res.status(500).end('Error');
       return console.log(error);
     }
     console.log('Message sent: %s', info.messageId);
   });
-  res.end();
+  res.status(200).end('It worked');
 });
 
 module.exports = router;

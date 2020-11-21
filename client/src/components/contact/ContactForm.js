@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
+import SuccessMessage from './SuccessMessage'
 import axios from 'axios';
 
 export default function Contact() {
@@ -10,14 +11,18 @@ export default function Contact() {
   const [subject, setSubject] = useState(null);
   const [text, setText] = useState(null);
 
+  const [success, setSuccess] = useState(null);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     axios.post('/sendmail', {email, name, subject, text})
       .then(response => {
         console.log(response);
+        setSuccess(true)
       })
       .catch(error => {
         console.log(error);
+        setSuccess(false)
       });
   }
   const emailChange = (event) => {
@@ -59,6 +64,7 @@ export default function Contact() {
           Submit
         </Button>
       </Form>
+      <SuccessMessage success={success}/>
     </Container>
   );
 }
