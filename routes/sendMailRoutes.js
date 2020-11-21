@@ -9,25 +9,25 @@ router.post('/', (req, res) => {
   const { email, name, subject, text } = req.body;
   console.log(email, subject, text);
   const transporter = nodemailer.createTransport({
-    host: 'mail.operadocs.com',
+    host: process.env.EMAIL_HOST,
     port: 465,
     secure: true,
     auth: {
-      user: process.env.EMAIL,
+      user: process.env.FROM_EMAIL,
       pass: process.env.EMAIL_PASSWORD,
     },
   });
 
   const mailOptions = {
     from: `"${name}" <${email}>`,
-    to: 'henrik.zenkert@gmail.com',
+    to: process.env.TO_EMAIL,
     subject,
     text,
   };
   // I make two emails, because the first one always goes to my spam folder in gmail. The second one will go to most of the time go to real folder, because transporter host, and from adress are correct together. 
   const mailOptionsNotSpam = {
-    from: `"operadocsContact" <contact@operadocs.com>`,
-    to: 'henrik.zenkert@gmail.com',
+    from: `"operadocsContact" <${process.env.FROM_EMAIL}>`,
+    to: process.env.TO_EMAIL,
     subject: `${email} - ${subject}`,
     text,
   };
