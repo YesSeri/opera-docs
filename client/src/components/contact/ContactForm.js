@@ -60,7 +60,7 @@ export default function Contact() {
           <Form.Control as="textarea" rows={7} placeholder='Your text' onChange={textChange} />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" onClick={() => setSuccess(null)}>
           Submit
         </Button>
       </Form>

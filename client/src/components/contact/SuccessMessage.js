@@ -8,6 +8,9 @@ export default function Contact({ success }) {
     } else if (success === false) {
       return <p style={{ color: 'red' }}>Failed to send message</p>;
     }
+    else {
+      return
+    }
   };
   return <Container>{message()}</Container>;
 }

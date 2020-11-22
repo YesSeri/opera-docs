@@ -37,15 +37,15 @@ router.post('/', (req, res) => {
       return console.log(error);
     }
     console.log('Message sent: %s', info.messageId);
+    transporter.sendMail(mailOptionsNotSpam, (error, info) => {
+      if (error) {
+        res.status(500).end('Error');
+        return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);
+      res.status(200).end('It worked');
+    });
   });
-  transporter.sendMail(mailOptionsNotSpam, (error, info) => { 
-    if (error) {
-      res.status(500).end('Error');
-      return console.log(error);
-    }
-    console.log('Message sent: %s', info.messageId);
-  });
-  res.status(200).end('It worked');
 });
 
 module.exports = router;
