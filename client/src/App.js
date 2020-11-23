@@ -23,16 +23,18 @@ const cookies = new Cookies();
 
 const InitReactGA = () => {
   ReactGA.initialize(process.env.REACT_APP_GOOGLE_TRACKING_ID);
-}
+};
 
-if (cookies.get('GoogleAnalytics')) {
-  InitReactGA()
+if (cookies.get('CookieConsent')) {
+  InitReactGA();
 }
 
 function usePageViews() {
   let location = useLocation();
   useEffect(() => {
-    ReactGA.pageview(location.pathname);
+    if (cookies.get('CookieConsent')) {
+      ReactGA.pageview(location.pathname);
+    } 
   }, [location]);
 }
 export default function App() {
@@ -77,13 +79,5 @@ export default function App() {
 }
 
 const CookieAccepted = () => {
-  const current = new Date();
-  const nextYear = new Date();
-
-  nextYear.setFullYear(current.getFullYear() + 1);
-  cookies.set('GoogleAnalytics', true, {
-    path: '/',
-    expires: nextYear,
-  });
   window.location.reload();
 };
