@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './components/musicRelated/music.css'
+import './components/musicRelated/music.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Banner from './components/Banner';
@@ -14,10 +14,20 @@ import Piece from './components/musicRelated/Piece';
 import Search from './components/search/Search';
 import About from './components/About';
 import Contact from './components/contact/Contact';
+import CookieConsent from 'react-cookie-consent';
+import Cookies from 'universal-cookie';
 import { useLocation, Switch, Route } from 'react-router-dom';
 import ReactGA from 'react-ga';
 
-ReactGA.initialize(process.env.REACT_APP_GOOGLE_TRACKING_ID);
+const cookies = new Cookies();
+
+const InitReactGA = () => {
+  ReactGA.initialize(process.env.REACT_APP_GOOGLE_TRACKING_ID);
+}
+
+if (cookies.get('GoogleAnalytics')) {
+  InitReactGA()
+}
 
 function usePageViews() {
   let location = useLocation();
@@ -26,16 +36,13 @@ function usePageViews() {
   }, [location]);
 }
 export default function App() {
-  
   usePageViews();
 
   return (
     <div id="wrapper">
       <div className="siteContainer">
-        <div className='logoContainer'>
-          <h1>
-            operadocs
-          </h1>
+        <div className="logoContainer">
+          <h1>operadocs</h1>
         </div>
         <Banner />
         <NavBar />
@@ -52,6 +59,31 @@ export default function App() {
         </Switch>
       </div>
       <Footer />
+      <CookieConsent
+        enableDeclineButton
+        buttonText="I accept"
+        onAccept={() => {
+          CookieAccepted();
+        }}
+        onDecline={() => {
+          console.log('Cookies disabled');
+        }}
+      >
+        This website uses cookies and google analytics to enhance the user
+        experience.
+      </CookieConsent>
     </div>
   );
 }
+
+const CookieAccepted = () => {
+  const current = new Date();
+  const nextYear = new Date();
+
+  nextYear.setFullYear(current.getFullYear() + 1);
+  cookies.set('GoogleAnalytics', true, {
+    path: '/',
+    expires: nextYear,
+  });
+  window.location.reload();
+};
