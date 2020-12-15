@@ -14,27 +14,27 @@ import Piece from './components/musicRelated/Piece';
 import Search from './components/search/Search';
 import About from './components/About';
 import Contact from './components/contact/Contact';
-import CookieConsent from 'react-cookie-consent';
-import Cookies from 'universal-cookie';
+// import CookieConsent from 'react-cookie-consent';
+// import Cookies from 'universal-cookie';
 import { useLocation, Switch, Route } from 'react-router-dom';
 import ReactGA from 'react-ga';
 
-const cookies = new Cookies();
+// const cookies = new Cookies();
 
 const InitReactGA = () => {
   ReactGA.initialize(process.env.REACT_APP_GOOGLE_TRACKING_ID);
 };
 
-if (cookies.get('CookieConsent')) {
+// if (cookies.get('CookieConsent')) {
   InitReactGA();
-}
+// }
 
 function usePageViews() {
   let location = useLocation();
   useEffect(() => {
-    if (cookies.get('CookieConsent')) {
+    // if (cookies.get('CookieConsent')) {
       ReactGA.pageview(location.pathname);
-    } 
+    // } 
   }, [location]);
 }
 export default function App() {
@@ -61,7 +61,7 @@ export default function App() {
         </Switch>
       </div>
       <Footer />
-      <CookieConsent
+      {/* <CookieConsent
         enableDeclineButton
         buttonText="I accept"
         onAccept={() => {
@@ -73,7 +73,7 @@ export default function App() {
       >
         This website uses cookies and google analytics to enhance the user
         experience.
-      </CookieConsent>
+      </CookieConsent> */}
     </div>
   );
 }
