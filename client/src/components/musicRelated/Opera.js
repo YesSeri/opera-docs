@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getApiData } from '../helper/HelperFunctions';
+import { createPieceUrl, getApiData } from '../helper/HelperFunctions';
 import { Helmet } from 'react-helmet'
 
 function Opera(props) {
   const [data, setData] = useState(null);
-  const { pathname } = props.location;
   const opera = data ? data[0].name : '';
   useEffect(() => {
     const { operaIdName } = props.match.params;
@@ -17,13 +16,8 @@ function Opera(props) {
   }, [props.match.params]);
 
   const operaPieces = () => {
-    const pieces = data.map(({ title, id, type }) => {
-      const safeTitle = title
-        .replace(/[^a-zA-Z ]/g, '')
-        .replace(/\s+/g, '-')
-        .toLowerCase();
-      const url = `${id}-${safeTitle}`;
-
+    const pieces = data.map(({ last_name, opera_id, name, title, id, type }) => {
+      const pieceUrl = createPieceUrl(last_name, opera_id, name, id, title)
       const weight =
         type === 'recitativo' || type === 'choir' || type === 'intermezzo'
           ? 'normal'
@@ -32,7 +26,7 @@ function Opera(props) {
         <div key={id}>
           <Link
             style={{ fontWeight: weight }}
-            to={`${pathname}/${url}`}
+            to={`${pieceUrl}`}
           >{`${title}`}</Link>
           <br />
         </div>

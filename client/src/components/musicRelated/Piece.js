@@ -44,7 +44,7 @@ function Piece(props) {
             </Col>
             <Col>
               <b> Composer: </b>
-              {`${last_name}, ${first_name}`}
+              {`${last_name.replace("_", " ")}, ${first_name}`}
             </Col>
             <Col>
               <b> Link: </b>

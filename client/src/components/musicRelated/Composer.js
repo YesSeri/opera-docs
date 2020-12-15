@@ -35,7 +35,7 @@ function Composer(props) {
       <Container fluid>
         <Helmet>
             <title>
-              operadocs - Operas by {`${first_name} ${last_name}`}
+              operadocs - Operas by {`${first_name} ${last_name.replace("_", " ")}`}
             </title>
         </Helmet>
         <Col xs={12}>
@@ -58,7 +58,7 @@ function Composer(props) {
     <div className='musicContainer'>
       <h1>
         {data && data[0] !== undefined
-          ? `${data[0].first_name} ${data[0].last_name}`
+          ? `${data[0].first_name} ${data[0].last_name.replace("_", " ")}`
           : null}
       </h1>
       {data ? composerInfo() : null}

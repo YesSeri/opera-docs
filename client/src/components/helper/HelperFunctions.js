@@ -1,4 +1,5 @@
 import axios from 'axios';
+import diacritics from 'diacritics';
 
 export function getApiData(url, setData) {
   const source = axios.CancelToken.source();
@@ -14,20 +15,20 @@ export function getApiData(url, setData) {
 }
 
 export function createPieceUrl(lastName, opera_id, opera, piece_id, title) {
-  const safeTitle = title
-    .replace(/[^a-zA-Z ]/g, '')
-    .replace(/\s+/g, '-')
-    .toLowerCase();
-  const pieceUrl = `${piece_id}-${safeTitle}`;
-  const operaUrl = `${opera_id}-${opera.replace(/\s+/g, '-').toLowerCase()}`;
-  const url = `/${lastName.toLowerCase()}/${operaUrl}/${pieceUrl}`;
-  return url
+  const safeTitle = diacritics.remove(title.replace(/\s+/g, '-').toLowerCase());
+  const endUrl = `${piece_id}-${safeTitle}`;
+  const startUrl = createOperaUrl(lastName, opera_id, opera);
+  const url = `${startUrl}/${endUrl}`;
+  console.log(url)
+  return url;
 }
 
 export function createOperaUrl(lastName, opera_id, opera) {
-  return `/${lastName.toLowerCase()}/${opera_id}-${opera.replace(/\s+/g, '-').toLowerCase()}` // url = lastname/id-opera
+  return `/${createComposerUrl(lastName)}/${opera_id}-${diacritics.remove(
+    opera.replace(/\s+/g, '-').toLowerCase()
+  )}`; // url = lastname/id-opera
 }
 
 export function createComposerUrl(lastName) {
-  return lastName.toLowerCase()
+  return lastName.toLowerCase();
 }

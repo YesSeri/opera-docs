@@ -8,8 +8,7 @@ router.use(express.json());
 
 router.get('/', (req, res) => {
   // Show all operas, sort by name
-  const query = 
-    `SELECT o.name as opera, o.id as opera_id, c.last_name FROM Operas as o 
+  const query = `SELECT o.name as opera, o.id as opera_id, c.last_name FROM Operas as o 
      INNER JOIN Composers as c 
      ON c.id = o.composer_id 
      ORDER BY opera`;
@@ -20,15 +19,17 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  const query =
-    `SELECT o.name, p.title, p.type, p.placement, p.id FROM Pieces as p 
-     INNER JOIN Operas as o ON o.id = p.opera_id 
+  const query = `SELECT p.id, p.title, p.type, p.placement, o.name, opera_id, c.last_name
+  FROM Pieces as p INNER JOIN Operas as o ON p.opera_id = o.id 
+  INNER JOIN Composers as c ON o.composer_id = c.id
      WHERE o.id = ? ORDER BY p.placement ASC;`
+
   const id = req.params.id;
   db.query(query, id, (err, result) => {
     if (err) console.error(err);
 
-    if (result.length === 0) { // Returns string instead of result to stop client from crashing when it recieves null or undefined. 
+    if (result.length === 0) {
+      // Returns string instead of result to stop client from crashing when it recieves null or undefined.
       res.json('');
     } else {
       res.json(result);
