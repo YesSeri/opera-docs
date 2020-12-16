@@ -78,6 +78,6 @@ export default function App() {
   );
 }
 
-const CookieAccepted = () => {
-  window.location.reload();
-};
+// const CookieAccepted = () => {
+//   window.location.reload();
+// };

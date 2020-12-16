@@ -25,7 +25,7 @@ function Composers() {
         return (
           <Row key={id}>
             <Col md={{ span: 4, offset: 4 }}>
-              <Nav.Link href={url}>{`${last_name.replace("_", " ")}, ${first_name}`}</Nav.Link>
+              <Nav.Link href={url}>{`${last_name}, ${first_name}`}</Nav.Link>
             </Col>
           </Row>
         );

@@ -10,6 +10,7 @@ function Composer(props) {
   const [data, setData] = useState('');
   useEffect(() => {
     const { lastName } = props.match.params;
+    console.log(lastName)
     const source = getApiData(`/api/composers/${lastName}`, setData) // Return is an axios cancel token. Used if component gets unmounted before request is completed. 
     return () => {
       source.cancel('Component was unmounted, axios request is cancelled.');
@@ -35,7 +36,7 @@ function Composer(props) {
       <Container fluid>
         <Helmet>
             <title>
-              operadocs - Operas by {`${first_name} ${last_name.replace("_", " ")}`}
+              operadocs - Operas by {`${first_name} ${last_name}`}
             </title>
         </Helmet>
         <Col xs={12}>
@@ -58,7 +59,7 @@ function Composer(props) {
     <div className='musicContainer'>
       <h1>
         {data && data[0] !== undefined
-          ? `${data[0].first_name} ${data[0].last_name.replace("_", " ")}`
+          ? `${data[0].first_name} ${data[0].last_name}`
           : null}
       </h1>
       {data ? composerInfo() : null}

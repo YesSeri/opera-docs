@@ -30,5 +30,5 @@ export function createOperaUrl(lastName, opera_id, opera) {
 }
 
 export function createComposerUrl(lastName) {
-  return lastName.toLowerCase();
+  return lastName.toLowerCase().replace(" ", "_");
 }

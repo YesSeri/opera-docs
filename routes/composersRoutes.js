@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:last_name', (req, res) => {
-  const last_name = req.params.last_name;
+  const last_name = req.params.last_name.replace("_", " ");
   const query = `SELECT o.name as opera, o.id as opera_id, c.first_name, c.last_name 
                   FROM Operas as o 
                   INNER JOIN Composers as c 
