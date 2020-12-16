@@ -23,7 +23,7 @@ function Opera(props) {
           ? 'normal'
           : 'bold';
       return (
-        <div key={id}>
+        <div key={id} className='operaContainer'>
           <Link
             style={{ fontWeight: weight }}
             to={`${pieceUrl}`}
