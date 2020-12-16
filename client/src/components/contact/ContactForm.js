@@ -56,8 +56,8 @@ export default function Contact() {
         </Form.Group>
 
         <Form.Group controlId="form.ControlTextarea">
-          <Form.Label>Text</Form.Label>
-          <Form.Control as="textarea" rows={7} placeholder='Your text' onChange={textChange} />
+          <Form.Label>Message</Form.Label>
+          <Form.Control as="textarea" rows={7} placeholder='Your message' onChange={textChange} />
         </Form.Group>
 
         <Button variant="primary" type="submit" onClick={() => setSuccess(null)}>
