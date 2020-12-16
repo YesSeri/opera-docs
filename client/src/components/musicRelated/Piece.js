@@ -30,7 +30,7 @@ function Piece(props) {
         <>
           <Helmet>
             <title>
-              operadocs - Sheet music for {title}, {opera}
+              operadocs - Score for {title} from {opera}
             </title>
           </Helmet>
           <h2 style={{ paddingTop: '20px' }}>{title}</h2>

@@ -6,7 +6,7 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>operadocs - Info and about page</title>
+        <title>operadocs - about us</title>
       </Helmet>
       <Container style={{ marginTop: '10px' }}>
         <h1>About</h1>
@@ -16,7 +16,8 @@ export default function About() {
           is no more copyright on them. This is a page solely for scores which
           are in the public domain. Without IMSLP, this site would never have
           been possible. This page was made and is maintained by Henrik Zenkert.
-          If you have any questions or remarks, please feel free to contact me.
+          If you have any questions or remarks, please feel free to contact me
+          through the contact page.
         </p>
       </Container>
     </>
