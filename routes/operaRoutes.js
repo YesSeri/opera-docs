@@ -2,7 +2,7 @@ const { resolveNaptr } = require('dns');
 const express = require('express');
 const path = require('path');
 const router = express.Router();
-const db = require('../helper/dbConnection');
+const pool = require('../utils/database');
 
 router.use(express.json());
 
@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
      INNER JOIN Composers as c 
      ON c.id = o.composer_id 
      ORDER BY opera`;
-  db.query(query, function (err, result) {
+  pool.query(query, function (err, result) {
     if (err) console.error(err);
     res.json(result);
   });
@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
      WHERE o.id = ? ORDER BY p.placement ASC;`
 
   const id = req.params.id;
-  db.query(query, id, (err, result) => {
+  pool.query(query, id, (err, result) => {
     if (err) console.error(err);
 
     if (result.length === 0) {

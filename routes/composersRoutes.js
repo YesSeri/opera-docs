@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const router = express.Router();
-const db = require('../helper/dbConnection');
+const pool = require('../utils/database');
 
 router.use(express.json());
 
@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
                   INNER JOIN Composers as c ON o.composer_id = c.id
                   ORDER BY c.last_name
                  `;
-  db.query(query, (err, result) => {
+  pool.query(query, (err, result) => {
     if (err) console.error(err);
     res.status(200).json(result);
   });
@@ -23,7 +23,7 @@ router.get('/:last_name', (req, res) => {
                   FROM Operas as o 
                   INNER JOIN Composers as c 
                   ON o.composer_id = c.id WHERE c.last_name = ?`;
-  db.query(query, last_name, (err, result) => {
+  pool.query(query, last_name, (err, result) => {
     res.json(result);
   });
 });
