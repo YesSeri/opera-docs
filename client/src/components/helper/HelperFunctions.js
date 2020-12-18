@@ -19,7 +19,6 @@ export function createPieceUrl(lastName, opera_id, opera, piece_id, title) {
   const endUrl = `${piece_id}-${safeTitle}`;
   const startUrl = createOperaUrl(lastName, opera_id, opera);
   const url = `${startUrl}/${endUrl}`;
-  console.log(url)
   return url;
 }
 
