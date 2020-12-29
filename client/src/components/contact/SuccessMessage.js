@@ -4,9 +4,12 @@ import Container from 'react-bootstrap/Container';
 export default function Contact({ success }) {
   const message = () => {
     if (success) {
-      return <p>Message has been sent</p>;
+      return (
+        <p style={{ marginTop: '10px' }}>Message has been sent</p>
+      )
+
     } else if (success === false) {
-      return <p style={{ color: 'red' }}>Failed to send message</p>;
+      return <p style={{ color: 'red', marginTop: '10px' }}>Failed to send message</p>;
     }
     else {
       return
