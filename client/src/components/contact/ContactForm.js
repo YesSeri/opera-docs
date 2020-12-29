@@ -3,19 +3,20 @@ import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import SuccessMessage from './SuccessMessage'
-import axios from 'axios';
+import emailjs from 'emailjs-com';
 
 export default function Contact() {
   const [email, setEmail] = useState(null);
   const [name, setName] = useState(null);
   const [subject, setSubject] = useState(null);
-  const [text, setText] = useState(null);
-
+  const [message, setMessage] = useState(null);
+  
   const [success, setSuccess] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('/sendmail', {email, name, subject, text})
+    const templateParams = { email, name, subject, message };
+    emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, templateParams, process.env.REACT_APP_USER_ID)
       .then(response => {
         console.log(response);
         setSuccess(true)
@@ -31,8 +32,8 @@ export default function Contact() {
   const nameChange = (event) => {
     setName(event.target.value)
   }
-  const textChange = (event) => {
-    setText(event.target.value)
+  const messageChange = (event) => {
+    setMessage(event.target.value)
   }
   const subjectChange = (event) => {
     setSubject(event.target.value)
@@ -57,14 +58,14 @@ export default function Contact() {
 
         <Form.Group controlId="form.ControlTextarea">
           <Form.Label>Message</Form.Label>
-          <Form.Control as="textarea" rows={7} placeholder='Your message' onChange={textChange} />
+          <Form.Control as="textarea" rows={7} placeholder='Your message' onChange={messageChange} />
         </Form.Group>
 
         <Button variant="primary" type="submit" onClick={() => setSuccess(null)}>
           Submit
         </Button>
       </Form>
-      <SuccessMessage success={success}/>
+      <SuccessMessage success={success} />
     </Container>
   );
 }
