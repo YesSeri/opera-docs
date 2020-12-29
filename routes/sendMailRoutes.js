@@ -43,6 +43,7 @@ router.post('/', (req, res) => {
         return console.log(error);
       }
       console.log('Message sent: %s', info.messageId);
+      res.setHeader('Content-Type', 'text/html');
       res.status(200).end('It worked');
     });
   });
