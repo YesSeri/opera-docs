@@ -1,3 +1,6 @@
+.navFooterContainer {
+  padding-top: -10px;
+}
 .navFooterContainer a {
   font-size: 1.5rem;
   color: #000;
