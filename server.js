@@ -1,11 +1,11 @@
 if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
+	require('dotenv').config();
 }
 
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
-const compression = require('compression')
+const compression = require('compression');
 
 const app = express();
 
@@ -14,8 +14,9 @@ const composersRoutes = require('./routes/composersRoutes.js');
 const operaRoutes = require('./routes/operaRoutes.js');
 const searchRoutes = require('./routes/searchRoutes.js');
 
-if (process.env.NODE_ENV !== 'production') { // Only enable cors in development. For security this is better.
-  app.use(cors());
+if (process.env.NODE_ENV !== 'production') {
+	// Only enable cors in development. For security this is better.
+	app.use(cors());
 }
 
 app.use(compression());
@@ -25,12 +26,13 @@ app.use('/api/composers', composersRoutes);
 app.use('/api/operas', operaRoutes);
 app.use('/api/search', searchRoutes);
 
-if (process.env.NODE_ENV === 'production') { // If this is in production, then we need to use react as a static thing, instead of in the client folder. 
-  const folder = path.join(__dirname, 'client', 'build');
-  app.use(express.static(path.join(folder)));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(folder, 'index.html'));
-  });
+if (process.env.NODE_ENV === 'production') {
+	// If this is in production, then we need to use react as a static thing, instead of in the client folder.
+	const folder = path.join(__dirname, 'client', 'build');
+	app.use(express.static(path.join(folder)));
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(folder, 'index.html'));
+	});
 }
 
 const port = process.env.PORT || 5000; // If there is a PORT env variable it chooses that, else it chooses port 5000

@@ -22,46 +22,46 @@ import ReactGA from 'react-ga';
 // const cookies = new Cookies();
 
 const InitReactGA = () => {
-  ReactGA.initialize(process.env.REACT_APP_GOOGLE_TRACKING_ID);
+	ReactGA.initialize(process.env.REACT_APP_GOOGLE_TRACKING_ID);
 };
 
 // if (cookies.get('CookieConsent')) {
-  InitReactGA();
+InitReactGA();
 // }
 
 function usePageViews() {
-  let location = useLocation();
-  useEffect(() => {
-    // if (cookies.get('CookieConsent')) {
-      ReactGA.pageview(location.pathname);
-    // } 
-  }, [location]);
+	let location = useLocation();
+	useEffect(() => {
+		// if (cookies.get('CookieConsent')) {
+		ReactGA.pageview(location.pathname);
+		// }
+	}, [location]);
 }
 export default function App() {
-  usePageViews();
+	usePageViews();
 
-  return (
-    <div id="wrapper">
-      <div className="siteContainer">
-        <div className="logoContainer">
-          <h1>operadocs</h1>
-        </div>
-        <Banner />
-        <NavBar />
-        <Switch>
-          <Route path="/about" exact component={About} />
-          <Route path="/contact" exact component={Contact} />
-          <Route path="/composers" exact component={Composers} />
-          <Route path="/arias" exact component={Arias} />
-          <Route path="/operas" exact component={Operas} />
-          <Route path="/:lastName/:operaId/:pieceIdName" component={Piece} />
-          <Route path="/:lastName/:operaIdName" component={Opera} />
-          <Route path="/:lastName" component={Composer} />
-          <Route exact path="/" component={Search}></Route>
-        </Switch>
-      </div>
-      <Footer />
-      {/* <CookieConsent
+	return (
+		<div id="wrapper">
+			<div className="siteContainer">
+				<div className="logoContainer">
+					<h1>operadocs</h1>
+				</div>
+				<Banner />
+				<NavBar />
+				<Switch>
+					<Route path="/about" exact component={About} />
+					<Route path="/contact" exact component={Contact} />
+					<Route path="/composers" exact component={Composers} />
+					<Route path="/arias" exact component={Arias} />
+					<Route path="/operas" exact component={Operas} />
+					<Route path="/:lastName/:operaId/:pieceIdName" component={Piece} />
+					<Route path="/:lastName/:operaIdName" component={Opera} />
+					<Route path="/:lastName" component={Composer} />
+					<Route exact path="/" component={Search}></Route>
+				</Switch>
+			</div>
+			<Footer />
+			{/* <CookieConsent
         enableDeclineButton
         buttonText="I accept"
         onAccept={() => {
@@ -74,8 +74,8 @@ export default function App() {
         This website uses cookies and google analytics to enhance the user
         experience.
       </CookieConsent> */}
-    </div>
-  );
+		</div>
+	);
 }
 
 // const CookieAccepted = () => {

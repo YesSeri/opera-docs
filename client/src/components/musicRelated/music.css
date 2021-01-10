@@ -1,11 +1,11 @@
 .musicContainer a {
-  font-size: 1.1rem;
+	font-size: 1.1rem;
 }
 @media screen and (max-width: 600px) {
-  .musicContainer .operaContainer {
-    border-radius: 10px;
-    border-top: solid #ddd 1px;
-    border-right: solid #ddd 1px;
-    border-left: solid #ddd 1px;
-  }
+	.musicContainer .operaContainer {
+		border-radius: 10px;
+		border-top: solid #ddd 1px;
+		border-right: solid #ddd 1px;
+		border-left: solid #ddd 1px;
+	}
 }
