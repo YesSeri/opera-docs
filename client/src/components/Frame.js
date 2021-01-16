@@ -13,7 +13,7 @@ export default function Frame({ downloadLink }) {
 					<Col xl={{ span: 10, offset: 1 }}>
 						<PDFObject
 							url={downloadLink}
-							fallbackLink={`<iframe>https://docs.google.com/gview?url=${downloadLink}&embedded=true</iframe>`}
+							fallbackLink={`<h1>https://docs.google.com/gview?url=${downloadLink}&embedded=true</h1>`}
 						/>
 					</Col>
 				</Row>
