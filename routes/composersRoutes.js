@@ -7,7 +7,7 @@ router.use(express.json());
 
 router.get('/', (req, res) => {
 	const query = `SELECT DISTINCT c.last_name, c.first_name, c.id
-                  FROM Pieces as p INNER JOIN operas as o ON p.opera_id = o.id 
+                  FROM pieces as p INNER JOIN operas as o ON p.opera_id = o.id 
                   INNER JOIN composers as c ON o.composer_id = c.id
                   ORDER BY c.last_name
                  `;

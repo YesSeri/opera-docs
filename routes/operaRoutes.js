@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
 	const query = `SELECT p.id, p.title, p.type, p.placement, o.name, opera_id, c.last_name
-  FROM Pieces as p INNER JOIN operas as o ON p.opera_id = o.id 
+  FROM pieces as p INNER JOIN operas as o ON p.opera_id = o.id 
   INNER JOIN composers as c ON o.composer_id = c.id
      WHERE o.id = ? ORDER BY p.placement ASC;`;
 
