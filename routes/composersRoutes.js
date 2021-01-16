@@ -7,7 +7,7 @@ router.use(express.json());
 
 router.get('/', (req, res) => {
 	const query = `SELECT DISTINCT c.last_name, c.first_name, c.id
-                  FROM Pieces as p INNER JOIN Operas as o ON p.opera_id = o.id 
+                  FROM Pieces as p INNER JOIN operas as o ON p.opera_id = o.id 
                   INNER JOIN Composers as c ON o.composer_id = c.id
                   ORDER BY c.last_name
                  `;
@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 router.get('/:last_name', (req, res) => {
 	const last_name = req.params.last_name.replace('_', ' ');
 	const query = `SELECT o.name as opera, o.id as opera_id, c.first_name, c.last_name 
-                  FROM Operas as o 
+                  FROM operas as o 
                   INNER JOIN Composers as c 
                   ON o.composer_id = c.id WHERE c.last_name = ?`;
 	pool.query(query, last_name, (err, result) => {
