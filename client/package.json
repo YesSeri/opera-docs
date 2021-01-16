@@ -17,6 +17,7 @@
     "react-dom": "^16.14.0",
     "react-ga": "^3.2.0",
     "react-helmet": "^6.1.0",
+    "react-pdf": "^5.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
     "react-spinkit": "^3.0.0",
@@ -45,6 +46,5 @@
     ]
   },
   "proxy": "http://localhost:5000/",
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
