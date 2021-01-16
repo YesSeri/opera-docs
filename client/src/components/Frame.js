@@ -11,15 +11,15 @@ export default function Frame({ downloadLink }) {
 	function createMarkup() {
 		return {
 			__html: `<iframe 
-				src="${downloadLink}"  
+				src="https://docs.google.com/gview?url=${downloadLink}&embedded=true"
 				frameborder="0" 
 				iframe.onload = () => { console.log("myframe is loaded"); 
 				style="height: 100vh; width: 100%;">
 			</iframe>`,
 		};
 	}
-	function MyComponent() {
-		return <div dangerouslySetInnerHTML={createMarkup()} />;
+	function MyDangerousIframe() {
+		return <div dangerouslySetInnerHTML={createIframe()} />;
 	}
 	return (
 		<div className="iframeContainer">
@@ -32,7 +32,7 @@ export default function Frame({ downloadLink }) {
 				</Row>
 				<Row>
 					<Col className="frameContainer" xl={{ span: 10, offset: 1 }}>
-						<MyComponent />
+						<MyDangerousIframe />
 					</Col>
 				</Row>
 			</Container>
