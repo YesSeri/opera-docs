@@ -8,7 +8,7 @@ const Spinner = require("react-spinkit");
 export default function Frame({ downloadLink }) {
 	const [loading, setLoading] = useState(true);
 
-	function createMarkup() {
+	function createIframe() {
 		return {
 			__html: `<iframe 
 				src="https://docs.google.com/gview?url=${downloadLink}&embedded=true"
