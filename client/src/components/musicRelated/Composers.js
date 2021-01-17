@@ -21,6 +21,7 @@ function Composers() {
 		if (data) {
 			return data.map(({ id, last_name, first_name }) => {
 				const url = createComposerUrl(last_name);
+				console.log(url)
 				return (
 					<Row key={id}>
 						<Col md={{ span: 4, offset: 4 }}>

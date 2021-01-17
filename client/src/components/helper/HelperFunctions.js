@@ -1,5 +1,4 @@
 import axios from 'axios';
-import diacritics from 'diacritics';
 
 export function getApiData(url, setData) {
 	const source = axios.CancelToken.source();
@@ -15,19 +14,15 @@ export function getApiData(url, setData) {
 }
 
 export function createPieceUrl(lastName, opera_id, opera, piece_id, title) {
-	const safeTitle = diacritics.remove(title.replace(/\s+/g, '-').toLowerCase());
-	const endUrl = `${piece_id}-${safeTitle}`;
+	const endUrl = `${piece_id}-${title}`;
 	const startUrl = createOperaUrl(lastName, opera_id, opera);
-	const url = `${startUrl}/${endUrl}`;
-	return url;
+	return encodeURI(`${startUrl}/${endUrl}`)
 }
 
 export function createOperaUrl(lastName, opera_id, opera) {
-	return `/${createComposerUrl(lastName)}/${opera_id}-${diacritics.remove(
-		opera.replace(/\s+/g, '-').toLowerCase()
-	)}`;
+	return encodeURI(`/${createComposerUrl(lastName)}/${opera_id}-${opera}`);
 }
 
 export function createComposerUrl(lastName) {
-	return lastName.toLowerCase().replace(' ', '_');
+	return encodeURI(lastName);
 }
