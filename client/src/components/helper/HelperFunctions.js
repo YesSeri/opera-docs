@@ -20,9 +20,18 @@ export function createPieceUrl(lastName, opera_id, opera, piece_id, title) {
 }
 
 export function createOperaUrl(lastName, opera_id, opera) {
-	return encodeURI(`/${createComposerUrl(lastName)}/${opera_id}-${opera}`);
+	const url =  encodeURI(`/${createComposerUrlUnencoded(lastName)}/${opera_id}-${opera}`);
+	return url
+}
+
+export function createOperaUrlUnencoded(lastName, opera_id, opera) {
+	return `/${createComposerUrlUnencoded(lastName)}/${opera_id}-${opera}`;
 }
 
 export function createComposerUrl(lastName) {
 	return encodeURI(lastName);
+}
+
+export function createComposerUrlUnencoded(lastName) {
+	return lastName;
 }
