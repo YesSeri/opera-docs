@@ -1,39 +1,41 @@
-if (process.env.NODE_ENV !== 'production') {
-	require('dotenv').config();
+if (process.env.NODE_ENV !== "production") {
+	require("dotenv").config();
 }
+const path = require("path");
 
-const express = require('express');
-const path = require('path');
-const cors = require('cors');
-const compression = require('compression');
-
+// Express
+const express = require("express");
 const app = express();
 
-const piecesRoutes = require('./routes/piecesRoutes.js');
-const composersRoutes = require('./routes/composersRoutes.js');
-const operaRoutes = require('./routes/operaRoutes.js');
-const searchRoutes = require('./routes/searchRoutes.js');
+// Utils
+const compression = require("compression");
+const { expressLogger, logger } = require("./utils/pino");
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== "production") {
+	const cors = require("cors");
 	// Only enable cors in development. For security this is better.
 	app.use(cors());
 }
-
+if (process.env.NODE_ENV === "production") app.use(expressLogger);
 app.use(compression());
 
-app.use('/api/pieces', piecesRoutes); // Each of these routes are used to find stuff for the client. The client connects locally to these.
-app.use('/api/composers', composersRoutes);
-app.use('/api/operas', operaRoutes);
-app.use('/api/search', searchRoutes);
+app.use("/api/pieces", require("./routes/piecesRoutes.js")); // Each of these routes are used to find stuff for the client. The client connects locally to these.
+app.use("/api/composers", require("./routes/composersRoutes.js"));
+app.use("/api/operas", require("./routes/operaRoutes.js"));
+app.use("/api/search", require("./routes/searchRoutes.js"));
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
 	// If this is in production, then we need to use react as a static thing, instead of in the client folder.
-	const folder = path.join(__dirname, 'client', 'build');
+	const folder = path.join(__dirname, "client", "build");
 	app.use(express.static(path.join(folder)));
-	app.get('*', (req, res) => {
-		res.sendFile(path.resolve(folder, 'index.html'));
+	app.get("*", (req, res) => {
+		res.sendFile(path.resolve(folder, "index.html"));
+	});
+} else {
+	app.get("*", (req, res) => {
+		res.json({ "Not valid": "This route doesn't exist" });
 	});
 }
 
 const port = process.env.PORT || 5000; // If there is a PORT env variable it chooses that, else it chooses port 5000
-app.listen(port, () => console.log(`READServer listening at port ${port}`));
+app.listen(port, () => logger.info(`Server listening at port ${port}`));
