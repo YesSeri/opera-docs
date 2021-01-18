@@ -18,9 +18,6 @@
 		"nodemon": "^2.0.4",
 		"pino-pretty": "^4.3.0"
 	},
-	"nodemonConfig": {
-    "ignore": ["utils/logs/*"]
-  },
 	"scripts": {
 		"start": "node server.js",
 		"installAll": "npm install && npm install --prefix client",
