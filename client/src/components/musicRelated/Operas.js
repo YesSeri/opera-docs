@@ -21,7 +21,6 @@ function Operas() {
 			const url = createOperaUrl(last_name, opera_id, opera);
 			return (
 				<Col key={opera_id}>
-					{console.log(url)}
 					<Nav.Link href={url}>{`${opera}`}</Nav.Link>
 				</Col>
 			);

@@ -28,7 +28,7 @@ export default function Contact() {
 				setSuccess(true);
 			})
 			.catch((error) => {
-				console.log(error);
+				console.error(error);
 				setSuccess(false);
 			});
 	};
