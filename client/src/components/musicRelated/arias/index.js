@@ -9,7 +9,7 @@ import {
 	createComposerUrl,
 	createOperaUrl,
 	getApiData,
-} from '../helper/HelperFunctions';
+} from '../../utils/utilFunctions';
 import './music.css';
 
 function Arias() {

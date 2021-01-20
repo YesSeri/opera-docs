@@ -7,7 +7,7 @@ import {
 	createPieceUrl,
 	createComposerUrl,
 	createOperaUrl,
-} from '../helper/HelperFunctions';
+} from '../utils/utilFunctions';
 
 export function composerPost(result, className, index = null) {
 	const { last_name, first_name } = result.item;

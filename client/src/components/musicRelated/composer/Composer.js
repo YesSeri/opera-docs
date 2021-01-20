@@ -3,8 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { Helmet } from 'react-helmet';
-import { createOperaUrl } from '../helper/HelperFunctions';
-import { getApiData } from '../helper/HelperFunctions';
+import { createOperaUrl, getApiData } from '../../utils/utilFunctions';
 
 function Composer(props) {
 	const [data, setData] = useState('');

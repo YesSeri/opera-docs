@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { createPieceUrl, getApiData } from '../helper/HelperFunctions';
+import { createPieceUrl, getApiData } from '../../utils/utilFunctions';
 import { Helmet } from 'react-helmet';
 
 function Opera(props) {

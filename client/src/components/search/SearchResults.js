@@ -5,7 +5,7 @@ import {
 	optionsComposers,
 	search,
 } from './SearchResultsHelper';
-import { getApiData } from '../helper/HelperFunctions';
+import { getApiData } from '../utils/utilFunctions';
 import TopResult from './TopResult';
 import OtherResults from './OtherResults';
 import './searchResults.css';

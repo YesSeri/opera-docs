@@ -1,23 +1,11 @@
 import React, { useEffect } from 'react';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './components/musicRelated/music.css';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
-import Banner from './components/Banner';
-import Composers from './components/musicRelated/Composers';
-import Composer from './components/musicRelated/Composer';
-import Operas from './components/musicRelated/Operas';
-import Opera from './components/musicRelated/Opera';
-import Arias from './components/musicRelated/Arias';
-import Piece from './components/musicRelated/Piece';
-import Search from './components/search/Search';
-import About from './components/About';
-import Contact from './components/contact/Contact';
+import { About, Banner, Contact, Footer, NavBar, Search, Arias, Piece, Composer, Composers, Opera, Operas } from './components'
 // import CookieConsent from 'react-cookie-consent';
 // import Cookies from 'universal-cookie';
 import { useLocation, Switch, Route } from 'react-router-dom';
 import ReactGA from 'react-ga';
+import { Wrapper } from './stylesAppGlobal/styleApp'
 
 // const cookies = new Cookies();
 
@@ -41,7 +29,7 @@ export default function App() {
 	usePageViews();
 
 	return (
-		<div id="wrapper">
+		<Wrapper>
 			<div className="siteContainer">
 				<div className="logoContainer">
 					<h1>operadocs</h1>
@@ -74,7 +62,7 @@ export default function App() {
         This website uses cookies and google analytics to enhance the user
         experience.
       </CookieConsent> */}
-		</div>
+		</Wrapper>
 	);
 }
 

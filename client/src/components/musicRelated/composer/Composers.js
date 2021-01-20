@@ -4,8 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Nav from 'react-bootstrap/Nav';
 import { Helmet } from 'react-helmet';
-import { createComposerUrl } from '../helper/HelperFunctions';
-import { getApiData } from '../helper/HelperFunctions';
+import { createComposerUrl, getApiData } from '../../utils/utilFunctions';
 
 function Composers() {
 	const [data, setData] = useState(null);

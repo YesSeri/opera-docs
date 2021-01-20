@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Frame from '../Frame';
-import { getApiData } from '../helper/HelperFunctions';
+import Frame from '../../frame';
+import { getApiData } from '../../utils/utilFunctions';
 import { Helmet } from 'react-helmet';
 
 function Piece(props) {
