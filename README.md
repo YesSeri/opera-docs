@@ -8,8 +8,6 @@ A few years ago I had help from someone and made a wordpress site for viewing sc
 
 Should I add a row for acts in pieces, so I can group the operas by act in the /composer/opera view? Adding it to the DB would be quite quick.
 
-Should I rewrite client in typescript? Might make things more clear, so I know exactly what does in and out of each function. Might avoid a few bugs, and remove the ugly checking for undefined that I have to use in some places, like the search for example. Could also be interesting to learn it.
-
 I might need to create more routes, if performance slows down, so that every single API route only queries exactly what it needs. Now the API queries for a few things it might not need. However so far performance is great so no need to worry as of yet.
 
 Another concern: It might be worth restructuring the site to use Redux. However, the problem then is, how much of the database would you put into the Redux? I am unsure how much data is okay for a web browser to handle. When the site is done I might have a maximum of 700 pieces, meaning that the page would have to read in a query containing an array with 700 items, and each item being an object containing 7 key value pairs + mod time and creation time. Is that to much?
@@ -21,3 +19,15 @@ One more very important thing to work on is the looks. I need to look into how t
 Need to add a success message when succesfully submitting mail.
 
 const googleUrlPDF = `https://drive.google.com/viewerng/viewer?embedded=true&url=https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${filename}`
+
+
+
+### Things to improve
+
+- Refactor css -> styled components
+- Refactor search into smaller pieces
+  - Use compound components?
+  - Have a container folder where you put final result together and export that
+- I need a solid pdf viewer longterm.
+  - https://github.com/react-pdf-viewer/react-pdf-viewer
+    - This one works well, but when i tried it last time it bugged out when there was over a 100 pages in pdf.
