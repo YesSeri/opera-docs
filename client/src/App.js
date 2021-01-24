@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { About, Banner, Contact, Footer, NavBar, Search, Arias, Piece, Composer, Composers, Opera, Operas } from './components'
+import { About, Banner, Contact, Footer, Search, Arias, Piece, Composer, Composers, Opera, Operas } from './components'
+import Header from './container/header'
 // import CookieConsent from 'react-cookie-consent';
 // import Cookies from 'universal-cookie';
 import { useLocation, Switch, Route } from 'react-router-dom';
@@ -30,12 +31,8 @@ export default function App() {
 
 	return (
 		<Wrapper>
-			<div className="siteContainer">
-				<div className="logoContainer">
-					<h1>operadocs</h1>
-				</div>
-				<Banner />
-				<NavBar />
+			<div>
+				<Header />
 				<Switch>
 					<Route path="/about" exact component={About} />
 					<Route path="/contact" exact component={Contact} />
@@ -45,7 +42,7 @@ export default function App() {
 					<Route path="/:lastName/:operaId/:pieceIdName" component={Piece} />
 					<Route path="/:lastName/:operaIdName" component={Opera} />
 					<Route path="/:lastName" component={Composer} />
-					<Route exact path="/" component={Search}></Route>
+					<Route path="/" exact component={Search}></Route>
 				</Switch>
 			</div>
 			<Footer />

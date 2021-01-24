@@ -1,5 +1,8 @@
-.musicContainer a {
+.musicContainer a{
 	font-size: 1.1rem;
+}
+.musicContainer{
+	text-align: center;
 }
 @media screen and (max-width: 600px) {
 	.musicContainer .operaContainer {
