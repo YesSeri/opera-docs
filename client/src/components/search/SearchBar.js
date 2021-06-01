@@ -6,6 +6,11 @@ import diacritics from 'diacritics';
 
 const SearchBar = ({ setSearchValue }) => {
 	// Parent component of SearchBar and SearchResults is Search
+	const keyDown = (e) => {
+		if (e.key === "Enter") {
+			e.preventDefault();
+		}
+	}
 	return (
 		<Container style={{ paddingTop: '10px' }}>
 			<Col lg={{ span: 6, offset: 3 }}>
@@ -14,6 +19,7 @@ const SearchBar = ({ setSearchValue }) => {
 						<Form.Control
 							type="text"
 							placeholder="Enter search"
+							onKeyDown={keyDown}
 							onChange={(e) => {
 								setSearchValue(diacritics.remove(e.target.value)); // Remove all strange italian signs above letters for better search, e.g. è and é
 							}}

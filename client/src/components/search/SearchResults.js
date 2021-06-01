@@ -23,7 +23,7 @@ export default function SearchResults({ searchValue }) {
 		const composersSource = getApiData(`/api/composers/`, setComposers); // Return is an axios cancel token. Used if component gets unmounted before request is completed.
 		return () => {
 			piecesSource.cancel(
-				'Component was unmounted, axios search request is cancelled.'
+				'Component was unmounted, axios piece request is cancelled.'
 			);
 			operasSource.cancel(
 				'Component was unmounted, axios opera request is cancelled.'

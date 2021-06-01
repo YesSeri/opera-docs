@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { About, Banner, Contact, Footer, Search, Arias, Piece, Composer, Composers, Opera, Operas } from './components'
+import { About, Contact, Footer, Search, Arias, Piece, Composer, Composers, Opera, Operas } from './components'
+import { newSearch } from './components'
 import Header from './container/header'
 // import CookieConsent from 'react-cookie-consent';
 // import Cookies from 'universal-cookie';
@@ -42,6 +43,7 @@ export default function App() {
 					<Route path="/:lastName/:operaId/:pieceIdName" component={Piece} />
 					<Route path="/:lastName/:operaIdName" component={Opera} />
 					<Route path="/:lastName" component={Composer} />
+					<Route path="/" exact component={newSearch}></Route>
 					<Route path="/" exact component={Search}></Route>
 				</Switch>
 			</div>

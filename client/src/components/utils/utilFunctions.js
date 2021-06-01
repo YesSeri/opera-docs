@@ -14,24 +14,25 @@ export function getApiData(url, setData) {
 }
 
 export function createPieceUrl(lastName, opera_id, opera, piece_id, title) {
+	const startUrl = createOperaUrlUnencoded(lastName, opera_id, opera);
 	const endUrl = `${piece_id}-${title}`;
-	const startUrl = createOperaUrl(lastName, opera_id, opera);
 	return encodeURI(`${startUrl}/${endUrl}`)
 }
 
 export function createOperaUrl(lastName, opera_id, opera) {
-	const url =  encodeURI(`/${createComposerUrlUnencoded(lastName)}/${opera_id}-${opera}`);
-	return url
-}
-
-export function createOperaUrlUnencoded(lastName, opera_id, opera) {
-	return `/${createComposerUrlUnencoded(lastName)}/${opera_id}-${opera}`;
+	const startUrl = `/${createComposerUrlUnencoded(lastName)}`;
+	const endUrl = `${opera_id}-${opera}`;
+	return encodeURI(`${startUrl}/${endUrl}`)
 }
 
 export function createComposerUrl(lastName) {
 	return encodeURI(lastName);
 }
 
-export function createComposerUrlUnencoded(lastName) {
+export function createOperaUrlUnencoded(lastName, opera_id, opera) {
+	return `/${createComposerUrlUnencoded(lastName)}/${opera_id}-${opera}`;
+}
+
+function createComposerUrlUnencoded(lastName) {
 	return lastName;
 }

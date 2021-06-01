@@ -6,6 +6,7 @@ export { default as Footer } from './footer'
 export { default as Logo } from './logo'
 export { default as NavBar } from './navbar'
 export { default as Search } from './search'
+export { default as newSearch } from './newSearch'
 
 export { default as Arias } from './musicRelated/arias'
 export { default as Piece } from './musicRelated/piece'
