@@ -1,16 +1,34 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import Container from 'react-bootstrap/Container';
 
 const ResultPane = styled.div`
     text-align: center;
  	font-size: 1.2em;
-    width: 33%;
+    padding: 0 3px;
+    flex: 1 1 1;
+    width:33.33%;
+    border-radius: 10px;
+    border-top: solid #ddd 1px;
+    border-right: solid #ddd 1px;
+    border-left: solid #ddd 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:nth-last-child(-n+3){
+        border: solid #ddd 1px;
+    }
     @media screen and (max-width: 1000px) {
- 	font-size: 1.1em;
+        &:nth-last-child(-n+2){
+            border: solid #ddd 1px;
+        }
+        font-size: 1.1em;
         width: 50%;
     }
     @media screen and (max-width: 600px) {
- 	font-size: 1.0em;
+        &:nth-last-child(){
+            border: solid #ddd 1px;
+        }
+        font-size: 1.0em;
         width: 100%;
     }
 `
@@ -18,7 +36,6 @@ const TopResultPane = styled(ResultPane)`
  	font-size: 2.7em;
     width: 100%;
     padding-bottom: 10px;
-
     &:hover{
         color: #33e;
     } 	
@@ -32,9 +49,9 @@ const TopResultPane = styled(ResultPane)`
 const ResultsContainer = styled.div`
     display:flex;
     flex-wrap:wrap;
+    justify-content: center;
     max-width:1200px;
     margin:auto;
-    
 `
 const Link = styled.a`
 

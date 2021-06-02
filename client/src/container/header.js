@@ -1,6 +1,5 @@
 import React from 'react'
-import Logo from '../components/logo'
-import { Banner, NavBar } from '../components'
+import { Banner, NavBar, Logo } from '../components'
 
 export default function Header() {
   return (

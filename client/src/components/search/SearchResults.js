@@ -11,7 +11,7 @@ import {
 import { TopResultPane, ResultPane, ResultsContainer, Link } from './styled'
 const SearchValue = ({ searchValue }) => {
     const [pieceFuse, operaFuse, composerFuse] = useGetFuses(); // Fuse JS indexes the data and makes it searchable.
-    const [results, setResults] = useState([]);
+    const [results, setResults] = useState(null);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         if (pieceFuse && operaFuse && composerFuse) {
@@ -21,14 +21,17 @@ const SearchValue = ({ searchValue }) => {
 
     useEffect(() => {
         function getSortedTopsMatches() {
+            // Searches through all the pieces and returns relevant results, unsorted
             const pieces = pieceFuse.search(searchValue);
             const operas = operaFuse.search(searchValue);
             const composers = composerFuse.search(searchValue);
+            // This creates one big array from the three searched arrays and if the array is empty then it adds and empty array.
             const allResults = [...(pieces || []), ...(operas || []), ...(composers || [])]
             const sortedResults = allResults.sort((a, b) => a.score - b.score);
-            return sortedResults.slice(0, 15);
+            // One main result and 18 subresults. 18 is divisible by 3 and 2, which is neat for presentation.
+            return sortedResults.slice(0, 19);
         }
-        if (searchValue < 1 || loading) return
+        if (loading || searchValue.length < 3) return
         const arr = getSortedTopsMatches()
         const equalizedArr = arr.map(({ item }) => {
             const { last_name, opera_id, opera, piece_id, title } = item
@@ -47,14 +50,16 @@ const SearchValue = ({ searchValue }) => {
             return ""
         })
         setResults(equalizedArr)
-    }, [searchValue, loading])
+    }, [searchValue, loading, composerFuse, operaFuse, pieceFuse])
     return (
-        <ResultsContainer>
-            <TopResult result={results[0]} />
-            {results.slice(1).map(result =>
-                <Result key={result.link} result={result} />
-            )}
-        </ResultsContainer>
+        results ?
+            <ResultsContainer>
+                <TopResult result={results[0]} />
+                {results.slice(1).map(result =>
+                    <Result key={result.link} result={result} />
+                )}
+            </ResultsContainer>
+        : <div />
     )
 };
 

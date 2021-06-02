@@ -4,7 +4,7 @@ import SearchBar from './SearchBar';
 import { Helmet } from 'react-helmet';
 // This is just a container for the search
 function Search() {
-    const [searchValue, setSearchValue] = useState('car');
+    const [searchValue, setSearchValue] = useState('');
     return (
         <>
             <Helmet>
