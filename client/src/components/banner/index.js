@@ -17,13 +17,6 @@ export default function Banner() {
 					{rightText}
 				</Pane>
 			</Inner>
-			{/* <Row className="topRow">
-				<Col className="centered">{topText}</Col>
-			</Row>
-			<Row className="align-items-center bottomRow centered">
-				<Col md={6}>{leftText}</Col>
-				<Col md={6}>{rightText}</Col>
-			</Row> */}
 		</Container>
 	);
 }
