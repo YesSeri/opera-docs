@@ -52,14 +52,15 @@ const SearchValue = ({ searchValue }) => {
         setResults(equalizedArr)
     }, [searchValue, loading, composerFuse, operaFuse, pieceFuse])
     return (
-        results ?
+        // An array of length 0 still evaluates to true, so we need to do this double check.
+        results && results.length !== 0 ?
             <ResultsContainer>
                 <TopResult result={results[0]} />
                 {results.slice(1).map(result =>
                     <Result key={result.link} result={result} />
                 )}
             </ResultsContainer>
-        : <div />
+        : null
     )
 };
 

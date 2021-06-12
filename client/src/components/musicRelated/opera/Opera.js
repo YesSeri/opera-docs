@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { createPieceUrl, getApiData } from '../../utils/utilFunctions';
 import { Helmet } from 'react-helmet';
+import { ResultPane, ResultsContainer } from './styled'
 
 function Opera(props) {
 	const [data, setData] = useState(null);
@@ -24,17 +25,17 @@ function Opera(props) {
 						? 'normal'
 						: 'bold';
 				return (
-					<div key={id} className="operaContainer">
+					<ResultPane key={id} style={{width: '100%'}}>
 						<Link
 							style={{ fontWeight: weight }}
 							to={`${pieceUrl}`}
 						>{`${title}`}</Link>
 						<br />
-					</div>
+					</ResultPane>
 				);
 			}
 		);
-		return pieces;
+		return (<ResultsContainer>{pieces}</ResultsContainer>);
 	};
 	return (
 		<div className="musicContainer">

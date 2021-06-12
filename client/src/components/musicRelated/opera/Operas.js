@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { Helmet } from 'react-helmet';
 import { createOperaUrl, getApiData } from '../../utils/utilFunctions';
+import { ResultPane, ResultsContainer } from './styled'
 
 function Operas() {
 	const [data, setData] = useState(null);
@@ -19,9 +20,9 @@ function Operas() {
 		return data.map(({ last_name, opera_id, opera }) => {
 			const url = createOperaUrl(last_name, opera_id, opera);
 			return (
-				<Col key={opera_id}>
+				<ResultPane style={{}} key={opera_id}>
 					<Nav.Link href={url}>{`${opera}`}</Nav.Link>
-				</Col>
+				</ResultPane>
 			);
 		});
 	};
@@ -30,11 +31,9 @@ function Operas() {
 			<Helmet>
 				<title>operadocs - Operas and Scores</title>
 			</Helmet>
-			<Container className="musicContainer">
-				<Row xs={1} md={2} lg={3}>
-					{data ? operaPieces() : null}
-				</Row>
-			</Container>
+			<ResultsContainer>
+				{data ? operaPieces() : null}
+			</ResultsContainer>
 		</>
 	);
 }

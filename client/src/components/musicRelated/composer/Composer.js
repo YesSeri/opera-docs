@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { createOperaUrl, getApiData } from '../../utils/utilFunctions';
 import { Image, MusicContainer, Link } from './styled'
+import { ResultPane, ResultsContainer } from './styled'
 
 
 const ComposerInfo = ({ data }) => {
@@ -27,12 +28,15 @@ const ComposersOperas = ({ data }) => {
 	const operas = data.map(({ last_name, opera_id, opera }) => {
 		const link = createOperaUrl(last_name, opera_id, opera);
 		return (
-			<div>
+			<ResultPane>
 				<Link href={link}>{`${opera}`}</Link>
-			</div>
+			</ResultPane>
 		);
 	});
-	return operas;
+	return (
+		<ResultsContainer style={{paddingTop: '0.5em', justifyContent: 'center'}}>
+			{operas}
+		</ResultsContainer>);
 };
 
 function Composer(props) {
