@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import { Helmet } from 'react-helmet';
+import { Title } from '../../sharedStyles/styles'
 
 export default function About() {
 	return (
@@ -9,7 +10,7 @@ export default function About() {
 				<title>operadocs - about us</title>
 			</Helmet>
 			<Container style={{ marginTop: '10px' }}>
-				<h1>About</h1>
+				<Title>About</Title>
 				<p>
 					This is a page where scores can be found. They have been found in a
 					variety of places but what they all have in common is that the there

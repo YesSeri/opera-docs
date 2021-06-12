@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Container, Item, Pane, Inner } from './styled'
 
 const topText = `The Platform for finding opera sheet music online`;

@@ -30,4 +30,7 @@ const ResultsContainer = styled.div`
     margin:auto;
 `
 
-export { ResultsContainer, ResultPane }
+const Title = styled.h1`
+	text-align: center;
+`
+export { ResultsContainer, ResultPane, Title }
