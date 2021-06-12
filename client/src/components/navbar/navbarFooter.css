@@ -1,5 +1,6 @@
 .navFooterContainer {
   padding-top: -10px;
+  user-select: none;
 }
 .navFooterContainer a {
 	font-size: 1.5rem;
