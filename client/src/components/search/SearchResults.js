@@ -34,17 +34,18 @@ const SearchValue = ({ searchValue }) => {
         if (loading || searchValue.length < 3) return
         const arr = getSortedTopsMatches()
         const equalizedArr = arr.map(({ item }) => {
-            const { last_name, opera_id, opera, piece_id, title, type } = item
-            if (type === 'piece') {
+            // not all categorys have all the destructed variables. Some will be undefined.
+            const { last_name, opera_id, opera, piece_id, title, category, type } = item
+            if (category === 'piece') {
                 const link = createPieceUrl(last_name, opera_id, opera, piece_id, title);
-                const text = title.toLowerCase().includes("ouverture") ? `${title} - ${opera}`: title;
+                const text = type.toLowerCase().includes("ouverture") ? `${title} - ${opera}` : title;
                 return { text, link }
             }
-            else if (type === 'opera') {
+            else if (category === 'opera') {
                 const link = createOperaUrl(last_name, opera_id, opera);
                 return { text: opera, link }
             }
-            else if (type === 'composer') {
+            else if (category === 'composer') {
                 const link = createComposerUrl(last_name);
                 return { text: last_name, link }
             }
@@ -145,14 +146,14 @@ const useGetInfo = () => {
                 .get('/api/search', {
                     cancelToken: pieceSource.token,
                 })
-            setPieces(response.data.map(el => ({ ...el, type: 'piece' })));
+            setPieces(response.data.map(el => ({ ...el, category: 'piece' })));
         }
         const fetchOperas = async () => {
             const response = await axios
                 .get('/api/operas', {
                     cancelToken: operaSource.token,
                 })
-            setOperas(response.data.map(el => ({ ...el, type: 'opera' })));
+            setOperas(response.data.map(el => ({ ...el, category: 'opera' })));
 
         }
         const fetchComposers = async () => {
@@ -160,7 +161,7 @@ const useGetInfo = () => {
                 .get('/api/composers', {
                     cancelToken: composerSource.token,
                 })
-            setComposers(response.data.map(el => ({ ...el, type: 'composer' })));
+            setComposers(response.data.map(el => ({ ...el, category: 'composer' })));
         }
         fetchPieces();
         fetchOperas();
