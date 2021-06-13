@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Nav from 'react-bootstrap/Nav';
 import { Helmet } from 'react-helmet';
 import { createOperaUrl, getApiData } from '../../utils/utilFunctions';
-import { ResultPane, ResultsContainer } from './styled'
+import { ResultPane, ResultsContainer, Link } from './styled'
 
 function Operas() {
 	const [data, setData] = useState(null);
@@ -17,8 +16,8 @@ function Operas() {
 		return data.map(({ last_name, opera_id, opera }) => {
 			const url = createOperaUrl(last_name, opera_id, opera);
 			return (
-				<ResultPane style={{}} key={opera_id}>
-					<Nav.Link href={url}>{`${opera}`}</Nav.Link>
+				<ResultPane key={opera_id}>
+					<Link href={url}>{`${opera}`}</Link>
 				</ResultPane>
 			);
 		});

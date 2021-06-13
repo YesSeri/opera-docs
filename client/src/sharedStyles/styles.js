@@ -31,6 +31,7 @@ const ResultsContainer = styled.div`
 `
 
 const Title = styled.h1`
+    padding-top: 5px;
 	text-align: center;
 `
 export { ResultsContainer, ResultPane, Title }

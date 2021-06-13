@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { createPieceUrl, getApiData } from '../../utils/utilFunctions';
 import { Helmet } from 'react-helmet';
-import { ResultPane, ResultsContainer } from './styled'
+import { ResultPane, ResultsContainer, Link, Title } from './styled'
 
 function Opera(props) {
 	const [data, setData] = useState(null);
@@ -25,10 +24,10 @@ function Opera(props) {
 						? 'normal'
 						: 'bold';
 				return (
-					<ResultPane key={id} style={{width: '100%'}}>
+					<ResultPane key={id} style={{ width: '100%' }}>
 						<Link
 							style={{ fontWeight: weight }}
-							to={`${pieceUrl}`}
+							href={`${pieceUrl}`}
 						>{`${title}`}</Link>
 						<br />
 					</ResultPane>
@@ -42,7 +41,7 @@ function Opera(props) {
 			<Helmet>
 				<title>operadocs - Vocal scores for {opera}</title>
 			</Helmet>
-			{data ? <h1>{opera}</h1> : data === null ? '' : 'Nothing here'}
+			{data ? <Title>{opera}</Title> : data === null ? '' : 'Nothing here'}
 			{data ? operaPieces() : null}
 		</div>
 	);

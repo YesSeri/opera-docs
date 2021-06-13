@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import { ResultPane, ResultsContainer } from '../../../sharedStyles/styles'
+import { ResultPane, ResultsContainer, Title } from '../../../sharedStyles/styles'
 
 const Image = styled.img`
     border-radius: 10px;
@@ -10,9 +10,4 @@ const Image = styled.img`
 const Link = styled.a`
     font-size: 1.1rem;
 `
-
-const MusicContainer = styled.div`
- 	text-align: center;
-`
-
-export { ResultPane, ResultsContainer, Image, Link, MusicContainer }
+export { ResultPane, ResultsContainer, Link, Image, Title }

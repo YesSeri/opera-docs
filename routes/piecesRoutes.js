@@ -5,9 +5,10 @@ const pool = require("../utils/database");
 
 router.use(express.json());
 router.get("/arias", (req, res) => {
-	const query = `SELECT p.id as piece_id, p.title, p.type, p.placement, o.name as opera, o.id as opera_id, c.first_name, c.last_name, c.id as composer_id 
+	const query = `SELECT p.id as piece_id, p.title, p.type, v.type as voice_type, p.placement, o.name as opera, o.id as opera_id, c.first_name, c.last_name, c.id as composer_id 
                     FROM pieces as p INNER JOIN operas as o ON p.opera_id = o.id 
                     INNER JOIN composers as c ON o.composer_id = c.id
+                    LEFT JOIN voice_type as v ON p.voice_type = v.id
                     WHERE p.type = 'aria'
                     ORDER BY opera ASC, p.placement ASC;`;
 	pool.query(query, function (error, result) {

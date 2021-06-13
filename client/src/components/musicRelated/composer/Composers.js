@@ -20,7 +20,7 @@ function Composers() {
 				const url = createComposerUrl(last_name);
 				return (
 					<ResultPane key={id}>
-						<Nav.Link href={url}>{`${last_name}, ${first_name}`}</Nav.Link>
+						<a href={url}>{`${last_name}, ${first_name}`}</a>
 					</ResultPane>
 				);
 			});
