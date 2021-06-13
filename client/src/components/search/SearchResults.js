@@ -27,7 +27,8 @@ const SearchValue = ({ searchValue }) => {
             const composers = composerFuse.search(searchValue);
             // This creates one big array from the three searched arrays and if the array is empty then it adds and empty array.
             const allResults = [...(pieces || []), ...(operas || []), ...(composers || [])]
-            const sortedResults = allResults.sort((a, b) => a.score - b.score);
+            const filteredResults = allResults.filter(el => el.score < 0.6)
+            const sortedResults = filteredResults.sort((a, b) => a.score - b.score);
             // One main result and 18 subresults. 18 is divisible by 3 and 2, which is neat for presentation.
             return sortedResults.slice(0, 19);
         }
@@ -95,7 +96,7 @@ const options = {
     getFn,
     includeScore: true,
     shouldSort: false,
-    location: true,
+    ignoreLocation: true
 }
 const pieceOptions = {
     ...options,
