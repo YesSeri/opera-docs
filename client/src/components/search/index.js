@@ -12,7 +12,7 @@ function Search() {
                     operadocs - Search for Arias, Ensembles, Recitatives and Ouvertures
 				</title>
             </Helmet>
-            <SearchBar setSearchValue={setSearchValue} />
+            <SearchBar setSearchValue={setSearchValue} searchValue={searchValue} />
             <SearchResults searchValue={searchValue} />
         </>
     );

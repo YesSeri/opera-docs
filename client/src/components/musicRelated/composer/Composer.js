@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { createOperaUrl, getApiData } from '../../utils/utilFunctions';
-import { Image, MusicContainer, Link } from './styled'
-import { ResultPane, ResultsContainer } from './styled'
+import { Image, MusicContainer, Link, ResultPane, ResultsContainer } from './styled'
 
 
 const ComposerInfo = ({ data }) => {
@@ -34,7 +33,7 @@ const ComposersOperas = ({ data }) => {
 		);
 	});
 	return (
-		<ResultsContainer style={{paddingTop: '0.5em', justifyContent: 'center'}}>
+		<ResultsContainer style={{ paddingTop: '0.5em', justifyContent: 'center' }}>
 			{operas}
 		</ResultsContainer>);
 };

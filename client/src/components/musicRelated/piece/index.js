@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import Frame from '../../frame';
 import { getApiData } from '../../utils/utilFunctions';
 import { Helmet } from 'react-helmet';
+import { Title, Container, Item } from './styled'
 
 function Piece(props) {
 	const [data, setData] = useState(null);
@@ -27,20 +26,20 @@ function Piece(props) {
 							operadocs - Score for {title} from {opera}
 						</title>
 					</Helmet>
-					<h2 style={{ paddingTop: '20px' }}>{title}</h2>
-					<Row xs={1} md={4} style={{ paddingTop: '30px' }}>
-						<Col>
+					<Title >{title}</Title>
+					<Container>
+						<Item>
 							<b>Type: </b> {type.charAt(0).toUpperCase() + type.slice(1)}
-						</Col>
-						<Col>
+						</Item>
+						<Item>
 							<b>Opera: </b>
 							{opera}
-						</Col>
-						<Col>
+						</Item>
+						<Item>
 							<b> Composer: </b>
 							{`${last_name}, ${first_name}`}
-						</Col>
-						<Col>
+						</Item>
+						<Item>
 							<b> Link: </b>
 							{data ? (
 								<a
@@ -49,8 +48,8 @@ function Piece(props) {
 									here
 								</a>
 							) : null}
-						</Col>
-					</Row>
+						</Item>
+					</Container>
 				</>
 			);
 		}
@@ -58,14 +57,14 @@ function Piece(props) {
 	};
 
 	return (
-		<div className="musicContainer">
-			{data ? PieceInfo() : null}
-			{data ? (
+		data ?
+			(<div>
+				<PieceInfo />
 				<Frame
 					downloadLink={`https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${data.file_title}`}
 				/>
-			) : null}
-		</div>
+			</div>)
+			: 'Piece not found'
 	);
 }
 

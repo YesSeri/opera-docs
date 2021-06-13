@@ -7,6 +7,7 @@ export const GlobalStyles = createGlobalStyle`
 		-moz-osx-font-smoothing:grayscale;
 		background-color: #fff;
 		font-size: 16px;
+		text-align:center;
 	}
 	html {
 		-webkit-box-sizing: border-box;

@@ -34,18 +34,19 @@ const SearchValue = ({ searchValue }) => {
         if (loading || searchValue.length < 3) return
         const arr = getSortedTopsMatches()
         const equalizedArr = arr.map(({ item }) => {
-            const { last_name, opera_id, opera, piece_id, title } = item
-            if (item.type === 'piece') {
+            const { last_name, opera_id, opera, piece_id, title, type } = item
+            if (type === 'piece') {
                 const link = createPieceUrl(last_name, opera_id, opera, piece_id, title);
-                return { text: item.title, link }
+                const text = title.toLowerCase().includes("ouverture") ? `${title} - ${opera}`: title;
+                return { text, link }
             }
-            else if (item.type === 'opera') {
+            else if (type === 'opera') {
                 const link = createOperaUrl(last_name, opera_id, opera);
-                return { text: item.opera, link }
+                return { text: opera, link }
             }
-            else if (item.type === 'composer') {
+            else if (type === 'composer') {
                 const link = createComposerUrl(last_name);
-                return { text: item.last_name, link }
+                return { text: last_name, link }
             }
             return ""
         })
@@ -60,7 +61,7 @@ const SearchValue = ({ searchValue }) => {
                     <Result key={result.link} result={result} />
                 )}
             </ResultsContainer>
-        : null
+            : null
     )
 };
 

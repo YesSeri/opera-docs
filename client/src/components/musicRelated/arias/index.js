@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import { Helmet } from 'react-helmet';
 import {
 	createPieceUrl,
@@ -7,7 +6,7 @@ import {
 	createOperaUrl,
 	getApiData,
 } from '../../utils/utilFunctions';
-import { Container, ResultPane, ResultsContainer, Link, Item } from './styled'
+import { Container, ResultPane, ResultsContainer, Link } from './styled'
 
 function Arias() {
 	const [data, setData] = useState(null);
@@ -22,7 +21,7 @@ function Arias() {
 	const AriasInfo = () => {
 		//p.id title o.id opera c.id c.lastname, c.firstname
 		const arias = data.map(
-			({ piece_id, title, opera_id, opera, voice_type, type, last_name, first_name }) => {
+			({ piece_id, title, opera_id, opera, last_name, first_name }) => {
 				const composerUrl = createComposerUrl(last_name);
 				const operaUrl = createOperaUrl(last_name, opera_id, opera);
 				const pieceUrl = createPieceUrl(
@@ -34,37 +33,14 @@ function Arias() {
 				);
 
 				return (
-					<ResultPane>
+					<ResultPane key={piece_id}>
 						<Link href={pieceUrl}>{title}</Link>
 						<Link href={operaUrl}>{opera}</Link>
-						<Item href={operaUrl}>{voice_type ? voice_type : 'Singer'}</Item>
+						{/* <Item href={operaUrl}>{voice_type ? voice_type : 'Singer'}</Item> */}
 						<Link
 							href={composerUrl}
 						>{`${last_name}, ${first_name}`}</Link>
 					</ResultPane>
-					// <Row
-					// 	style={{
-					// 		borderRadius: '10px',
-					// 		borderTop: 'solid #ddd 1px',
-					// 		borderRight: 'solid #ddd 1px',
-					// 		borderLeft: 'solid #ddd 1px',
-					// 	}}
-					// 	key={piece_id}
-					// 	xs={1}
-					// 	sm={3}
-					// >
-					// 	<Col>
-					// 		<Nav.Link href={pieceUrl}>{title}</Nav.Link>
-					// 	</Col>
-					// 	<Col>
-					// 		<Nav.Link href={operaUrl}>{opera}</Nav.Link>
-					// 	</Col>
-					// 	<Col>
-					// 		<Nav.Link
-					// 			href={composerUrl}
-					// 		>{`${last_name}, ${first_name}`}</Nav.Link>
-					// 	</Col>
-					// </Row>
 				)
 			}
 		);
