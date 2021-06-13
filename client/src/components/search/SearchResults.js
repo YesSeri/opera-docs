@@ -39,7 +39,7 @@ const SearchValue = ({ searchValue }) => {
             const { last_name, opera_id, opera, piece_id, title, category, type } = item
             if (category === 'piece') {
                 const link = createPieceUrl(last_name, opera_id, opera, piece_id, title);
-                const text = type.toLowerCase().includes("ouverture") ? `${title} - ${opera}` : title;
+                const text = type.toLowerCase().includes("ouverture") || type.toLowerCase().includes("intermezzo") ? `${title} - ${opera}` : title;
                 return { text, link }
             }
             else if (category === 'opera') {
