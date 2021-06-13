@@ -3,16 +3,26 @@ import Form from 'react-bootstrap/Form';
 import diacritics from 'diacritics';
 import { SearchContainer } from './styled'
 
-const SearchBar = ({ setSearchValue }) => {
+const SearchBar = ({ searchValue, setSearchValue }) => {
+	// Used so we can scroll to searchbar on enter
+	const formRef = React.useRef(null)
 	const disableEnter = (e) => {
 		if (e.key === "Enter") {
+			// Scrolls the search results in to view.
+			formRef.current.scrollIntoView()
 			e.preventDefault();
 		}
 	}
+	React.useEffect(() => {
+		formRef.current.scrollIntoView();
+		return () => {
+		}
+	}, [searchValue])
 	return (
 		<SearchContainer>
 			<Form>
 				<Form.Control
+					ref={formRef}
 					type="text"
 					placeholder="Enter search"
 					onKeyDown={disableEnter}
