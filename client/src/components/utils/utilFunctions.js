@@ -6,7 +6,9 @@ export function getApiData(url, setData) {
 		.get(url, {
 			cancelToken: source.token,
 		})
-		.then((response) => setData(response.data))
+		.then((response) => {
+			setData(response.data)
+		})
 		.catch((err) => {
 			if (err) console.error(err);
 		});

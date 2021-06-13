@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import { Helmet } from 'react-helmet';
 import { createComposerUrl, getApiData } from '../../utils/utilFunctions';
@@ -35,11 +34,9 @@ function Composers() {
 			<Helmet>
 				<title>operadocs - A list of all available composers</title>
 			</Helmet>
-			<Container className="musicContainer">
 				<ResultsContainer>
 					<Composers></Composers>
 				</ResultsContainer>
-			</Container>
 		</>
 	);
 }
