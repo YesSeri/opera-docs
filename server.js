@@ -11,12 +11,8 @@ const app = express();
 const compression = require("compression");
 const { expressLogger, logger } = require("./utils/pino");
 
-if (process.env.NODE_ENV !== "production") {
-	const cors = require("cors");
-	// Only enable cors in development. For security this is better.
-	app.use(cors());
-}
 if (process.env.NODE_ENV === "production") app.use(expressLogger);
+
 app.use(compression());
 
 app.use("/api/pieces", require("./routes/piecesRoutes.js")); // Each of these routes are used to find stuff for the client. The client connects locally to these.

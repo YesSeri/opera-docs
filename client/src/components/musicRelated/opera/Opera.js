@@ -20,7 +20,7 @@ function Opera(props) {
 			({ last_name, opera_id, name, title, id, type }) => {
 				const pieceUrl = createPieceUrl(last_name, opera_id, name, id, title);
 				const weight =
-					type === 'recitativo' || type === 'choir' || type === 'intermezzo'
+					type === 'recitativo' || type === 'choir' || type === 'intermezzo' || type === 'other'
 						? 'normal'
 						: 'bold';
 				return (
