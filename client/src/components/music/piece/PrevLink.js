@@ -11,7 +11,7 @@ const PrevLink = ({ id }) => {
         return () => {
             source.cancel('Component was unmounted, axios request is cancelled.');
         };
-    }, []);
+    }, [id]);
     useEffect(() => {
         if (data) {
             const { last_name, opera_id, opera, id, title } = data;
