@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Frame from '../../frame';
 import { getApiData } from '../../utils/utilFunctions';
 import { Helmet } from 'react-helmet';
-import { Title, Container, Item } from './styled'
+import { Title, Container, Item, Description } from './styled'
 
 function Piece(props) {
 	const [data, setData] = useState(null);
@@ -16,7 +16,7 @@ function Piece(props) {
 	}, [props.match.params]);
 
 	const PieceInfo = () => {
-		const { title, opera, type, first_name, last_name } = data;
+		const { title, opera, type, first_name, last_name, description } = data;
 		let renderPiece = '';
 		if (title) {
 			renderPiece = (
@@ -27,7 +27,10 @@ function Piece(props) {
 						</title>
 					</Helmet>
 					<Title >{title}</Title>
-					<Container>
+					<Description>
+						<b>Synopsis: </b>{description}
+					</Description>
+					<	Container>
 						<Item>
 							<b>Type: </b> {type.charAt(0).toUpperCase() + type.slice(1)}
 						</Item>

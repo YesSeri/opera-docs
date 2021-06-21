@@ -7,11 +7,11 @@ export { default as Logo } from './logo'
 export { default as NavBar } from './navbar'
 export { default as Search } from './search'
 
-export { default as Arias } from './musicRelated/arias'
-export { default as Piece } from './musicRelated/piece'
+export { default as Arias } from './music/arias'
+export { default as Piece } from './music/piece'
 
-export { default as Composer } from './musicRelated/composer/Composer'
-export { default as Composers } from './musicRelated/composer/Composers'
+export { default as Composer } from './music/composer/Composer'
+export { default as Composers } from './music/composer/Composers'
 
-export { default as Opera } from './musicRelated/opera/Opera'
-export { default as Operas } from './musicRelated/opera/Operas'
+export { default as Opera } from './music/opera/Opera'
+export { default as Operas } from './music/opera/Operas'
