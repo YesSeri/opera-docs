@@ -3,8 +3,7 @@ import Frame from '../../frame';
 import { getApiData } from '../../utils/utilFunctions';
 import { Helmet } from 'react-helmet';
 import { Title, Container, Item } from './styled'
-import PrevLink from './PrevLink'
-import NextLink from './NextLink'
+import Links from './Links'
 import Synopsis from './Synopsis';
 
 function Piece(props) {
@@ -20,7 +19,6 @@ function Piece(props) {
 	const PieceInfo = () => {
 		const { title, opera, type, first_name, last_name, description, file_title, id } = data;
 		let renderPiece = '';
-		console.log({ id })
 		if (title) {
 			renderPiece = (
 				<>
@@ -31,10 +29,7 @@ function Piece(props) {
 					</Helmet>
 					<Title >{title}</Title>
 					<Synopsis description={description} />
-					<div style={{ justifyContent: 'center', display: 'flex' }}>
-						<PrevLink id={id} />
-						<NextLink id={id} />
-					</div>
+					<Links id={id} />
 					<Container>
 						<Item>
 							<b>Type: </b> {type.charAt(0).toUpperCase() + type.slice(1)}
