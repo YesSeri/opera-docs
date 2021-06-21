@@ -3,6 +3,7 @@ import Frame from '../../frame';
 import { getApiData } from '../../utils/utilFunctions';
 import { Helmet } from 'react-helmet';
 import { Title, Container, Item, Description } from './styled'
+import NextLink from './NextLink'
 
 function Piece(props) {
 	const [data, setData] = useState(null);
@@ -15,6 +16,7 @@ function Piece(props) {
 		};
 	}, [props.match.params]);
 
+	console.log(data)
 	const PieceInfo = () => {
 		const { title, opera, type, first_name, last_name, description } = data;
 		let renderPiece = '';
@@ -30,7 +32,8 @@ function Piece(props) {
 					<Description>
 						<b>Synopsis: </b>{description}
 					</Description>
-					<	Container>
+					<NextLink data={data}/>
+					<Container>
 						<Item>
 							<b>Type: </b> {type.charAt(0).toUpperCase() + type.slice(1)}
 						</Item>
