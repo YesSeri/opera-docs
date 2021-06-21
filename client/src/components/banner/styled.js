@@ -1,9 +1,9 @@
 import styled from "styled-components/macro";
 
 const Container = styled.div`
-display: flex;
+    display: flex;
 	justify-content: center;
-	background-color: #6a1a1b;
+	background-color: ${({ theme }) => theme.color.main};
 	color: #fff;
 	padding: 20px;
 	margin-bottom: 10px;
@@ -23,10 +23,10 @@ const Pane = styled.div`
 `
 const Inner = styled.div`
     display:flex;
-    max-width:1000px;
     justify-content: center;
     align-items: center;
     flex-wrap:wrap;
+    ${({theme}) => theme.responsiveWidth}
 `
 
 export { Container, Item, Pane, Inner }

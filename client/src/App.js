@@ -6,7 +6,9 @@ import Header from './container/header'
 // import Cookies from 'universal-cookie';
 import { useLocation, Switch, Route } from 'react-router-dom';
 import ReactGA from 'react-ga';
+import { ThemeProvider } from 'styled-components'
 import { Wrapper } from './stylesAppGlobal/styleApp'
+import theme from './theme'
 
 // const cookies = new Cookies();
 
@@ -26,28 +28,31 @@ function usePageViews() {
 		// }
 	}, [location]);
 }
+
+
 export default function App() {
 	usePageViews();
 
 	return (
-		<Wrapper>
-			<div>
-				<Header />
-				<Switch>
-					<Route path="/about" exact component={About} />
-					<Route path="/contact" exact component={Contact} />
-					<Route path="/composers" exact component={Composers} />
-					<Route path="/arias" exact component={Arias} />
-					<Route path="/operas" exact component={Operas} />
-					<Route path="/:lastName/:operaId/:pieceIdName" component={Piece} />
-					<Route path="/:lastName/:operaIdName" component={Opera} />
-					<Route path="/:lastName" component={Composer} />
-					<Route path="/" exact component={Search}></Route>
-					<Route path="/" exact component={Search}></Route>
-				</Switch>
-			</div>
-			<Footer />
-			{/* <CookieConsent
+		<ThemeProvider theme={theme}>
+			<Wrapper>
+				<div>
+					<Header />
+					<Switch>
+						<Route path="/about" exact component={About} />
+						<Route path="/contact" exact component={Contact} />
+						<Route path="/composers" exact component={Composers} />
+						<Route path="/arias" exact component={Arias} />
+						<Route path="/operas" exact component={Operas} />
+						<Route path="/:lastName/:operaId/:pieceIdName" component={Piece} />
+						<Route path="/:lastName/:operaIdName" component={Opera} />
+						<Route path="/:lastName" component={Composer} />
+						<Route path="/" exact component={Search}></Route>
+						<Route path="/" exact component={Search}></Route>
+					</Switch>
+				</div>
+				<Footer />
+				{/* <CookieConsent
         enableDeclineButton
         buttonText="I accept"
         onAccept={() => {
@@ -60,7 +65,8 @@ export default function App() {
         This website uses cookies and google analytics to enhance the user
         experience.
       </CookieConsent> */}
-		</Wrapper>
+			</Wrapper>
+		</ThemeProvider>
 	);
 }
 

@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Frame from '../../frame';
 import { getApiData } from '../../utils/utilFunctions';
 import { Helmet } from 'react-helmet';
-import { Title, Container, Item, Description } from './styled'
+import { Title, Container, Item } from './styled'
+import PrevLink from './PrevLink'
 import NextLink from './NextLink'
+import Synopsis from './Synopsis';
 
 function Piece(props) {
 	const [data, setData] = useState(null);
@@ -15,11 +17,10 @@ function Piece(props) {
 			source.cancel('Component was unmounted, axios request is cancelled.');
 		};
 	}, [props.match.params]);
-
-	console.log(data)
 	const PieceInfo = () => {
-		const { title, opera, type, first_name, last_name, description } = data;
+		const { title, opera, type, first_name, last_name, description, file_title, id } = data;
 		let renderPiece = '';
+		console.log({ id })
 		if (title) {
 			renderPiece = (
 				<>
@@ -29,10 +30,11 @@ function Piece(props) {
 						</title>
 					</Helmet>
 					<Title >{title}</Title>
-					<Description>
-						<b>Synopsis: </b>{description}
-					</Description>
-					<NextLink data={data}/>
+					<Synopsis description={description} />
+					<div style={{ justifyContent: 'center', display: 'flex' }}>
+						<PrevLink id={id} />
+						<NextLink id={id} />
+					</div>
 					<Container>
 						<Item>
 							<b>Type: </b> {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -43,13 +45,13 @@ function Piece(props) {
 						</Item>
 						<Item>
 							<b> Composer: </b>
-							{`${last_name}, ${first_name}`}
+							{last_name}, {first_name}
 						</Item>
 						<Item>
 							<b> Link: </b>
 							{data ? (
 								<a
-									href={`https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${data.file_title}`}
+									href={`https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${file_title}`}
 								>
 									here
 								</a>
@@ -63,14 +65,12 @@ function Piece(props) {
 	};
 
 	return (
-		data ?
-			(<div>
-				<PieceInfo />
-				<Frame
-					downloadLink={`https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${data.file_title}`}
-				/>
-			</div>)
-			: 'Piece not found'
+		data && <div>
+			<PieceInfo />
+			<Frame
+				downloadLink={`https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${data.file_title}`}
+			/>
+		</div>
 	);
 }
 

@@ -24,7 +24,6 @@ export default function Contact() {
 				process.env.REACT_APP_USER_ID
 			)
 			.then((response) => {
-				console.log(response);
 				setSuccess(true);
 			})
 			.catch((error) => {
