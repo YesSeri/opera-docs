@@ -15,10 +15,6 @@ export function getApiData(url, setData) {
 	return source;
 }
 
-export async function getApiDataV2(url, setUrl) {
-	getApiDataV2(url, setUrl)
-}
-
 export function createPieceUrl(lastName, opera_id, opera, piece_id, title) {
 	const startUrl = createOperaUrlUnencoded(lastName, opera_id, opera);
 	const endUrl = `${piece_id}-${title}`;

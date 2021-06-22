@@ -1,28 +1,42 @@
 import React, { useEffect, useState } from 'react'
-import { createPieceUrl, getApiDataV2 } from '../../utils/utilFunctions'
+import { createPieceUrl, getApiData } from '../../utils/utilFunctions'
 import { Link, Container } from './linkStyle';
 
-const Links = (props) => {
+const Links = ({id}) => {
+    const [prevUrl, nextUrl] = useGetUrls(id);
+    return (
+        <Container>
+            {prevUrl && <Link href={prevUrl}>Prev</Link>}
+            {nextUrl && <Link href={nextUrl}>Next</Link>}
+        </Container>)
+}
+
+function useGetUrls(id) {
+    const [prevData, setPrevData] = useState(null);
+    const [nextData, setNextData] = useState(null);
     const [prevUrl, setPrevUrl] = useState(null);
     const [nextUrl, setNextUrl] = useState(null);
-
     useEffect(() => {
-        async function fetchData(dir, setUrl) {
-            const { response, source } = await getApiDataV2(`/api/pieces/${dir}/${props.id}`, setUrl);
-            return source;
-        }
-        const prevSource = fetchData('prev', setPrevUrl);
-        const nextSource = fetchData('next', setNextUrl);
+        const prevSource = getApiData(`/api/pieces/prev/${id}`, setPrevData);
+        const nextSource = getApiData(`/api/pieces/next/${id}`, setNextData);
         return () => {
             prevSource.cancel('Component was unmounted, axios request is cancelled.');
             nextSource.cancel('Component was unmounted, axios request is cancelled.');
         };
-    }, [props.id]);
+    }, [id]);
+    useEffect(() => {
+        if (prevData) {
+            const { last_name, opera_id, opera, id, title } = prevData;
+            setPrevUrl(createPieceUrl(last_name, opera_id, opera, id, title))
+        }
+        if (nextData) {
+            const { last_name, opera_id, opera, id, title } = nextData;
+            setNextUrl(createPieceUrl(last_name, opera_id, opera, id, title))
+        }
 
-    return (prevUrl && nextUrl ? <Container>
-        <Link href={prevUrl}>Prev</Link>
-        <Link href={nextUrl}>Next</Link>
-    </Container> : null)
+    }, [prevData, nextData])
+
+    return [prevUrl, nextUrl]
 }
 
 export default Links
