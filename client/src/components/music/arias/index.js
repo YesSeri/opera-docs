@@ -36,7 +36,6 @@ function Arias() {
 					<ResultPane key={piece_id}>
 						<Link href={pieceUrl}>{title}</Link>
 						<Link href={operaUrl}>{opera}</Link>
-						{/* <Item href={operaUrl}>{voice_type ? voice_type : 'Singer'}</Item> */}
 						<Link
 							href={composerUrl}
 						>{`${last_name}, ${first_name}`}</Link>
