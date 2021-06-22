@@ -15,14 +15,8 @@ export function getApiData(url, setData) {
 	return source;
 }
 
-export async function getApiDataV2(url) {
-	const source = axios.CancelToken.source();
-	try {
-		const response = axios.get(url, { cancelToken: source.token, })
-		return { response, source };
-	} catch (err) {
-		if (err) console.error(err);
-	};
+export async function getApiDataV2(url, setUrl) {
+	getApiDataV2(url, setUrl)
 }
 
 export function createPieceUrl(lastName, opera_id, opera, piece_id, title) {

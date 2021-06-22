@@ -8,10 +8,7 @@ const Links = (props) => {
 
     useEffect(() => {
         async function fetchData(dir, setUrl) {
-            const { response, source } = await getApiDataV2(`/api/pieces/${dir}/${props.id}`);
-            const { data } = await response
-            const { last_name, opera_id, opera, id, title } = data;
-            setUrl(createPieceUrl(last_name, opera_id, opera, id, title))
+            const { response, source } = await getApiDataV2(`/api/pieces/${dir}/${props.id}`, setUrl);
             return source;
         }
         const prevSource = fetchData('prev', setPrevUrl);

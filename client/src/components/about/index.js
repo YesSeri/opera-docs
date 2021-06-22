@@ -7,7 +7,7 @@ export default function About() {
 	return (
 		<>
 			<Helmet>
-				<title>operadocs - about us</title>
+				<title>operadocs - About us</title>
 			</Helmet>
 			<Container style={{ marginTop: '10px' }}>
 				<Title>About</Title>
