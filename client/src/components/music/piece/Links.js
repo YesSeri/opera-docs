@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { createPieceUrl, getApiData } from '../../utils/utilFunctions'
 import { Link, Container } from './linkStyle';
 
-const Links = ({id}) => {
+const Links = ({ id }) => {
     const [prevUrl, nextUrl] = useGetUrls(id);
     return (
         <Container>
             {prevUrl && <Link href={prevUrl}>Prev</Link>}
             {nextUrl && <Link href={nextUrl}>Next</Link>}
-        </Container>)
+        </Container>
+    )
 }
 
 function useGetUrls(id) {
@@ -33,7 +34,6 @@ function useGetUrls(id) {
             const { last_name, opera_id, opera, id, title } = nextData;
             setNextUrl(createPieceUrl(last_name, opera_id, opera, id, title))
         }
-
     }, [prevData, nextData])
 
     return [prevUrl, nextUrl]
