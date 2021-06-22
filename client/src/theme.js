@@ -5,14 +5,12 @@ const theme = {
   responsiveWidth: `margin: auto;
     width: 70%;
     @media screen and (max-width: 1200px) {
-        width: 80%;
-    }
-    @media screen and (max-width: 900px) {
         width: 90%;
     }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 900px) {
         width: 100%;
-    }`,
+    }
+    `,
 
 }
 

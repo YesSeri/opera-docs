@@ -8,8 +8,8 @@ function Piece(props) {
 	const [data, setData] = useState(null);
 
 	useEffect(() => {
-		console.log(props.match.params.pieceIdName)
-		const id = props.match.params.pieceIdName.replace(/(^\d+)(.+$)/i, '$1');
+		const { pieceIdName } = props.match.params
+		const id = pieceIdName.replace(/(^\d+)(.+$)/i, '$1');
 		const source = getApiData(`/api/pieces/${id}`, setData);
 		return () => {
 			source.cancel('Component was unmounted, axios request is cancelled.');

@@ -4,8 +4,13 @@ import { Title } from '../../../sharedStyles/styles'
 const Container = styled.div`
     display:flex;
     background-color: #eee;
+    padding: 1em 0;
+    border-radius: 15px 15px 0 0;
+    ${({ theme }) => theme.responsiveWidth}
     @media screen and (max-width: 900px) {
         flex-wrap: wrap;
+        border-radius: 0;
+        padding: 0.2em 0;
     }
 `
 const Item = styled.div`
