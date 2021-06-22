@@ -1,33 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import Frame from '../../frame';
-import { getApiData } from '../../utils/utilFunctions';
-import Links from './Links'
-import Synopsis from './Synopsis';
-import Info from './Info';
-import { Title } from './styled'
+import InfoContainer from './InfoContainer'
 import { Helmet } from 'react-helmet'
+import { getApiData } from '../../utils/utilFunctions';
 
 function Piece(props) {
 	const [data, setData] = useState(null);
+
 	useEffect(() => {
-		const { pieceIdName } = props.match.params;
-		const id = pieceIdName.replace(/(^\d+)(.+$)/i, '$1');
+		console.log(props.match.params.pieceIdName)
+		const id = props.match.params.pieceIdName.replace(/(^\d+)(.+$)/i, '$1');
 		const source = getApiData(`/api/pieces/${id}`, setData);
 		return () => {
 			source.cancel('Component was unmounted, axios request is cancelled.');
 		};
-	}, [props.match.params]);
-	return (data &&
+	}, [props.match.params.pieceIdName]);
+
+
+	return (
+		data &&
 		<div>
 			<Helmet>
 				<title>
 					operadocs - Score for {data.title} from {data.opera}
 				</title>
 			</Helmet>
-			<Title>{data.title}</Title>
-			<Synopsis description={data.description} />
-			<Links id={data.id} />
-			<Info data={data} />
+			<InfoContainer pieceIdName={props.match.params} data={data} setData={setData} />
 			<Frame
 				downloadLink={`https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${data.file_title}`}
 			/>
