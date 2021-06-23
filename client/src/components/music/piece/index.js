@@ -8,7 +8,7 @@ function Piece(props) {
 	const [data, setData] = useState(null);
 
 	useEffect(() => {
-		const { pieceIdName } = props.match.params
+		const pieceIdName = props.match.params.pieceIdName
 		const id = pieceIdName.replace(/(^\d+)(.+$)/i, '$1');
 		const source = getApiData(`/api/pieces/${id}`, setData);
 		return () => {
@@ -25,7 +25,7 @@ function Piece(props) {
 					operadocs - Score for {data.title} from {data.opera}
 				</title>
 			</Helmet>
-			<InfoContainer pieceIdName={props.match.params} data={data} setData={setData} />
+			<InfoContainer data={data} />
 			<Frame
 				downloadLink={`https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${data.file_title}`}
 			/>

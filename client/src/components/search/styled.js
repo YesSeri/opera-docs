@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 import Container from 'react-bootstrap/Container';
-import { ResultPane, ResultsContainer } from '../../sharedStyles/styles'
+import { ResultPane, ResultsContainer } from '../../sharedStyles'
 
 const TopResultPane = styled(ResultPane)`
  	font-size: 2.7em;

@@ -3,11 +3,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
-import './navbarFooter.css';
+import { NavWrapper } from '../../sharedStyles'
+// import './navbarFooter.css';
 
 function NavBar() {
 	return (
-		<div className="navFooterContainer topNavContainer">
+		<NavWrapper>
 			<Navbar bg="light" expand="sm">
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
@@ -36,7 +37,7 @@ function NavBar() {
 					</Nav>
 				</Navbar.Collapse>
 			</Navbar>
-		</div>
+		</NavWrapper>
 	);
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Item } from './styled'
 
-function Info({ data: { type, opera, last_name, first_name, file_title } }) {
+function Info({ type, opera, last_name, first_name, file_title }) {
     return (
         <Container>
             <Item>

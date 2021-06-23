@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { NavLink } from 'react-router-dom';
+import { NavWrapper } from '../../sharedStyles'
 
 function Footer() {
 	const [visible, setVisible] = useState(true);
@@ -11,7 +12,7 @@ function Footer() {
 		setVisible(false);
 	};
 	return (
-		<div className="navFooterContainer">
+		<NavWrapper>
 			<Navbar
 				bg="light"
 				expand="sm"
@@ -35,7 +36,7 @@ function Footer() {
 					&#10006;
 				</div>
 			</Navbar>
-		</div>
+		</NavWrapper>
 	);
 }
 export default Footer;

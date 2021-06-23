@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 
-export const Text = styled.h1`
+const Text = styled.h1`
 	font-size: 4em;
 	text-align:center;
 	@media (max-width: 600px){
@@ -8,7 +8,7 @@ export const Text = styled.h1`
 	}
 `
 
-export const Container = styled.div`
+const Container = styled.div`
   cursor: pointer;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -20,16 +20,4 @@ export const Container = styled.div`
 	}
 `
 
-export const Wrapper = styled.div`
-	.siteContainer {
-		text-align: center;
-	}
-	.siteContainer .logoContainer h1 {
-		font-size: 4em;
-		background-color: #111;
-		color: white;
-		border-bottom-left-radius: 20px;
-		border-bottom-right-radius: 20px;
-		padding-bottom: 5px;
-	}
-`
+export { Container, Text }

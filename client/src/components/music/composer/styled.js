@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import { ResultPane, ResultsContainer } from '../../../sharedStyles/styles'
+import { ResultPane, ResultsContainer } from '../../../sharedStyles'
 
 const Image = styled.img`
     border-radius: 10px;

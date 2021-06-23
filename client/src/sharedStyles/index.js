@@ -23,6 +23,28 @@ const ResultPane = styled.div`
     }
 `
 
+const NavWrapper = styled.div`
+  user-select: none;
+  a {
+    font-size: 1.5rem;
+    color: #000;
+    padding: 5px 8px;
+    border-radius: 10px;
+  }
+  a:not(.active):hover {
+    background-color: #333;
+    color: white;
+  }
+  .active,
+  .active:hover {
+    background-color: #222;
+    color: white;
+  }
+  .closeFooter {
+    cursor: pointer;
+  }
+
+`
 const ResultsContainer = styled.div`
     display:flex;
     flex-wrap:wrap;
@@ -34,4 +56,4 @@ const Title = styled.h1`
     padding-top: 20px;
 	text-align: center;
 `
-export { ResultsContainer, ResultPane, Title }
+export { ResultsContainer, ResultPane, Title, NavWrapper }

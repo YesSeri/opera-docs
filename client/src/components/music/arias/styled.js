@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import { ResultPane as RPane, ResultsContainer} from '../../../sharedStyles/styles'
+import { ResultPane as RPane, ResultsContainer} from '../../../sharedStyles'
 
 const Container = styled.div`
     display: flex;

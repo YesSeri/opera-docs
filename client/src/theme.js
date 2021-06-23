@@ -1,6 +1,7 @@
 const theme = {
   color: {
-    main: '#6a1a1b'
+    main: '#6a1a1b',
+    second: '#eee',
   },
   responsiveWidth: `margin: auto;
     width: 70%;

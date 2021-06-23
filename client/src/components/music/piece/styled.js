@@ -1,9 +1,9 @@
 import styled from "styled-components/macro";
-import { Title } from '../../../sharedStyles/styles'
+import { Title } from '../../../sharedStyles'
 
 const Container = styled.div`
     display:flex;
-    background-color: #eee;
+    background-color: ${({theme}) => theme.color.second};
     padding: 1em 0;
     border-radius: 15px 15px 0 0;
     ${({ theme }) => theme.responsiveWidth}
@@ -26,7 +26,7 @@ const Description = styled.div`
     padding: 1em 1.2em;
     margin: 1em auto;
     width:50%;
-    background-color: #eee;
+    background-color: ${({theme}) => theme.color.second};
     border-radius: 25px;
     @media screen and (max-width: 900px) {
         padding: 1em 0.2em;
