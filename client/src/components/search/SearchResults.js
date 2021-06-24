@@ -139,22 +139,24 @@ const useGetInfo = () => {
     const [operas, setOperas] = useState(null);
     const [composers, setComposers] = useState(null);
     useEffect(() => {
-        const fetchData = async (url, setData, category) => {
-            const source = axios.CancelToken.source();
+        const fetchData = async (url, setData, category, source) => {
             try {
                 const response = await axios
                     .get(url, {
                         cancelToken: source.token,
                     })
                 setData(response.data.map(el => ({ ...el, category })));
-
+                return source;
             } catch (error) {
                 console.error(error)
             }
         }
-        const pieceSource = fetchData('/api/search', setPieces, 'piece');
-        const operaSource = fetchData('/api/operas', setOperas, 'opera');
-        const composerSource = fetchData('/api/composers', setComposers, 'composer');
+        const pieceSource = axios.CancelToken.source();
+        const operaSource = axios.CancelToken.source();
+        const composerSource = axios.CancelToken.source();
+        fetchData('/api/search', setPieces, 'piece', pieceSource);
+        fetchData('/api/operas', setOperas, 'opera', operaSource);
+        fetchData('/api/composers', setComposers, 'composer', composerSource);
         return () => {
             pieceSource.cancel(
                 'Component was unmounted, axios piece request is cancelled.'
