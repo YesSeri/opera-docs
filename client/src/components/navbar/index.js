@@ -2,9 +2,7 @@ import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
-import Col from 'react-bootstrap/Col';
 import { NavWrapper } from '../../sharedStyles'
-// import './navbarFooter.css';
 
 function NavBar() {
 	return (
@@ -13,27 +11,18 @@ function NavBar() {
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="mx-auto">
-						<Col>
-							<NavLink exact activeClassName="active" to="/">
-								Search
-							</NavLink>
-						</Col>
-
-						<Col>
-							<NavLink exact activeClassName="active" to="/operas">
-								Operas
-							</NavLink>
-						</Col>
-						<Col>
-							<NavLink exact activeClassName="active" to="/composers">
-								Composers
-							</NavLink>
-						</Col>
-						<Col>
-							<NavLink exact activeClassName="active" to="/arias">
-								Arias
-							</NavLink>
-						</Col>
+						<NavLink exact activeClassName="active" to="/">
+							Search
+						</NavLink>
+						<NavLink exact activeClassName="active" to="/operas">
+							Operas
+						</NavLink>
+						<NavLink exact activeClassName="active" to="/composers">
+							Composers
+						</NavLink>
+						<NavLink exact activeClassName="active" to="/arias">
+							Arias
+						</NavLink>
 					</Nav>
 				</Navbar.Collapse>
 			</Navbar>

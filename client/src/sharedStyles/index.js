@@ -25,11 +25,15 @@ const ResultPane = styled.div`
 
 const NavWrapper = styled.div`
   user-select: none;
+  .mx-auto .navbar-nav {
+    padding: 0 15px;
+  }
   a {
     font-size: 1.5rem;
     color: #000;
-    padding: 5px 8px;
+    padding: 0.2em 0.3em 0 0.3em;
     border-radius: 10px;
+    margin: 0 1em;
   }
   a:not(.active):hover {
     background-color: #333;

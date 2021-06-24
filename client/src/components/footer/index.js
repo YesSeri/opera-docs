@@ -8,9 +8,6 @@ import { NavWrapper } from '../../sharedStyles'
 
 function Footer() {
 	const [visible, setVisible] = useState(true);
-	const handleClick = () => {
-		setVisible(false);
-	};
 	return (
 		<NavWrapper>
 			<Navbar
@@ -19,20 +16,15 @@ function Footer() {
 				style={{ display: visible ? 'flex' : 'none' }}
 			>
 				<Nav className="mx-auto">
-					<Row>
-						<Col>
-							<NavLink exact activeClassName="active" to="/contact">
-								Contact
-							</NavLink>
-						</Col>
-						<Col>
-							<NavLink exact activeClassName="active" to="/about">
-								About
-							</NavLink>
-						</Col>
-					</Row>
+					<NavLink exact activeClassName="active" to="/contact">
+						Contact
+					</NavLink>
+					<NavLink exact activeClassName="active" to="/about">
+						About
+					</NavLink>
 				</Nav>
-				<div className="closeFooter" onClick={handleClick}>
+				<div className="closeFooter" onClick={() => setVisible(false)}>
+
 					&#10006;
 				</div>
 			</Navbar>
