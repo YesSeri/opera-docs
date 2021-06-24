@@ -34,7 +34,7 @@ const SearchBar = ({ searchValue, setSearchValue }) => {
 						setSearchValue(diacritics.remove(e.target.value)); // Remove all strange italian signs above letters for better search, e.g. è and é
 					}}
 				/>
-				<Form.Text className="text-muted">
+				<Form.Text className={searchValue ? "text-muted" : ""} >
 					Enter the name of an opera, composer or piece.
 				</Form.Text>
 			</Form>
