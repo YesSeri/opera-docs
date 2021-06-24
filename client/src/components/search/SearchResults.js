@@ -139,43 +139,31 @@ const useGetInfo = () => {
     const [operas, setOperas] = useState(null);
     const [composers, setComposers] = useState(null);
     useEffect(() => {
-        const pieceSource = axios.CancelToken.source();
-        const operaSource = axios.CancelToken.source();
-        const composerSource = axios.CancelToken.source();
-        const fetchPieces = async () => {
-            const response = await axios
-                .get('/api/search', {
-                    cancelToken: pieceSource.token,
-                })
-            setPieces(response.data.map(el => ({ ...el, category: 'piece' })));
-        }
-        const fetchOperas = async () => {
-            const response = await axios
-                .get('/api/operas', {
-                    cancelToken: operaSource.token,
-                })
-            setOperas(response.data.map(el => ({ ...el, category: 'opera' })));
+        const fetchData = async (url, setData, category) => {
+            const source = axios.CancelToken.source();
+            try {
+                const response = await axios
+                    .get(url, {
+                        cancelToken: source.token,
+                    })
+                setData(response.data.map(el => ({ ...el, category })));
 
+            } catch (error) {
+                console.error(error)
+            }
         }
-        const fetchComposers = async () => {
-            const response = await axios
-                .get('/api/composers', {
-                    cancelToken: composerSource.token,
-                })
-            setComposers(response.data.map(el => ({ ...el, category: 'composer' })));
-        }
-        fetchPieces();
-        fetchOperas();
-        fetchComposers();
+        const pieceSource = fetchData('/api/search', setPieces, 'piece');
+        const operaSource = fetchData('/api/operas', setOperas, 'opera');
+        const composerSource = fetchData('/api/composers', setComposers, 'composer');
         return () => {
             pieceSource.cancel(
                 'Component was unmounted, axios piece request is cancelled.'
             );
             operaSource.cancel(
-                'Component was unmounted, axios piece request is cancelled.'
+                'Component was unmounted, axios opera request is cancelled.'
             );
             composerSource.cancel(
-                'Component was unmounted, axios piece request is cancelled.'
+                'Component was unmounted, axios composer request is cancelled.'
             );
         }
     }, [])

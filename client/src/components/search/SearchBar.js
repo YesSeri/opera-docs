@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import diacritics from 'diacritics';
 import { SearchContainer } from './styled'
 
 const SearchBar = ({ searchValue, setSearchValue }) => {
 	// Used so we can scroll to searchbar on enter
-	const formRef = React.useRef(null)
+	const formRef = useRef(null)
 	const disableEnter = (e) => {
 		if (e.key === "Enter") {
 			// Scrolls the search results in to view.
@@ -13,11 +13,15 @@ const SearchBar = ({ searchValue, setSearchValue }) => {
 			e.preventDefault();
 		}
 	}
-	React.useEffect(() => {
+	useEffect(() => {
 		formRef.current.scrollIntoView();
 		return () => {
 		}
 	}, [searchValue])
+
+	useEffect(() => {
+		formRef.current.focus()
+	}, [])
 	return (
 		<SearchContainer>
 			<Form>
