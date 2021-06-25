@@ -13,27 +13,25 @@ const ResultPane = styled.div`
     align-items: center;
     justify-content: center;
     padding: 10px;
-    @media screen and (max-width: 1000px) {
+    ${({ theme }) => theme.mediumSize(`
         font-size: 1.1em;
         width: 50%;
-    }
-    @media screen and (max-width: 600px) {
+    `)}
+    ${({ theme }) => theme.smallSize(`
         font-size: 1.0em;
         width: 100%;
-    }
+    `)}
 `
 
 const NavWrapper = styled.div`
   user-select: none;
-  .mx-auto .navbar-nav {
-    padding: 0 15px;
-  }
   a {
     font-size: 1.5rem;
-    color: #000;
-    padding: 0.2em 0.3em 0 0.3em;
+    color: black;
+    padding: 0 0.2em;
     border-radius: 10px;
     margin: 0 1em;
+    ${({ theme }) => theme.smallSize('margin: 0 0.3em;')}
   }
   a:not(.active):hover {
     background-color: #333;

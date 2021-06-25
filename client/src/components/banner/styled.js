@@ -17,9 +17,7 @@ const Pane = styled.div`
     width:50%;
 	font-size: 1.1rem;
     padding:10px;
-    @media screen and (max-width: 600px) {
-        width: 100%;
-    }
+	${({ theme }) => theme.smallSize('width: 100%;')}
 `
 const Inner = styled.div`
     display:flex;

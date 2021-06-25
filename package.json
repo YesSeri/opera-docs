@@ -18,7 +18,7 @@
 		"pino-pretty": "^4.3.0"
 	},
 	"scripts": {
-		"start": "node server.js",
+		"start": "npm run dev",
 		"installAll": "npm install && npm install --prefix client",
 		"server": "nodemon server.js",
 		"client": "npm start --prefix client",

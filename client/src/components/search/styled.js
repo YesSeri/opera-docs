@@ -8,12 +8,8 @@ const TopResultPane = styled(ResultPane)`
     &:hover{
         color: #33e;
     } 	
-    @media screen and (max-width: 1000px) {
-        font-size: 2.4em;
-    }
-    @media screen and (max-width: 600px) {
-        font-size: 2.1em;
-    }
+	${({ theme }) => theme.mediumSize('font-size: 2.4em;')}
+	${({ theme }) => theme.smallSize('font-size: 2.1em;')}
 `
 
 const Link = styled.a`
