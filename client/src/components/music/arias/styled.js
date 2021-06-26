@@ -9,7 +9,6 @@ const Container = styled.div`
 const Link = styled.a`
     font-size: 1.1rem;
     width:25%;
-
 	${({ theme }) => theme.mediumSize('width: 100%;')}
 `
 const Item = styled.span`
@@ -24,10 +23,10 @@ const ResultPane = styled(RPane)`
     justify-content: space-evenly;
     max-width: 1400px;
 	${({ theme }) => theme.mediumSize(
-        `flex-wrap:wrap;
+	`flex-wrap:wrap;
         font-size: 1.1em;
         width: 100%;`
-    )}
+)}
 `
 
 export { Container, ResultPane, ResultsContainer, Link, Item }

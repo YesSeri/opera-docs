@@ -35,7 +35,7 @@ const SearchBar = ({ searchValue, setSearchValue }) => {
 					}}
 				/>
 				<Form.Text>
-					{searchValue.length > 2 ? 
+					{searchValue.length > 2 ?
 						"These are the results:"
 						:
 						"Enter the name of an opera, composer or piece."

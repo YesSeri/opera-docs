@@ -1,9 +1,8 @@
-// Rounded border item.
 import styled from 'styled-components/macro'
 
 const ResultPane = styled.div`
     text-align: center;
- 	font-size: 1.2em;
+    font-size: 1.2em;
     padding: 0 3px;
     flex: 1 1 1;
     width:33.33%;
@@ -24,27 +23,27 @@ const ResultPane = styled.div`
 `
 
 const NavWrapper = styled.div`
-  user-select: none;
-  a {
-    font-size: 1.5rem;
-    color: black;
-    padding: 0 0.2em;
-    border-radius: 10px;
-    margin: 0 1em;
-    ${({ theme }) => theme.smallSize('margin: 0 0.3em;')}
-  }
-  a:not(.active):hover {
-    background-color: #333;
-    color: white;
-  }
-  .active,
-  .active:hover {
-    background-color: #222;
-    color: white;
-  }
-  .closeFooter {
-    cursor: pointer;
-  }
+	user-select: none;
+	a {
+		font-size: 1.5rem;
+		color: black;
+		padding: 0 0.2em;
+		border-radius: 10px;
+		margin: 0 1em;
+		${({ theme }) => theme.smallSize('margin: 0 0.3em;')}
+	}
+	a:not(.active):hover {
+		background-color: #333;
+		color: white;
+	}
+	.active,
+	.active:hover {
+		background-color: #222;
+		color: white;
+	}
+	.closeFooter {
+		cursor: pointer;
+	}
 
 `
 const ResultsContainer = styled.div`

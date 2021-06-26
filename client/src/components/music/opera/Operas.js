@@ -12,7 +12,7 @@ function Operas() {
 		};
 	}, []);
 
-	const operaPieces = () => {
+	const OperaPieces = () => {
 		return data.map(({ last_name, opera_id, opera }) => {
 			const url = createOperaUrl(last_name, opera_id, opera);
 			return (
@@ -28,7 +28,7 @@ function Operas() {
 				<title>operadocs - Operas and Scores</title>
 			</Helmet>
 			<ResultsContainer>
-				{data ? operaPieces() : null}
+				{data && <OperaPieces />}
 			</ResultsContainer>
 		</>
 	);

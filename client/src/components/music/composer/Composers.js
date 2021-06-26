@@ -33,9 +33,9 @@ function Composers() {
 			<Helmet>
 				<title>operadocs - A list of all available composers</title>
 			</Helmet>
-				<ResultsContainer>
-					<Composers></Composers>
-				</ResultsContainer>
+			<ResultsContainer>
+				<Composers />
+			</ResultsContainer>
 		</>
 	);
 }
