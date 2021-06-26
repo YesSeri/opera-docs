@@ -1,6 +1,13 @@
 import styled from "styled-components/macro";
 import { Title } from '../../../sharedStyles'
 
+const SynopsisContainer = styled.div`
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: center;
+	align-items:center;
+`
+
 const Container = styled.div`
     display:flex;
     background-color: ${({ theme }) => theme.color.second};
@@ -28,6 +35,9 @@ const Description = styled.div`
     width:50%;
     background-color: ${({ theme }) => theme.color.second};
     border-radius: 25px;
+	${({ theme }) => theme.largeSize(`
+        width: 80%;
+    `)}
 	${({ theme }) => theme.mediumSize(`
         padding: 1em 0.2em;
         width: 100%;
@@ -35,4 +45,4 @@ const Description = styled.div`
     `)}
 `
 
-export { Title, Container, Item, Description }
+export { Title, Container, Item, Description, SynopsisContainer }

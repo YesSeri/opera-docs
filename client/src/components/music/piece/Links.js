@@ -2,41 +2,47 @@ import React, { useEffect, useState } from 'react'
 import { createPieceUrl, getApiData } from '../../utils/utilFunctions'
 import { Link, Container } from './linkStyle';
 
+const PrevLink = ({ id }) => {
+	const url = useGetUrl(id, 'prev');
+	return (
+		url && <Link href={url}>Prev</Link>
+	)
+}
+
+const NextLink = ({ id }) => {
+	const url = useGetUrl(id, 'next');
+	return (
+		url && <Link href={url}>Next</Link>
+	)
+}
 const Links = ({ id }) => {
-	const [prevUrl, nextUrl] = useGetUrls(id);
 	return (
 		<Container>
-			{prevUrl && <Link href={prevUrl}>Prev</Link>}
-			{nextUrl && <Link href={nextUrl}>Next</Link>}
+			<div>
+				<PrevLink id={id} />
+				<NextLink id={id} />
+			</div>
 		</Container>
 	)
 }
 
-function useGetUrls(id) {
-	const [prevData, setPrevData] = useState(null);
-	const [nextData, setNextData] = useState(null);
-	const [prevUrl, setPrevUrl] = useState(null);
-	const [nextUrl, setNextUrl] = useState(null);
+function useGetUrl(id, dir) {
+	const [data, setData] = useState(null);
+	const [url, setUrl] = useState(null);
 	useEffect(() => {
-		const prevSource = getApiData(`/api/pieces/prev/${id}`, setPrevData);
-		const nextSource = getApiData(`/api/pieces/next/${id}`, setNextData);
+		const source = getApiData(`/api/pieces/${dir}/${id}`, setData);
 		return () => {
-			prevSource.cancel('Component was unmounted, axios request is cancelled.');
-			nextSource.cancel('Component was unmounted, axios request is cancelled.');
+			source.cancel('Component was unmounted, axios request is cancelled.');
 		};
 	}, [id]);
 	useEffect(() => {
-		if (prevData) {
-			const { last_name, opera_id, opera, id, title } = prevData;
-			setPrevUrl(createPieceUrl(last_name, opera_id, opera, id, title))
+		if (data) {
+			const { last_name, opera_id, opera, id, title } = data;
+			setUrl(createPieceUrl(last_name, opera_id, opera, id, title))
 		}
-		if (nextData) {
-			const { last_name, opera_id, opera, id, title } = nextData;
-			setNextUrl(createPieceUrl(last_name, opera_id, opera, id, title))
-		}
-	}, [prevData, nextData])
+	}, [data])
 
-	return [prevUrl, nextUrl]
+	return url
 }
 
-export default Links
+export { Links }
