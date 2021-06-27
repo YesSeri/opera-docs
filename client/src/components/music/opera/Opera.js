@@ -16,34 +16,38 @@ function Opera(props) {
 	}, [props.match.params]);
 
 	const OperaPiece = () => {
-		return <ResultsContainer>
-			{data.map(
-				({ last_name, opera_id, name, title, id, type }) => {
-					const pieceUrl = createPieceUrl(last_name, opera_id, name, id, title);
-					const weight =
-						type === 'recitativo' || type === 'choir' || type === 'intermezzo' || type === 'other'
-							? 'normal'
-							: 'bold';
-					return (
-						<ResultPane key={id} style={{ width: '100%' }}>
-							<Link
-								style={{ fontWeight: weight }}
-								href={`${pieceUrl}`}
-							>{`${title}`}</Link>
-							<br />
-						</ResultPane>
-					);
-				}
-			)}
-		</ResultsContainer>
+		return data.map(
+			({ last_name, opera_id, name, title, id, type }) => {
+				const pieceUrl = createPieceUrl(last_name, opera_id, name, id, title);
+				const weight =
+					type === 'recitativo' || type === 'choir' || type === 'intermezzo' || type === 'other'
+						? 'normal'
+						: 'bold';
+				return (
+					<ResultPane key={id} style={{ width: '100%' }}>
+						<Link
+							style={{ fontWeight: weight }}
+							href={`${pieceUrl}`}
+						>{`${title}`}</Link>
+						<br />
+					</ResultPane>
+				);
+			}
+		)
 	};
 	return (
-		<div className="musicContainer">
+		<div>
 			<Helmet>
 				<title>operadocs - Vocal scores for {opera}</title>
 			</Helmet>
-			{data ? <Title>{opera}</Title> : data === null ? '' : 'Nothing here'}
-			{data && <OperaPiece />}
+			{data &&
+				<div>
+					<Title>{opera}</Title>
+					<ResultsContainer>
+						<OperaPiece />
+					</ResultsContainer>
+				</div>
+			}
 		</div>
 	);
 }

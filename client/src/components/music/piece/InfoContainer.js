@@ -1,8 +1,8 @@
 import React, { } from 'react'
-import { Links } from './Links'
+import { Links } from './links/Links'
 import Synopsis from './Synopsis';
 import Info from './Info';
-import { Title, SynopsisContainer } from './styled'
+import { Title } from './styled'
 
 const InfoContainer = ({ data: { title, id, description, type, opera, last_name, first_name, file_title } }) => {
 	return (
@@ -11,7 +11,6 @@ const InfoContainer = ({ data: { title, id, description, type, opera, last_name,
 			<Synopsis description={description} />
 			<Links id={id} />
 			<Info type={type} opera={opera} last_name={last_name} first_name={first_name} file_title={file_title} />
-
 		</div>
 	)
 }

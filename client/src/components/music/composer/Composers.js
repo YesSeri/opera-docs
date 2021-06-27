@@ -14,18 +14,14 @@ function Composers() {
 	}, []);
 
 	const Composers = () => {
-		if (data) {
-			return data.map(({ id, last_name, first_name }) => {
-				const url = createComposerUrl(last_name);
-				return (
-					<ResultPane key={id}>
-						<a href={url}>{`${last_name}, ${first_name}`}</a>
-					</ResultPane>
-				);
-			});
-		} else {
-			return <div />
-		}
+		return data.map(({ id, last_name, first_name }) => {
+			const url = createComposerUrl(last_name);
+			return (
+				<ResultPane key={id}>
+					<a href={url}>{`${last_name}, ${first_name}`}</a>
+				</ResultPane>
+			);
+		});
 	};
 
 	return (
@@ -34,7 +30,9 @@ function Composers() {
 				<title>operadocs - A list of all available composers</title>
 			</Helmet>
 			<ResultsContainer>
-				<Composers />
+				{data &&
+					<Composers />
+				}
 			</ResultsContainer>
 		</>
 	);

@@ -9,7 +9,7 @@ const Container = styled.div`
 	padding-bottom:1em;
 	div{
 		border-radius: 10px;
-		padding:1em;
+		padding:0.5em 1em;
 		background-color: ${({ theme }) => theme.color.second};
 		${({ theme }) => theme.mediumSize(`
 			min-width:10em;
