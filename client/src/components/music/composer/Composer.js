@@ -27,7 +27,7 @@ const ComposerOperas = ({ data }) => {
 	const operas = data.map(({ last_name, opera_id, opera }) => {
 		const link = createOperaUrl(last_name, opera_id, opera);
 		return (
-			<ResultPane>
+			<ResultPane  key={opera_id}>
 				<Link href={link}>{opera}</Link>
 			</ResultPane>
 		);
@@ -49,7 +49,7 @@ function Composer(props) {
 	}, [props.match.params]);
 
 	return (
-		data &&
+		(data && data.length !== 0) &&
 		<MusicContainer>
 			<ComposerInfo data={data} />
 			<ComposerOperas data={data} />

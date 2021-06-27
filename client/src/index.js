@@ -5,11 +5,9 @@ import { GlobalStyles } from './stylesAppGlobal/global-styles'
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-	<React.StrictMode>
+	<BrowserRouter>
 		<GlobalStyles />
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
-	</React.StrictMode>,
+		<App />
+	</BrowserRouter>,
 	document.getElementById('root')
 );

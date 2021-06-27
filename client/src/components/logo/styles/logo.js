@@ -1,9 +1,15 @@
 import styled from 'styled-components/macro';
 
-const Text = styled.h1`
+const Link = styled.a`
 	font-size: 4em;
 	text-align:center;
 	${({ theme }) => theme.smallSize('font-size: 3em;')}
+    color: white;
+    text-decoration: none;
+	&:hover {
+		color: white; 
+		text-decoration:none; 
+	}
 `
 
 const Container = styled.div`
@@ -16,4 +22,4 @@ const Container = styled.div`
 	${({ theme }) => theme.smallSize('margin-bottom: 5px;')}
 `
 
-export { Container, Text }
+export { Container, Link }

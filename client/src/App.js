@@ -20,18 +20,13 @@ const InitReactGA = () => {
 InitReactGA();
 // }
 
-function usePageViews() {
+export default function App() {
 	let location = useLocation();
 	useEffect(() => {
 		// if (cookies.get('CookieConsent')) {
 		ReactGA.pageview(location.pathname);
 		// }
 	}, [location]);
-}
-
-
-export default function App() {
-	usePageViews();
 
 	return (
 		<ThemeProvider theme={theme}>
@@ -47,8 +42,7 @@ export default function App() {
 						<Route path="/:lastName/:operaId/:pieceIdName" component={Piece} />
 						<Route path="/:lastName/:operaIdName" component={Opera} />
 						<Route path="/:lastName" component={Composer} />
-						<Route path="/" exact component={Search}></Route>
-						<Route path="/" exact component={Search}></Route>
+						<Route path="/" component={Search}></Route>
 					</Switch>
 				</div>
 				<Footer />
@@ -72,4 +66,5 @@ export default function App() {
 
 // const CookieAccepted = () => {
 //   window.location.reload();
+//   InitReactGA();
 // };
