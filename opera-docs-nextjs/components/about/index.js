@@ -1,14 +1,11 @@
-import React from 'react';
+// import React from 'react';
 import Container from 'react-bootstrap/Container';
 // import { Helmet } from 'react-helmet';
-import { Title } from '../../utils/sharedStyles'
+import {Title} from './styled'
 
 export default function About() {
 	return (
 		<>
-			<Helmet>
-				<title>operadocs - About us</title>
-			</Helmet>
 			<Container style={{ marginTop: '10px' }}>
 				<Title>About</Title>
 				<p>
