@@ -24,43 +24,46 @@ const NavWrapper = styled.div`
 		cursor: pointer;
 	}
 `
-const ResultPane = styled.div`
+const BorderDiv = styled.div`
     font-size: 1.2em;
     border-radius: 10px;
     border: solid #ddd 1px;
     padding: 10px;
-	width:33%;
+`
+const ResponsiveContainer = styled.div`
 	${({ theme }) => theme.mediumSize(`
         font-size: 1.1em;
-		width:50%;
     `)}
     ${({ theme }) => theme.smallSize(`
         font-size: 1.0em;
-		width:100%;
-    `)} 
-
+    `)}
+	${({ theme }) => theme.responsiveWidth} 
+`
+const ResultPane = styled(BorderDiv)`
 `
 
-const ResultsContainer = styled.div`
+const ResultsContainer = styled(ResponsiveContainer)`
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	${({ theme }) => theme.mediumSize(`
+		grid-template-columns: 1fr 1fr;
+    `)}
+	${({ theme }) => theme.smallSize(`
+		grid-template-columns: 1fr;
+    `)}
+`
+
+const ResultPaneSingle = styled(BorderDiv)`
+	width:100%;
+`
+
+const ResultsContainerSingle = styled(ResponsiveContainer)`
 	display:flex;
 	flex-wrap:wrap;
-	padding:5px;
-	${({ theme }) => theme.responsiveWidth}
-	/* display:grid;
-	grid-template-columns: 1fr 1fr 1fr;
-
-	${({ theme }) => theme.mediumSize(`
-        font-size: 1.1em;
-		grid-template-columns: 1fr 1fr ;
-    `)}
-    ${({ theme }) => theme.smallSize(`
-        font-size: 1.0em;
-		grid-template-columns: 1fr;
-    `)} */
+	max-width:500px;
 `
-
 
 const Title = styled.h1`
     padding-top: 20px;
 `
-export { ResultsContainer, ResultPane, Title, NavWrapper }
+export { ResultsContainer, ResultPane, ResultsContainerSingle, ResultPaneSingle, Title, NavWrapper }

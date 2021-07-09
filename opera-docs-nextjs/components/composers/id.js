@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Image, MusicContainer, ResultPane, ResultsContainer } from './styled'
+import { Image, MusicContainer, ResultPaneSingle, ResultsContainerSingle } from './styled'
 
 
 const ComposerInfo = ({ data }) => {
@@ -25,15 +25,15 @@ const ComposerOperas = ({ data }) => {
 		const url = urlCreator(opera_id);
 
 		return (
-			<ResultPane key={opera_id}>
+			<ResultPaneSingle key={opera_id}>
 				<Link href={url}>{opera}</Link>
-			</ResultPane>
+			</ResultPaneSingle>
 		);
 	});
 	return (
-		<ResultsContainer style={{ paddingTop: '0.5em', justifyContent: 'center' }}>
+		<ResultsContainerSingle style={{ paddingTop: '0.5em' }}>
 			{operas}
-		</ResultsContainer>);
+		</ResultsContainerSingle>);
 };
 
 function Composer({ data }) {

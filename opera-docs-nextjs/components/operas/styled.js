@@ -1,13 +1,10 @@
 import styled from 'styled-components'
-import { ResultPane, ResultsContainer} from '../../utils/sharedStyles'
+import { ResultPane, ResultsContainer, ResultPaneSingle, ResultsContainerSingle } from '../../utils/sharedStyles'
 
 const Link = styled.a`
     font-size: 1.1rem;
 `
 const Title = styled.h1`
     padding-top: 20px;
-` 
-const PieceList = styled(ResultPane)`
-	width:100%;
 `
-export { ResultsContainer, ResultPane, Title, Link, PieceList }
+export { ResultPane, ResultsContainer, ResultPaneSingle, ResultsContainerSingle, Title, Link }
