@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import queryGetData from '../utils/queryGetData'
-import diacritics from 'diacritics';
-import Fuse from 'fuse.js';
 import Search from '../components/search'
 
 // This is what is searched for, and the what is needed to create link

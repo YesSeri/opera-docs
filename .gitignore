@@ -1,6 +1,3 @@
-node_modules
-private
-*.pdf
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -11,23 +8,23 @@ private
 # testing
 /coverage
 
+# next.js
+/.next/
+/out/
+
 # production
-/client/build
+/build
 
 # misc
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-.env
-.htaccess
 
-*.log
-/utils/logs
-
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/tmp
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

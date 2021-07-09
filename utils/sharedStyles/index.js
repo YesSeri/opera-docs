@@ -42,6 +42,7 @@ const ResultPane = styled(BorderDiv)`
 
 const ResultsContainer = styled(ResponsiveContainer)`
 	display:grid;
+	grid-gap: 10px;
 	grid-template-columns: 1fr 1fr 1fr;
 	${({ theme }) => theme.mediumSize(`
 		grid-template-columns: 1fr 1fr;
@@ -52,6 +53,7 @@ const ResultsContainer = styled(ResponsiveContainer)`
 `
 
 const ResultPaneSingle = styled(BorderDiv)`
+	margin-bottom: 10px;
 	width:100%;
 `
 

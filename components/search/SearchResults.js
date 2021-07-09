@@ -19,7 +19,10 @@ const SearchValue = ({ searchValue, data }) => {
 			// One main result and 18 subresults. 18 is divisible by 3 and 2, which is neat for presentation.
 			return sortedResults.slice(0, 19);
 		}
-		if (searchValue.length < 3) return
+		if (searchValue.length < 2) {
+			setResults(null);
+			return
+		}
 		const arr = getSortedTopsMatches()
 		const linkTitleArr = arr.map(({ item }) => {
 			const { id, title, category } = item

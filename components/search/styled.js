@@ -1,9 +1,11 @@
-import styled from 'styled-components/macro'
+import styled from 'styled-components'
 import Container from 'react-bootstrap/Container';
-import { ResultPane, ResultsContainer } from '../../sharedStyles'
+import { ResultPane, ResultsContainer } from '../../utils/sharedStyles'
+import NextLink from 'next/link'
 
 const TopResultPane = styled(ResultPane)`
  	font-size: 2.7em;
+	grid-column: 1/-1;
     width: 100%;
     &:hover{
         color: #33e;
@@ -12,7 +14,7 @@ const TopResultPane = styled(ResultPane)`
 	${({ theme }) => theme.smallSize('font-size: 2.1em;')}
 `
 
-const Link = styled.a`
+const Link = styled(NextLink)`
 
 `
 
