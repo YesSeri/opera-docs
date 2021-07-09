@@ -8,7 +8,6 @@ const Image = styled.img`
     max-width: 36rem;
 `
 const Link = styled.a`
-    font-size: 1.1rem;
 `
 
 const MusicContainer = styled.div`

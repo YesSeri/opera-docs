@@ -13,6 +13,7 @@ function NavBar() {
 						<NavLink href="/" name="Search" />
 						<NavLink href="/operas" name="Operas" />
 						<NavLink href="/composers" name="Composers" />
+						<NavLink href="/arias" name="Arias" />
 					</Nav>
 				</Navbar.Collapse>
 			</Navbar>

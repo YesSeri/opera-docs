@@ -6,7 +6,7 @@ const theme = {
 	// Used to make item reponsive. Should only be used for items that take up fullscreen.
 	responsiveWidth:
 		` margin: auto;
-    width: 70%;
+		width: 70%;
     @media screen and (max-width: 1200px) {
         width: 90%;
     }

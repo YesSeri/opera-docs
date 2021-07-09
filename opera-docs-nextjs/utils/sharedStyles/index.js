@@ -32,10 +32,8 @@ const BorderDiv = styled.div`
 `
 const ResponsiveContainer = styled.div`
 	${({ theme }) => theme.mediumSize(`
-        font-size: 1.1em;
     `)}
     ${({ theme }) => theme.smallSize(`
-        font-size: 1.0em;
     `)}
 	${({ theme }) => theme.responsiveWidth} 
 `
