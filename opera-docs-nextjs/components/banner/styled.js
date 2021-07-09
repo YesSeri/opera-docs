@@ -7,7 +7,6 @@ const Container = styled.div`
 	color: #fff;
 	padding: 20px;
 	margin-bottom: 10px;
-    text-align:center;
 `
 const Item = styled.div`
 	font-size: 1.5rem;

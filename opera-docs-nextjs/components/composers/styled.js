@@ -12,7 +12,6 @@ const Link = styled.a`
 `
 
 const MusicContainer = styled.div`
- 	text-align: center;
 `
 
 export { ResultPane, ResultsContainer, Image, Link, MusicContainer }

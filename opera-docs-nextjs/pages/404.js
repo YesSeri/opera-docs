@@ -14,7 +14,6 @@ import styled from 'styled-components'
 const Container = styled.div`
 	color:#000;
 	background:#fff;
-	text-align:center;
 	display:flex;
 	flex-direction:column;
 	align-items:center;

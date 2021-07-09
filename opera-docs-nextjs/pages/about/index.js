@@ -2,7 +2,7 @@ import React from 'react'
 import About from '../../components/about'
 
 import Head from 'next/head'
-const Contact = () => {
+const AboutPage = () => {
 	return (
 		<>
 			<Head>
@@ -13,4 +13,4 @@ const Contact = () => {
 	)
 }
 
-export default Contact
+export default AboutPage

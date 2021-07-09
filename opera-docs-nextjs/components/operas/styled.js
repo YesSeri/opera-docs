@@ -30,6 +30,5 @@ const Link = styled.a`
 
 const Title = styled.h1`
     padding-top: 20px;
-	text-align: center;
 `
 export { ResultsContainer, ResultPane, Title, Link }

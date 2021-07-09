@@ -25,7 +25,6 @@ const NavWrapper = styled.div`
 	}
 `
 const ResultPane = styled.div`
-    text-align: center;
     font-size: 1.2em;
     padding: 0 3px;
     flex: 1 1 1;
@@ -55,6 +54,5 @@ const ResultsContainer = styled.div`
 
 const Title = styled.h1`
     padding-top: 20px;
-	text-align: center;
 `
 export { ResultsContainer, ResultPane, Title, NavWrapper }

@@ -22,7 +22,6 @@ const Container = styled.div`
 `
 const Item = styled.div`
     width: 25%;
-    text-align:center;
 
 	${({ theme }) => theme.mediumSize(`
         padding: 0.3em 0;

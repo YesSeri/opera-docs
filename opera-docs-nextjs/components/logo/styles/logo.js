@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const Link = styled.a`
 	font-size: 4em;
-	text-align:center;
 	${({ theme }) => theme.smallSize('font-size: 3em;')}
     color: white;
     text-decoration: none;
@@ -13,8 +12,8 @@ const Link = styled.a`
 `
 
 const Container = styled.div`
-	text-align:center;
 	padding-bottom: 0.3em;
+	margin-top: -0.7em;
 	cursor: pointer;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
