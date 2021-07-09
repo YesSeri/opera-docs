@@ -28,7 +28,7 @@ const SearchBar = ({ searchValue, setSearchValue }) => {
 				<Form.Control
 					ref={formRef}
 					type="text"
-					placeholder="Enter search"
+					placeholder="Search"
 					onKeyDown={disableEnter}
 					onChange={(e) => {
 						setSearchValue(diacritics.remove(e.target.value)); // Remove all strange italian signs above letters for better search, e.g. è and é

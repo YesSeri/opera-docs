@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Head from 'next/head'
 import queryGetData from '../utils/queryGetData'
 import diacritics from 'diacritics';
@@ -9,11 +8,6 @@ import Search from '../components/search'
 // piece: keys: ['title'], id
 // opera: keys: ['opera'], id
 // comoposer: keys: ['last_name', 'first_name'], id
-
-function getFn() {
-    // The getFn option, is that it should remove diacritics, when searching.
-    return diacritics.remove(Fuse.config.getFn.apply(this, arguments))
-}
 
 async function queryData(query) {
     return await queryGetData(query);

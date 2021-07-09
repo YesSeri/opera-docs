@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Link from 'next/link';
 import { NavWrapper, CloseButton } from './styled'
+import NavLink from '../NavLink'
 
 function Footer() {
 	const [visible, setVisible] = useState(true);
@@ -14,12 +15,8 @@ function Footer() {
 				expand="sm"
 			>
 				<Nav className="mx-auto" style={{ display: 'block' }}>
-					<Link href="/contact">
-						Contact
-					</Link>
-					<Link href="/about">
-						About
-					</Link>
+					<NavLink href="/contact" name="Contact" />
+					<NavLink href="/about" name="About" />
 				</Nav>
 				<CloseButton onClick={() => setVisible(false)}>
 					&#10006;

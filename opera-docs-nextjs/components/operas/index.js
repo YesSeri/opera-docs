@@ -1,5 +1,4 @@
 import React from 'react'
-import Head from 'next/head'
 import { ResultPane, ResultsContainer } from './styled'
 import Link from 'next/link'
 
