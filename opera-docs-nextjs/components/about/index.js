@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import { Helmet } from 'react-helmet';
-import { Title } from '../../sharedStyles'
+// import { Helmet } from 'react-helmet';
+import { Title } from '../../utils/sharedStyles'
 
 export default function About() {
 	return (
