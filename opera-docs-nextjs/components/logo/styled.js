@@ -13,7 +13,7 @@ const Link = styled.a`
 
 const Container = styled.div`
 	padding-bottom: 0.3em;
-	margin-top: -0.7em;
+	margin-top: -0.4em;
 	cursor: pointer;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;

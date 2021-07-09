@@ -1,9 +1,12 @@
 a {
-	color: #3333dd;
+	color: #007bff;
 	text-decoration: none;
 }
 
 html {
 	text-align: center;
-	font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

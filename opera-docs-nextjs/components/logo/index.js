@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Container } from './styles/logo'
+import { Link, Container } from './styled'
 
 export default function Logo() {
 	return (

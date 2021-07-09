@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
-import { ResultPane, ResultsContainer, Title } from './styled'
+import { ResultPane, ResultsContainer, Title, PieceList } from './styled'
 
 
 export default function OperaWithId({ data }) {
@@ -15,13 +15,13 @@ export default function OperaWithId({ data }) {
             ? 'normal'
             : 'bold';
         return (
-          <ResultPane key={id}>
+          <PieceList key={id}>
             <Link
               style={{ fontWeight: weight }}
               href={`/pieces/${pieceUrl}`}
             >{`${title}`}</Link>
             <br />
-          </ResultPane>
+          </PieceList>
         );
       }
     )

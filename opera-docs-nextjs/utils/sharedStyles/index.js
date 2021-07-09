@@ -26,31 +26,39 @@ const NavWrapper = styled.div`
 `
 const ResultPane = styled.div`
     font-size: 1.2em;
-    padding: 0 3px;
-    flex: 1 1 1;
-    width:33.33%;
     border-radius: 10px;
     border: solid #ddd 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 10px;
-    ${({ theme }) => theme.mediumSize(`
+	width:33%;
+	${({ theme }) => theme.mediumSize(`
         font-size: 1.1em;
-        width: 50%;
+		width:50%;
     `)}
     ${({ theme }) => theme.smallSize(`
         font-size: 1.0em;
-        width: 100%;
-    `)}
+		width:100%;
+    `)} 
+
 `
 
 const ResultsContainer = styled.div`
-    display:flex;
-    flex-wrap:wrap;
-    max-width:1200px;
-    margin:auto;
+	display:flex;
+	flex-wrap:wrap;
+	padding:5px;
+	${({ theme }) => theme.responsiveWidth}
+	/* display:grid;
+	grid-template-columns: 1fr 1fr 1fr;
+
+	${({ theme }) => theme.mediumSize(`
+        font-size: 1.1em;
+		grid-template-columns: 1fr 1fr ;
+    `)}
+    ${({ theme }) => theme.smallSize(`
+        font-size: 1.0em;
+		grid-template-columns: 1fr;
+    `)} */
 `
+
 
 const Title = styled.h1`
     padding-top: 20px;
