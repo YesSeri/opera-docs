@@ -7,7 +7,10 @@
     "build": "next build",
 	"start": "next start -p $PORT"
   },
-  "cacheDirectories": [".next/cache"],
+  "engines": {
+    "node": "14.x",
+	"npm": "7.x"
+  },
   "dependencies": {
     "@sendgrid/mail": "^7.4.5",
     "axios": "^0.21.1",
