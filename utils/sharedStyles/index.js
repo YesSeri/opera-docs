@@ -32,13 +32,9 @@ const BorderDiv = styled.div`
     font-size: 1.2em;
     border-radius: 10px;
     border: solid #ddd 1px;
-    padding: 10px;
+	padding:0.5em 0;
 `
 const ResponsiveContainer = styled.div`
-	${({ theme }) => theme.mediumSize(`
-    `)}
-    ${({ theme }) => theme.smallSize(`
-    `)}
 	${({ theme }) => theme.responsiveWidth} 
 `
 const ResultPane = styled(BorderDiv)`
