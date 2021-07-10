@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+	"start": "next start -p $PORT"
   },
+  "cacheDirectories": [".next/cache"],
   "dependencies": {
     "@sendgrid/mail": "^7.4.5",
     "axios": "^0.21.1",
