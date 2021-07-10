@@ -11,7 +11,7 @@ export default function NavLink({ href, name }) {
 	const router = useRouter();
 	const { pathname } = router
 	return (
-		<Link prefetch href={href} passHref>
+		<Link href={href} passHref>
 			<StyledLink active={pathname === href} >{name}</StyledLink>
 		</Link>
 	)
