@@ -1,5 +1,5 @@
 import React from 'react';
-import { CustomPane, ResultsContainerSingle, Link } from './styled'
+import { CustomPane, ResultsContainerSingle, Item, LastItem, Container } from './styled'
 
 const urlCreator = (path, id) => `/${path}/${id}`
 function Arias({ data }) {
@@ -12,11 +12,11 @@ function Arias({ data }) {
 				const composerUrl = urlCreator('composers', composerId)
 				return (
 					<CustomPane key={pieceId}>
-						<Link href={pieceUrl}>{pieceTitle}</Link>
-						<Link href={operaUrl}>{operaTitle}</Link>
-						<Link
+						<Item href={pieceUrl}>{pieceTitle}</Item>
+						<Item href={operaUrl}>{operaTitle}</Item>
+						<LastItem
 							href={composerUrl}
-						>{`${lastName}, ${firstName}`}</Link>
+						>{`${lastName}, ${firstName}`}</LastItem>
 					</CustomPane>
 				)
 			}
@@ -24,9 +24,11 @@ function Arias({ data }) {
 		return arias;
 	};
 	return (
-		<ResultsContainerSingle>
-			<AriasInfo />
-		</ResultsContainerSingle>
+		<Container>
+			<ResultsContainerSingle>
+				<AriasInfo />
+			</ResultsContainerSingle>
+		</Container>
 	);
 }
 

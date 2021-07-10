@@ -10,21 +10,19 @@ const Container = styled.div`
   width:100vw;
   display:grid;
   align-content: space-between;
-  margin:auto;
 `
-
 const Layout = ({ children }) => {
-  return (
-    <Container>
-      <div>
-        <Logo />
-        <Banner />
-        <Navbar />
-        {children}
-      </div>
-      <Footer />
-    </Container>
-  )
+	return (
+		<Container>
+			<div>
+				<Logo />
+				<Banner />
+				<Navbar />
+				{children}
+			</div>
+			<Footer />
+		</Container>
+	)
 }
 
 export default Layout

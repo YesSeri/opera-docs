@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ResultPane, ResultsContainer, ResultPaneSingle, ResultsContainerSingle } from '../../utils/sharedStyles'
+import { ResultPane, ResultsContainer, ResultPaneSingle, ResultsContainerSingle, Container } from '../../utils/sharedStyles'
 
 const Image = styled.img`
     border-radius: 10px;
@@ -13,4 +13,4 @@ const Link = styled.a`
 const MusicContainer = styled.div`
 `
 
-export { ResultPane, ResultsContainer, ResultPaneSingle, ResultsContainerSingle, Image, Link, MusicContainer }
+export { ResultPane, ResultsContainer, ResultPaneSingle, ResultsContainerSingle, Image, Link, MusicContainer, Container }

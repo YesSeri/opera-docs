@@ -1,5 +1,4 @@
-import Head from 'next/head';
-import { ResultPane, ResultsContainer } from './styled'
+import { ResultPane, ResultsContainer, Container } from './styled'
 import Link from 'next/link'
 
 const urlCreator = (id) => '/composers/' + id
@@ -16,9 +15,11 @@ function Composers({ data }) {
 	};
 
 	return (
-		<ResultsContainer>
-			<Info />
-		</ResultsContainer>
+		<Container>
+			<ResultsContainer>
+				<Info />
+			</ResultsContainer>
+		</Container>
 	);
 }
 

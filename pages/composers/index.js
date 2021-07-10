@@ -21,7 +21,6 @@ function ComposersPage({ data }) {
 		<>
 			<Head>
 				<title>operadocs - show all composers</title>
-				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
 			<Composers data={data}/>
 		</>

@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+const Container = styled.div`
+	padding-top:1em;
+`
+
 const NavWrapper = styled.div`
 	user-select: none;
 	width:100%;
@@ -66,4 +70,4 @@ const ResultsContainerSingle = styled(ResponsiveContainer)`
 const Title = styled.h1`
     padding-top: 20px;
 `
-export { ResultsContainer, ResultPane, ResultsContainerSingle, ResultPaneSingle, Title, NavWrapper }
+export { ResultsContainer, ResultPane, ResultsContainerSingle, ResultPaneSingle, Title, NavWrapper, Container }

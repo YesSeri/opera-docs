@@ -1,12 +1,17 @@
 import styled from "styled-components";
-import { ResultPaneSingle, ResultsContainerSingle } from '../../utils/sharedStyles'
+import { ResultPaneSingle, ResultsContainerSingle, Container } from '../../utils/sharedStyles'
 import Link from 'next/link'
 
 const CustomPane = styled(ResultPaneSingle)`
 	display: grid;
-	*:not(:last-child){
-		border-bottom: 1px solid #ddd;
-	}
+`
+const Item = styled(Link)`
+	border-bottom: 1px solid #ddd;
+	padding:5px 0;
+
+`
+const LastItem = styled(Item)`
+	border-bottom: none;
 `
 
-export { CustomPane, ResultsContainerSingle, Link }
+export { CustomPane, ResultsContainerSingle, Item, LastItem, Container }
