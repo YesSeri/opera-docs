@@ -38,10 +38,6 @@ export async function getStaticProps() {
 export default function Home({ data }) {
     return (
         <div>
-            <Head>
-                <title>operadocs - free opera sheet music </title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
             <Search data={data} />
         </div>
     )

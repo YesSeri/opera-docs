@@ -1,5 +1,12 @@
-export default function App() {
+import * as gtag from '../../lib/gtag'
+function handleClick() {
+	gtag.event({
+		action: 'clicked_email',
+		category: 'Contact',
+	})
+}
+export default function Contact() {
 	return (
-		<p>To contact me, please write me an email at <a href="mailto:name@rapidtables.com">operadocs@protonmail.com</a>.</p>
+		<p>To contact me, please write me an email at <a onClick={handleClick} href="mailto:name@rapidtables.com">operadocs@protonmail.com</a>.</p>
 	)
 }
