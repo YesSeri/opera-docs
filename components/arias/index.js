@@ -1,5 +1,5 @@
 import React from 'react';
-import { CustomPane, CustomContainer, Link, Container, HorizontalDivider } from './styled'
+import { CustomPane, CustomContainer, Link, Container } from './styled'
 
 const urlCreator = (path, id) => `/${path}/${id}`
 function Arias({ data }) {

@@ -1,22 +1,23 @@
 import styled from 'styled-components'
+import Link from 'next/link'
 
-const Link = styled.a`
-	margin: 0 0.5em;
-`
 const Container = styled.div`
 	display:flex;
 	justify-content:center;
 	padding-bottom:1em;
-	div{
+	& > div{
 		display:flex;
 		justify-content: space-around;
 		border-radius: 10px;
-		padding:0.5em 1em;
+		padding:0.4em 0;
 		background-color: ${({ theme }) => theme.color.second};
 		${({ theme }) => theme.mediumSize(`
 			min-width:10em;
-			padding:0.1em;
 		`)}
 	}
 `
-export { Link, Container }
+
+const LinkContainer = styled.div`
+		padding: 0 1em;
+`
+export { LinkContainer, Link, Container }
