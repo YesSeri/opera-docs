@@ -32,7 +32,7 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
-					<meta charset="utf-8" />
+					<meta charSet="utf-8" />
 					<meta name="description" content="A Platform for finding opera sheet music online for free" />
 					<link rel="icon" href="/favicon.ico" />
 					{/* Global Site Tag (gtag.js) - Google Analytics */}
