@@ -33,9 +33,7 @@ export default class MyDocument extends Document {
 			<Html lang="en">
 				<Head>
 					<meta charset="utf-8" />
-					<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 					<meta name="description" content="A Platform for finding opera sheet music online for free" />
-					<title>operadocs - free opera sheet music</title>
 					<link rel="icon" href="/favicon.ico" />
 					{/* Global Site Tag (gtag.js) - Google Analytics */}
 					<script

@@ -20,7 +20,7 @@ function AriasPage({ data }) {
 	return (
 		<>
 			<Head>
-				<title>operadocs - all arias</title>
+				<title>operadocs - show all arias</title>
 			</Head>
 			<Arias data={data} /> 
 		</>

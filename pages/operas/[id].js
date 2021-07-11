@@ -36,7 +36,7 @@ export default function OperaWithId({ data }) {
   return (
     <>
       <Head>
-        <title>operadocs - vocal scores for {operaTitle}</title>
+        <title>operadocs - sheet music for all pieces in {operaTitle}</title>
       </Head>
       <Opera data={data} />
     </>

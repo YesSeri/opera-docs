@@ -21,7 +21,7 @@ function OperasPage({ data }) {
 	return (
 		<>
 			<Head>
-				<title>operadocs - all operas</title>
+				<title>operadocs - show all operas</title>
 			</Head>
 			<Operas data={data} /> 
 		</>
