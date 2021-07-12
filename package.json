@@ -4,11 +4,10 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"nodemon": "nodemon server.js",
-		"node": "node server.js",
 		"build": "next build",
 		"export": "npm run build && next export",
-		"start": "next start -p $PORT"
+		"start": "NODE_ENV=production node server.js",
+		"startWin": "SET NODE_ENV=production & node server.js"
 	},
 	"engines": {
 		"node": "16.4.2",
