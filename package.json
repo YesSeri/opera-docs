@@ -9,8 +9,7 @@
 		"start": "NODE_ENV=production node server.js",
 		"startWin": "SET NODE_ENV=production & node server.js"
 	},
-	"engines": {
-	},
+	"engines": {},
 	"dependencies": {
 		"axios": "^0.21.1",
 		"bootstrap": "^5.0.2",
@@ -18,7 +17,9 @@
 		"fuse.js": "^6.4.6",
 		"mysql2": "^2.2.5",
 		"next": "^11.0.1",
+		"react": "^17.0.2",
 		"react-bootstrap": "^1.6.1",
+		"react-dom": "^17.0.2",
 		"react-pdfobject": "^1.1.1",
 		"styled-components": "^5.3.0"
 	}
