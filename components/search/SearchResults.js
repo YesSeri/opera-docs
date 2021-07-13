@@ -38,7 +38,7 @@ const SearchValue = ({ searchValue, data }) => {
 				<Result result={results[0]} />
 			</TopResultPane>
 			{results.slice(1).map(result =>
-				<ResultPane>
+				<ResultPane key={result.title}>
 					<Result key={result.link} result={result} />
 				</ResultPane>
 			)}
