@@ -1,3 +1,4 @@
 module.exports = {
-	assetPrefix: './'
+	// assetPrefix: './',
+	trailingSlash: true,
 }

@@ -22,7 +22,7 @@ function ComposersPage({ data }) {
 			<Head>
 				<title>operadocs - show all composers</title>
 			</Head>
-			<Composers data={data}/>
+			<Composers data={data} />
 		</>
 	);
 }

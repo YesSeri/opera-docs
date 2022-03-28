@@ -23,7 +23,7 @@ function OperasPage({ data }) {
 			<Head>
 				<title>operadocs - show all operas</title>
 			</Head>
-			<Operas data={data} /> 
+			<Operas data={data} />
 		</>
 	);
 }

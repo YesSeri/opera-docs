@@ -31,20 +31,14 @@ export async function getStaticPaths() {
 }
 // Find all pieces in the opera
 export async function getStaticProps({ params }) {
-	const query = `SELECT p.id, p.title, p.description, p.file_title, p.placement, p.type, 
-                o.name as opera, o.id as opera_id, c.first_name, c.last_name 
-                FROM pieces as p INNER JOIN operas as o ON p.opera_id = o.id 
-                INNER JOIN composers as c ON o.composer_id = c.id WHERE p.id = ?;`;
+	const query = `SELECT p.id, p.title, p.description, p.file_title, 
+					p.type, p.next_id, p.prev_id,
+					o.name as opera, o.id as opera_id, c.first_name, c.last_name 
+					FROM pieces as p INNER JOIN operas as o ON p.opera_id = o.id 
+					INNER JOIN composers as c ON o.composer_id = c.id WHERE p.id = ?;`;
 	const [data] = await queryGetData(query, params.id);
-	const { placement, opera_id } = data;
-	const nextPos = placement + 1;
-	const prevPos = placement - 1;
-	const posQuery = `SELECT p.id FROM pieces as p 
-                INNER JOIN operas as o ON p.opera_id = o.id 
-                WHERE o.id = ? AND p.placement = ?`;
-	const [prev] = await queryGetData(posQuery, [opera_id, prevPos]);
-	const [next] = await queryGetData(posQuery, [opera_id, nextPos]);
-	const completeData = { ...data, prevId: prev?.id ?? false, nextId: next?.id ?? false }
+	const { prev_id, next_id } = data;
+	const completeData = { ...data, prevId: prev_id ?? false, nextId: next_id ?? false }
 	return {
 		props: { data: completeData }
 	}
