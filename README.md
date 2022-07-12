@@ -17,10 +17,6 @@ npm install
 
 You need to have a database to be able to run and build the site.
 
-## Contributing
-
-Contributions are always welcome!
-
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
@@ -34,6 +30,21 @@ NEXT_PUBLIC_GA_ID=G-AB12AB12AB
 
 Run the export command in `package.json`. The pdfs should be located in the ./public/pdfs folder.
 
+```
+cd public_html
+chmod -R 755 ./operadocs.com/_next/
+ls ./operadocs.com | grep -v "pdfs" | xargs rm -rf
+unzip ./out.zip -d ./operadocs.com
+
+(optional)
+rm -rf ./operadocs.com/*
+cp -r ./wp-content/uploads/pdfsToBeAccessed ./operadocs.com/pdfs
+```
+
 ## Roadmap
 
 - Add music playback to the sheet music.
+
+## Contributing
+
+Contributions are always welcome!
