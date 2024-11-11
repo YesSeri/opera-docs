@@ -20,9 +20,9 @@ function AriasPage({ data }) {
 	return (
 		<>
 			<Head>
-				<title>operadocs - show all arias</title>
+				<title>ariavault - show all arias</title>
 			</Head>
-			<Arias data={data} /> 
+			<Arias data={data} />
 		</>
 	);
 }

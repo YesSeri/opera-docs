@@ -25,7 +25,6 @@ export async function getStaticProps({ params }) {
 					WHERE o.id = ? AND prev_id IS NULL;`;
 	let [current] = await queryGetData(query, params.id);
 	const piecesInOpera = [current];
-	console.log(piecesInOpera)
 
 	// To stop infinte loop, if I make a mistake in DB.
 	let i = 0;
@@ -52,7 +51,7 @@ export default function OperaWithId({ data }) {
 	return (
 		<>
 			<Head>
-				<title>operadocs - sheet music for all pieces in {operaTitle}</title>
+				<title>ariavault - sheet music for all pieces in {operaTitle}</title>
 			</Head>
 			<Opera data={data} />
 		</>

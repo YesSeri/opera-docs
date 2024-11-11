@@ -20,7 +20,7 @@ function ComposersPage({ data }) {
 	return (
 		<>
 			<Head>
-				<title>operadocs - show all composers</title>
+				<title>ariavault - show all composers</title>
 			</Head>
 			<Composers data={data} />
 		</>

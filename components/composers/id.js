@@ -13,7 +13,7 @@ const ComposerInfo = ({ data }) => {
 			</h1>
 			<Image
 				alt={`picture of ${last_name}`}
-				src={encodeURI(`https://singcademy.com/wp-content/uploads/composerPics/${uniqName}.jpeg`)}
+				src={encodeURI(`/composerPics/${uniqName}.jpeg`)}
 			/>
 		</>
 	);

@@ -5,7 +5,7 @@ function PiecesPage() {
 	return (
 		<>
 			<Head>
-				<title>operadocs - pieces</title>
+				<title>ariavault - pieces</title>
 			</Head>
 			<div>
 				<p>This page is a work in progress</p>

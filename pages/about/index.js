@@ -6,7 +6,7 @@ const AboutPage = () => {
 	return (
 		<>
 			<Head>
-				<title>operadocs - about us</title>
+				<title>ariavault - about us</title>
 			</Head>
 			<About />
 		</>

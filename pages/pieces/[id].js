@@ -8,7 +8,7 @@ const PieceWithId = ({ data }) => {
 		<>
 			<Head>
 				<title>
-					operadocs - vocal score, sheet music for {data.title} from {data.opera} by {data.last_name}, {data.first_name}
+					ariavault - vocal score, sheet music for {data.title} from {data.opera} by {data.last_name}, {data.first_name}
 				</title>
 			</Head>
 			<Piece data={data} />

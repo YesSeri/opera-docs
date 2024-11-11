@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
 		<>
 			<Head>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-				<title>operadocs - free opera sheet music</title>
+				<title>ariavault - free opera sheet music</title>
 			</Head>
 			<ThemeProvider theme={theme}>
 				<Layout>

@@ -6,7 +6,7 @@ const ContactPage = () => {
 	return (
 		<>
 			<Head>
-				<title>operadocs - contact us</title>
+				<title>ariavault - contact us</title>
 			</Head>
 			<Contact />
 		</>

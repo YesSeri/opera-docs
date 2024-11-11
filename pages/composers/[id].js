@@ -37,7 +37,7 @@ export default function OperaWithId({ data }) {
 	return (
 		<>
 			<Head>
-				<title>operadocs - operas by {first_name} {last_name}</title>
+				<title>ariavault - operas by {first_name} {last_name}</title>
 			</Head>
 			<Composer data={data} />
 

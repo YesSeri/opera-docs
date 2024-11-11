@@ -7,6 +7,7 @@ function handleClick() {
 }
 export default function Contact() {
 	return (
-		<p>To contact me, please write me an email at <a onClick={handleClick} href="mailto:operadocs@protonmail.com">operadocs@protonmail.com</a>.</p>
+		<p>Contact me</p>
+		// <p>To contact me, please write me an email at <a onClick={handleClick} href="mailto:ariavault@protonmail.com">ariavault@protonmail.com</a>.</p>
 	)
 }

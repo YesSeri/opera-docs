@@ -9,7 +9,6 @@ function Piece({ data }) {
 		<>
 			<InfoContainer data={data} />
 			<Frame
-				// downloadLink={`https://singcademy.com/wp-content/uploads/pdfsToBeAccessed/${data.file_title}`}
 				downloadLink={`${url}/${data.file_title}`}
 			/>
 		</>

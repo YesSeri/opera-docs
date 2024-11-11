@@ -35,3 +35,6 @@ yarn-error.log*
 *.sql
 public/pdfs
 pdfs
+
+Operadocs
+Operadocs.7z

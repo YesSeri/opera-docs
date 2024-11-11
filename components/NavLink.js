@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import styled from 'styled-components'
 import { useRouter } from "next/router";
 
@@ -11,8 +10,6 @@ export default function NavLink({ href, name }) {
 	const router = useRouter();
 	const { pathname } = router
 	return (
-		<Link href={href} passHref>
-			<StyledLink active={pathname === href} >{name}</StyledLink>
-		</Link>
+		<StyledLink href={href} active={pathname === href} >{name}</StyledLink>
 	)
 }
