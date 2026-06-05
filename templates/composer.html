@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}ariavault - operas by {{ page.extra.first_name }} {{ page.extra.last_name }}{% endblock title %}
+
+{% block content %}
+{% set operas = load_data(path="data/operas.json") %}
+<article class="composer-page">
+  <h1>{{ page.extra.first_name }} {{ page.extra.last_name }}</h1>
+  {% if page.extra.image %}
+    <img class="composer-image" src="/{{ page.extra.image }}" alt="Picture of {{ page.extra.last_name }}">
+  {% endif %}
+  <div class="single-list">
+    {% for opera in operas %}
+      {% if opera.composer_id == page.extra.composer_id %}
+      <a class="single-row" href="/operas/{{ opera.id }}/">{{ opera.title }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</article>
+{% endblock content %}

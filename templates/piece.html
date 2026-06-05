@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}ariavault - vocal score, sheet music for {{ page.title }}{% endblock title %}
+
+{% block content %}
+<article class="piece-page">
+  <h1>{{ page.title }}</h1>
+
+  {% if page.content %}
+    <section class="synopsis">
+      {{ page.content | safe }}
+    </section>
+  {% endif %}
+
+  <nav class="prev-next" aria-label="Piece navigation">
+    {% if page.extra.prev_id %}<a href="/pieces/{{ page.extra.prev_id }}/">Prev</a>{% endif %}
+    {% if page.extra.next_id %}<a href="/pieces/{{ page.extra.next_id }}/">Next</a>{% endif %}
+  </nav>
+
+  <dl class="metadata">
+    <div><dt>Type</dt><dd>{{ page.extra.piece_type | capitalize }}</dd></div>
+    <div><dt>Opera</dt><dd><a href="/operas/{{ page.extra.opera_id }}/">{{ page.extra.opera }}</a></dd></div>
+    <div><dt>Composer</dt><dd><a href="/composers/{{ page.extra.composer_id }}/">{{ page.extra.composer_last_name }}, {{ page.extra.composer_first_name }}</a></dd></div>
+    <div><dt>Link</dt><dd><a href="{{ page.extra.pdf_url }}">Open PDF</a></dd></div>
+  </dl>
+
+  <section class="pdf-frame" aria-label="PDF score">
+    <object data="{{ page.extra.pdf_url }}" type="application/pdf">
+      <p>Your browser cannot display this PDF inline. <a href="{{ page.extra.pdf_url }}">Open the PDF</a>.</p>
+    </object>
+  </section>
+</article>
+{% endblock content %}

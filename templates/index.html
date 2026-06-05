@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="home-stage" aria-label="Search catalogue">
+  <div class="home-intro">
+    <p class="eyebrow">Public-domain vocal scores</p>
+    <h1>Find opera sheet music fast.</h1>
+  </div>
+
+  <div class="search-panel">
+    <label class="search-label" for="catalogue-search">Search the catalogue</label>
+    <input id="catalogue-search" class="search-input" type="search" autocomplete="off" placeholder="Try Mozart, Carmen, soprano, or aria">
+    <p id="search-help" class="search-help">Enter the name of an opera, composer or piece.</p>
+    <div id="search-results" class="search-results" aria-live="polite"></div>
+  </div>
+
+  <nav class="home-shortcuts" aria-label="Catalogue shortcuts">
+    <a href="/operas/"><span>Operas</span></a>
+    <a href="/composers/"><span>Composers</span></a>
+    <a href="/arias/"><span>Arias</span></a>
+  </nav>
+</section>
+{% endblock content %}
+
+{% block scripts %}
+<script src="/search.js" defer></script>
+{% endblock scripts %}

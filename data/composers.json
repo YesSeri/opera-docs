@@ -1,0 +1,57 @@
+[
+  {
+    "id": 51,
+    "first_name": "Ludwig van",
+    "last_name": "Beethoven"
+  },
+  {
+    "id": 22,
+    "first_name": "Georges",
+    "last_name": "Bizet"
+  },
+  {
+    "id": 11,
+    "first_name": "Gaetano",
+    "last_name": "Donizetti"
+  },
+  {
+    "id": 55,
+    "first_name": "George Frideric",
+    "last_name": "Handel"
+  },
+  {
+    "id": 28,
+    "first_name": "Ruggiero",
+    "last_name": "Leoncavallo"
+  },
+  {
+    "id": 32,
+    "first_name": "Pietro",
+    "last_name": "Mascagni"
+  },
+  {
+    "id": 58,
+    "first_name": "Wolfgang Amadeus",
+    "last_name": "Mozart"
+  },
+  {
+    "id": 29,
+    "first_name": "Giacomo",
+    "last_name": "Puccini"
+  },
+  {
+    "id": 10,
+    "first_name": "Gioacchino",
+    "last_name": "Rossini"
+  },
+  {
+    "id": 60,
+    "first_name": "Johann",
+    "last_name": "Strauss II"
+  },
+  {
+    "id": 17,
+    "first_name": "Giuseppe",
+    "last_name": "Verdi"
+  }
+]

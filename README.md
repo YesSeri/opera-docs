@@ -1,50 +1,98 @@
-# ariavault - sheet music online
+# ariavault
 
-Find free sheet music online. View the site here [ariavault](https://www.ariavault.com)
+Find free public-domain opera sheet music online.
 
-## Authors
+The public site is migrating from Next.js to [Zola](https://www.getzola.org/), with a small Rust exporter that turns the version-controlled SQLite catalogue into static Zola content.
 
-- [Henrik Zenkert](https://www.github.com/Yesseri)
+## Requirements
 
-## Installation
+- Zola
+- Rust
+- Optional: a MariaDB/MySQL database when refreshing `data/catalogue.sqlite`
 
-Install with npm
+## Catalogue database
+
+The public catalogue is stored in SQLite so it can be version controlled:
+
+```text
+data/catalogue.sqlite
+data/catalogue.sql
+```
+
+Use `catalogue.sqlite` for the build tools. Use `catalogue.sql` as the reviewable text snapshot.
+
+## Environment variables
+
+The exporter accepts either a single connection URL:
+
+```text
+DB_CONNECTION_URL=mysql://user:password@host:port/database
+```
+
+or the split variables used by the legacy app:
+
+```text
+DB_URL=localhost
+DB_PORT=3306
+DB_USER=user
+DB_PASS=password
+DB_NAME=database
+```
+
+## Migrate MariaDB to SQLite
+
+Run this when the MariaDB catalogue is the source you want to snapshot:
 
 ```bash
-git clone https://github.com/YesSeri/opera-docs.git
-npm install
+cd tools/catalog-exporter
+cargo run --release --bin mariadb_to_sqlite
 ```
 
-You need to have a database to be able to run and build the site.
+This writes:
 
-## Environment Variables
+- `data/catalogue.sqlite`
+- `data/catalogue.sql`
 
-To run this project, you will need to add the following environment variables to your .env file
+## Apply SQLite migrations
 
-```
-DB_CONNECTION_URL=mysql://user:password@host:port/database
-NEXT_PUBLIC_GA_ID=G-AB12AB12AB
-```
+Schema migrations live in `data/migrations` and are applied in filename order:
 
-## Build & Export
-
-Run the export command in `package.json`. The pdfs should be located in the ./public/pdfs folder.
-
-```
-cd public_html
-chmod -R 755 ./operadocs.com/_next/
-ls ./operadocs.com | grep -v "pdfs" | xargs rm -rf
-unzip ./out.zip -d ./operadocs.com
-
-(optional)
-rm -rf ./operadocs.com/*
-cp -r ./wp-content/uploads/pdfsToBeAccessed ./operadocs.com/pdfs
+```bash
+cd tools/catalog-exporter
+cargo run --release --bin migrate_sqlite
 ```
 
-## Roadmap
+Use migrations for schema changes such as adding tables, columns, indexes, or constraints. Normal catalogue edits can be made directly in SQLite and then committed with the updated SQL snapshot.
 
-- Add music playback to the sheet music.
+## Generate catalogue content
 
-## Contributing
+```bash
+cd tools/catalog-exporter
+cargo run --release --bin catalog-exporter
+```
 
-Contributions are always welcome!
+The exporter reads `data/catalogue.sqlite` by default and writes generated pages and data to:
+
+- `content/composers/*`
+- `content/operas/*`
+- `content/pieces/*`
+- `data/*.json`
+- `static/search-index.json`
+
+## Run locally
+
+```bash
+zola serve
+```
+
+## Build
+
+```bash
+zola build
+```
+
+The static site is written to `dist/`.
+
+## Notes
+
+Legacy Next.js files are still present during the migration, but the Zola path is now the intended public-site build. See `ZOLA_MIGRATION.md` for more detail.

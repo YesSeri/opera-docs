@@ -2,6 +2,7 @@
 
 # dependencies
 node_modules
+target/
 /.pnp
 .pnp.js
 
@@ -11,6 +12,9 @@ node_modules
 # next.js
 /.next/
 out
+
+# zola
+dist
 
 # production
 /build
@@ -33,7 +37,9 @@ yarn-error.log*
 # custom
 *.zip
 *.sql
+!data/catalogue.sql
 public/pdfs
+static/pdfs
 pdfs
 
 Operadocs

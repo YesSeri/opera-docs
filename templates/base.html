@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% if page %}{{ page.title }}{% elif section %}{{ section.title }}{% else %}{{ config.title }}{% endif %}{% endblock title %}</title>
+  <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="logo" href="/">ariavault</a>
+      <section class="banner" aria-label="Site introduction">
+        <p class="banner-title">{{ config.extra.tagline }}</p>
+        <div class="banner-grid">
+          <p>Search for the opera, composer or song you want to find.</p>
+          <p>Alternatively, find your scores by choosing a specific composer or opera.</p>
+        </div>
+      </section>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/">Search</a>
+        <a href="/operas/">Operas</a>
+        <a href="/composers/">Composers</a>
+        <a href="/arias/">Arias</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      {% block content %}{% endblock content %}
+    </main>
+
+    <footer class="footer">
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </footer>
+  </div>
+  {% block scripts %}{% endblock scripts %}
+</body>
+</html>

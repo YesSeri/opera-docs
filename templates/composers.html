@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set composers = load_data(path="data/composers.json") %}
+<section class="listing">
+  <h1>Composers</h1>
+  {% if composers | length > 0 %}
+    <div class="result-grid">
+      {% for composer in composers %}
+        <a class="result-pane" href="/composers/{{ composer.id }}/">{{ composer.last_name }}, {{ composer.first_name }}</a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="empty-state">Run the catalogue exporter to generate composer pages from the database.</p>
+  {% endif %}
+</section>
+{% endblock content %}

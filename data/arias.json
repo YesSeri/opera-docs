@@ -1,0 +1,1782 @@
+[
+  {
+    "composer_first_name": "Gaetano",
+    "composer_id": 11,
+    "composer_last_name": "Donizetti",
+    "id": 389,
+    "opera": "Anna Bolena",
+    "opera_id": 23,
+    "placement": 3,
+    "title": "Ella di me, sollecita"
+  },
+  {
+    "composer_first_name": "Gaetano",
+    "composer_id": 11,
+    "composer_last_name": "Donizetti",
+    "id": 390,
+    "opera": "Anna Bolena",
+    "opera_id": 23,
+    "placement": 4,
+    "title": "Deh, non voler costringere"
+  },
+  {
+    "composer_first_name": "Gaetano",
+    "composer_id": 11,
+    "composer_last_name": "Donizetti",
+    "id": 391,
+    "opera": "Anna Bolena",
+    "opera_id": 23,
+    "placement": 5,
+    "title": "Come innocente giovane"
+  },
+  {
+    "composer_first_name": "Gaetano",
+    "composer_id": 11,
+    "composer_last_name": "Donizetti",
+    "id": 393,
+    "opera": "Anna Bolena",
+    "opera_id": 23,
+    "placement": 7,
+    "title": "Da quel dì che lei perduta"
+  },
+  {
+    "composer_first_name": "Gaetano",
+    "composer_id": 11,
+    "composer_last_name": "Donizetti",
+    "id": 395,
+    "opera": "Anna Bolena",
+    "opera_id": 23,
+    "placement": 9,
+    "title": "Ah, parea che per incanto"
+  },
+  {
+    "composer_first_name": "Gaetano",
+    "composer_id": 11,
+    "composer_last_name": "Donizetti",
+    "id": 401,
+    "opera": "Anna Bolena",
+    "opera_id": 23,
+    "placement": 14,
+    "title": "Per questa fiamma indomita"
+  },
+  {
+    "composer_first_name": "Gaetano",
+    "composer_id": 11,
+    "composer_last_name": "Donizetti",
+    "id": 403,
+    "opera": "Anna Bolena",
+    "opera_id": 23,
+    "placement": 15,
+    "title": "Vivi tu, te ne scongiuro"
+  },
+  {
+    "composer_first_name": "Georges",
+    "composer_id": 22,
+    "composer_last_name": "Bizet",
+    "id": 104,
+    "opera": "Carmen",
+    "opera_id": 13,
+    "placement": 5,
+    "title": "Habanera - L'amour est un oiseau rebelle"
+  },
+  {
+    "composer_first_name": "Georges",
+    "composer_id": 22,
+    "composer_last_name": "Bizet",
+    "id": 108,
+    "opera": "Carmen",
+    "opera_id": 13,
+    "placement": 9,
+    "title": "Tra la la la, coupe-moi brûle-moi"
+  },
+  {
+    "composer_first_name": "Georges",
+    "composer_id": 22,
+    "composer_last_name": "Bizet",
+    "id": 109,
+    "opera": "Carmen",
+    "opera_id": 13,
+    "placement": 10,
+    "title": "Seguidilla - Près des remparts de Séville"
+  },
+  {
+    "composer_first_name": "Georges",
+    "composer_id": 22,
+    "composer_last_name": "Bizet",
+    "id": 115,
+    "opera": "Carmen",
+    "opera_id": 13,
+    "placement": 16,
+    "title": "Toreador - Votre toast je peux vous le rendre"
+  },
+  {
+    "composer_first_name": "Georges",
+    "composer_id": 22,
+    "composer_last_name": "Bizet",
+    "id": 117,
+    "opera": "Carmen",
+    "opera_id": 13,
+    "placement": 18,
+    "title": "Halte-là! Qui va là"
+  },
+  {
+    "composer_first_name": "Georges",
+    "composer_id": 22,
+    "composer_last_name": "Bizet",
+    "id": 120,
+    "opera": "Carmen",
+    "opera_id": 13,
+    "placement": 20,
+    "title": "La fleur que tu ma'vais jetée"
+  },
+  {
+    "composer_first_name": "Georges",
+    "composer_id": 22,
+    "composer_last_name": "Bizet",
+    "id": 128,
+    "opera": "Carmen",
+    "opera_id": 13,
+    "placement": 28,
+    "title": "C'est des contrebandiers... Je dis que rien ne m'épouvante"
+  },
+  {
+    "composer_first_name": "Pietro",
+    "composer_id": 32,
+    "composer_last_name": "Mascagni",
+    "id": 479,
+    "opera": "Cavalleria rusticana",
+    "opera_id": 25,
+    "placement": 3,
+    "title": "Dite, mamma Lucia... Il cavallo scalpita"
+  },
+  {
+    "composer_first_name": "Pietro",
+    "composer_id": 32,
+    "composer_last_name": "Mascagni",
+    "id": 481,
+    "opera": "Cavalleria rusticana",
+    "opera_id": 25,
+    "placement": 5,
+    "title": "Voi lo sapete o mamma"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 414,
+    "opera": "Così fan tutte",
+    "opera_id": 24,
+    "placement": 9,
+    "title": "Vorrei dir"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 432,
+    "opera": "Così fan tutte",
+    "opera_id": 24,
+    "placement": 24,
+    "title": "Ah, scostati, pavento il tristo affetto... Smanie implacabili"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 434,
+    "opera": "Così fan tutte",
+    "opera_id": 24,
+    "placement": 26,
+    "title": "In uomini, in soldati"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 438,
+    "opera": "Così fan tutte",
+    "opera_id": 24,
+    "placement": 30,
+    "title": "Come scoglio immoto resta"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 440,
+    "opera": "Così fan tutte",
+    "opera_id": 24,
+    "placement": 32,
+    "title": "Non siate ritrosi"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 441,
+    "opera": "Così fan tutte",
+    "opera_id": 24,
+    "placement": 33,
+    "title": "Rivolgete a lui lo sguardo"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 444,
+    "opera": "Così fan tutte",
+    "opera_id": 24,
+    "placement": 36,
+    "title": "Un'aura amorosa"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 448,
+    "opera": "Così fan tutte",
+    "opera_id": 24,
+    "placement": 40,
+    "title": "Una donna a quindici anni"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 458,
+    "opera": "Così fan tutte",
+    "opera_id": 24,
+    "placement": 50,
+    "title": "Ah, lo veggio, quell'anima bella"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 461,
+    "opera": "Così fan tutte",
+    "opera_id": 24,
+    "placement": 52,
+    "title": "Per pieta, ben mio, perdona"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 463,
+    "opera": "Così fan tutte",
+    "opera_id": 24,
+    "placement": 54,
+    "title": "Donne mie, la fate a tanti"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 465,
+    "opera": "Così fan tutte",
+    "opera_id": 24,
+    "placement": 56,
+    "title": "Tradito, schernito dal perfido cor"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 469,
+    "opera": "Così fan tutte",
+    "opera_id": 24,
+    "placement": 59,
+    "title": "È amore un ladroncello"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 473,
+    "opera": "Così fan tutte",
+    "opera_id": 24,
+    "placement": 63,
+    "title": "Tutti accusan le donne"
+  },
+  {
+    "composer_first_name": "Johann",
+    "composer_id": 60,
+    "composer_last_name": "Strauss II",
+    "id": 251,
+    "opera": "Die Fledermaus",
+    "opera_id": 17,
+    "placement": 2,
+    "title": "Täubchen, das entflattert ist... Da schreibt meine Schwester Ida"
+  },
+  {
+    "composer_first_name": "Johann",
+    "composer_id": 60,
+    "composer_last_name": "Strauss II",
+    "id": 260,
+    "opera": "Die Fledermaus",
+    "opera_id": 17,
+    "placement": 11,
+    "title": "Ich lade gern mir Gäste ein"
+  },
+  {
+    "composer_first_name": "Johann",
+    "composer_id": 60,
+    "composer_last_name": "Strauss II",
+    "id": 262,
+    "opera": "Die Fledermaus",
+    "opera_id": 17,
+    "placement": 13,
+    "title": "Mein Herr Marquis, ein Mann wie Sie"
+  },
+  {
+    "composer_first_name": "Johann",
+    "composer_id": 60,
+    "composer_last_name": "Strauss II",
+    "id": 265,
+    "opera": "Die Fledermaus",
+    "opera_id": 17,
+    "placement": 15,
+    "title": "Klänge der Heimath... Feuer, Lebenslust, schwellt ächte Ungarbrust"
+  },
+  {
+    "composer_first_name": "Johann",
+    "composer_id": 60,
+    "composer_last_name": "Strauss II",
+    "id": 269,
+    "opera": "Die Fledermaus",
+    "opera_id": 17,
+    "placement": 19,
+    "title": "Spiel' ich die Unschuld vom Lande"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 58,
+    "opera": "Die Zauberflöte",
+    "opera_id": 10,
+    "placement": 3,
+    "title": "Der Vogelfänger bin ich ja"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 59,
+    "opera": "Die Zauberflöte",
+    "opera_id": 10,
+    "placement": 4,
+    "title": "Dies bildnis ist bezaubernd schön"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 60,
+    "opera": "Die Zauberflöte",
+    "opera_id": 10,
+    "placement": 5,
+    "title": "O zittre nicht, mein lieber Sohn... Zum Leiden bin ich auserkoren"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 66,
+    "opera": "Die Zauberflöte",
+    "opera_id": 10,
+    "placement": 11,
+    "title": "O Isis und Osiris"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 68,
+    "opera": "Die Zauberflöte",
+    "opera_id": 10,
+    "placement": 13,
+    "title": "Alles fühlt der Liebe Freuden"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 69,
+    "opera": "Die Zauberflöte",
+    "opera_id": 10,
+    "placement": 14,
+    "title": "Der Hölle Rache kocht in meinem Herzen"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 70,
+    "opera": "Die Zauberflöte",
+    "opera_id": 10,
+    "placement": 15,
+    "title": "In diesen heilgen Hallen"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 72,
+    "opera": "Die Zauberflöte",
+    "opera_id": 10,
+    "placement": 17,
+    "title": "Ach, ich fühl's, es ist entschwunden"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 76,
+    "opera": "Die Zauberflöte",
+    "opera_id": 10,
+    "placement": 20,
+    "title": "Ein Mädchen oder Weibchen wünscht Papageno sich"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 359,
+    "opera": "Don Carlos",
+    "opera_id": 22,
+    "placement": 2,
+    "title": "Fontainbleau... Io la vidie al suo sorriso"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 363,
+    "opera": "Don Carlos",
+    "opera_id": 22,
+    "placement": 6,
+    "title": "Carlo il sommo imperatore... Ei voleva regnare"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 367,
+    "opera": "Don Carlos",
+    "opera_id": 22,
+    "placement": 10,
+    "title": "Nei giardin del bello"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 372,
+    "opera": "Don Carlos",
+    "opera_id": 22,
+    "placement": 14,
+    "title": "Non pianger mia compagna"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 377,
+    "opera": "Don Carlos",
+    "opera_id": 22,
+    "placement": 19,
+    "title": "Ella giammai m'amo... Dormirò sol"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 380,
+    "opera": "Don Carlos",
+    "opera_id": 22,
+    "placement": 22,
+    "title": "Pietà, perdon... O don fatale"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 381,
+    "opera": "Don Carlos",
+    "opera_id": 22,
+    "placement": 23,
+    "title": "Per me giunto... Io morrò, ma lieto in core"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 383,
+    "opera": "Don Carlos",
+    "opera_id": 22,
+    "placement": 25,
+    "title": "Tu che le vanità..."
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 2,
+    "opera": "Don Giovanni",
+    "opera_id": 12,
+    "placement": 2,
+    "title": "Notte e giorno faticar"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 10,
+    "opera": "Don Giovanni",
+    "opera_id": 12,
+    "placement": 10,
+    "title": "Madamina il catalogo è questo"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 13,
+    "opera": "Don Giovanni",
+    "opera_id": 12,
+    "placement": 13,
+    "title": "Ho capito signorsì"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 17,
+    "opera": "Don Giovanni",
+    "opera_id": 12,
+    "placement": 17,
+    "title": "Ah fuggi il traditor"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 22,
+    "opera": "Don Giovanni",
+    "opera_id": 12,
+    "placement": 22,
+    "title": "Or sai chi lonore"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 24,
+    "opera": "Don Giovanni",
+    "opera_id": 12,
+    "placement": 24,
+    "title": "Dalla sua pace"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 26,
+    "opera": "Don Giovanni",
+    "opera_id": 12,
+    "placement": 26,
+    "title": "Fin ch'han dal vino"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 28,
+    "opera": "Don Giovanni",
+    "opera_id": 12,
+    "placement": 28,
+    "title": "Batti batti, o bel Masetto"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 35,
+    "opera": "Don Giovanni",
+    "opera_id": 12,
+    "placement": 35,
+    "title": "Deh, vieni alla finestra, o mio tesoro"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 37,
+    "opera": "Don Giovanni",
+    "opera_id": 12,
+    "placement": 37,
+    "title": "Metà di voi qua vadano"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 39,
+    "opera": "Don Giovanni",
+    "opera_id": 12,
+    "placement": 39,
+    "title": "Vedrai carino"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 42,
+    "opera": "Don Giovanni",
+    "opera_id": 12,
+    "placement": 42,
+    "title": "Ah pietà signori miei"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 44,
+    "opera": "Don Giovanni",
+    "opera_id": 12,
+    "placement": 44,
+    "title": "Il mio tesoro intanto"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 48,
+    "opera": "Don Giovanni",
+    "opera_id": 12,
+    "placement": 48,
+    "title": "In quali eccessi o Numi... Mi tradi quallalma ingrata..."
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 53,
+    "opera": "Don Giovanni",
+    "opera_id": 12,
+    "placement": 52,
+    "title": "Crudele ah no mio bene... Non mi dir bell'idol mio"
+  },
+  {
+    "composer_first_name": "Gaetano",
+    "composer_id": 11,
+    "composer_last_name": "Donizetti",
+    "id": 492,
+    "opera": "Don Pasquale",
+    "opera_id": 26,
+    "placement": 3,
+    "title": "Bella siccome un angelo"
+  },
+  {
+    "composer_first_name": "Gaetano",
+    "composer_id": 11,
+    "composer_last_name": "Donizetti",
+    "id": 494,
+    "opera": "Don Pasquale",
+    "opera_id": 26,
+    "placement": 5,
+    "title": "Ah, un foco in solito mi sento addosso"
+  },
+  {
+    "composer_first_name": "Gaetano",
+    "composer_id": 11,
+    "composer_last_name": "Donizetti",
+    "id": 496,
+    "opera": "Don Pasquale",
+    "opera_id": 26,
+    "placement": 7,
+    "title": "Quel guardo il cavaliere... So anch'io la virtù magica"
+  },
+  {
+    "composer_first_name": "Gaetano",
+    "composer_id": 11,
+    "composer_last_name": "Donizetti",
+    "id": 498,
+    "opera": "Don Pasquale",
+    "opera_id": 26,
+    "placement": 9,
+    "title": "Povero Ernesto... Cercherò lontana terra"
+  },
+  {
+    "composer_first_name": "Gaetano",
+    "composer_id": 11,
+    "composer_last_name": "Donizetti",
+    "id": 507,
+    "opera": "Don Pasquale",
+    "opera_id": 26,
+    "placement": 17,
+    "title": "Com'è gentil"
+  },
+  {
+    "composer_first_name": "Ludwig van",
+    "composer_id": 51,
+    "composer_last_name": "Beethoven",
+    "id": 342,
+    "opera": "Fidelio",
+    "opera_id": 21,
+    "placement": 3,
+    "title": "O wär ich schon mit dir vereint"
+  },
+  {
+    "composer_first_name": "Ludwig van",
+    "composer_id": 51,
+    "composer_last_name": "Beethoven",
+    "id": 344,
+    "opera": "Fidelio",
+    "opera_id": 21,
+    "placement": 5,
+    "title": "Hat man nicht auch Gold beineben"
+  },
+  {
+    "composer_first_name": "Ludwig van",
+    "composer_id": 51,
+    "composer_last_name": "Beethoven",
+    "id": 347,
+    "opera": "Fidelio",
+    "opera_id": 21,
+    "placement": 8,
+    "title": "Ha, welch ein Augenblick"
+  },
+  {
+    "composer_first_name": "Ludwig van",
+    "composer_id": 51,
+    "composer_last_name": "Beethoven",
+    "id": 349,
+    "opera": "Fidelio",
+    "opera_id": 21,
+    "placement": 10,
+    "title": "Abscheulicher, wo eilst du hin"
+  },
+  {
+    "composer_first_name": "Ludwig van",
+    "composer_id": 51,
+    "composer_last_name": "Beethoven",
+    "id": 351,
+    "opera": "Fidelio",
+    "opera_id": 21,
+    "placement": 12,
+    "title": "Gott, welch Dunkel hier"
+  },
+  {
+    "composer_first_name": "Gioacchino",
+    "composer_id": 10,
+    "composer_last_name": "Rossini",
+    "id": 522,
+    "opera": "Guillaume Tell",
+    "opera_id": 27,
+    "placement": 10,
+    "title": "Sombre forêt, désert triste"
+  },
+  {
+    "composer_first_name": "Gioacchino",
+    "composer_id": 10,
+    "composer_last_name": "Rossini",
+    "id": 526,
+    "opera": "Guillaume Tell",
+    "opera_id": 27,
+    "placement": 14,
+    "title": "Puor notre amour, plus d'espérance"
+  },
+  {
+    "composer_first_name": "Gioacchino",
+    "composer_id": 10,
+    "composer_last_name": "Rossini",
+    "id": 531,
+    "opera": "Guillaume Tell",
+    "opera_id": 27,
+    "placement": 20,
+    "title": "Asile héréditaire"
+  },
+  {
+    "composer_first_name": "Gioacchino",
+    "composer_id": 10,
+    "composer_last_name": "Rossini",
+    "id": 196,
+    "opera": "Il Barbiere di Siviglia",
+    "opera_id": 15,
+    "placement": 3,
+    "title": "Ecco ridente in cielo"
+  },
+  {
+    "composer_first_name": "Gioacchino",
+    "composer_id": 10,
+    "composer_last_name": "Rossini",
+    "id": 198,
+    "opera": "Il Barbiere di Siviglia",
+    "opera_id": 15,
+    "placement": 5,
+    "title": "Largo al factotum della Città"
+  },
+  {
+    "composer_first_name": "Gioacchino",
+    "composer_id": 10,
+    "composer_last_name": "Rossini",
+    "id": 199,
+    "opera": "Il Barbiere di Siviglia",
+    "opera_id": 15,
+    "placement": 6,
+    "title": "Se il mio nome"
+  },
+  {
+    "composer_first_name": "Gioacchino",
+    "composer_id": 10,
+    "composer_last_name": "Rossini",
+    "id": 201,
+    "opera": "Il Barbiere di Siviglia",
+    "opera_id": 15,
+    "placement": 8,
+    "title": "Una voce poco fa"
+  },
+  {
+    "composer_first_name": "Gioacchino",
+    "composer_id": 10,
+    "composer_last_name": "Rossini",
+    "id": 203,
+    "opera": "Il Barbiere di Siviglia",
+    "opera_id": 15,
+    "placement": 10,
+    "title": "La calunnia è un venticello"
+  },
+  {
+    "composer_first_name": "Gioacchino",
+    "composer_id": 10,
+    "composer_last_name": "Rossini",
+    "id": 208,
+    "opera": "Il Barbiere di Siviglia",
+    "opera_id": 15,
+    "placement": 14,
+    "title": "Manca un foglio, e già suppongo"
+  },
+  {
+    "composer_first_name": "Gioacchino",
+    "composer_id": 10,
+    "composer_last_name": "Rossini",
+    "id": 213,
+    "opera": "Il Barbiere di Siviglia",
+    "opera_id": 15,
+    "placement": 19,
+    "title": "Contro un cor che accende amore"
+  },
+  {
+    "composer_first_name": "Gioacchino",
+    "composer_id": 10,
+    "composer_last_name": "Rossini",
+    "id": 214,
+    "opera": "Il Barbiere di Siviglia",
+    "opera_id": 15,
+    "placement": 20,
+    "title": "Quando mi sei vicina amabile Rosina"
+  },
+  {
+    "composer_first_name": "Gioacchino",
+    "composer_id": 10,
+    "composer_last_name": "Rossini",
+    "id": 217,
+    "opera": "Il Barbiere di Siviglia",
+    "opera_id": 15,
+    "placement": 23,
+    "title": "Il vecchietto cerca moglie"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 141,
+    "opera": "La Bohème",
+    "opera_id": 14,
+    "placement": 5,
+    "title": "Che gelida manina"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 142,
+    "opera": "La Bohème",
+    "opera_id": 14,
+    "placement": 6,
+    "title": "Sì. Mi chiamano Mimì"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 148,
+    "opera": "La Bohème",
+    "opera_id": 14,
+    "placement": 12,
+    "title": "Quando m’en vo’"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 154,
+    "opera": "La Bohème",
+    "opera_id": 14,
+    "placement": 18,
+    "title": "Donde lieta"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 159,
+    "opera": "La Bohème",
+    "opera_id": 14,
+    "placement": 23,
+    "title": "Vecchia zimarra"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 87,
+    "opera": "La Traviata",
+    "opera_id": 11,
+    "placement": 7,
+    "title": "È strano... Ah fors'è lui che l'anima..."
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 89,
+    "opera": "La Traviata",
+    "opera_id": 11,
+    "placement": 9,
+    "title": "Lunge da lei... De miei bollenti spiriti..."
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 91,
+    "opera": "La Traviata",
+    "opera_id": 11,
+    "placement": 11,
+    "title": "Dammi tu forza, o cielo..."
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 92,
+    "opera": "La Traviata",
+    "opera_id": 11,
+    "placement": 12,
+    "title": "Di Provenza il mar"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 94,
+    "opera": "La Traviata",
+    "opera_id": 11,
+    "placement": 14,
+    "title": "Addio del passato bei sogni ridenti"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 166,
+    "opera": "Le Nozze di Figaro",
+    "opera_id": 1,
+    "placement": 4,
+    "title": "Se vuol ballare, Signor contino"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 167,
+    "opera": "Le Nozze di Figaro",
+    "opera_id": 1,
+    "placement": 5,
+    "title": "La vendetta, oh, la vendetta"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 169,
+    "opera": "Le Nozze di Figaro",
+    "opera_id": 1,
+    "placement": 7,
+    "title": "Non so più cosa son, cosa faccio"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 173,
+    "opera": "Le Nozze di Figaro",
+    "opera_id": 1,
+    "placement": 10,
+    "title": "Non più andrai, farfallone amoroso"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 174,
+    "opera": "Le Nozze di Figaro",
+    "opera_id": 1,
+    "placement": 11,
+    "title": "Porgi amor qualche ristoro"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 175,
+    "opera": "Le Nozze di Figaro",
+    "opera_id": 1,
+    "placement": 12,
+    "title": "Voi, che sapete, che cosa è amor"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 176,
+    "opera": "Le Nozze di Figaro",
+    "opera_id": 1,
+    "placement": 13,
+    "title": "Venite, inginocchiatevi"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 181,
+    "opera": "Le Nozze di Figaro",
+    "opera_id": 1,
+    "placement": 18,
+    "title": "Hai già vinta la causa"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 183,
+    "opera": "Le Nozze di Figaro",
+    "opera_id": 1,
+    "placement": 20,
+    "title": "E susanna non vien... Dove sono i bei momenti"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 188,
+    "opera": "Le Nozze di Figaro",
+    "opera_id": 1,
+    "placement": 25,
+    "title": "L'ho perduta, me meschina"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 189,
+    "opera": "Le Nozze di Figaro",
+    "opera_id": 1,
+    "placement": 26,
+    "title": "Il capro e la capretta"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 190,
+    "opera": "Le Nozze di Figaro",
+    "opera_id": 1,
+    "placement": 27,
+    "title": "In quegli anni in cui val poco"
+  },
+  {
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_id": 58,
+    "composer_last_name": "Mozart",
+    "id": 191,
+    "opera": "Le Nozze di Figaro",
+    "opera_id": 1,
+    "placement": 29,
+    "title": "Giunse al fin il momento... Deh vieni non tardar"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 564,
+    "opera": "Nabucco",
+    "opera_id": 29,
+    "placement": 2,
+    "title": "Gli arredi festivi... Sperate, o figli... D'Egitto"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 568,
+    "opera": "Nabucco",
+    "opera_id": 29,
+    "placement": 6,
+    "title": "Anch'io dischiuso un giorno... Salgo già del trono aurato"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 569,
+    "opera": "Nabucco",
+    "opera_id": 29,
+    "placement": 7,
+    "title": "Preghiera - Tu sul labbro"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 576,
+    "opera": "Nabucco",
+    "opera_id": 29,
+    "placement": 14,
+    "title": "Finale terzo - Oh chi piange... Del fururo nel buio discerno"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 577,
+    "opera": "Nabucco",
+    "opera_id": 29,
+    "placement": 15,
+    "title": "Dio di Giuda... O prodi miei, seguitemi"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 578,
+    "opera": "Nabucco",
+    "opera_id": 29,
+    "placement": 16,
+    "title": "Oh dischiuso è il firmamento"
+  },
+  {
+    "composer_first_name": "Ruggiero",
+    "composer_id": 28,
+    "composer_last_name": "Leoncavallo",
+    "id": 308,
+    "opera": "Pagliacci",
+    "opera_id": 19,
+    "placement": 1,
+    "title": "Prologue - Si puo"
+  },
+  {
+    "composer_first_name": "Ruggiero",
+    "composer_id": 28,
+    "composer_last_name": "Leoncavallo",
+    "id": 310,
+    "opera": "Pagliacci",
+    "opera_id": 19,
+    "placement": 3,
+    "title": "Un tal gioco"
+  },
+  {
+    "composer_first_name": "Ruggiero",
+    "composer_id": 28,
+    "composer_last_name": "Leoncavallo",
+    "id": 312,
+    "opera": "Pagliacci",
+    "opera_id": 19,
+    "placement": 5,
+    "title": "Qual fiamma avea nel guardo... Stridono lassù"
+  },
+  {
+    "composer_first_name": "Ruggiero",
+    "composer_id": 28,
+    "composer_last_name": "Leoncavallo",
+    "id": 317,
+    "opera": "Pagliacci",
+    "opera_id": 19,
+    "placement": 9,
+    "title": "Vesti la giubba"
+  },
+  {
+    "composer_first_name": "Ruggiero",
+    "composer_id": 28,
+    "composer_last_name": "Leoncavallo",
+    "id": 320,
+    "opera": "Pagliacci",
+    "opera_id": 19,
+    "placement": 12,
+    "title": "Pagliaccio mio marito"
+  },
+  {
+    "composer_first_name": "Ruggiero",
+    "composer_id": 28,
+    "composer_last_name": "Leoncavallo",
+    "id": 321,
+    "opera": "Pagliacci",
+    "opera_id": 19,
+    "placement": 13,
+    "title": "O Colombina, il tenero fido Arlecchin è a te vicin"
+  },
+  {
+    "composer_first_name": "Ruggiero",
+    "composer_id": 28,
+    "composer_last_name": "Leoncavallo",
+    "id": 322,
+    "opera": "Pagliacci",
+    "opera_id": 19,
+    "placement": 14,
+    "title": "È dessa... Dei, come è bella"
+  },
+  {
+    "composer_first_name": "Ruggiero",
+    "composer_id": 28,
+    "composer_last_name": "Leoncavallo",
+    "id": 323,
+    "opera": "Pagliacci",
+    "opera_id": 19,
+    "placement": 15,
+    "title": "Arlecchin... Columbina... Alfin s'arrenda"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 228,
+    "opera": "Rigoletto",
+    "opera_id": 16,
+    "placement": 3,
+    "title": "Questa o quella per me pari sono"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 236,
+    "opera": "Rigoletto",
+    "opera_id": 16,
+    "placement": 11,
+    "title": "Caro nome che il mio cor"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 238,
+    "opera": "Rigoletto",
+    "opera_id": 16,
+    "placement": 13,
+    "title": "Ella mi fu rapita... Parmi veder le lagrime"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 240,
+    "opera": "Rigoletto",
+    "opera_id": 16,
+    "placement": 15,
+    "title": "Possente amor mi chiama"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 241,
+    "opera": "Rigoletto",
+    "opera_id": 16,
+    "placement": 16,
+    "title": "Povero Rigoletto... Cortigiani, vil razza dannata"
+  },
+  {
+    "composer_first_name": "Giuseppe",
+    "composer_id": 17,
+    "composer_last_name": "Verdi",
+    "id": 244,
+    "opera": "Rigoletto",
+    "opera_id": 16,
+    "placement": 19,
+    "title": "E l'ami... La donna è mobile"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 582,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 2,
+    "title": "Frondi tenere... Ombra mai fù"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 584,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 4,
+    "title": "O voi che penate"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 585,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 5,
+    "title": "Và godendo vezzoso e bello"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 587,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 7,
+    "title": "Io le dirò che l'amo... Tu le dirai che l'ami"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 589,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 9,
+    "title": "Sì, mio ben, io vivo per te sol"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 591,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 11,
+    "title": "Meglio in voi vol mio partire"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 592,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 12,
+    "title": "Belissima Romilda... Di tacere e di schernirmi"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 593,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 13,
+    "title": "Aspide sono... Nè men con l'ombre"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 594,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 14,
+    "title": "Se cangio spoglia, non cangio core"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 600,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 20,
+    "title": "Più che penso alle fiamme"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 601,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 21,
+    "title": "Eccoti il foglio, Elviro... Signore, lasciate far a me"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 602,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 22,
+    "title": "Non sò se sia la speme"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 603,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 23,
+    "title": "Tradi di reggia sposa... Saprà delle mie offese"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 605,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 25,
+    "title": "Se l'idol mio"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 606,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 26,
+    "title": "Per rapir quel tesoro... Un cenno leggiadretto"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 611,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 31,
+    "title": "Se bramate d'amar, chi vi sdegna"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 612,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 32,
+    "title": "L'amerò, non fia vero... È gelosia quella tiranna"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 613,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 33,
+    "title": "Già che il duol non m'uccide... Anima infida tradita io sono"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 614,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 34,
+    "title": "È pazzo affè... Quella che tutta fè"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 617,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 37,
+    "title": "Per dar fine alla mia pena... Arsamene, ove andate... Si, la voglio e la otterò"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 618,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 38,
+    "title": "V'inchino, eccelso Rè... Voi mi dite che non l'ami"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 619,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 39,
+    "title": "Saria lieve ognio doglia... Il core spera e teme"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 620,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 40,
+    "title": "Me infelice... Del mio caro baco amabile"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 622,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 42,
+    "title": "Romilda, e sarà ver... Val più contento core"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 624,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 44,
+    "title": "La fortuna, la vita.. Che cede al furore"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 628,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 48,
+    "title": "Nò, nò, se tu mi sprezzi"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 630,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 50,
+    "title": "Per rendermi beato"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 631,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 51,
+    "title": "Ubbidirò al mio Rè... Amor tiranno, amor"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 632,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 52,
+    "title": "Come già vi accennammo... Del Ciel d'amore sorte si bella"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 637,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 55,
+    "title": "Cagion son io del mio dolore"
+  },
+  {
+    "composer_first_name": "George Frideric",
+    "composer_id": 55,
+    "composer_last_name": "Handel",
+    "id": 643,
+    "opera": "Serse",
+    "opera_id": 30,
+    "placement": 61,
+    "title": "Crude furie degl'orridi abissi"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 277,
+    "opera": "Tosca",
+    "opera_id": 18,
+    "placement": 3,
+    "title": "Dammi i colori... Recondita armonia"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 280,
+    "opera": "Tosca",
+    "opera_id": 18,
+    "placement": 6,
+    "title": "Mario, Mario, Mario... Son qui... Non la sospiri, la nostra casetta"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 281,
+    "opera": "Tosca",
+    "opera_id": 18,
+    "placement": 7,
+    "title": "Or lasciami al lavoro... Ah quegli occhi..."
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 286,
+    "opera": "Tosca",
+    "opera_id": 18,
+    "placement": 12,
+    "title": "Tre sbirri... Te Deum... Tosca, mi fai dimenticare Iddio"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 287,
+    "opera": "Tosca",
+    "opera_id": 18,
+    "placement": 13,
+    "title": "Tosca e un buon falco"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 297,
+    "opera": "Tosca",
+    "opera_id": 18,
+    "placement": 22,
+    "title": "Vissi d'arte, vissi d'amore"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 302,
+    "opera": "Tosca",
+    "opera_id": 18,
+    "placement": 27,
+    "title": "Io de' sospiri"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 305,
+    "opera": "Tosca",
+    "opera_id": 18,
+    "placement": 30,
+    "title": "E lucevan le stelle"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 537,
+    "opera": "Turandot",
+    "opera_id": 28,
+    "placement": 3,
+    "title": "Signore, ascolta"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 538,
+    "opera": "Turandot",
+    "opera_id": 28,
+    "placement": 4,
+    "title": "Non piangere, Liu"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 542,
+    "opera": "Turandot",
+    "opera_id": 28,
+    "placement": 8,
+    "title": "In quest reggia"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 543,
+    "opera": "Turandot",
+    "opera_id": 28,
+    "placement": 9,
+    "title": "Figlio del cielo"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 545,
+    "opera": "Turandot",
+    "opera_id": 28,
+    "placement": 11,
+    "title": "Nessun dorma"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 548,
+    "opera": "Turandot",
+    "opera_id": 28,
+    "placement": 14,
+    "title": "Tanto amore segreto... Tu che di gel sei cinta"
+  },
+  {
+    "composer_first_name": "Giacomo",
+    "composer_id": 29,
+    "composer_last_name": "Puccini",
+    "id": 551,
+    "opera": "Turandot",
+    "opera_id": 28,
+    "placement": 17,
+    "title": "Del primo pianto"
+  }
+]

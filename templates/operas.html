@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set operas = load_data(path="data/operas.json") %}
+<section class="listing">
+  <h1>Operas</h1>
+  {% if operas | length > 0 %}
+    <div class="result-grid">
+      {% for opera in operas %}
+        <a class="result-pane" href="/operas/{{ opera.id }}/">{{ opera.title }}</a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="empty-state">Run the catalogue exporter to generate opera pages from the database.</p>
+  {% endif %}
+</section>
+{% endblock content %}

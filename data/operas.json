@@ -1,0 +1,170 @@
+[
+  {
+    "id": 23,
+    "title": "Anna Bolena",
+    "translation": "",
+    "composer_id": 11,
+    "composer_first_name": "Gaetano",
+    "composer_last_name": "Donizetti"
+  },
+  {
+    "id": 13,
+    "title": "Carmen",
+    "translation": "",
+    "composer_id": 22,
+    "composer_first_name": "Georges",
+    "composer_last_name": "Bizet"
+  },
+  {
+    "id": 25,
+    "title": "Cavalleria rusticana",
+    "translation": "Rustic chivalry",
+    "composer_id": 32,
+    "composer_first_name": "Pietro",
+    "composer_last_name": "Mascagni"
+  },
+  {
+    "id": 24,
+    "title": "Così fan tutte",
+    "translation": "Women are like that",
+    "composer_id": 58,
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_last_name": "Mozart"
+  },
+  {
+    "id": 17,
+    "title": "Die Fledermaus",
+    "translation": "The Bat",
+    "composer_id": 60,
+    "composer_first_name": "Johann",
+    "composer_last_name": "Strauss II"
+  },
+  {
+    "id": 10,
+    "title": "Die Zauberflöte",
+    "translation": "The Magic Flute",
+    "composer_id": 58,
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_last_name": "Mozart"
+  },
+  {
+    "id": 22,
+    "title": "Don Carlos",
+    "translation": "",
+    "composer_id": 17,
+    "composer_first_name": "Giuseppe",
+    "composer_last_name": "Verdi"
+  },
+  {
+    "id": 12,
+    "title": "Don Giovanni",
+    "translation": "",
+    "composer_id": 58,
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_last_name": "Mozart"
+  },
+  {
+    "id": 26,
+    "title": "Don Pasquale",
+    "translation": "",
+    "composer_id": 11,
+    "composer_first_name": "Gaetano",
+    "composer_last_name": "Donizetti"
+  },
+  {
+    "id": 21,
+    "title": "Fidelio",
+    "translation": "",
+    "composer_id": 51,
+    "composer_first_name": "Ludwig van",
+    "composer_last_name": "Beethoven"
+  },
+  {
+    "id": 27,
+    "title": "Guillaume Tell",
+    "translation": "Wilhelm Tell",
+    "composer_id": 10,
+    "composer_first_name": "Gioacchino",
+    "composer_last_name": "Rossini"
+  },
+  {
+    "id": 15,
+    "title": "Il Barbiere di Siviglia",
+    "translation": "The Barber of Seville",
+    "composer_id": 10,
+    "composer_first_name": "Gioacchino",
+    "composer_last_name": "Rossini"
+  },
+  {
+    "id": 14,
+    "title": "La Bohème",
+    "translation": "",
+    "composer_id": 29,
+    "composer_first_name": "Giacomo",
+    "composer_last_name": "Puccini"
+  },
+  {
+    "id": 11,
+    "title": "La Traviata",
+    "translation": "The Fallen Woman",
+    "composer_id": 17,
+    "composer_first_name": "Giuseppe",
+    "composer_last_name": "Verdi"
+  },
+  {
+    "id": 1,
+    "title": "Le Nozze di Figaro",
+    "translation": "The Marriage of Figaro",
+    "composer_id": 58,
+    "composer_first_name": "Wolfgang Amadeus",
+    "composer_last_name": "Mozart"
+  },
+  {
+    "id": 29,
+    "title": "Nabucco",
+    "translation": "Nebuchadnezzar",
+    "composer_id": 17,
+    "composer_first_name": "Giuseppe",
+    "composer_last_name": "Verdi"
+  },
+  {
+    "id": 19,
+    "title": "Pagliacci",
+    "translation": "",
+    "composer_id": 28,
+    "composer_first_name": "Ruggiero",
+    "composer_last_name": "Leoncavallo"
+  },
+  {
+    "id": 16,
+    "title": "Rigoletto",
+    "translation": "",
+    "composer_id": 17,
+    "composer_first_name": "Giuseppe",
+    "composer_last_name": "Verdi"
+  },
+  {
+    "id": 30,
+    "title": "Serse",
+    "translation": "Xerxes",
+    "composer_id": 55,
+    "composer_first_name": "George Frideric",
+    "composer_last_name": "Handel"
+  },
+  {
+    "id": 18,
+    "title": "Tosca",
+    "translation": "",
+    "composer_id": 29,
+    "composer_first_name": "Giacomo",
+    "composer_last_name": "Puccini"
+  },
+  {
+    "id": 28,
+    "title": "Turandot",
+    "translation": "",
+    "composer_id": 29,
+    "composer_first_name": "Giacomo",
+    "composer_last_name": "Puccini"
+  }
+]

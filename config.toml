@@ -1,0 +1,12 @@
+base_url = "https://www.ariavault.com"
+title = "ariavault"
+description = "Free public-domain opera sheet music and vocal scores."
+default_language = "en"
+compile_sass = false
+minify_html = true
+generate_feeds = false
+build_search_index = false
+output_dir = "dist"
+
+[extra]
+tagline = "The platform for finding opera sheet music online"

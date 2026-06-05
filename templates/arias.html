@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set arias = load_data(path="data/arias.json") %}
+<section class="listing">
+  <h1>Arias</h1>
+  {% if arias | length > 0 %}
+    <div class="aria-grid">
+      {% for aria in arias %}
+        <article class="aria-row">
+          <a href="/pieces/{{ aria.id }}/">{{ aria.title }}</a>
+          <a href="/operas/{{ aria.opera_id }}/">{{ aria.opera }}</a>
+          <a href="/composers/{{ aria.composer_id }}/">{{ aria.composer_last_name }}, {{ aria.composer_first_name }}</a>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="empty-state">Run the catalogue exporter to generate aria data from the database.</p>
+  {% endif %}
+</section>
+{% endblock content %}

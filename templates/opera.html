@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}ariavault - sheet music for all pieces in {{ page.title }}{% endblock title %}
+
+{% block content %}
+{% set pieces = load_data(path="data/pieces.json") %}
+<article class="listing">
+  <h1>{{ page.title }}</h1>
+  <div class="single-list">
+    {% for piece in pieces %}
+      {% if piece.opera_id == page.extra.opera_id %}
+      <a class="single-row{% if piece.piece_type != 'recitativo' and piece.piece_type != 'choir' and piece.piece_type != 'intermezzo' and piece.piece_type != 'other' %} featured{% endif %}" href="/pieces/{{ piece.id }}/">{{ piece.title }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</article>
+{% endblock content %}
