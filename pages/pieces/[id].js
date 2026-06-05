@@ -7,9 +7,7 @@ const PieceWithId = ({ data }) => {
 	return (
 		<>
 			<Head>
-				<title>
-					ariavault - vocal score, sheet music for {data.title} from {data.opera} by {data.last_name}, {data.first_name}
-				</title>
+				<title>{`ariavault - vocal score, sheet music for ${data.title} from ${data.opera} by ${data.last_name}, ${data.first_name}`}</title>
 			</Head>
 			<Piece data={data} />
 		</>
@@ -37,6 +35,10 @@ export async function getStaticProps({ params }) {
 					FROM pieces as p INNER JOIN operas as o ON p.opera_id = o.id 
 					INNER JOIN composers as c ON o.composer_id = c.id WHERE p.id = ?;`;
 	const [data] = await queryGetData(query, params.id);
+	if (!data) {
+		return { notFound: true }
+	}
+
 	const { prev_id, next_id } = data;
 	const completeData = { ...data, prevId: prev_id ?? false, nextId: next_id ?? false }
 	return {

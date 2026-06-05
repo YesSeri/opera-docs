@@ -22,27 +22,34 @@ export async function getStaticProps({ params }) {
 	const query = `SELECT p.id, p.title, p.type, p.next_id, p.prev_id, o.name, opera_id, c.last_name
 					FROM pieces as p INNER JOIN operas as o ON p.opera_id = o.id 
 					INNER JOIN composers as c ON o.composer_id = c.id
-					WHERE o.id = ? AND prev_id IS NULL;`;
-	let [current] = await queryGetData(query, params.id);
-	const piecesInOpera = [current];
+					WHERE o.id = ?;`;
+	const pieces = await queryGetData(query, params.id);
 
-	// To stop infinte loop, if I make a mistake in DB.
-	let i = 0;
-	while (true) {
-		const query = `SELECT p.id, p.title, p.type, p.next_id, p.prev_id, o.name, opera_id, c.last_name
-					FROM pieces as p INNER JOIN operas as o ON p.opera_id = o.id 
-					INNER JOIN composers as c ON o.composer_id = c.id
-					WHERE p.id = ?;`;
-		const [data] = await queryGetData(query, current.next_id);
-		piecesInOpera.push(data);
-		if (data.next_id === null || i > 120) {
+	if (pieces.length === 0) {
+		return { notFound: true }
+	}
+
+	const piecesById = new Map(pieces.map((piece) => [piece.id, piece]));
+	const firstPiece = pieces.find((piece) => piece.prev_id === null) || pieces[0];
+	const piecesInOpera = [];
+	const seenIds = new Set();
+	let current = firstPiece;
+
+	while (current && !seenIds.has(current.id)) {
+		piecesInOpera.push(current);
+		seenIds.add(current.id);
+
+		if (current.next_id === null) {
 			break;
 		}
-		current = data;
-		i++;
+
+		current = piecesById.get(current.next_id);
 	}
+
+	const unorderedPieces = pieces.filter((piece) => !seenIds.has(piece.id));
+
 	return {
-		props: { data: piecesInOpera }
+		props: { data: [...piecesInOpera, ...unorderedPieces] }
 	}
 }
 
@@ -51,7 +58,7 @@ export default function OperaWithId({ data }) {
 	return (
 		<>
 			<Head>
-				<title>ariavault - sheet music for all pieces in {operaTitle}</title>
+				<title>{`ariavault - sheet music for all pieces in ${operaTitle}`}</title>
 			</Head>
 			<Opera data={data} />
 		</>

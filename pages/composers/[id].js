@@ -27,6 +27,10 @@ export async function getStaticProps({ params }) {
 				  ORDER BY o.name`;
 
 	const data = await queryGetData(query, params.id);
+	if (data.length === 0) {
+		return { notFound: true }
+	}
+
 	return {
 		props: { data }
 	}
@@ -37,7 +41,7 @@ export default function OperaWithId({ data }) {
 	return (
 		<>
 			<Head>
-				<title>ariavault - operas by {first_name} {last_name}</title>
+				<title>{`ariavault - operas by ${first_name} ${last_name}`}</title>
 			</Head>
 			<Composer data={data} />
 

@@ -23,6 +23,9 @@ const SearchValue = ({ searchValue, data }) => {
 			setResults(null);
 			return
 		}
+		if (!fuse) {
+			return
+		}
 		const arr = getSortedTopsMatches()
 		const linkTitleArr = arr.map(({ item }) => {
 			const { id, title, category } = item
